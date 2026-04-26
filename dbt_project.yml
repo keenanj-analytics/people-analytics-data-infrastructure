@@ -39,6 +39,15 @@ clean-targets:
   - "target"
   - "dbt_packages"
 
+# Project variables. `current_date` is the canonical "today" for the
+# synthetic dataset (the spec's current quarter). All time-based
+# calculations (tenure_months, months_since_last_promotion, etc.)
+# anchor on this date so the dataset's analytics stay stable as the
+# real wall-clock date drifts forward. Override at runtime with:
+#   dbt run --vars '{current_date: "2025-06-30"}'
+vars:
+  current_date: '2025-03-31'
+
 models:
   justkaizen_analytics:
     +persist_docs:
@@ -48,7 +57,7 @@ models:
       +materialized: view
       +schema:       staging
     intermediate:
-      +materialized: ephemeral
+      +materialized: view
       +schema:       intermediate
     marts:
       +materialized: table

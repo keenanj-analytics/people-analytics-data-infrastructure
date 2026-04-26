@@ -1,0 +1,118 @@
+version: 2
+
+models:
+  - name: int_employee_tenure
+    description: |
+      Per-employee tenure and career-velocity calculations. One row per
+      employee. Reference date for "current" is var('current_date'),
+      defaulting to 2025-03-31 (the synthetic dataset's current
+      quarter); for terminated employees the reference date is their
+      termination_date so tenure stops at departure.
+    columns:
+      - name: employee_id
+        description: FK to stg_employees. One row per employee. Primary key.
+        tests:
+          - not_null
+          - unique
+          - relationships:
+              to: ref('stg_employees')
+              field: employee_id
+
+      - name: hire_date
+        description: Carried forward from stg_employees.
+        tests:
+          - not_null
+
+      - name: termination_date
+        description: |
+          Carried forward from stg_employees. Null for active employees.
+
+      - name: reference_date
+        description: |
+          The date used as "today" in all tenure calculations.
+          COALESCE(termination_date, var('current_date')). Always
+          populated; always >= hire_date.
+        tests:
+          - not_null
+
+      - name: tenure_months
+        description: |
+          Whole months between hire_date and reference_date. Always
+          non-negative. Active employees with same-day hires return 0.
+        tests:
+          - not_null
+          - dbt_utils.expression_is_true:
+              expression: ">= 0"
+
+      - name: tenure_years
+        description: |
+          Tenure in years (days / 365.25, rounded to 2 decimals). Always
+          non-negative.
+        tests:
+          - not_null
+          - dbt_utils.expression_is_true:
+              expression: ">= 0"
+
+      - name: total_promotions
+        description: |
+          Count of Promotion events in stg_job_history for the employee.
+          Includes IC->IC steps and IC->M jumps but NOT Title Change
+          rows (which encode the Manager Step-Back's M1->IC4 demotion).
+          Zero for employees who have never been promoted.
+        tests:
+          - not_null
+          - dbt_utils.expression_is_true:
+              expression: ">= 0"
+
+      - name: last_promotion_date
+        description: |
+          Effective date of the employee's most recent Promotion event.
+          Null for employees who have never been promoted.
+
+      - name: months_since_last_promotion
+        description: |
+          Whole months from last_promotion_date to reference_date.
+          Null for employees who have never been promoted.
+        tests:
+          - dbt_utils.expression_is_true:
+              expression: ">= 0"
+              config:
+                where: "months_since_last_promotion is not null"
+
+      - name: time_in_current_role_months
+        description: |
+          Whole months from the most recent event of any change_type
+          (Hire / Promotion / Lateral Transfer / Title Change /
+          Manager Change) to reference_date. Approximates time spent
+          in the current role configuration.
+        tests:
+          - not_null
+          - dbt_utils.expression_is_true:
+              expression: ">= 0"
+
+      - name: last_manager_change_date
+        description: |
+          Effective date of the employee's most recent Manager Change
+          event. Null for employees who have never had a manager change
+          (most employees -- the original at-hire manager remains
+          unchanged in raw_job_history when at-hire == current).
+
+      - name: has_manager_change_last_12mo
+        description: |
+          TRUE when a Manager Change occurred within 12 months prior to
+          reference_date. FALSE otherwise. Never null -- employees with
+          no Manager Change history return FALSE, not NULL.
+        tests:
+          - not_null
+
+      - name: career_velocity_per_year
+        description: |
+          Promotions per tenure-year. Computed as
+            total_promotions * 365.25 / tenure_in_days
+          rounded to 3 decimals. Returns 0 for same-day hires (avoids
+          divide-by-zero). High values (> 0.5) indicate fast career
+          progression typical of High-flyer and Founder archetypes.
+        tests:
+          - not_null
+          - dbt_utils.expression_is_true:
+              expression: ">= 0"

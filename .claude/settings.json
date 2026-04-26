@@ -1,0 +1,12 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python3 scripts/data_generation/09_build_raw_compensation.py)",
+      "Bash(python3 -c ' *)",
+      "Bash(python3 scripts/data_generation/10_build_raw_performance.py)",
+      "Bash(python3 scripts/data_generation/11_build_raw_recruiting.py)",
+      "Bash(python3 scripts/data_generation/12_build_raw_engagement.py)",
+      "Bash(python3 scripts/data_generation/13_validate_and_export.py)"
+    ]
+  }
+}

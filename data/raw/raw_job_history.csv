@@ -1,0 +1,1046 @@
+employee_id,effective_date,change_type,old_job_level,new_job_level,old_department,new_department,old_sub_department,new_sub_department,old_job_title,new_job_title,old_manager_id,new_manager_id
+EMP-001,2020-01-15,Hire,,M5,,Executive,,,,CEO,,
+EMP-002,2020-01-15,Hire,,M5,,Engineering,,(CTO),,CTO,,EMP-001
+EMP-0020,2020-03-28,Hire,,IC4,,Customer Success,,Implementation,,Implementation Lead,,EMP-0022
+EMP-0020,2022-09-28,Promotion,IC4,IC5,Customer Success,Customer Success,Implementation,Implementation,Implementation Lead,Principal Implementation Lead,EMP-0022,EMP-0022
+EMP-0020,2022-09-28,Manager Change,IC5,IC5,Customer Success,Customer Success,Implementation,Implementation,Principal Implementation Lead,Principal Implementation Lead,EMP-0022,EMP-0037
+EMP-0021,2020-01-16,Hire,,IC3,,Engineering,,Data,,Senior Data Engineer,,EMP-0028
+EMP-0021,2021-10-10,Promotion,IC3,IC4,Engineering,Engineering,Data,Data,Senior Data Engineer,Staff Data Engineer,EMP-0028,EMP-0028
+EMP-0021,2022-08-23,Manager Change,IC4,IC4,Engineering,Engineering,Data,Data,Staff Data Engineer,Staff Data Engineer,EMP-0028,EMP-0034
+EMP-0021,2023-07-06,Promotion,IC4,IC5,Engineering,Engineering,Data,Data,Staff Data Engineer,Principal Data Engineer,EMP-0034,EMP-0034
+EMP-0022,2020-01-24,Hire,,M1,,Customer Success,,CSM,,CS Manager,,EMP-019
+EMP-0022,2022-08-27,Promotion,M1,M2,Customer Success,Customer Success,CSM,CSM,CS Manager,Senior CS Manager,EMP-019,EMP-019
+EMP-0022,2022-08-27,Lateral Transfer,M2,M2,Customer Success,Customer Success,CSM,Implementation,Senior CS Manager,Senior CS Manager,EMP-019,EMP-019
+EMP-0022,2022-08-27,Manager Change,M2,M2,Customer Success,Customer Success,Implementation,Implementation,Senior CS Manager,Senior CS Manager,EMP-019,EMP-010
+EMP-0023,2020-01-16,Hire,,M1,,Engineering,,Infrastructure,,Engineering Manager,,EMP-002
+EMP-0023,2022-08-23,Promotion,M1,M2,Engineering,Engineering,Infrastructure,Infrastructure,Engineering Manager,Senior Engineering Manager,EMP-002,EMP-002
+EMP-0023,2022-08-23,Manager Change,M2,M2,Engineering,Engineering,Infrastructure,Infrastructure,Senior Engineering Manager,Senior Engineering Manager,EMP-002,EMP-014
+EMP-0024,2020-02-10,Hire,,IC3,,Product,,Design,,Senior Product Designer,,EMP-019
+EMP-0024,2021-10-27,Promotion,IC3,IC4,Product,Product,Design,Design,Senior Product Designer,Staff Product Designer,EMP-019,EMP-019
+EMP-0024,2022-09-05,Manager Change,IC4,IC4,Product,Product,Design,Design,Staff Product Designer,Staff Product Designer,EMP-019,EMP-0035
+EMP-0024,2023-07-14,Promotion,IC4,IC5,Product,Product,Design,Design,Staff Product Designer,Principal Product Designer,EMP-0035,EMP-0035
+EMP-0025,2020-01-16,Hire,,M1,,People,,DEIB,,M1 DEIB,,EMP-019
+EMP-0025,2022-08-23,Lateral Transfer,M1,M1,People,People,DEIB,HRBPs,M1 DEIB,HRBP Manager,EMP-019,EMP-019
+EMP-0025,2022-08-23,Manager Change,M1,M1,People,People,HRBPs,HRBPs,HRBP Manager,HRBP Manager,EMP-019,EMP-0043
+EMP-0026,2020-01-16,Hire,,M1,,Sales,,Account Executive,,Sales Manager,,EMP-019
+EMP-0026,2022-08-23,Promotion,M1,M2,Sales,Sales,Account Executive,Account Executive,Sales Manager,Senior Sales Manager,EMP-019,EMP-019
+EMP-0026,2022-08-23,Manager Change,M2,M2,Sales,Sales,Account Executive,Account Executive,Senior Sales Manager,Senior Sales Manager,EMP-019,EMP-018
+EMP-0027,2020-03-13,Hire,,IC3,,Engineering,,Infrastructure,,Senior Software Engineer,,EMP-0023
+EMP-0027,2021-11-17,Promotion,IC3,IC4,Engineering,Engineering,Infrastructure,Infrastructure,Senior Software Engineer,Staff Software Engineer,EMP-0023,EMP-0023
+EMP-0027,2022-09-21,Manager Change,IC4,IC4,Engineering,Engineering,Infrastructure,Infrastructure,Staff Software Engineer,Staff Software Engineer,EMP-0023,EMP-0130
+EMP-0027,2023-07-25,Promotion,IC4,IC5,Engineering,Engineering,Infrastructure,Infrastructure,Staff Software Engineer,Principal Engineer,EMP-0130,EMP-0130
+EMP-0028,2020-01-16,Hire,,M1,,Engineering,,Infrastructure,,Engineering Manager,,EMP-002
+EMP-0028,2022-08-23,Promotion,M1,M2,Engineering,Engineering,Infrastructure,Infrastructure,Engineering Manager,Senior Engineering Manager,EMP-002,EMP-002
+EMP-0028,2022-08-23,Lateral Transfer,M2,M2,Engineering,Engineering,Infrastructure,Platform,Senior Engineering Manager,Senior Engineering Manager,EMP-002,EMP-002
+EMP-0028,2022-08-23,Manager Change,M2,M2,Engineering,Engineering,Platform,Platform,Senior Engineering Manager,Senior Engineering Manager,EMP-002,EMP-013
+EMP-0029,2021-02-14,Hire,,M1,,Engineering,,AI/ML,,Engineering Manager,,EMP-014
+EMP-0029,2023-03-09,Manager Change,M1,M1,Engineering,Engineering,AI/ML,AI/ML,Engineering Manager,Engineering Manager,EMP-014,EMP-0045
+EMP-003,2022-02-01,Hire,,M5,,Sales,,(CRO),,CRO,,EMP-001
+EMP-0030,2021-03-27,Hire,,M1,,Sales,,SDR,,SDR Manager,,EMP-0026
+EMP-0031,2021-04-07,Hire,,IC3,,G&A,,Facilities,,Senior Facilities Specialist,,EMP-0025
+EMP-0031,2023-04-04,Promotion,IC3,IC4,G&A,G&A,Facilities,Facilities,Senior Facilities Specialist,Staff Facilities Specialist,EMP-0025,EMP-0025
+EMP-0031,2023-04-04,Lateral Transfer,IC4,IC4,G&A,G&A,Facilities,Finance,Staff Facilities Specialist,Staff Financial Analyst,EMP-0025,EMP-0025
+EMP-0031,2023-04-04,Manager Change,IC4,IC4,G&A,G&A,Finance,Finance,Staff Financial Analyst,Staff Financial Analyst,EMP-0025,EMP-0153
+EMP-0032,2021-03-16,Hire,,IC4,,Engineering,,Data,,Staff Data Engineer,,EMP-0036
+EMP-0032,2023-03-24,Manager Change,IC4,IC4,Engineering,Engineering,Data,Data,Staff Data Engineer,Staff Data Engineer,EMP-0036,EMP-0181
+EMP-0033,2021-01-25,Hire,,IC4,,Engineering,,Platform,,Staff Software Engineer,,EMP-0023
+EMP-0033,2023-02-27,Promotion,IC4,IC5,Engineering,Engineering,Platform,Platform,Staff Software Engineer,Principal Engineer,EMP-0023,EMP-0023
+EMP-0033,2023-02-27,Manager Change,IC5,IC5,Engineering,Engineering,Platform,Platform,Principal Engineer,Principal Engineer,EMP-0023,EMP-0124
+EMP-0034,2021-05-21,Hire,,IC4,,Engineering,,Data,,Staff Data Engineer,,EMP-0134
+EMP-0034,2023-04-26,Promotion,IC4,M1,Engineering,Engineering,Data,Data,Staff Data Engineer,Engineering Manager,EMP-0134,EMP-0134
+EMP-0035,2021-04-13,Hire,,IC3,,Product,,Design,,Senior Product Designer,,EMP-019
+EMP-0035,2023-04-07,Promotion,IC3,M1,Product,Product,Design,Design,Senior Product Designer,"Product Manager, Lead",EMP-019,EMP-019
+EMP-0035,2023-04-07,Manager Change,M1,M1,Product,Product,Design,Design,"Product Manager, Lead","Product Manager, Lead",EMP-019,EMP-0155
+EMP-0036,2021-01-15,Hire,,M1,,Engineering,,Data,,Engineering Manager,,EMP-013
+EMP-0036,2023-02-22,Manager Change,M1,M1,Engineering,Engineering,Data,Data,Engineering Manager,Engineering Manager,EMP-013,EMP-0134
+EMP-0037,2021-03-20,Hire,,IC4,,Customer Success,,Implementation,,Implementation Lead,,EMP-0022
+EMP-0037,2023-03-26,Promotion,IC4,M1,Customer Success,Customer Success,Implementation,Implementation,Implementation Lead,CS Manager,EMP-0022,EMP-0022
+EMP-0038,2021-04-24,Hire,,M1,,Sales,,Sales Engineering,,Sales Manager,,EMP-0041
+EMP-0039,2021-05-08,Hire,,IC4,,Engineering,,Infrastructure,,Staff Software Engineer,,EMP-0023
+EMP-0039,2023-04-19,Manager Change,IC4,IC4,Engineering,Engineering,Infrastructure,Infrastructure,Staff Software Engineer,Staff Software Engineer,EMP-0023,EMP-0130
+EMP-004,2021-06-01,Hire,,M5,,G&A,,(CFO),,CFO,,EMP-001
+EMP-0040,2021-05-24,Hire,,IC3,,Engineering,,Data,,Senior Data Engineer,,EMP-0034
+EMP-0040,2023-04-27,Promotion,IC3,IC4,Engineering,Engineering,Data,Data,Senior Data Engineer,Staff Data Engineer,EMP-0034,EMP-0034
+EMP-0041,2021-02-24,Hire,,IC3,,Sales,,Sales Engineering,,Senior Sales Engineer,,EMP-0026
+EMP-0041,2022-07-07,Promotion,IC3,M1,Sales,Sales,Sales Engineering,Sales Engineering,Senior Sales Engineer,Sales Manager,EMP-0026,EMP-0026
+EMP-0041,2023-03-14,Lateral Transfer,M1,M1,Sales,Sales,Sales Engineering,Account Management,Sales Manager,Sales Manager,EMP-0026,EMP-0026
+EMP-0041,2023-03-14,Manager Change,M1,M1,Sales,Sales,Account Management,Account Management,Sales Manager,Sales Manager,EMP-0026,EMP-018
+EMP-0041,2023-11-18,Promotion,M1,M2,Sales,Sales,Account Management,Account Management,Sales Manager,Senior Sales Manager,EMP-018,EMP-018
+EMP-0042,2021-05-29,Hire,,IC4,,Customer Success,,CSM,,Strategic CSM,,EMP-0139
+EMP-0043,2021-06-30,Hire,,IC3,,People,,DEIB,,Senior DEIB Specialist,,EMP-015
+EMP-0043,2022-09-29,Promotion,IC3,M1,People,People,DEIB,DEIB,Senior DEIB Specialist,M1 DEIB,EMP-015,EMP-015
+EMP-0043,2023-12-30,Promotion,M1,M2,People,People,DEIB,DEIB,M1 DEIB,DEIB Manager,EMP-015,EMP-015
+EMP-0044,2021-02-16,Hire,,M1,,Engineering,,AI/ML,,Engineering Manager,,EMP-013
+EMP-0044,2023-03-10,Manager Change,M1,M1,Engineering,Engineering,AI/ML,AI/ML,Engineering Manager,Engineering Manager,EMP-013,EMP-0045
+EMP-0045,2021-04-09,Hire,,IC4,,Engineering,,Infrastructure,,Staff Software Engineer,,EMP-014
+EMP-0045,2022-08-06,Promotion,IC4,M1,Engineering,Engineering,Infrastructure,Infrastructure,Staff Software Engineer,Engineering Manager,EMP-014,EMP-014
+EMP-0045,2023-04-05,Lateral Transfer,M1,M1,Engineering,Engineering,Infrastructure,AI/ML,Engineering Manager,Engineering Manager,EMP-014,EMP-014
+EMP-0045,2023-12-03,Promotion,M1,M2,Engineering,Engineering,AI/ML,AI/ML,Engineering Manager,Senior Engineering Manager,EMP-014,EMP-014
+EMP-0046,2021-05-27,Hire,,M1,,Marketing,,Product Marketing,,Marketing Manager,,EMP-015
+EMP-0046,2023-04-29,Promotion,M1,M2,Marketing,Marketing,Product Marketing,Product Marketing,Marketing Manager,Senior Marketing Manager,EMP-015,EMP-015
+EMP-0046,2023-04-29,Lateral Transfer,M2,M2,Marketing,Marketing,Product Marketing,Brand,Senior Marketing Manager,Senior Marketing Manager,EMP-015,EMP-015
+EMP-0046,2023-04-29,Manager Change,M2,M2,Marketing,Marketing,Brand,Brand,Senior Marketing Manager,Senior Marketing Manager,EMP-015,EMP-011
+EMP-0047,2022-08-29,Hire,,IC1,,Sales,,Account Management,,Junior Account Manager,,EMP-0186
+EMP-0048,2021-08-19,Hire,,IC3,,Marketing,,Product Marketing,,Senior Product Marketing Manager,,EMP-0046
+EMP-0048,2022-06-01,Manager Change,IC3,IC3,Marketing,Marketing,Product Marketing,Product Marketing,Senior Product Marketing Manager,Senior Product Marketing Manager,EMP-0046,EMP-0164
+EMP-0049,2022-11-26,Hire,,IC3,,Engineering,,Infrastructure,,Senior Software Engineer,,EMP-0130
+EMP-005,2023-09-15,Hire,,M5,,Product,,(CPO),,Chief Product Officer,,EMP-001
+EMP-0050,2022-01-24,Hire,,IC2,,Sales,,Account Executive,,Account Executive,,EMP-0146
+EMP-0051,2021-10-24,Hire,,IC1,,Engineering,,Data,,Associate Software Engineer,,EMP-0036
+EMP-0052,2022-05-06,Hire,,IC1,,Engineering,,AI/ML,,Associate Software Engineer,,EMP-0185
+EMP-0053,2022-02-06,Hire,,IC2,,Sales,,Sales Engineering,,Sales Engineer,,EMP-0038
+EMP-0054,2021-10-20,Hire,,IC1,,Marketing,,Content,,Marketing Coordinator,,EMP-0046
+EMP-0054,2022-06-16,Manager Change,IC1,IC1,Marketing,Marketing,Content,Content,Marketing Coordinator,Marketing Coordinator,EMP-0046,EMP-0156
+EMP-0055,2021-09-16,Hire,,IC1,,Marketing,,Growth,,Marketing Coordinator,,EMP-0046
+EMP-0055,2022-06-11,Manager Change,IC1,IC1,Marketing,Marketing,Growth,Growth,Marketing Coordinator,Marketing Coordinator,EMP-0046,EMP-0170
+EMP-0056,2022-07-05,Hire,,IC3,,Sales,,Sales Engineering,,Senior Sales Engineer,,EMP-0038
+EMP-0057,2021-05-04,Hire,,IC2,,Sales,,Sales Engineering,,Sales Engineer,,EMP-0038
+EMP-0058,2022-05-25,Hire,,IC2,,Engineering,,Data,,Software Engineer,,EMP-0162
+EMP-0059,2021-09-05,Hire,,IC3,,Sales,,Sales Engineering,,Senior Sales Engineer,,EMP-0038
+EMP-006,2023-10-01,Hire,,M5,,People,,(CPO),,Chief People Officer,,EMP-001
+EMP-0060,2021-08-30,Hire,,IC3,,Sales,,Sales Engineering,,Senior Sales Engineer,,EMP-0038
+EMP-0061,2022-07-08,Hire,,IC3,,Engineering,,Platform,,Senior Software Engineer,,EMP-0165
+EMP-0062,2021-06-19,Hire,,IC3,,G&A,,Finance,,Senior Financial Analyst,,EMP-004
+EMP-0062,2022-04-21,Manager Change,IC3,IC3,G&A,G&A,Finance,Finance,Senior Financial Analyst,Senior Financial Analyst,EMP-004,EMP-0153
+EMP-0063,2022-08-25,Hire,,IC2,,Engineering,,Infrastructure,,Software Engineer,,EMP-0176
+EMP-0064,2021-08-30,Hire,,IC2,,People,,Recruiting,,Recruiter,,EMP-0025
+EMP-0064,2022-05-22,Manager Change,IC2,IC2,People,People,Recruiting,Recruiting,Recruiter,Recruiter,EMP-0025,EMP-0157
+EMP-0065,2021-05-10,Hire,,IC3,,Sales,,Account Executive,,Senior Account Executive,,EMP-0026
+EMP-0065,2022-03-30,Manager Change,IC3,IC3,Sales,Sales,Account Executive,Account Executive,Senior Account Executive,Senior Account Executive,EMP-0026,EMP-0147
+EMP-0066,2022-04-22,Hire,,IC1,,G&A,,Legal,,Legal Coordinator,,EMP-012
+EMP-0066,2022-09-03,Manager Change,IC1,IC1,G&A,G&A,Legal,Legal,Legal Coordinator,Legal Coordinator,EMP-012,EMP-0179
+EMP-0067,2021-11-11,Hire,,IC3,,Sales,,SDR,,Staff SDR,,EMP-0030
+EMP-0067,2022-06-22,Manager Change,IC3,IC3,Sales,Sales,SDR,SDR,Staff SDR,Staff SDR,EMP-0030,EMP-0143
+EMP-0068,2021-04-09,Hire,,IC1,,Customer Success,,Implementation,,Junior Implementation Specialist,,EMP-0037
+EMP-0069,2021-09-15,Hire,,IC1,,G&A,,Facilities,,Office Coordinator,,EMP-012
+EMP-0069,2022-05-24,Manager Change,IC1,IC1,G&A,G&A,Facilities,Facilities,Office Coordinator,Office Coordinator,EMP-012,EMP-0153
+EMP-007,2020-06-01,Hire,,M4,,Engineering,,Platform,,"VP Engineering, Platform",,EMP-002
+EMP-0070,2022-10-01,Hire,,IC1,,Sales,,SDR,,Sales Development Representative,,EMP-0030
+EMP-0071,2021-10-25,Hire,,IC1,,Sales,,SDR,,Sales Development Representative,,EMP-0030
+EMP-0071,2022-06-22,Manager Change,IC1,IC1,Sales,Sales,SDR,SDR,Sales Development Representative,Sales Development Representative,EMP-0030,EMP-0143
+EMP-0072,2022-02-03,Hire,,IC3,,Sales,,Account Executive,,Senior Account Executive,,EMP-0169
+EMP-0073,2022-08-08,Hire,,IC3,,Sales,,Sales Engineering,,Senior Sales Engineer,,EMP-0038
+EMP-0074,2021-10-25,Hire,,IC1,,Engineering,,AI/ML,,Associate Software Engineer,,EMP-0185
+EMP-0075,2022-02-24,Hire,,IC2,,Sales,,SDR,,Senior SDR,,EMP-0143
+EMP-0076,2022-09-30,Hire,,IC2,,G&A,,Legal,,Paralegal,,EMP-0179
+EMP-0077,2021-03-05,Hire,,IC3,,Engineering,,Data,,Senior Data Engineer,,EMP-0036
+EMP-0077,2022-03-03,Manager Change,IC3,IC3,Engineering,Engineering,Data,Data,Senior Data Engineer,Senior Data Engineer,EMP-0036,EMP-0034
+EMP-0078,2021-04-18,Hire,,IC3,,G&A,,Facilities,,Senior Facilities Specialist,,EMP-0044
+EMP-0078,2022-03-23,Manager Change,IC3,IC3,G&A,G&A,Facilities,Facilities,Senior Facilities Specialist,Senior Facilities Specialist,EMP-0044,EMP-0126
+EMP-0079,2022-05-18,Hire,,IC3,,Sales,,SDR,,Staff SDR,,EMP-0030
+EMP-008,2021-03-01,Hire,,M4,,Engineering,,AI/ML,,"VP Engineering, AI/ML",,EMP-002
+EMP-0080,2022-07-27,Hire,,IC1,,Engineering,,Platform,,Associate Software Engineer,,EMP-0142
+EMP-0081,2022-07-23,Hire,,IC3,,Sales,,Account Executive,,Senior Account Executive,,EMP-0169
+EMP-0082,2022-11-04,Hire,,IC1,,Engineering,,AI/ML,,Associate Software Engineer,,EMP-0044
+EMP-0083,2021-11-23,Hire,,IC3,,People,,Total Rewards,,Senior Compensation Analyst,,EMP-0025
+EMP-0084,2022-03-23,Hire,,IC3,,Customer Success,,Support,,Staff Support Specialist,,EMP-0125
+EMP-0085,2022-09-24,Hire,,IC3,,G&A,,Legal,,Corporate Counsel,,EMP-0179
+EMP-0086,2021-12-08,Hire,,IC2,,G&A,,IT,,Systems Administrator,,EMP-012
+EMP-0086,2022-07-13,Manager Change,IC2,IC2,G&A,G&A,IT,IT,Systems Administrator,Systems Administrator,EMP-012,EMP-0126
+EMP-0087,2022-07-23,Hire,,IC1,,Sales,,SDR,,Sales Development Representative,,EMP-0030
+EMP-0088,2022-08-09,Hire,,IC2,,G&A,,IT,,Systems Administrator,,EMP-0126
+EMP-0089,2022-11-15,Hire,,IC2,,People,,People Ops,,People Operations Specialist,,EMP-0178
+EMP-009,2022-04-01,Hire,,M4,,Sales,,(VP Sales),,VP Sales,,EMP-003
+EMP-0090,2022-08-24,Hire,,IC1,,Engineering,,Data,,Associate Software Engineer,,EMP-0162
+EMP-0091,2022-06-16,Hire,,IC1,,Sales,,Account Management,,Junior Account Manager,,EMP-0182
+EMP-0092,2021-09-15,Hire,,IC2,,Engineering,,Data,,Software Engineer,,EMP-0034
+EMP-0093,2022-12-23,Hire,,IC1,,Engineering,,Data,,Associate Software Engineer,,EMP-0181
+EMP-0094,2021-10-22,Hire,,IC3,,People,,Recruiting,,Senior Recruiter,,EMP-0157
+EMP-0095,2021-04-15,Hire,,IC1,,Marketing,,Product Marketing,,Marketing Coordinator,,EMP-0022
+EMP-0095,2022-03-01,Manager Change,IC1,IC1,Marketing,Marketing,Product Marketing,Product Marketing,Marketing Coordinator,Marketing Coordinator,EMP-0022,EMP-0164
+EMP-0096,2021-10-08,Hire,,IC2,,Customer Success,,Implementation,,Implementation Specialist,,EMP-0037
+EMP-0097,2021-05-20,Hire,,IC1,,Engineering,,Platform,,Associate Software Engineer,,EMP-0028
+EMP-0097,2022-04-08,Manager Change,IC1,IC1,Engineering,Engineering,Platform,Platform,Associate Software Engineer,Associate Software Engineer,EMP-0028,EMP-0142
+EMP-0098,2021-09-10,Hire,,IC1,,Engineering,,AI/ML,,Associate Software Engineer,,EMP-0044
+EMP-0099,2022-03-28,Hire,,IC1,,Sales,,Account Management,,Junior Account Manager,,EMP-0038
+EMP-0099,2022-09-12,Manager Change,IC1,IC1,Sales,Sales,Account Management,Account Management,Junior Account Manager,Junior Account Manager,EMP-0038,EMP-0182
+EMP-010,2021-09-01,Hire,,M4,,Customer Success,,(VP CS),,VP Customer Success,,EMP-003
+EMP-0100,2021-07-08,Hire,,IC2,,Sales,,SDR,,Senior SDR,,EMP-0030
+EMP-0100,2022-04-23,Manager Change,IC2,IC2,Sales,Sales,SDR,SDR,Senior SDR,Senior SDR,EMP-0030,EMP-0143
+EMP-0101,2021-12-07,Hire,,IC2,,G&A,,Legal,,Paralegal,,EMP-012
+EMP-0101,2022-07-07,Manager Change,IC2,IC2,G&A,G&A,Legal,Legal,Paralegal,Paralegal,EMP-012,EMP-0179
+EMP-0102,2022-06-14,Hire,,IC2,,G&A,,Legal,,Paralegal,,EMP-0179
+EMP-0103,2022-11-20,Hire,,IC1,,Sales,,Account Management,,Junior Account Manager,,EMP-0186
+EMP-0104,2022-03-08,Hire,,IC2,,Sales,,Sales Engineering,,Sales Engineer,,EMP-0038
+EMP-0105,2022-07-11,Hire,,IC2,,Engineering,,Data,,Software Engineer,,EMP-0036
+EMP-0106,2021-07-10,Hire,,IC3,,G&A,,Facilities,,Senior Facilities Specialist,,EMP-004
+EMP-0106,2022-04-27,Manager Change,IC3,IC3,G&A,G&A,Facilities,Facilities,Senior Facilities Specialist,Senior Facilities Specialist,EMP-004,EMP-0179
+EMP-0107,2022-05-05,Hire,,IC2,,Marketing,,Growth,,Growth Marketing Manager,,EMP-0170
+EMP-0108,2021-10-22,Hire,,IC3,,People,,People Ops,,Senior People Operations Specialist,,EMP-0025
+EMP-0108,2022-06-11,Manager Change,IC3,IC3,People,People,People Ops,People Ops,Senior People Operations Specialist,Senior People Operations Specialist,EMP-0025,EMP-0178
+EMP-0109,2021-08-04,Hire,,IC3,,Engineering,,Platform,,Senior Software Engineer,,EMP-0029
+EMP-0109,2022-05-10,Manager Change,IC3,IC3,Engineering,Engineering,Platform,Platform,Senior Software Engineer,Senior Software Engineer,EMP-0029,EMP-0124
+EMP-011,2021-07-01,Hire,,M4,,Marketing,,(VP Mktg),,VP Marketing,,EMP-001
+EMP-0110,2021-08-26,Hire,,IC3,,Engineering,,Infrastructure,,Senior Software Engineer,,EMP-0028
+EMP-0110,2022-05-16,Manager Change,IC3,IC3,Engineering,Engineering,Infrastructure,Infrastructure,Senior Software Engineer,Senior Software Engineer,EMP-0028,EMP-0130
+EMP-0111,2022-01-22,Hire,,IC1,,Marketing,,Content,,Marketing Coordinator,,EMP-0156
+EMP-0112,2022-05-21,Hire,,IC2,,Engineering,,AI/ML,,Software Engineer,,EMP-0185
+EMP-0113,2021-07-07,Hire,,IC1,,Customer Success,,Implementation,,Junior Implementation Specialist,,EMP-0037
+EMP-0114,2021-06-22,Hire,,IC1,,Sales,,Account Executive,,Junior Account Executive,,EMP-0026
+EMP-0114,2022-04-11,Manager Change,IC1,IC1,Sales,Sales,Account Executive,Account Executive,Junior Account Executive,Junior Account Executive,EMP-0026,EMP-0169
+EMP-0115,2021-12-06,Hire,,IC2,,Engineering,,Platform,,Software Engineer,,EMP-0142
+EMP-0116,2022-04-22,Hire,,IC2,,G&A,,Legal,,Paralegal,,EMP-012
+EMP-0116,2022-09-20,Manager Change,IC2,IC2,G&A,G&A,Legal,Legal,Paralegal,Paralegal,EMP-012,EMP-0179
+EMP-0117,2021-03-11,Hire,,IC1,,Marketing,,Brand,,Marketing Coordinator,,EMP-0022
+EMP-0117,2022-02-15,Manager Change,IC1,IC1,Marketing,Marketing,Brand,Brand,Marketing Coordinator,Marketing Coordinator,EMP-0022,EMP-0164
+EMP-0118,2021-12-08,Hire,,IC3,,Marketing,,Brand,,Senior Brand Manager,,EMP-0170
+EMP-0119,2021-08-21,Hire,,IC2,,Customer Success,,Support,,Senior Support Specialist,,EMP-0125
+EMP-012,2021-08-01,Hire,,M4,,G&A,,Finance,,VP Finance,,EMP-004
+EMP-0120,2022-02-21,Hire,,IC1,,Sales,,Account Executive,,Junior Account Executive,,EMP-0147
+EMP-0121,2022-06-15,Hire,,IC1,,Sales,,Sales Engineering,,Junior Sales Engineer,,EMP-0038
+EMP-0122,2022-03-27,Hire,,IC2,,People,,People Ops,,People Operations Specialist,,EMP-0178
+EMP-0122,2023-09-28,Promotion,IC2,IC3,People,People,People Ops,People Ops,People Operations Specialist,Senior People Operations Specialist,EMP-0178,EMP-0178
+EMP-0123,2021-11-28,Hire,,IC2,,Customer Success,,Implementation,,Implementation Specialist,,EMP-0139
+EMP-0123,2023-07-30,Lateral Transfer,IC2,IC2,Customer Success,Customer Success,Implementation,CSM,Implementation Specialist,Customer Success Manager,EMP-0139,EMP-0139
+EMP-0124,2021-08-21,Hire,,IC3,,Engineering,,AI/ML,,Senior ML Engineer,,EMP-0028
+EMP-0124,2023-06-11,Promotion,IC3,M1,Engineering,Engineering,AI/ML,AI/ML,Senior ML Engineer,Engineering Manager,EMP-0028,EMP-0028
+EMP-0124,2023-06-11,Lateral Transfer,M1,M1,Engineering,Engineering,AI/ML,Platform,Engineering Manager,Engineering Manager,EMP-0028,EMP-0028
+EMP-0125,2021-08-07,Hire,,IC3,,Customer Success,,Implementation,,Senior Implementation Specialist,,EMP-0022
+EMP-0125,2023-06-04,Promotion,IC3,M1,Customer Success,Customer Success,Implementation,Implementation,Senior Implementation Specialist,CS Manager,EMP-0022,EMP-0022
+EMP-0125,2023-06-04,Lateral Transfer,M1,M1,Customer Success,Customer Success,Implementation,Support,CS Manager,CS Manager,EMP-0022,EMP-0022
+EMP-0126,2022-04-06,Hire,,IC3,,G&A,,IT,,Senior Systems Administrator,,EMP-0291
+EMP-0126,2023-10-03,Promotion,IC3,M1,G&A,G&A,IT,IT,Senior Systems Administrator,IT Manager,EMP-0291,EMP-0291
+EMP-0127,2022-01-23,Hire,,IC3,,Product,,Product Management,,Senior Product Manager,,EMP-0155
+EMP-0127,2023-08-27,Promotion,IC3,M1,Product,Product,Product Management,Product Management,Senior Product Manager,"Product Manager, Lead",EMP-0155,EMP-0155
+EMP-0127,2023-08-27,Lateral Transfer,M1,M1,Product,Product,Product Management,UX Research,"Product Manager, Lead","Product Manager, Lead",EMP-0155,EMP-0155
+EMP-0128,2022-12-20,Hire,,IC2,,Engineering,,AI/ML,,Software Engineer,,EMP-0029
+EMP-0128,2024-02-09,Promotion,IC2,IC3,Engineering,Engineering,AI/ML,AI/ML,Software Engineer,Senior ML Engineer,EMP-0029,EMP-0029
+EMP-0129,2022-07-11,Hire,,IC2,,Engineering,,Infrastructure,,Software Engineer,,EMP-0124
+EMP-0129,2023-11-20,Promotion,IC2,IC3,Engineering,Engineering,Infrastructure,Infrastructure,Software Engineer,Senior Software Engineer,EMP-0124,EMP-0124
+EMP-0129,2023-11-20,Lateral Transfer,IC3,IC3,Engineering,Engineering,Infrastructure,Platform,Senior Software Engineer,Senior Software Engineer,EMP-0124,EMP-0124
+EMP-013,2021-01-15,Hire,,M3,,Engineering,,Data,,"Director of Engineering, Data",,EMP-002
+EMP-0130,2021-11-03,Hire,,IC3,,Engineering,,Data,,Senior Data Engineer,,EMP-0023
+EMP-0130,2023-07-18,Promotion,IC3,M1,Engineering,Engineering,Data,Data,Senior Data Engineer,Engineering Manager,EMP-0023,EMP-0023
+EMP-0130,2023-07-18,Lateral Transfer,M1,M1,Engineering,Engineering,Data,Infrastructure,Engineering Manager,Engineering Manager,EMP-0023,EMP-0023
+EMP-0131,2022-12-17,Hire,,IC2,,Sales,,Sales Engineering,,Sales Engineer,,EMP-0038
+EMP-0132,2022-06-05,Hire,,IC2,,Customer Success,,Implementation,,Implementation Specialist,,EMP-0037
+EMP-0133,2022-03-10,Hire,,IC3,,Engineering,,AI/ML,,Senior ML Engineer,,EMP-0044
+EMP-0133,2023-03-17,Promotion,IC3,IC4,Engineering,Engineering,AI/ML,AI/ML,Senior ML Engineer,Staff ML Engineer,EMP-0044,EMP-0044
+EMP-0133,2024-03-23,Promotion,IC4,IC5,Engineering,Engineering,AI/ML,AI/ML,Staff ML Engineer,Principal ML Engineer,EMP-0044,EMP-0044
+EMP-0134,2021-02-26,Hire,,IC3,,Engineering,,Data,,Senior Data Engineer,,EMP-013
+EMP-0134,2022-07-09,Promotion,IC3,M1,Engineering,Engineering,Data,Data,Senior Data Engineer,Engineering Manager,EMP-013,EMP-013
+EMP-0134,2023-11-19,Promotion,M1,M2,Engineering,Engineering,Data,Data,Engineering Manager,Senior Engineering Manager,EMP-013,EMP-013
+EMP-0135,2022-08-27,Hire,,IC3,,Marketing,,Content,,Senior Content Marketing Manager,,EMP-0156
+EMP-0136,2021-08-18,Hire,,IC2,,Customer Success,,Support,,Senior Support Specialist,,EMP-0144
+EMP-0136,2023-06-09,Lateral Transfer,IC2,IC2,Customer Success,Customer Success,Support,CSM,Senior Support Specialist,Customer Success Manager,EMP-0144,EMP-0144
+EMP-0137,2022-09-04,Hire,,IC2,,Sales,,Sales Engineering,,Sales Engineer,,EMP-0038
+EMP-0138,2021-11-17,Hire,,M1,,Engineering,,Infrastructure,,Engineering Manager,,EMP-0023
+EMP-0139,2021-05-04,Hire,,M1,,Customer Success,,CSM,,CS Manager,,EMP-0022
+EMP-014,2021-02-01,Hire,,M3,,Engineering,,Infrastructure,,"Director of Engineering, Infra",,EMP-002
+EMP-0140,2022-08-18,Hire,,IC3,,Marketing,,Product Marketing,,Senior Product Marketing Manager,,EMP-0164
+EMP-0140,2023-12-09,Promotion,IC3,IC4,Marketing,Marketing,Product Marketing,Product Marketing,Senior Product Marketing Manager,Staff Product Marketing Manager,EMP-0164,EMP-0164
+EMP-0141,2022-01-25,Hire,,IC3,,Customer Success,,Implementation,,Senior Implementation Specialist,,EMP-0037
+EMP-0142,2021-10-11,Hire,,IC3,,Engineering,,Platform,,Senior Software Engineer,,EMP-0028
+EMP-0142,2023-07-06,Promotion,IC3,M1,Engineering,Engineering,Platform,Platform,Senior Software Engineer,Engineering Manager,EMP-0028,EMP-0028
+EMP-0143,2021-11-13,Hire,,IC3,,Sales,,Sales Engineering,,Senior Sales Engineer,,EMP-0041
+EMP-0143,2023-07-23,Promotion,IC3,M1,Sales,Sales,Sales Engineering,Sales Engineering,Senior Sales Engineer,Sales Manager,EMP-0041,EMP-0041
+EMP-0143,2023-07-23,Lateral Transfer,M1,M1,Sales,Sales,Sales Engineering,SDR,Sales Manager,SDR Manager,EMP-0041,EMP-0041
+EMP-0144,2021-03-24,Hire,,IC3,,Customer Success,,Implementation,,Senior Implementation Specialist,,EMP-0022
+EMP-0144,2023-03-28,Promotion,IC3,M1,Customer Success,Customer Success,Implementation,Implementation,Senior Implementation Specialist,CS Manager,EMP-0022,EMP-0022
+EMP-0144,2023-03-28,Lateral Transfer,M1,M1,Customer Success,Customer Success,Implementation,CSM,CS Manager,CS Manager,EMP-0022,EMP-0022
+EMP-0145,2021-09-27,Hire,,IC3,,Customer Success,,Implementation,,Senior Implementation Specialist,,EMP-0139
+EMP-0145,2023-06-29,Lateral Transfer,IC3,IC3,Customer Success,Customer Success,Implementation,CSM,Senior Implementation Specialist,Senior CSM,EMP-0139,EMP-0139
+EMP-0146,2021-08-11,Hire,,IC3,,Sales,,Account Executive,,Senior Account Executive,,EMP-0026
+EMP-0146,2023-06-06,Promotion,IC3,M1,Sales,Sales,Account Executive,Account Executive,Senior Account Executive,Sales Manager,EMP-0026,EMP-0026
+EMP-0147,2022-01-29,Hire,,IC3,,Sales,,Account Executive,,Senior Account Executive,,EMP-0026
+EMP-0147,2023-08-30,Promotion,IC3,M1,Sales,Sales,Account Executive,Account Executive,Senior Account Executive,Sales Manager,EMP-0026,EMP-0026
+EMP-0148,2022-04-09,Hire,,IC2,,People,,Total Rewards,,Compensation Analyst,,EMP-0025
+EMP-0148,2023-10-04,Lateral Transfer,IC2,IC2,People,People,Total Rewards,L&D,Compensation Analyst,L&D Specialist,EMP-0025,EMP-0025
+EMP-0149,2021-08-15,Hire,,IC3,,Product,,Product Management,,Senior Product Manager,,EMP-019
+EMP-0149,2023-06-08,Promotion,IC3,M1,Product,Product,Product Management,Product Management,Senior Product Manager,"Product Manager, Lead",EMP-019,EMP-019
+EMP-0149,2023-06-08,Manager Change,M1,M1,Product,Product,Product Management,Product Management,"Product Manager, Lead","Product Manager, Lead",EMP-019,EMP-0155
+EMP-015,2021-05-01,Hire,,M3,,People,,Recruiting,,Director of Recruiting,,EMP-006
+EMP-0150,2022-03-09,Hire,,IC3,,Engineering,,Platform,,Senior Software Engineer,,EMP-0142
+EMP-0150,2023-03-16,Promotion,IC3,IC4,Engineering,Engineering,Platform,Platform,Senior Software Engineer,Staff Software Engineer,EMP-0142,EMP-0142
+EMP-0150,2024-03-23,Promotion,IC4,IC5,Engineering,Engineering,Platform,Platform,Staff Software Engineer,Principal Engineer,EMP-0142,EMP-0142
+EMP-0151,2021-09-14,Hire,,IC2,,Customer Success,,CSM,,Customer Success Manager,,EMP-0144
+EMP-0151,2023-06-23,Promotion,IC2,IC3,Customer Success,Customer Success,CSM,CSM,Customer Success Manager,Senior CSM,EMP-0144,EMP-0144
+EMP-0152,2022-09-16,Hire,,IC3,,People,,DEIB,,Senior DEIB Specialist,,EMP-0178
+EMP-0153,2022-05-27,Hire,,M1,,G&A,,Legal,,Legal Manager,,EMP-0291
+EMP-0153,2023-10-28,Lateral Transfer,M1,M1,G&A,G&A,Legal,Finance,Legal Manager,Finance Manager,EMP-0291,EMP-0291
+EMP-0154,2022-04-12,Hire,,IC3,,Engineering,,Data,,Senior Data Engineer,,EMP-0036
+EMP-0155,2021-12-02,Hire,,M1,,Product,,Product Management,,"Product Manager, Lead",,EMP-017
+EMP-0155,2023-08-01,Promotion,M1,M2,Product,Product,Product Management,Product Management,"Product Manager, Lead","Senior Manager, Product",EMP-017,EMP-017
+EMP-0155,2023-08-01,Lateral Transfer,M2,M2,Product,Product,Product Management,UX Research,"Senior Manager, Product","Senior Manager, Product",EMP-017,EMP-017
+EMP-0156,2021-12-24,Hire,,IC3,,Marketing,,Growth,,Senior Growth Marketing Manager,,EMP-0046
+EMP-0156,2023-08-12,Promotion,IC3,M1,Marketing,Marketing,Growth,Growth,Senior Growth Marketing Manager,Marketing Manager,EMP-0046,EMP-0046
+EMP-0156,2023-08-12,Lateral Transfer,M1,M1,Marketing,Marketing,Growth,Content,Marketing Manager,Marketing Manager,EMP-0046,EMP-0046
+EMP-0157,2021-10-06,Hire,,IC3,,People,,HRBPs,,Senior HRBP,,EMP-0043
+EMP-0157,2023-07-04,Promotion,IC3,M1,People,People,HRBPs,HRBPs,Senior HRBP,HRBP Manager,EMP-0043,EMP-0043
+EMP-0157,2023-07-04,Lateral Transfer,M1,M1,People,People,HRBPs,Recruiting,HRBP Manager,Recruiting Manager,EMP-0043,EMP-0043
+EMP-0158,2021-11-21,Hire,,IC3,,Engineering,,Data,,Senior Data Engineer,,EMP-0028
+EMP-0158,2023-07-27,Promotion,IC3,M1,Engineering,Engineering,Data,Data,Senior Data Engineer,Engineering Manager,EMP-0028,EMP-0028
+EMP-0158,2023-07-27,Lateral Transfer,M1,M1,Engineering,Engineering,Data,Platform,Engineering Manager,Engineering Manager,EMP-0028,EMP-0028
+EMP-0159,2022-12-30,Hire,,IC2,,Engineering,,Platform,,Software Engineer,,EMP-0165
+EMP-0159,2024-02-14,Promotion,IC2,IC3,Engineering,Engineering,Platform,Platform,Software Engineer,Senior Software Engineer,EMP-0165,EMP-0165
+EMP-016,2022-01-15,Hire,,M3,,People,,People Ops,,Director of People Ops,,EMP-006
+EMP-0160,2022-10-02,Hire,,IC2,,Marketing,,Brand,,Brand Manager,,EMP-0156
+EMP-0160,2023-12-31,Promotion,IC2,IC3,Marketing,Marketing,Brand,Brand,Brand Manager,Senior Brand Manager,EMP-0156,EMP-0156
+EMP-0161,2022-08-21,Hire,,IC3,,People,,Recruiting,,Senior Recruiter,,EMP-0157
+EMP-0162,2021-10-29,Hire,,IC3,,Engineering,,Data,,Senior Data Engineer,,EMP-0134
+EMP-0162,2023-07-15,Promotion,IC3,M1,Engineering,Engineering,Data,Data,Senior Data Engineer,Engineering Manager,EMP-0134,EMP-0134
+EMP-0163,2022-11-18,Hire,,IC2,,Engineering,,AI/ML,,Software Engineer,,EMP-0185
+EMP-0163,2024-01-24,Promotion,IC2,IC3,Engineering,Engineering,AI/ML,AI/ML,Software Engineer,Senior ML Engineer,EMP-0185,EMP-0185
+EMP-0164,2022-02-11,Hire,,IC3,,Marketing,,Growth,,Senior Growth Marketing Manager,,EMP-0046
+EMP-0164,2023-09-06,Promotion,IC3,M1,Marketing,Marketing,Growth,Growth,Senior Growth Marketing Manager,Marketing Manager,EMP-0046,EMP-0046
+EMP-0164,2023-09-06,Lateral Transfer,M1,M1,Marketing,Marketing,Growth,Product Marketing,Marketing Manager,Marketing Manager,EMP-0046,EMP-0046
+EMP-0165,2021-10-21,Hire,,IC3,,Engineering,,AI/ML,,Senior ML Engineer,,EMP-0028
+EMP-0165,2023-07-11,Promotion,IC3,M1,Engineering,Engineering,AI/ML,AI/ML,Senior ML Engineer,Engineering Manager,EMP-0028,EMP-0028
+EMP-0165,2023-07-11,Lateral Transfer,M1,M1,Engineering,Engineering,AI/ML,Platform,Engineering Manager,Engineering Manager,EMP-0028,EMP-0028
+EMP-0166,2022-07-06,Hire,,IC2,,Engineering,,Data,,Software Engineer,,EMP-0034
+EMP-0166,2023-11-17,Promotion,IC2,IC3,Engineering,Engineering,Data,Data,Software Engineer,Senior Data Engineer,EMP-0034,EMP-0034
+EMP-0167,2022-06-29,Hire,,IC3,,Engineering,,Platform,,Senior Software Engineer,,EMP-0124
+EMP-0167,2023-11-14,Promotion,IC3,IC4,Engineering,Engineering,Platform,Platform,Senior Software Engineer,Staff Software Engineer,EMP-0124,EMP-0124
+EMP-0168,2022-03-30,Hire,,IC3,,Customer Success,,CSM,,Senior CSM,,EMP-0144
+EMP-0169,2021-10-24,Hire,,IC3,,Sales,,Account Executive,,Senior Account Executive,,EMP-0026
+EMP-0169,2023-07-13,Promotion,IC3,M1,Sales,Sales,Account Executive,Account Executive,Senior Account Executive,Sales Manager,EMP-0026,EMP-0026
+EMP-017,2021-11-01,Hire,,M3,,Product,,Product Management,,Director of Product,,EMP-005
+EMP-0170,2021-11-21,Hire,,IC3,,Marketing,,Growth,,Senior Growth Marketing Manager,,EMP-0046
+EMP-0170,2023-07-27,Promotion,IC3,M1,Marketing,Marketing,Growth,Growth,Senior Growth Marketing Manager,Marketing Manager,EMP-0046,EMP-0046
+EMP-0171,2022-02-10,Hire,,IC2,,People,,DEIB,,DEIB Specialist,,EMP-0025
+EMP-0172,2022-02-08,Hire,,IC2,,Engineering,,Infrastructure,,Software Engineer,,EMP-0142
+EMP-0172,2023-09-04,Promotion,IC2,IC3,Engineering,Engineering,Infrastructure,Infrastructure,Software Engineer,Senior Software Engineer,EMP-0142,EMP-0142
+EMP-0172,2023-09-04,Lateral Transfer,IC3,IC3,Engineering,Engineering,Infrastructure,Platform,Senior Software Engineer,Senior Software Engineer,EMP-0142,EMP-0142
+EMP-0173,2022-04-24,Hire,,IC2,,Sales,,SDR,,Senior SDR,,EMP-0030
+EMP-0174,2021-12-27,Hire,,IC2,,Engineering,,Infrastructure,,Software Engineer,,EMP-0124
+EMP-0174,2023-08-14,Promotion,IC2,IC3,Engineering,Engineering,Infrastructure,Infrastructure,Software Engineer,Senior Software Engineer,EMP-0124,EMP-0124
+EMP-0174,2023-08-14,Lateral Transfer,IC3,IC3,Engineering,Engineering,Infrastructure,Platform,Senior Software Engineer,Senior Software Engineer,EMP-0124,EMP-0124
+EMP-0175,2022-06-11,Hire,,IC3,,Sales,,Account Executive,,Senior Account Executive,,EMP-0169
+EMP-0176,2021-05-26,Hire,,IC3,,Engineering,,Infrastructure,,Senior Software Engineer,,EMP-0023
+EMP-0176,2023-04-28,Promotion,IC3,M1,Engineering,Engineering,Infrastructure,Infrastructure,Senior Software Engineer,Engineering Manager,EMP-0023,EMP-0023
+EMP-0177,2022-12-18,Hire,,IC2,,Engineering,,Infrastructure,,Software Engineer,,EMP-0130
+EMP-0178,2022-01-25,Hire,,IC3,,People,,Total Rewards,,Senior Compensation Analyst,,EMP-0043
+EMP-0178,2023-08-28,Promotion,IC3,M1,People,People,Total Rewards,Total Rewards,Senior Compensation Analyst,M1 Total Rewards,EMP-0043,EMP-0043
+EMP-0178,2023-08-28,Lateral Transfer,M1,M1,People,People,Total Rewards,People Ops,M1 Total Rewards,M1 People Ops,EMP-0043,EMP-0043
+EMP-0179,2022-04-29,Hire,,IC3,,G&A,,Legal,,Corporate Counsel,,EMP-0291
+EMP-0179,2023-10-14,Promotion,IC3,M1,G&A,G&A,Legal,Legal,Corporate Counsel,Legal Manager,EMP-0291,EMP-0291
+EMP-018,2022-05-01,Hire,,M3,,Sales,,Account Executive,,"Director of Sales, Enterprise",,EMP-009
+EMP-0180,2022-06-14,Hire,,IC3,,Engineering,,Platform,,Senior Software Engineer,,EMP-0165
+EMP-0180,2023-11-06,Promotion,IC3,IC4,Engineering,Engineering,Platform,Platform,Senior Software Engineer,Staff Software Engineer,EMP-0165,EMP-0165
+EMP-0181,2021-04-13,Hire,,IC3,,Engineering,,Data,,Senior Data Engineer,,EMP-0134
+EMP-0181,2023-04-07,Promotion,IC3,M1,Engineering,Engineering,Data,Data,Senior Data Engineer,Engineering Manager,EMP-0134,EMP-0134
+EMP-0182,2022-04-04,Hire,,IC3,,Sales,,SDR,,Staff SDR,,EMP-0041
+EMP-0182,2023-10-02,Promotion,IC3,M1,Sales,Sales,SDR,SDR,Staff SDR,SDR Manager,EMP-0041,EMP-0041
+EMP-0182,2023-10-02,Lateral Transfer,M1,M1,Sales,Sales,SDR,Account Management,SDR Manager,Sales Manager,EMP-0041,EMP-0041
+EMP-0183,2022-01-07,Hire,,IC2,,Engineering,,AI/ML,,Software Engineer,,EMP-0044
+EMP-0183,2023-08-19,Promotion,IC2,IC3,Engineering,Engineering,AI/ML,AI/ML,Software Engineer,Senior ML Engineer,EMP-0044,EMP-0044
+EMP-0184,2022-04-10,Hire,,IC3,,Sales,,SDR,,Staff SDR,,EMP-0143
+EMP-0185,2021-08-10,Hire,,IC3,,Engineering,,AI/ML,,Senior ML Engineer,,EMP-0045
+EMP-0185,2023-06-05,Promotion,IC3,M1,Engineering,Engineering,AI/ML,AI/ML,Senior ML Engineer,Engineering Manager,EMP-0045,EMP-0045
+EMP-0186,2021-10-06,Hire,,IC3,,Sales,,Account Management,,Senior Account Manager,,EMP-0041
+EMP-0186,2023-07-04,Promotion,IC3,M1,Sales,Sales,Account Management,Account Management,Senior Account Manager,Sales Manager,EMP-0041,EMP-0041
+EMP-0187,2022-08-25,Hire,,IC3,,Product,,Design,,Senior Product Designer,,EMP-0127
+EMP-0187,2023-12-12,Promotion,IC3,IC4,Product,Product,Design,Design,Senior Product Designer,Staff Product Designer,EMP-0127,EMP-0127
+EMP-0187,2023-12-12,Lateral Transfer,IC4,IC4,Product,Product,Design,UX Research,Staff Product Designer,Staff UX Researcher,EMP-0127,EMP-0127
+EMP-0188,2022-10-15,Hire,,IC3,,Customer Success,,Support,,Staff Support Specialist,,EMP-0125
+EMP-0189,2021-12-15,Hire,,IC2,,Engineering,,AI/ML,,Software Engineer,,EMP-0029
+EMP-0189,2022-10-11,Promotion,IC2,IC3,Engineering,Engineering,AI/ML,AI/ML,Software Engineer,Senior ML Engineer,EMP-0029,EMP-0029
+EMP-0189,2023-08-08,Promotion,IC3,IC4,Engineering,Engineering,AI/ML,AI/ML,Senior ML Engineer,Staff ML Engineer,EMP-0029,EMP-0029
+EMP-0189,2024-06-03,Promotion,IC4,IC5,Engineering,Engineering,AI/ML,AI/ML,Staff ML Engineer,Principal ML Engineer,EMP-0029,EMP-0029
+EMP-019,2020-01-15,Hire,,M3,,Product,,Product Management,,Co-Founder / CPO,,EMP-001
+EMP-0190,2022-06-04,Hire,,IC3,,G&A,,Legal,,Corporate Counsel,,EMP-0179
+EMP-0191,2022-03-07,Hire,,IC3,,Engineering,,AI/ML,,Senior ML Engineer,,EMP-0029
+EMP-0192,2021-10-27,Hire,,IC3,,Engineering,,Infrastructure,,Senior Software Engineer,,EMP-0028
+EMP-0192,2023-06-09,Manager Change,IC3,IC3,Engineering,Engineering,Infrastructure,Infrastructure,Senior Software Engineer,Senior Software Engineer,EMP-0028,EMP-0138
+EMP-0193,2022-09-07,Hire,,IC3,,Sales,,Account Executive,,Senior Account Executive,,EMP-0169
+EMP-0194,2021-12-11,Hire,,IC2,,Engineering,,Platform,,Software Engineer,,EMP-0158
+EMP-0195,2021-08-02,Hire,,IC2,,Engineering,,AI/ML,,Software Engineer,,EMP-0029
+EMP-0195,2023-06-01,Manager Change,IC2,IC2,Engineering,Engineering,AI/ML,AI/ML,Software Engineer,Software Engineer,EMP-0029,EMP-0185
+EMP-0196,2022-02-07,Hire,,IC3,,People,,L&D,,Senior L&D Specialist,,EMP-0025
+EMP-0197,2022-08-07,Hire,,IC2,,Engineering,,AI/ML,,Software Engineer,,EMP-0185
+EMP-0198,2021-11-27,Hire,,IC2,,Sales,,SDR,,Senior SDR,,EMP-0143
+EMP-0199,2022-06-21,Hire,,IC3,,Sales,,Account Executive,,Senior Account Executive,,EMP-0146
+EMP-0200,2022-06-03,Hire,,IC2,,Sales,,Account Management,,Account Manager,,EMP-0186
+EMP-0201,2021-12-28,Hire,,IC3,,G&A,,IT,,Senior Systems Administrator,,EMP-012
+EMP-0201,2023-03-07,Manager Change,IC3,IC3,G&A,G&A,IT,IT,Senior Systems Administrator,Senior Systems Administrator,EMP-012,EMP-0126
+EMP-0202,2022-03-05,Hire,,IC2,,Marketing,,Product Marketing,,Product Marketing Manager,,EMP-0164
+EMP-0203,2022-03-22,Hire,,IC2,,Marketing,,Growth,,Growth Marketing Manager,,EMP-0170
+EMP-0204,2022-08-19,Hire,,IC3,,Engineering,,AI/ML,,Senior ML Engineer,,EMP-0029
+EMP-0205,2022-02-21,Hire,,IC2,,Engineering,,Data,,Software Engineer,,EMP-0181
+EMP-0206,2022-09-16,Hire,,IC2,,People,,HRBPs,,HR Business Partner,,EMP-0025
+EMP-0207,2022-05-31,Hire,,IC2,,Engineering,,Data,,Software Engineer,,EMP-0181
+EMP-0208,2021-10-11,Hire,,IC2,,Sales,,SDR,,Senior SDR,,EMP-0030
+EMP-0209,2022-09-25,Hire,,IC2,,Engineering,,Data,,Software Engineer,,EMP-0162
+EMP-0210,2022-01-15,Hire,,IC3,,Engineering,,AI/ML,,Senior ML Engineer,,EMP-0185
+EMP-0211,2022-01-04,Hire,,IC3,,Sales,,Account Executive,,Senior Account Executive,,EMP-0146
+EMP-0212,2021-08-03,Hire,,IC2,,Marketing,,Product Marketing,,Product Marketing Manager,,EMP-0046
+EMP-0212,2023-01-18,Manager Change,IC2,IC2,Marketing,Marketing,Product Marketing,Product Marketing,Product Marketing Manager,Product Marketing Manager,EMP-0046,EMP-0164
+EMP-0213,2022-03-26,Hire,,IC2,,Sales,,SDR,,Senior SDR,,EMP-0143
+EMP-0214,2022-02-14,Hire,,IC3,,Customer Success,,CSM,,Senior CSM,,EMP-0144
+EMP-0215,2022-09-22,Hire,,IC2,,Sales,,Account Executive,,Account Executive,,EMP-0146
+EMP-0216,2022-02-02,Hire,,IC3,,G&A,,Legal,,Corporate Counsel,,EMP-012
+EMP-0216,2023-07-12,Manager Change,IC3,IC3,G&A,G&A,Legal,Legal,Corporate Counsel,Corporate Counsel,EMP-012,EMP-0179
+EMP-0217,2022-01-12,Hire,,IC2,,Engineering,,Platform,,Software Engineer,,EMP-0142
+EMP-0218,2022-08-09,Hire,,IC2,,Engineering,,AI/ML,,Software Engineer,,EMP-0029
+EMP-0219,2022-05-24,Hire,,IC3,,Engineering,,Infrastructure,,Senior Software Engineer,,EMP-0138
+EMP-0220,2022-02-22,Hire,,IC2,,Engineering,,Infrastructure,,Software Engineer,,EMP-0138
+EMP-0221,2022-12-31,Hire,,IC3,,Engineering,,Platform,,Senior Software Engineer,,EMP-0124
+EMP-0222,2022-03-21,Hire,,IC2,,Sales,,SDR,,Senior SDR,,EMP-0030
+EMP-0223,2022-04-06,Hire,,IC2,,Engineering,,Platform,,Software Engineer,,EMP-0142
+EMP-0224,2021-06-19,Hire,,IC2,,Customer Success,,Support,,Senior Support Specialist,,EMP-0139
+EMP-0224,2022-11-12,Manager Change,IC2,IC2,Customer Success,Customer Success,Support,Support,Senior Support Specialist,Senior Support Specialist,EMP-0139,EMP-0125
+EMP-0225,2021-03-12,Hire,,IC3,,Customer Success,,Implementation,,Senior Implementation Specialist,,EMP-0022
+EMP-0225,2022-04-25,Manager Change,IC3,IC3,Customer Success,Customer Success,Implementation,Implementation,Senior Implementation Specialist,Senior Implementation Specialist,EMP-0022,EMP-0037
+EMP-0226,2021-11-12,Hire,,IC3,,Sales,,Sales Engineering,,Senior Sales Engineer,,EMP-0038
+EMP-0227,2022-07-30,Hire,,IC2,,Engineering,,AI/ML,,Software Engineer,,EMP-0044
+EMP-0228,2022-05-16,Hire,,IC2,,People,,People Ops,,People Operations Specialist,,EMP-0178
+EMP-0229,2022-06-20,Hire,,IC2,,Engineering,,Platform,,Software Engineer,,EMP-0124
+EMP-0230,2022-05-25,Hire,,IC2,,Product,,Product Management,,Product Manager,,EMP-0149
+EMP-0231,2021-01-21,Hire,,IC2,,Engineering,,Data,,Software Engineer,,EMP-0036
+EMP-0231,2022-02-20,Manager Change,IC2,IC2,Engineering,Engineering,Data,Data,Software Engineer,Software Engineer,EMP-0036,EMP-0181
+EMP-0232,2021-06-26,Hire,,IC3,,Sales,,Account Management,,Senior Account Manager,,EMP-0038
+EMP-0232,2022-08-12,Promotion,IC3,M1,Sales,Sales,Account Management,Account Management,Senior Account Manager,Sales Manager,EMP-0038,EMP-0038
+EMP-0232,2023-05-14,Manager Change,M1,M1,Sales,Sales,Account Management,Account Management,Sales Manager,Sales Manager,EMP-0038,EMP-0182
+EMP-0232,2023-07-21,Title Change,M1,IC4,Sales,Sales,Account Management,Account Management,Sales Manager,Strategic Account Manager,EMP-0182,EMP-0182
+EMP-0233,2022-10-30,Hire,,IC3,,Engineering,,Platform,,Senior Software Engineer,,EMP-0158
+EMP-0233,2023-07-21,Promotion,IC3,M1,Engineering,Engineering,Platform,Platform,Senior Software Engineer,Engineering Manager,EMP-0158,EMP-0158
+EMP-0233,2024-02-27,Title Change,M1,IC4,Engineering,Engineering,Platform,Platform,Engineering Manager,Staff Software Engineer,EMP-0158,EMP-0158
+EMP-0234,2022-03-31,Hire,,IC3,,Sales,,Account Management,,Senior Account Manager,,EMP-0186
+EMP-0234,2023-02-22,Promotion,IC3,M1,Sales,Sales,Account Management,Account Management,Senior Account Manager,Sales Manager,EMP-0186,EMP-0186
+EMP-0234,2023-11-23,Title Change,M1,IC4,Sales,Sales,Account Management,Account Management,Sales Manager,Strategic Account Manager,EMP-0186,EMP-0186
+EMP-0235,2021-08-23,Hire,,IC3,,Customer Success,,Support,,Staff Support Specialist,,EMP-0125
+EMP-0235,2022-09-21,Promotion,IC3,M1,Customer Success,Customer Success,Support,Support,Staff Support Specialist,CS Manager,EMP-0125,EMP-0125
+EMP-0235,2023-08-16,Title Change,M1,IC4,Customer Success,Customer Success,Support,Support,CS Manager,Support Lead,EMP-0125,EMP-0125
+EMP-0236,2021-10-28,Hire,,IC3,,Sales,,Account Management,,Senior Account Manager,,EMP-0038
+EMP-0236,2022-11-07,Promotion,IC3,M1,Sales,Sales,Account Management,Account Management,Senior Account Manager,Sales Manager,EMP-0038,EMP-0038
+EMP-0236,2023-07-15,Lateral Transfer,M1,M1,Sales,Sales,Account Management,Account Executive,Sales Manager,Sales Manager,EMP-0038,EMP-0038
+EMP-0236,2023-07-15,Manager Change,M1,M1,Sales,Sales,Account Executive,Account Executive,Sales Manager,Sales Manager,EMP-0038,EMP-0147
+EMP-0236,2023-09-15,Title Change,M1,IC4,Sales,Sales,Account Executive,Account Executive,Sales Manager,Enterprise Account Executive,EMP-0147,EMP-0147
+EMP-0237,2022-06-01,Hire,,IC3,,Engineering,,AI/ML,,Senior ML Engineer,,EMP-0044
+EMP-0237,2023-04-07,Promotion,IC3,M1,Engineering,Engineering,AI/ML,AI/ML,Senior ML Engineer,Engineering Manager,EMP-0044,EMP-0044
+EMP-0237,2023-12-21,Title Change,M1,IC4,Engineering,Engineering,AI/ML,AI/ML,Engineering Manager,Staff ML Engineer,EMP-0044,EMP-0044
+EMP-0238,2022-06-27,Hire,,IC3,,G&A,,IT,,Senior Systems Administrator,,EMP-0126
+EMP-0238,2023-04-25,Promotion,IC3,M1,G&A,G&A,IT,IT,Senior Systems Administrator,IT Manager,EMP-0126,EMP-0126
+EMP-0238,2024-01-02,Title Change,M1,IC4,G&A,G&A,IT,IT,IT Manager,IT Manager (IC track),EMP-0126,EMP-0126
+EMP-0239,2021-07-20,Hire,,IC3,,People,,L&D,,Senior L&D Specialist,,EMP-0025
+EMP-0239,2022-08-29,Promotion,IC3,M1,People,People,L&D,L&D,Senior L&D Specialist,L&D Manager,EMP-0025,EMP-0025
+EMP-0239,2023-05-26,Lateral Transfer,M1,M1,People,People,L&D,HRBPs,L&D Manager,HRBP Manager,EMP-0025,EMP-0025
+EMP-0239,2023-08-01,Title Change,M1,IC4,People,People,HRBPs,HRBPs,HRBP Manager,Principal HRBP,EMP-0025,EMP-0025
+EMP-0240,2021-09-20,Hire,,IC3,,G&A,,IT,,Senior Systems Administrator,,EMP-012
+EMP-0240,2022-09-08,Manager Change,IC3,IC3,G&A,G&A,IT,IT,Senior Systems Administrator,Senior Systems Administrator,EMP-012,EMP-0126
+EMP-0241,2022-04-02,Hire,,IC2,,Engineering,,Data,,Software Engineer,,EMP-0036
+EMP-0242,2022-03-22,Hire,,IC1,,Engineering,,AI/ML,,Associate Software Engineer,,EMP-0044
+EMP-0243,2022-12-26,Hire,,IC3,,Customer Success,,CSM,,Senior CSM,,EMP-0144
+EMP-0244,2021-05-28,Hire,,IC1,,Engineering,,Infrastructure,,Associate Software Engineer,,EMP-0023
+EMP-0244,2022-04-07,Manager Change,IC1,IC1,Engineering,Engineering,Infrastructure,Infrastructure,Associate Software Engineer,Associate Software Engineer,EMP-0023,EMP-0138
+EMP-0245,2022-05-25,Hire,,IC1,,Engineering,,Infrastructure,,Associate Software Engineer,,EMP-0130
+EMP-0246,2021-11-17,Hire,,IC2,,Sales,,Account Management,,Account Manager,,EMP-0030
+EMP-0246,2022-08-27,Manager Change,IC2,IC2,Sales,Sales,Account Management,Account Management,Account Manager,Account Manager,EMP-0030,EMP-0182
+EMP-0247,2022-05-01,Hire,,IC3,,People,,L&D,,Senior L&D Specialist,,EMP-0025
+EMP-0248,2022-02-02,Hire,,IC1,,Engineering,,Data,,Associate Software Engineer,,EMP-0162
+EMP-0249,2021-03-09,Hire,,IC3,,Engineering,,Platform,,Senior Software Engineer,,EMP-0044
+EMP-0249,2021-10-14,Manager Change,IC3,IC3,Engineering,Engineering,Platform,Platform,Senior Software Engineer,Senior Software Engineer,EMP-0044,EMP-0165
+EMP-0250,2022-01-22,Hire,,IC2,,Sales,,Account Management,,Account Manager,,EMP-0186
+EMP-0251,2021-09-09,Hire,,IC1,,Customer Success,,Support,,Customer Support Specialist,,EMP-0125
+EMP-0252,2021-08-12,Hire,,IC1,,Engineering,,Platform,,Associate Software Engineer,,EMP-0023
+EMP-0252,2022-08-28,Manager Change,IC1,IC1,Engineering,Engineering,Platform,Platform,Associate Software Engineer,Associate Software Engineer,EMP-0023,EMP-0158
+EMP-0253,2022-05-03,Hire,,IC2,,Engineering,,Platform,,Software Engineer,,EMP-0158
+EMP-0254,2022-07-24,Hire,,IC3,,Sales,,Account Executive,,Senior Account Executive,,EMP-0146
+EMP-0255,2023-11-13,Hire,,IC4,,Sales,,Account Executive,,Enterprise Account Executive,,EMP-0026
+EMP-0255,2024-12-13,Manager Change,IC4,IC4,Sales,Sales,Account Executive,Account Executive,Enterprise Account Executive,Enterprise Account Executive,EMP-0026,EMP-0147
+EMP-0256,2022-01-31,Hire,,IC3,,Engineering,,Data,,Senior Data Engineer,,EMP-0036
+EMP-0256,2023-07-20,Manager Change,IC3,IC3,Engineering,Engineering,Data,Data,Senior Data Engineer,Senior Data Engineer,EMP-0036,EMP-0181
+EMP-0257,2021-02-07,Hire,,IC3,,Sales,,Account Executive,,Senior Account Executive,,EMP-0026
+EMP-0257,2022-02-05,Manager Change,IC3,IC3,Sales,Sales,Account Executive,Account Executive,Senior Account Executive,Senior Account Executive,EMP-0026,EMP-0169
+EMP-0258,2021-07-06,Hire,,IC2,,Product,,Product Management,,Product Manager,,EMP-019
+EMP-0258,2022-07-29,Manager Change,IC2,IC2,Product,Product,Product Management,Product Management,Product Manager,Product Manager,EMP-019,EMP-0149
+EMP-0259,2023-09-24,Hire,,IC3,,Engineering,,AI/ML,,Senior ML Engineer,,EMP-0029
+EMP-0259,2024-10-19,Manager Change,IC3,IC3,Engineering,Engineering,AI/ML,AI/ML,Senior ML Engineer,Senior ML Engineer,EMP-0029,EMP-0044
+EMP-0260,2022-01-08,Hire,,IC4,,Engineering,,Platform,,Staff Software Engineer,,EMP-0044
+EMP-0260,2022-10-19,Manager Change,IC4,IC4,Engineering,Engineering,Platform,Platform,Staff Software Engineer,Staff Software Engineer,EMP-0044,EMP-0142
+EMP-0261,2021-07-03,Hire,,IC3,,People,,Recruiting,,Senior Recruiter,,EMP-0025
+EMP-0261,2022-04-12,Manager Change,IC3,IC3,People,People,Recruiting,Recruiting,Senior Recruiter,Senior Recruiter,EMP-0025,EMP-0157
+EMP-0262,2023-09-01,Hire,,IC4,,Sales,,SDR,,Lead SDR,,EMP-003
+EMP-0262,2024-12-17,Manager Change,IC4,IC4,Sales,Sales,SDR,SDR,Lead SDR,Lead SDR,EMP-003,EMP-0030
+EMP-0263,2022-05-03,Hire,,IC2,,Marketing,,Growth,,Growth Marketing Manager,,EMP-0046
+EMP-0263,2023-06-20,Manager Change,IC2,IC2,Marketing,Marketing,Growth,Growth,Growth Marketing Manager,Growth Marketing Manager,EMP-0046,EMP-0170
+EMP-0264,2022-05-26,Hire,,IC2,,Product,,Design,,Product Designer,,EMP-0155
+EMP-0264,2022-12-10,Manager Change,IC2,IC2,Product,Product,Design,Design,Product Designer,Product Designer,EMP-0155,EMP-0035
+EMP-0265,2023-07-28,Hire,,IC4,,G&A,,Facilities,,Staff Facilities Specialist,,EMP-0153
+EMP-0265,2024-11-28,Manager Change,IC4,IC4,G&A,G&A,Facilities,Facilities,Staff Facilities Specialist,Staff Facilities Specialist,EMP-0153,EMP-0179
+EMP-0266,2022-04-22,Hire,,IC3,,Sales,,Account Executive,,Senior Account Executive,,EMP-0026
+EMP-0266,2023-08-08,Manager Change,IC3,IC3,Sales,Sales,Account Executive,Account Executive,Senior Account Executive,Senior Account Executive,EMP-0026,EMP-0147
+EMP-0267,2021-10-30,Hire,,IC2,,Customer Success,,Implementation,,Implementation Specialist,,EMP-0022
+EMP-0267,2023-02-05,Manager Change,IC2,IC2,Customer Success,Customer Success,Implementation,Implementation,Implementation Specialist,Implementation Specialist,EMP-0022,EMP-0037
+EMP-0268,2021-11-08,Hire,,IC3,,Marketing,,Content,,Senior Content Marketing Manager,,EMP-0046
+EMP-0268,2023-07-14,Manager Change,IC3,IC3,Marketing,Marketing,Content,Content,Senior Content Marketing Manager,Senior Content Marketing Manager,EMP-0046,EMP-0156
+EMP-0269,2022-05-08,Hire,,IC2,,Marketing,,Content,,Content Marketing Manager,,EMP-0046
+EMP-0269,2022-10-05,Manager Change,IC2,IC2,Marketing,Marketing,Content,Content,Content Marketing Manager,Content Marketing Manager,EMP-0046,EMP-0156
+EMP-0270,2022-07-25,Hire,,IC4,,Sales,,SDR,,Lead SDR,,EMP-003
+EMP-0270,2023-09-24,Manager Change,IC4,IC4,Sales,Sales,SDR,SDR,Lead SDR,Lead SDR,EMP-003,EMP-0030
+EMP-0271,2021-10-01,Hire,,IC3,,Engineering,,Platform,,Senior Software Engineer,,EMP-0044
+EMP-0271,2022-08-30,Manager Change,IC3,IC3,Engineering,Engineering,Platform,Platform,Senior Software Engineer,Senior Software Engineer,EMP-0044,EMP-0158
+EMP-0272,2021-09-12,Hire,,IC4,,Engineering,,Platform,,Staff Software Engineer,,EMP-0029
+EMP-0272,2023-02-22,Manager Change,IC4,IC4,Engineering,Engineering,Platform,Platform,Staff Software Engineer,Staff Software Engineer,EMP-0029,EMP-0124
+EMP-0273,2022-04-12,Hire,,IC4,,G&A,,IT,,IT Manager (IC track),,EMP-012
+EMP-0273,2022-10-17,Manager Change,IC4,IC4,G&A,G&A,IT,IT,IT Manager (IC track),IT Manager (IC track),EMP-012,EMP-0126
+EMP-0274,2021-02-13,Hire,,IC2,,Engineering,,AI/ML,,Software Engineer,,EMP-0023
+EMP-0274,2022-11-22,Manager Change,IC2,IC2,Engineering,Engineering,AI/ML,AI/ML,Software Engineer,Software Engineer,EMP-0023,EMP-0044
+EMP-0275,2022-05-16,Hire,,IC3,,Engineering,,Data,,Senior Data Engineer,,EMP-0162
+EMP-0276,2022-03-05,Hire,,IC2,,Product,,Design,,Product Designer,,EMP-0035
+EMP-0276,2023-09-17,Promotion,IC2,IC3,Product,Product,Design,Design,Product Designer,Senior Product Designer,EMP-0035,EMP-0035
+EMP-0277,2022-06-22,Hire,,IC3,,Engineering,,Infrastructure,,Senior Software Engineer,,EMP-0176
+EMP-0278,2022-04-02,Hire,,IC4,,Marketing,,Content,,Staff Content Strategist,,EMP-0156
+EMP-0279,2022-08-17,Hire,,IC4,,Customer Success,,Support,,Support Lead,,EMP-0125
+EMP-0280,2021-01-12,Hire,,IC3,,Engineering,,Data,,Senior Data Engineer,,EMP-0023
+EMP-0280,2023-02-20,Promotion,IC3,IC4,Engineering,Engineering,Data,Data,Senior Data Engineer,Staff Data Engineer,EMP-0023,EMP-0023
+EMP-0280,2023-02-20,Manager Change,IC4,IC4,Engineering,Engineering,Data,Data,Staff Data Engineer,Staff Data Engineer,EMP-0023,EMP-0162
+EMP-0281,2022-07-28,Hire,,IC4,,G&A,,Legal,,Senior Corporate Counsel,,EMP-0179
+EMP-0282,2022-10-07,Hire,,IC3,,Marketing,,Growth,,Senior Growth Marketing Manager,,EMP-0170
+EMP-0282,2024-01-03,Promotion,IC3,IC4,Marketing,Marketing,Growth,Growth,Senior Growth Marketing Manager,Staff Growth Marketing Manager,EMP-0170,EMP-0170
+EMP-0283,2022-12-13,Hire,,IC3,,Customer Success,,CSM,,Senior CSM,,EMP-0139
+EMP-0284,2021-10-12,Hire,,IC3,,Customer Success,,Support,,Staff Support Specialist,,EMP-0144
+EMP-0284,2023-07-07,Lateral Transfer,IC3,IC3,Customer Success,Customer Success,Support,CSM,Staff Support Specialist,Senior CSM,EMP-0144,EMP-0144
+EMP-0285,2022-06-30,Hire,,IC4,,Engineering,,AI/ML,,Staff ML Engineer,,EMP-0185
+EMP-0285,2023-11-14,Promotion,IC4,IC5,Engineering,Engineering,AI/ML,AI/ML,Staff ML Engineer,Principal ML Engineer,EMP-0185,EMP-0185
+EMP-0286,2022-09-21,Hire,,IC3,,Engineering,,AI/ML,,Senior ML Engineer,,EMP-0044
+EMP-0287,2022-06-24,Hire,,IC3,,Engineering,,Infrastructure,,Senior Software Engineer,,EMP-0130
+EMP-0288,2022-02-07,Hire,,IC3,,Engineering,,Infrastructure,,Senior Software Engineer,,EMP-0130
+EMP-0289,2021-01-31,Hire,,IC3,,Engineering,,AI/ML,,Senior ML Engineer,,EMP-0028
+EMP-0289,2023-03-02,Promotion,IC3,IC4,Engineering,Engineering,AI/ML,AI/ML,Senior ML Engineer,Staff ML Engineer,EMP-0028,EMP-0028
+EMP-0289,2023-03-02,Manager Change,IC4,IC4,Engineering,Engineering,AI/ML,AI/ML,Staff ML Engineer,Staff ML Engineer,EMP-0028,EMP-0029
+EMP-0290,2022-08-01,Hire,,IC4,,Customer Success,,CSM,,Strategic CSM,,EMP-0139
+EMP-0291,2022-01-20,Hire,,IC4,,G&A,,Finance,,Staff Financial Analyst,,EMP-012
+EMP-0291,2023-02-12,Promotion,IC4,M1,G&A,G&A,Finance,Finance,Staff Financial Analyst,Finance Manager,EMP-012,EMP-012
+EMP-0291,2023-08-26,Lateral Transfer,M1,M1,G&A,G&A,Finance,Facilities,Finance Manager,M1 Facilities,EMP-012,EMP-012
+EMP-0291,2024-03-07,Promotion,M1,M2,G&A,G&A,Facilities,Facilities,M1 Facilities,Facilities Manager,EMP-012,EMP-012
+EMP-0292,2021-05-14,Hire,,IC4,,Customer Success,,Implementation,,Implementation Lead,,EMP-0037
+EMP-0293,2021-05-27,Hire,,IC2,,Sales,,SDR,,Senior SDR,,EMP-0030
+EMP-0293,2023-04-29,Lateral Transfer,IC2,IC2,Sales,Sales,SDR,Account Executive,Senior SDR,Account Executive,EMP-0030,EMP-0030
+EMP-0293,2023-04-29,Manager Change,IC2,IC2,Sales,Sales,Account Executive,Account Executive,Account Executive,Account Executive,EMP-0030,EMP-0169
+EMP-0294,2022-03-04,Hire,,IC4,,Product,,Product Management,,Staff Product Manager,,EMP-0149
+EMP-0295,2021-07-08,Hire,,IC3,,Marketing,,Brand,,Senior Brand Manager,,EMP-0046
+EMP-0295,2023-05-20,Manager Change,IC3,IC3,Marketing,Marketing,Brand,Brand,Senior Brand Manager,Senior Brand Manager,EMP-0046,EMP-0164
+EMP-0296,2021-11-19,Hire,,IC3,,Sales,,Sales Engineering,,Senior Sales Engineer,,EMP-0038
+EMP-0296,2023-07-26,Promotion,IC3,IC4,Sales,Sales,Sales Engineering,Sales Engineering,Senior Sales Engineer,Staff Sales Engineer,EMP-0038,EMP-0038
+EMP-0297,2022-01-16,Hire,,IC4,,People,,L&D,,Staff L&D,,EMP-0025
+EMP-0297,2023-08-24,Manager Change,IC4,IC4,People,People,L&D,L&D,Staff L&D,Staff L&D,EMP-0025,EMP-0178
+EMP-0298,2022-08-15,Hire,,IC2,,Engineering,,Platform,,Software Engineer,,EMP-0142
+EMP-0298,2023-12-07,Promotion,IC2,IC3,Engineering,Engineering,Platform,Platform,Software Engineer,Senior Software Engineer,EMP-0142,EMP-0142
+EMP-0299,2021-07-28,Hire,,IC3,,Sales,,Account Executive,,Senior Account Executive,,EMP-0026
+EMP-0299,2023-05-30,Promotion,IC3,IC4,Sales,Sales,Account Executive,Account Executive,Senior Account Executive,Enterprise Account Executive,EMP-0026,EMP-0026
+EMP-0299,2023-05-30,Manager Change,IC4,IC4,Sales,Sales,Account Executive,Account Executive,Enterprise Account Executive,Enterprise Account Executive,EMP-0026,EMP-0146
+EMP-0300,2022-05-20,Hire,,IC2,,People,,HRBPs,,HR Business Partner,,EMP-0025
+EMP-0301,2022-04-23,Hire,,IC3,,Customer Success,,Implementation,,Senior Implementation Specialist,,EMP-0037
+EMP-0302,2022-01-07,Hire,,IC3,,Engineering,,Data,,Senior Data Engineer,,EMP-0162
+EMP-0303,2021-12-23,Hire,,IC3,,Engineering,,AI/ML,,Senior ML Engineer,,EMP-0029
+EMP-0303,2023-08-12,Promotion,IC3,IC4,Engineering,Engineering,AI/ML,AI/ML,Senior ML Engineer,Staff ML Engineer,EMP-0029,EMP-0029
+EMP-0304,2022-04-14,Hire,,IC2,,Customer Success,,Support,,Senior Support Specialist,,EMP-0125
+EMP-0305,2022-03-13,Hire,,IC4,,Customer Success,,CSM,,Strategic CSM,,EMP-0144
+EMP-0306,2021-02-02,Hire,,IC3,,Engineering,,Infrastructure,,Senior Software Engineer,,EMP-0023
+EMP-0306,2023-03-03,Promotion,IC3,IC4,Engineering,Engineering,Infrastructure,Infrastructure,Senior Software Engineer,Staff Software Engineer,EMP-0023,EMP-0023
+EMP-0306,2023-03-03,Manager Change,IC4,IC4,Engineering,Engineering,Infrastructure,Infrastructure,Staff Software Engineer,Staff Software Engineer,EMP-0023,EMP-0138
+EMP-0307,2022-09-09,Hire,,IC3,,Engineering,,Data,,Senior Data Engineer,,EMP-0162
+EMP-0308,2021-08-22,Hire,,IC3,,People,,Recruiting,,Senior Recruiter,,EMP-0025
+EMP-0308,2023-06-11,Promotion,IC3,IC4,People,People,Recruiting,Recruiting,Senior Recruiter,Staff Recruiter,EMP-0025,EMP-0025
+EMP-0308,2023-06-11,Manager Change,IC4,IC4,People,People,Recruiting,Recruiting,Staff Recruiter,Staff Recruiter,EMP-0025,EMP-0157
+EMP-0309,2021-02-06,Hire,,IC3,,Product,,Design,,Senior Product Designer,,EMP-019
+EMP-0309,2023-03-05,Promotion,IC3,IC4,Product,Product,Design,Design,Senior Product Designer,Staff Product Designer,EMP-019,EMP-019
+EMP-0309,2023-03-05,Manager Change,IC4,IC4,Product,Product,Design,Design,Staff Product Designer,Staff Product Designer,EMP-019,EMP-0035
+EMP-0310,2022-08-05,Hire,,IC4,,Engineering,,Data,,Staff Data Engineer,,EMP-0181
+EMP-0311,2022-04-15,Hire,,IC2,,Sales,,Account Executive,,Account Executive,,EMP-0146
+EMP-0311,2023-10-07,Promotion,IC2,IC3,Sales,Sales,Account Executive,Account Executive,Account Executive,Senior Account Executive,EMP-0146,EMP-0146
+EMP-0312,2022-08-29,Hire,,IC3,,Marketing,,Product Marketing,,Senior Product Marketing Manager,,EMP-0170
+EMP-0312,2023-12-14,Lateral Transfer,IC3,IC3,Marketing,Marketing,Product Marketing,Growth,Senior Product Marketing Manager,Senior Growth Marketing Manager,EMP-0170,EMP-0170
+EMP-0313,2021-07-26,Hire,,IC3,,People,,L&D,,Senior L&D Specialist,,EMP-0025
+EMP-0313,2023-05-29,Manager Change,IC3,IC3,People,People,L&D,L&D,Senior L&D Specialist,Senior L&D Specialist,EMP-0025,EMP-0178
+EMP-0314,2021-05-03,Hire,,IC3,,Engineering,,AI/ML,,Senior ML Engineer,,EMP-0044
+EMP-0314,2023-04-17,Promotion,IC3,IC4,Engineering,Engineering,AI/ML,AI/ML,Senior ML Engineer,Staff ML Engineer,EMP-0044,EMP-0044
+EMP-0315,2023-07-30,Hire,,IC3,,Sales,,Account Executive,,Senior Account Executive,,EMP-0147
+EMP-0316,2022-08-20,Hire,,IC4,,Sales,,SDR,,Lead SDR,,EMP-0143
+EMP-0317,2021-04-04,Hire,,IC2,,People,,DEIB,,DEIB Specialist,,EMP-0025
+EMP-0317,2023-04-02,Promotion,IC2,IC3,People,People,DEIB,DEIB,DEIB Specialist,Senior DEIB Specialist,EMP-0025,EMP-0025
+EMP-0317,2023-04-02,Manager Change,IC3,IC3,People,People,DEIB,DEIB,Senior DEIB Specialist,Senior DEIB Specialist,EMP-0025,EMP-0157
+EMP-0318,2022-08-03,Hire,,IC4,,Sales,,Account Management,,Strategic Account Manager,,EMP-0182
+EMP-0319,2022-06-06,Hire,,IC2,,Marketing,,Product Marketing,,Product Marketing Manager,,EMP-0164
+EMP-0319,2023-11-02,Promotion,IC2,IC3,Marketing,Marketing,Product Marketing,Product Marketing,Product Marketing Manager,Senior Product Marketing Manager,EMP-0164,EMP-0164
+EMP-0320,2022-06-17,Hire,,IC1,,Product,,Design,,Associate Product Designer,,EMP-0035
+EMP-0321,2024-08-23,Hire,,IC1,,Engineering,,Platform,,Associate Software Engineer,,EMP-0142
+EMP-0322,2023-09-05,Hire,,IC2,,Engineering,,Data,,Software Engineer,,EMP-0181
+EMP-0323,2022-03-13,Hire,,IC2,,People,,People Ops,,People Operations Specialist,,EMP-0178
+EMP-0324,2022-01-09,Hire,,IC1,,Engineering,,Platform,,Associate Software Engineer,,EMP-0165
+EMP-0325,2024-05-15,Hire,,IC2,,Sales,,Account Executive,,Account Executive,,EMP-0147
+EMP-0326,2024-12-21,Hire,,IC1,,Engineering,,Data,,Associate Software Engineer,,EMP-0036
+EMP-0327,2022-03-17,Hire,,IC1,,Sales,,Account Executive,,Junior Account Executive,,EMP-0169
+EMP-0328,2022-07-29,Hire,,IC1,,Engineering,,AI/ML,,Associate Software Engineer,,EMP-0029
+EMP-0329,2022-04-08,Hire,,IC1,,Sales,,SDR,,Sales Development Representative,,EMP-0143
+EMP-0330,2022-06-01,Hire,,IC1,,Sales,,Account Management,,Junior Account Manager,,EMP-0186
+EMP-0331,2022-01-04,Hire,,IC2,,Customer Success,,Implementation,,Implementation Specialist,,EMP-0037
+EMP-0332,2022-01-25,Hire,,IC1,,Engineering,,Platform,,Associate Software Engineer,,EMP-0124
+EMP-0333,2022-01-14,Hire,,IC2,,Customer Success,,Implementation,,Implementation Specialist,,EMP-0037
+EMP-0334,2022-04-29,Hire,,IC1,,Marketing,,Brand,,Marketing Coordinator,,EMP-0164
+EMP-0335,2022-10-28,Hire,,IC1,,Sales,,SDR,,Sales Development Representative,,EMP-0030
+EMP-0336,2022-01-08,Hire,,IC1,,G&A,,Facilities,,Office Coordinator,,EMP-012
+EMP-0336,2022-04-29,Manager Change,IC1,IC1,G&A,G&A,Facilities,Facilities,Office Coordinator,Office Coordinator,EMP-012,EMP-0153
+EMP-0337,2024-07-31,Hire,,IC1,,Sales,,SDR,,Sales Development Representative,,EMP-0030
+EMP-0338,2022-05-01,Hire,,IC2,,Engineering,,AI/ML,,Software Engineer,,EMP-0044
+EMP-0339,2022-10-19,Hire,,IC1,,Engineering,,Infrastructure,,Associate Software Engineer,,EMP-0138
+EMP-0340,2024-02-05,Hire,,IC2,,Product,,UX Research,,UX Researcher,,EMP-0127
+EMP-0341,2022-11-06,Hire,,IC1,,Customer Success,,CSM,,Junior Customer Success Manager,,EMP-0144
+EMP-0342,2022-12-05,Hire,,IC1,,Engineering,,Infrastructure,,Associate Software Engineer,,EMP-0176
+EMP-0343,2022-04-14,Hire,,IC1,,Product,,Product Management,,Associate Product Manager,,EMP-0149
+EMP-0344,2022-12-28,Hire,,IC1,,Engineering,,Data,,Associate Software Engineer,,EMP-0034
+EMP-0345,2024-11-09,Hire,,IC1,,Sales,,Account Executive,,Junior Account Executive,,EMP-0146
+EMP-0346,2022-08-07,Hire,,IC2,,Marketing,,Growth,,Growth Marketing Manager,,EMP-0170
+EMP-0347,2024-10-17,Hire,,IC1,,Product,,Product Management,,Associate Product Manager,,EMP-0149
+EMP-0348,2022-02-23,Hire,,IC1,,Engineering,,Data,,Associate Software Engineer,,EMP-0181
+EMP-0349,2024-05-28,Hire,,IC1,,Sales,,Sales Engineering,,Junior Sales Engineer,,EMP-0038
+EMP-0350,2023-10-24,Hire,,IC1,,Sales,,SDR,,Sales Development Representative,,EMP-0143
+EMP-0351,2022-05-03,Hire,,IC1,,Sales,,SDR,,Sales Development Representative,,EMP-0030
+EMP-0352,2022-02-23,Hire,,IC2,,Sales,,Account Management,,Account Manager,,EMP-0038
+EMP-0352,2022-04-08,Manager Change,IC2,IC2,Sales,Sales,Account Management,Account Management,Account Manager,Account Manager,EMP-0038,EMP-0182
+EMP-0353,2022-06-21,Hire,,IC2,,Engineering,,Data,,Software Engineer,,EMP-0034
+EMP-0354,2024-02-07,Hire,,IC2,,Engineering,,Platform,,Software Engineer,,EMP-0165
+EMP-0355,2022-03-24,Hire,,IC1,,G&A,,Legal,,Legal Coordinator,,EMP-012
+EMP-0355,2023-09-26,Promotion,IC1,IC2,G&A,G&A,Legal,Legal,Legal Coordinator,Paralegal,EMP-012,EMP-012
+EMP-0355,2023-09-26,Manager Change,IC2,IC2,G&A,G&A,Legal,Legal,Paralegal,Paralegal,EMP-012,EMP-0179
+EMP-0356,2025-03-01,Hire,,IC2,,Sales,,Account Management,,Account Manager,,EMP-0186
+EMP-0357,2024-11-07,Hire,,IC1,,Engineering,,Data,,Associate Software Engineer,,EMP-0158
+EMP-0357,2025-01-18,Lateral Transfer,IC1,IC1,Engineering,Engineering,Data,Platform,Associate Software Engineer,Associate Software Engineer,EMP-0158,EMP-0158
+EMP-0358,2022-04-11,Hire,,IC1,,Engineering,,Data,,Associate Software Engineer,,EMP-0034
+EMP-0359,2023-09-04,Hire,,IC3,,G&A,,IT,,Senior Systems Administrator,,EMP-0126
+EMP-0360,2022-06-21,Hire,,IC1,,Engineering,,Infrastructure,,Associate Software Engineer,,EMP-0138
+EMP-0361,2023-10-04,Hire,,IC2,,Marketing,,Content,,Content Marketing Manager,,EMP-0156
+EMP-0362,2021-05-19,Hire,,IC2,,G&A,,Finance,,Financial Analyst II,,EMP-0029
+EMP-0362,2023-04-25,Promotion,IC2,IC3,G&A,G&A,Finance,Finance,Financial Analyst II,Senior Financial Analyst,EMP-0029,EMP-0029
+EMP-0362,2023-04-25,Manager Change,IC3,IC3,G&A,G&A,Finance,Finance,Senior Financial Analyst,Senior Financial Analyst,EMP-0029,EMP-0153
+EMP-0363,2022-08-26,Hire,,IC1,,People,,HRBPs,,HR Coordinator,,EMP-0157
+EMP-0363,2023-12-13,Lateral Transfer,IC1,IC1,People,People,HRBPs,L&D,HR Coordinator,L&D Coordinator,EMP-0157,EMP-0157
+EMP-0364,2021-09-28,Hire,,IC1,,Customer Success,,Implementation,,Junior Implementation Specialist,,EMP-0139
+EMP-0364,2023-06-30,Lateral Transfer,IC1,IC1,Customer Success,Customer Success,Implementation,CSM,Junior Implementation Specialist,Junior Customer Success Manager,EMP-0139,EMP-0139
+EMP-0365,2024-08-28,Hire,,IC1,,Engineering,,AI/ML,,Associate Software Engineer,,EMP-0185
+EMP-0366,2021-01-03,Hire,,IC1,,Engineering,,Data,,Associate Software Engineer,,EMP-0023
+EMP-0366,2023-02-16,Promotion,IC1,IC2,Engineering,Engineering,Data,Data,Associate Software Engineer,Software Engineer,EMP-0023,EMP-0023
+EMP-0366,2023-02-16,Manager Change,IC2,IC2,Engineering,Engineering,Data,Data,Software Engineer,Software Engineer,EMP-0023,EMP-0162
+EMP-0367,2021-06-25,Hire,,IC1,,Sales,,Account Executive,,Junior Account Executive,,EMP-0026
+EMP-0367,2023-05-13,Promotion,IC1,IC2,Sales,Sales,Account Executive,Account Executive,Junior Account Executive,Account Executive,EMP-0026,EMP-0026
+EMP-0367,2023-05-13,Manager Change,IC2,IC2,Sales,Sales,Account Executive,Account Executive,Account Executive,Account Executive,EMP-0026,EMP-0146
+EMP-0368,2021-07-24,Hire,,IC3,,Engineering,,Infrastructure,,Senior Software Engineer,,EMP-0028
+EMP-0368,2023-05-28,Promotion,IC3,IC4,Engineering,Engineering,Infrastructure,Infrastructure,Senior Software Engineer,Staff Software Engineer,EMP-0028,EMP-0028
+EMP-0368,2023-05-28,Manager Change,IC4,IC4,Engineering,Engineering,Infrastructure,Infrastructure,Staff Software Engineer,Staff Software Engineer,EMP-0028,EMP-0138
+EMP-0369,2025-02-10,Hire,,IC2,,Sales,,Account Management,,Account Manager,,EMP-0186
+EMP-0369,2025-03-06,Promotion,IC2,IC3,Sales,Sales,Account Management,Account Management,Account Manager,Senior Account Manager,EMP-0186,EMP-0186
+EMP-0370,2024-05-22,Hire,,IC2,,Engineering,,AI/ML,,Software Engineer,,EMP-0185
+EMP-0370,2024-10-25,Promotion,IC2,IC3,Engineering,Engineering,AI/ML,AI/ML,Software Engineer,Senior ML Engineer,EMP-0185,EMP-0185
+EMP-0371,2022-03-26,Hire,,IC1,,Engineering,,Data,,Associate Software Engineer,,EMP-0034
+EMP-0371,2023-09-27,Promotion,IC1,IC2,Engineering,Engineering,Data,Data,Associate Software Engineer,Software Engineer,EMP-0034,EMP-0034
+EMP-0372,2022-05-01,Hire,,IC2,,G&A,,IT,,Systems Administrator,,EMP-0126
+EMP-0373,2021-11-30,Hire,,IC1,,Engineering,,Infrastructure,,Associate Software Engineer,,EMP-0176
+EMP-0373,2023-07-31,Promotion,IC1,IC2,Engineering,Engineering,Infrastructure,Infrastructure,Associate Software Engineer,Software Engineer,EMP-0176,EMP-0176
+EMP-0374,2021-11-18,Hire,,IC3,,Sales,,Account Executive,,Senior Account Executive,,EMP-0169
+EMP-0374,2023-07-25,Promotion,IC3,IC4,Sales,Sales,Account Executive,Account Executive,Senior Account Executive,Enterprise Account Executive,EMP-0169,EMP-0169
+EMP-0375,2025-01-13,Hire,,IC3,,Marketing,,Growth,,Senior Growth Marketing Manager,,EMP-0170
+EMP-0375,2025-02-20,Promotion,IC3,IC4,Marketing,Marketing,Growth,Growth,Senior Growth Marketing Manager,Staff Growth Marketing Manager,EMP-0170,EMP-0170
+EMP-0376,2022-08-19,Hire,,IC2,,People,,People Ops,,People Operations Specialist,,EMP-0178
+EMP-0377,2021-09-04,Hire,,IC2,,Engineering,,Infrastructure,,Software Engineer,,EMP-0023
+EMP-0377,2023-06-18,Promotion,IC2,IC3,Engineering,Engineering,Infrastructure,Infrastructure,Software Engineer,Senior Software Engineer,EMP-0023,EMP-0023
+EMP-0377,2023-06-18,Manager Change,IC3,IC3,Engineering,Engineering,Infrastructure,Infrastructure,Senior Software Engineer,Senior Software Engineer,EMP-0023,EMP-0138
+EMP-0378,2022-06-06,Hire,,IC1,,G&A,,Legal,,Legal Coordinator,,EMP-0126
+EMP-0378,2023-11-02,Lateral Transfer,IC1,IC1,G&A,G&A,Legal,Facilities,Legal Coordinator,Office Coordinator,EMP-0126,EMP-0126
+EMP-0379,2021-12-12,Hire,,IC2,,Engineering,,AI/ML,,Software Engineer,,EMP-0029
+EMP-0379,2023-08-06,Promotion,IC2,IC3,Engineering,Engineering,AI/ML,AI/ML,Software Engineer,Senior ML Engineer,EMP-0029,EMP-0029
+EMP-0380,2021-12-15,Hire,,IC2,,Sales,,SDR,,Senior SDR,,EMP-0169
+EMP-0380,2023-08-08,Lateral Transfer,IC2,IC2,Sales,Sales,SDR,Account Executive,Senior SDR,Account Executive,EMP-0169,EMP-0169
+EMP-0381,2022-09-05,Hire,,IC3,,Sales,,Account Executive,,Senior Account Executive,,EMP-0147
+EMP-0382,2022-07-10,Hire,,IC1,,Engineering,,Platform,,Associate Software Engineer,,EMP-0142
+EMP-0382,2023-11-19,Promotion,IC1,IC2,Engineering,Engineering,Platform,Platform,Associate Software Engineer,Software Engineer,EMP-0142,EMP-0142
+EMP-0383,2022-06-08,Hire,,IC1,,Sales,,Account Executive,,Junior Account Executive,,EMP-0147
+EMP-0383,2023-11-03,Promotion,IC1,IC2,Sales,Sales,Account Executive,Account Executive,Junior Account Executive,Account Executive,EMP-0147,EMP-0147
+EMP-0384,2021-09-08,Hire,,IC3,,G&A,,Facilities,,Senior Facilities Specialist,,EMP-012
+EMP-0384,2023-06-20,Manager Change,IC3,IC3,G&A,G&A,Facilities,Facilities,Senior Facilities Specialist,Senior Facilities Specialist,EMP-012,EMP-0179
+EMP-0385,2021-07-18,Hire,,IC1,,Sales,,Account Management,,Junior Account Manager,,EMP-0030
+EMP-0385,2023-05-25,Promotion,IC1,IC2,Sales,Sales,Account Management,Account Management,Junior Account Manager,Account Manager,EMP-0030,EMP-0030
+EMP-0385,2023-05-25,Manager Change,IC2,IC2,Sales,Sales,Account Management,Account Management,Account Manager,Account Manager,EMP-0030,EMP-0182
+EMP-0386,2023-09-15,Hire,,IC3,,Sales,,Account Management,,Senior Account Manager,,EMP-0182
+EMP-0387,2021-10-14,Hire,,IC3,,Customer Success,,Implementation,,Senior Implementation Specialist,,EMP-0139
+EMP-0387,2023-07-08,Lateral Transfer,IC3,IC3,Customer Success,Customer Success,Implementation,CSM,Senior Implementation Specialist,Senior CSM,EMP-0139,EMP-0139
+EMP-0388,2022-08-19,Hire,,IC3,,Engineering,,Platform,,Senior Software Engineer,,EMP-0158
+EMP-0389,2022-08-03,Hire,,IC2,,Engineering,,Data,,Software Engineer,,EMP-0036
+EMP-0389,2023-12-01,Promotion,IC2,IC3,Engineering,Engineering,Data,Data,Software Engineer,Senior Data Engineer,EMP-0036,EMP-0036
+EMP-0390,2021-09-04,Hire,,IC1,,Customer Success,,Support,,Customer Support Specialist,,EMP-0144
+EMP-0390,2023-06-18,Lateral Transfer,IC1,IC1,Customer Success,Customer Success,Support,CSM,Customer Support Specialist,Junior Customer Success Manager,EMP-0144,EMP-0144
+EMP-0391,2022-06-09,Hire,,IC3,,Engineering,,AI/ML,,Senior ML Engineer,,EMP-0029
+EMP-0392,2024-05-03,Hire,,IC1,,Engineering,,Infrastructure,,Associate Software Engineer,,EMP-0124
+EMP-0392,2024-10-16,Lateral Transfer,IC1,IC1,Engineering,Engineering,Infrastructure,Platform,Associate Software Engineer,Associate Software Engineer,EMP-0124,EMP-0124
+EMP-0393,2022-03-03,Hire,,IC2,,Sales,,Sales Engineering,,Sales Engineer,,EMP-0038
+EMP-0394,2022-10-01,Hire,,IC3,,G&A,,IT,,Senior Systems Administrator,,EMP-0126
+EMP-0395,2025-03-30,Hire,,IC3,,Engineering,,AI/ML,,Senior ML Engineer,,EMP-0029
+EMP-0396,2022-05-14,Hire,,IC3,,Engineering,,AI/ML,,Senior ML Engineer,,EMP-0185
+EMP-0396,2023-10-22,Promotion,IC3,IC4,Engineering,Engineering,AI/ML,AI/ML,Senior ML Engineer,Staff ML Engineer,EMP-0185,EMP-0185
+EMP-0397,2022-08-27,Hire,,IC3,,Engineering,,Platform,,Senior Software Engineer,,EMP-0165
+EMP-0398,2021-10-07,Hire,,IC2,,Sales,,Sales Engineering,,Sales Engineer,,EMP-0038
+EMP-0398,2023-07-04,Promotion,IC2,IC3,Sales,Sales,Sales Engineering,Sales Engineering,Sales Engineer,Senior Sales Engineer,EMP-0038,EMP-0038
+EMP-0399,2022-04-21,Hire,,IC2,,Marketing,,Content,,Content Marketing Manager,,EMP-0156
+EMP-0399,2023-10-10,Promotion,IC2,IC3,Marketing,Marketing,Content,Content,Content Marketing Manager,Senior Content Marketing Manager,EMP-0156,EMP-0156
+EMP-0400,2022-01-28,Hire,,IC1,,People,,DEIB,,DEIB Coordinator,,EMP-0178
+EMP-0400,2023-08-30,Promotion,IC1,IC2,People,People,DEIB,DEIB,DEIB Coordinator,DEIB Specialist,EMP-0178,EMP-0178
+EMP-0400,2023-08-30,Lateral Transfer,IC2,IC2,People,People,DEIB,Total Rewards,DEIB Specialist,Compensation Analyst,EMP-0178,EMP-0178
+EMP-0401,2021-01-01,Hire,,IC3,,Engineering,,Data,,Senior Data Engineer,,EMP-0028
+EMP-0401,2023-02-15,Promotion,IC3,IC4,Engineering,Engineering,Data,Data,Senior Data Engineer,Staff Data Engineer,EMP-0028,EMP-0028
+EMP-0401,2023-02-15,Manager Change,IC4,IC4,Engineering,Engineering,Data,Data,Staff Data Engineer,Staff Data Engineer,EMP-0028,EMP-0036
+EMP-0402,2022-02-11,Hire,,IC3,,Sales,,SDR,,Staff SDR,,EMP-0030
+EMP-0403,2022-09-22,Hire,,IC1,,Sales,,Account Management,,Junior Account Manager,,EMP-0182
+EMP-0404,2025-01-09,Hire,,IC3,,Customer Success,,Implementation,,Senior Implementation Specialist,,EMP-0037
+EMP-0405,2021-08-23,Hire,,IC1,,Marketing,,Brand,,Marketing Coordinator,,EMP-0046
+EMP-0405,2023-06-12,Promotion,IC1,IC2,Marketing,Marketing,Brand,Brand,Marketing Coordinator,Brand Manager,EMP-0046,EMP-0046
+EMP-0405,2023-06-12,Lateral Transfer,IC2,IC2,Marketing,Marketing,Brand,Growth,Brand Manager,Growth Marketing Manager,EMP-0046,EMP-0046
+EMP-0405,2023-06-12,Manager Change,IC2,IC2,Marketing,Marketing,Growth,Growth,Growth Marketing Manager,Growth Marketing Manager,EMP-0046,EMP-0170
+EMP-0406,2022-06-04,Hire,,IC3,,Engineering,,Data,,Senior Data Engineer,,EMP-0181
+EMP-0407,2021-09-04,Hire,,IC2,,Engineering,,Platform,,Software Engineer,,EMP-0028
+EMP-0407,2023-06-18,Promotion,IC2,IC3,Engineering,Engineering,Platform,Platform,Software Engineer,Senior Software Engineer,EMP-0028,EMP-0028
+EMP-0407,2023-06-18,Manager Change,IC3,IC3,Engineering,Engineering,Platform,Platform,Senior Software Engineer,Senior Software Engineer,EMP-0028,EMP-0142
+EMP-0408,2021-11-04,Hire,,IC3,,Engineering,,Infrastructure,,Senior Software Engineer,,EMP-0176
+EMP-0409,2021-11-20,Hire,,IC2,,Product,,UX Research,,UX Researcher,,EMP-0149
+EMP-0409,2023-07-26,Promotion,IC2,IC3,Product,Product,UX Research,UX Research,UX Researcher,Senior UX Researcher,EMP-0149,EMP-0149
+EMP-0409,2023-07-26,Lateral Transfer,IC3,IC3,Product,Product,UX Research,Product Management,Senior UX Researcher,Senior Product Manager,EMP-0149,EMP-0149
+EMP-0410,2021-10-06,Hire,,IC1,,Sales,,SDR,,Sales Development Representative,,EMP-0030
+EMP-0410,2023-07-04,Promotion,IC1,IC2,Sales,Sales,SDR,SDR,Sales Development Representative,Senior SDR,EMP-0030,EMP-0030
+EMP-0410,2023-07-04,Manager Change,IC2,IC2,Sales,Sales,SDR,SDR,Senior SDR,Senior SDR,EMP-0030,EMP-0143
+EMP-0411,2022-10-16,Hire,,IC1,,Engineering,,Infrastructure,,Associate Software Engineer,,EMP-0165
+EMP-0411,2024-01-07,Lateral Transfer,IC1,IC1,Engineering,Engineering,Infrastructure,Platform,Associate Software Engineer,Associate Software Engineer,EMP-0165,EMP-0165
+EMP-0412,2021-10-15,Hire,,IC3,,Sales,,SDR,,Staff SDR,,EMP-0030
+EMP-0412,2023-07-08,Lateral Transfer,IC3,IC3,Sales,Sales,SDR,Account Executive,Staff SDR,Senior Account Executive,EMP-0030,EMP-0030
+EMP-0412,2023-07-08,Manager Change,IC3,IC3,Sales,Sales,Account Executive,Account Executive,Senior Account Executive,Senior Account Executive,EMP-0030,EMP-0147
+EMP-0413,2022-09-27,Hire,,IC2,,Sales,,Sales Engineering,,Sales Engineer,,EMP-0038
+EMP-0414,2022-02-12,Hire,,IC2,,Product,,Product Management,,Product Manager,,EMP-0149
+EMP-0414,2023-09-06,Promotion,IC2,IC3,Product,Product,Product Management,Product Management,Product Manager,Senior Product Manager,EMP-0149,EMP-0149
+EMP-0415,2021-10-01,Hire,,IC2,,Engineering,,AI/ML,,Software Engineer,,EMP-0185
+EMP-0415,2023-07-01,Promotion,IC2,IC3,Engineering,Engineering,AI/ML,AI/ML,Software Engineer,Senior ML Engineer,EMP-0185,EMP-0185
+EMP-0416,2022-07-29,Hire,,IC1,,Engineering,,AI/ML,,Associate Software Engineer,,EMP-0029
+EMP-0416,2023-11-29,Promotion,IC1,IC2,Engineering,Engineering,AI/ML,AI/ML,Associate Software Engineer,Software Engineer,EMP-0029,EMP-0029
+EMP-0417,2024-02-02,Hire,,IC3,,Engineering,,Infrastructure,,Senior Software Engineer,,EMP-0176
+EMP-0418,2022-04-12,Hire,,IC1,,Sales,,Account Management,,Junior Account Manager,,EMP-0147
+EMP-0418,2023-10-06,Lateral Transfer,IC1,IC1,Sales,Sales,Account Management,Account Executive,Junior Account Manager,Junior Account Executive,EMP-0147,EMP-0147
+EMP-0419,2021-04-07,Hire,,IC3,,Engineering,,Platform,,Senior Software Engineer,,EMP-0029
+EMP-0419,2023-04-04,Promotion,IC3,IC4,Engineering,Engineering,Platform,Platform,Senior Software Engineer,Staff Software Engineer,EMP-0029,EMP-0029
+EMP-0419,2023-04-04,Manager Change,IC4,IC4,Engineering,Engineering,Platform,Platform,Staff Software Engineer,Staff Software Engineer,EMP-0029,EMP-0158
+EMP-0420,2022-09-24,Hire,,IC3,,Engineering,,Platform,,Senior Software Engineer,,EMP-0158
+EMP-0421,2022-03-25,Hire,,IC2,,Sales,,Sales Engineering,,Sales Engineer,,EMP-0038
+EMP-0422,2022-09-06,Hire,,IC2,,G&A,,IT,,Systems Administrator,,EMP-0126
+EMP-0423,2021-11-06,Hire,,IC3,,Product,,UX Research,,Senior UX Researcher,,EMP-0149
+EMP-0423,2023-07-19,Promotion,IC3,IC4,Product,Product,UX Research,UX Research,Senior UX Researcher,Staff UX Researcher,EMP-0149,EMP-0149
+EMP-0423,2023-07-19,Lateral Transfer,IC4,IC4,Product,Product,UX Research,Product Management,Staff UX Researcher,Staff Product Manager,EMP-0149,EMP-0149
+EMP-0424,2022-03-05,Hire,,IC3,,G&A,,Legal,,Corporate Counsel,,EMP-012
+EMP-0424,2023-09-17,Manager Change,IC3,IC3,G&A,G&A,Legal,Legal,Corporate Counsel,Corporate Counsel,EMP-012,EMP-0179
+EMP-0425,2022-02-07,Hire,,IC3,,Sales,,Sales Engineering,,Senior Sales Engineer,,EMP-0038
+EMP-0426,2022-07-17,Hire,,IC2,,Sales,,Account Executive,,Account Executive,,EMP-0147
+EMP-0426,2023-11-23,Promotion,IC2,IC3,Sales,Sales,Account Executive,Account Executive,Account Executive,Senior Account Executive,EMP-0147,EMP-0147
+EMP-0427,2022-04-16,Hire,,IC3,,Sales,,Account Executive,,Senior Account Executive,,EMP-0146
+EMP-0427,2023-10-08,Promotion,IC3,IC4,Sales,Sales,Account Executive,Account Executive,Senior Account Executive,Enterprise Account Executive,EMP-0146,EMP-0146
+EMP-0428,2022-08-22,Hire,,IC1,,Sales,,Sales Engineering,,Junior Sales Engineer,,EMP-0143
+EMP-0428,2023-12-11,Lateral Transfer,IC1,IC1,Sales,Sales,Sales Engineering,SDR,Junior Sales Engineer,Sales Development Representative,EMP-0143,EMP-0143
+EMP-0429,2022-07-29,Hire,,IC1,,Product,,Product Management,,Associate Product Manager,,EMP-0149
+EMP-0429,2023-11-29,Promotion,IC1,IC2,Product,Product,Product Management,Product Management,Associate Product Manager,Product Manager,EMP-0149,EMP-0149
+EMP-0430,2025-03-03,Hire,,IC3,,Engineering,,Infrastructure,,Senior Software Engineer,,EMP-0130
+EMP-0431,2021-09-22,Hire,,IC1,,Product,,UX Research,,Associate UX Researcher,,EMP-0149
+EMP-0431,2023-06-27,Promotion,IC1,IC2,Product,Product,UX Research,UX Research,Associate UX Researcher,UX Researcher,EMP-0149,EMP-0149
+EMP-0431,2023-06-27,Lateral Transfer,IC2,IC2,Product,Product,UX Research,Product Management,UX Researcher,Product Manager,EMP-0149,EMP-0149
+EMP-0432,2022-06-14,Hire,,IC2,,Engineering,,Platform,,Software Engineer,,EMP-0158
+EMP-0432,2023-11-06,Promotion,IC2,IC3,Engineering,Engineering,Platform,Platform,Software Engineer,Senior Software Engineer,EMP-0158,EMP-0158
+EMP-0433,2023-07-09,Hire,,IC3,,Engineering,,Data,,Senior Data Engineer,,EMP-0034
+EMP-0434,2021-01-19,Hire,,IC1,,Engineering,,Platform,,Associate Software Engineer,,EMP-0028
+EMP-0434,2023-02-24,Promotion,IC1,IC2,Engineering,Engineering,Platform,Platform,Associate Software Engineer,Software Engineer,EMP-0028,EMP-0028
+EMP-0434,2023-02-24,Manager Change,IC2,IC2,Engineering,Engineering,Platform,Platform,Software Engineer,Software Engineer,EMP-0028,EMP-0165
+EMP-0435,2021-03-23,Hire,,IC2,,Sales,,Sales Engineering,,Sales Engineer,,EMP-0026
+EMP-0435,2023-03-27,Promotion,IC2,IC3,Sales,Sales,Sales Engineering,Sales Engineering,Sales Engineer,Senior Sales Engineer,EMP-0026,EMP-0026
+EMP-0435,2023-03-27,Manager Change,IC3,IC3,Sales,Sales,Sales Engineering,Sales Engineering,Senior Sales Engineer,Senior Sales Engineer,EMP-0026,EMP-0038
+EMP-0436,2022-07-04,Hire,,IC1,,G&A,,IT,,IT Support Specialist,,EMP-0126
+EMP-0437,2022-03-23,Hire,,IC2,,Engineering,,AI/ML,,Software Engineer,,EMP-0044
+EMP-0437,2023-09-26,Promotion,IC2,IC3,Engineering,Engineering,AI/ML,AI/ML,Software Engineer,Senior ML Engineer,EMP-0044,EMP-0044
+EMP-0438,2021-10-14,Hire,,IC3,,Engineering,,Infrastructure,,Senior Software Engineer,,EMP-0023
+EMP-0438,2023-07-08,Manager Change,IC3,IC3,Engineering,Engineering,Infrastructure,Infrastructure,Senior Software Engineer,Senior Software Engineer,EMP-0023,EMP-0130
+EMP-0439,2022-05-25,Hire,,IC2,,Product,,Design,,Product Designer,,EMP-0035
+EMP-0439,2023-10-27,Promotion,IC2,IC3,Product,Product,Design,Design,Product Designer,Senior Product Designer,EMP-0035,EMP-0035
+EMP-0440,2021-10-22,Hire,,IC3,,Customer Success,,Support,,Staff Support Specialist,,EMP-0125
+EMP-0441,2022-05-22,Hire,,IC2,,Sales,,Account Management,,Account Manager,,EMP-0182
+EMP-0441,2023-10-26,Promotion,IC2,IC3,Sales,Sales,Account Management,Account Management,Account Manager,Senior Account Manager,EMP-0182,EMP-0182
+EMP-0442,2021-10-13,Hire,,IC1,,Marketing,,Product Marketing,,Marketing Coordinator,,EMP-0046
+EMP-0442,2023-07-07,Promotion,IC1,IC2,Marketing,Marketing,Product Marketing,Product Marketing,Marketing Coordinator,Product Marketing Manager,EMP-0046,EMP-0046
+EMP-0442,2023-07-07,Manager Change,IC2,IC2,Marketing,Marketing,Product Marketing,Product Marketing,Product Marketing Manager,Product Marketing Manager,EMP-0046,EMP-0164
+EMP-0443,2024-12-11,Hire,,IC2,,Engineering,,AI/ML,,Software Engineer,,EMP-0185
+EMP-0444,2025-02-15,Hire,,IC1,,Product,,UX Research,,Associate UX Researcher,,EMP-0127
+EMP-0445,2022-07-29,Hire,,IC3,,Engineering,,AI/ML,,Senior ML Engineer,,EMP-0185
+EMP-0446,2025-01-29,Hire,,IC1,,Sales,,Sales Engineering,,Junior Sales Engineer,,EMP-0030
+EMP-0446,2025-02-28,Lateral Transfer,IC1,IC1,Sales,Sales,Sales Engineering,SDR,Junior Sales Engineer,Sales Development Representative,EMP-0030,EMP-0030
+EMP-0447,2024-02-03,Hire,,IC1,,People,,HRBPs,,HR Coordinator,,EMP-0178
+EMP-0447,2024-09-01,Lateral Transfer,IC1,IC1,People,People,HRBPs,People Ops,HR Coordinator,People Operations Coordinator,EMP-0178,EMP-0178
+EMP-0448,2022-09-22,Hire,,IC1,,Engineering,,Infrastructure,,Associate Software Engineer,,EMP-0130
+EMP-0449,2025-03-26,Hire,,IC1,,People,,HRBPs,,HR Coordinator,,EMP-0157
+EMP-0449,2025-03-28,Lateral Transfer,IC1,IC1,People,People,HRBPs,Recruiting,HR Coordinator,Recruiting Coordinator,EMP-0157,EMP-0157
+EMP-0450,2022-10-13,Hire,,IC1,,Sales,,Sales Engineering,,Junior Sales Engineer,,EMP-0143
+EMP-0450,2024-01-06,Lateral Transfer,IC1,IC1,Sales,Sales,Sales Engineering,SDR,Junior Sales Engineer,Sales Development Representative,EMP-0143,EMP-0143
+EMP-0451,2022-05-16,Hire,,IC1,,Engineering,,Platform,,Associate Software Engineer,,EMP-0165
+EMP-0451,2023-10-23,Promotion,IC1,IC2,Engineering,Engineering,Platform,Platform,Associate Software Engineer,Software Engineer,EMP-0165,EMP-0165
+EMP-0452,2021-11-06,Hire,,IC3,,G&A,,Facilities,,Senior Facilities Specialist,,EMP-012
+EMP-0452,2023-07-19,Manager Change,IC3,IC3,G&A,G&A,Facilities,Facilities,Senior Facilities Specialist,Senior Facilities Specialist,EMP-012,EMP-0179
+EMP-0453,2022-01-20,Hire,,IC1,,G&A,,IT,,IT Support Specialist,,EMP-012
+EMP-0453,2023-08-26,Promotion,IC1,IC2,G&A,G&A,IT,IT,IT Support Specialist,Systems Administrator,EMP-012,EMP-012
+EMP-0453,2023-08-26,Manager Change,IC2,IC2,G&A,G&A,IT,IT,Systems Administrator,Systems Administrator,EMP-012,EMP-0126
+EMP-0454,2022-03-07,Hire,,IC1,,Engineering,,Infrastructure,,Associate Software Engineer,,EMP-0029
+EMP-0454,2023-09-18,Lateral Transfer,IC1,IC1,Engineering,Engineering,Infrastructure,AI/ML,Associate Software Engineer,Associate Software Engineer,EMP-0029,EMP-0029
+EMP-0455,2024-02-08,Hire,,IC3,,Marketing,,Product Marketing,,Senior Product Marketing Manager,,EMP-0170
+EMP-0455,2024-09-03,Lateral Transfer,IC3,IC3,Marketing,Marketing,Product Marketing,Growth,Senior Product Marketing Manager,Senior Growth Marketing Manager,EMP-0170,EMP-0170
+EMP-0456,2024-10-03,Hire,,IC1,,Engineering,,Platform,,Associate Software Engineer,,EMP-0124
+EMP-0456,2024-12-31,Promotion,IC1,IC2,Engineering,Engineering,Platform,Platform,Associate Software Engineer,Software Engineer,EMP-0124,EMP-0124
+EMP-0457,2022-11-24,Hire,,IC1,,G&A,,Finance,,Financial Analyst I,,EMP-0153
+EMP-0457,2024-01-27,Promotion,IC1,IC2,G&A,G&A,Finance,Finance,Financial Analyst I,Financial Analyst II,EMP-0153,EMP-0153
+EMP-0458,2021-11-12,Hire,,IC2,,Engineering,,Data,,Software Engineer,,EMP-0036
+EMP-0458,2023-07-22,Promotion,IC2,IC3,Engineering,Engineering,Data,Data,Software Engineer,Senior Data Engineer,EMP-0036,EMP-0036
+EMP-0459,2022-08-29,Hire,,IC3,,Engineering,,Platform,,Senior Software Engineer,,EMP-0124
+EMP-0460,2021-12-25,Hire,,IC2,,Engineering,,Infrastructure,,Software Engineer,,EMP-0165
+EMP-0460,2023-08-13,Promotion,IC2,IC3,Engineering,Engineering,Infrastructure,Infrastructure,Software Engineer,Senior Software Engineer,EMP-0165,EMP-0165
+EMP-0460,2023-08-13,Lateral Transfer,IC3,IC3,Engineering,Engineering,Infrastructure,Platform,Senior Software Engineer,Senior Software Engineer,EMP-0165,EMP-0165
+EMP-0461,2022-04-09,Hire,,IC2,,People,,DEIB,,DEIB Specialist,,EMP-0157
+EMP-0461,2023-10-04,Lateral Transfer,IC2,IC2,People,People,DEIB,Recruiting,DEIB Specialist,Recruiter,EMP-0157,EMP-0157
+EMP-0462,2022-05-19,Hire,,IC1,,Marketing,,Content,,Marketing Coordinator,,EMP-0156
+EMP-0463,2021-04-12,Hire,,IC3,,Marketing,,Brand,,Senior Brand Manager,,EMP-0025
+EMP-0463,2023-04-06,Promotion,IC3,IC4,Marketing,Marketing,Brand,Brand,Senior Brand Manager,Staff Brand Manager,EMP-0025,EMP-0025
+EMP-0463,2023-04-06,Manager Change,IC4,IC4,Marketing,Marketing,Brand,Brand,Staff Brand Manager,Staff Brand Manager,EMP-0025,EMP-0156
+EMP-0464,2021-10-02,Hire,,IC3,,Engineering,,Data,,Senior Data Engineer,,EMP-0036
+EMP-0464,2023-07-02,Promotion,IC3,IC4,Engineering,Engineering,Data,Data,Senior Data Engineer,Staff Data Engineer,EMP-0036,EMP-0036
+EMP-0465,2023-10-18,Hire,,IC2,,Customer Success,,Support,,Senior Support Specialist,,EMP-0125
+EMP-0466,2022-10-21,Hire,,IC3,,Sales,,Account Executive,,Senior Account Executive,,EMP-0146
+EMP-0467,2022-06-11,Hire,,IC3,,Customer Success,,Support,,Staff Support Specialist,,EMP-0125
+EMP-0468,2024-05-03,Hire,,IC2,,Engineering,,Infrastructure,,Software Engineer,,EMP-0176
+EMP-0469,2022-05-25,Hire,,IC3,,Customer Success,,Implementation,,Senior Implementation Specialist,,EMP-0037
+EMP-0470,2022-05-06,Hire,,IC1,,Product,,UX Research,,Associate UX Researcher,,EMP-0127
+EMP-0470,2023-10-18,Promotion,IC1,IC2,Product,Product,UX Research,UX Research,Associate UX Researcher,UX Researcher,EMP-0127,EMP-0127
+EMP-0471,2022-08-14,Hire,,IC1,,Engineering,,Infrastructure,,Associate Software Engineer,,EMP-0176
+EMP-0472,2022-08-11,Hire,,IC1,,Sales,,SDR,,Sales Development Representative,,EMP-0143
+EMP-0472,2023-12-05,Promotion,IC1,IC2,Sales,Sales,SDR,SDR,Sales Development Representative,Senior SDR,EMP-0143,EMP-0143
+EMP-0473,2021-09-15,Hire,,IC2,,People,,HRBPs,,HR Business Partner,,EMP-0025
+EMP-0473,2023-06-23,Promotion,IC2,IC3,People,People,HRBPs,HRBPs,HR Business Partner,Senior HRBP,EMP-0025,EMP-0025
+EMP-0474,2022-02-08,Hire,,IC1,,Engineering,,Platform,,Associate Software Engineer,,EMP-0158
+EMP-0474,2023-09-04,Promotion,IC1,IC2,Engineering,Engineering,Platform,Platform,Associate Software Engineer,Software Engineer,EMP-0158,EMP-0158
+EMP-0475,2021-04-06,Hire,,IC2,,Engineering,,Infrastructure,,Software Engineer,,EMP-0028
+EMP-0475,2023-04-03,Promotion,IC2,IC3,Engineering,Engineering,Infrastructure,Infrastructure,Software Engineer,Senior Software Engineer,EMP-0028,EMP-0028
+EMP-0475,2023-04-03,Manager Change,IC3,IC3,Engineering,Engineering,Infrastructure,Infrastructure,Senior Software Engineer,Senior Software Engineer,EMP-0028,EMP-0138
+EMP-0476,2023-09-05,Hire,,IC2,,Marketing,,Brand,,Brand Manager,,EMP-0156
+EMP-0477,2021-06-07,Hire,,IC3,,Marketing,,Content,,Senior Content Marketing Manager,,EMP-0046
+EMP-0477,2023-05-04,Manager Change,IC3,IC3,Marketing,Marketing,Content,Content,Senior Content Marketing Manager,Senior Content Marketing Manager,EMP-0046,EMP-0156
+EMP-0478,2022-03-22,Hire,,IC3,,Engineering,,Platform,,Senior Software Engineer,,EMP-0158
+EMP-0478,2023-09-25,Promotion,IC3,IC4,Engineering,Engineering,Platform,Platform,Senior Software Engineer,Staff Software Engineer,EMP-0158,EMP-0158
+EMP-0479,2021-07-23,Hire,,IC3,,Engineering,,Platform,,Senior Software Engineer,,EMP-0044
+EMP-0479,2023-05-27,Promotion,IC3,IC4,Engineering,Engineering,Platform,Platform,Senior Software Engineer,Staff Software Engineer,EMP-0044,EMP-0044
+EMP-0479,2023-05-27,Manager Change,IC4,IC4,Engineering,Engineering,Platform,Platform,Staff Software Engineer,Staff Software Engineer,EMP-0044,EMP-0165
+EMP-0480,2022-08-13,Hire,,IC1,,Product,,Design,,Associate Product Designer,,EMP-0035
+EMP-0480,2023-12-06,Promotion,IC1,IC2,Product,Product,Design,Design,Associate Product Designer,Product Designer,EMP-0035,EMP-0035
+EMP-0481,2021-09-22,Hire,,IC1,,Sales,,SDR,,Sales Development Representative,,EMP-0030
+EMP-0481,2023-06-27,Promotion,IC1,IC2,Sales,Sales,SDR,SDR,Sales Development Representative,Senior SDR,EMP-0030,EMP-0030
+EMP-0482,2021-12-28,Hire,,IC2,,Marketing,,Product Marketing,,Product Marketing Manager,,EMP-0170
+EMP-0482,2023-08-14,Promotion,IC2,IC3,Marketing,Marketing,Product Marketing,Product Marketing,Product Marketing Manager,Senior Product Marketing Manager,EMP-0170,EMP-0170
+EMP-0482,2023-08-14,Lateral Transfer,IC3,IC3,Marketing,Marketing,Product Marketing,Growth,Senior Product Marketing Manager,Senior Growth Marketing Manager,EMP-0170,EMP-0170
+EMP-0483,2022-01-11,Hire,,IC1,,Engineering,,Platform,,Associate Software Engineer,,EMP-0124
+EMP-0483,2023-08-21,Promotion,IC1,IC2,Engineering,Engineering,Platform,Platform,Associate Software Engineer,Software Engineer,EMP-0124,EMP-0124
+EMP-0484,2021-02-14,Hire,,IC3,,Engineering,,Infrastructure,,Senior Software Engineer,,EMP-0028
+EMP-0484,2023-03-09,Promotion,IC3,IC4,Engineering,Engineering,Infrastructure,Infrastructure,Senior Software Engineer,Staff Software Engineer,EMP-0028,EMP-0028
+EMP-0484,2023-03-09,Manager Change,IC4,IC4,Engineering,Engineering,Infrastructure,Infrastructure,Staff Software Engineer,Staff Software Engineer,EMP-0028,EMP-0176
+EMP-0485,2022-08-24,Hire,,IC2,,Sales,,SDR,,Senior SDR,,EMP-0030
+EMP-0486,2021-11-14,Hire,,IC3,,Sales,,Account Management,,Senior Account Manager,,EMP-0169
+EMP-0486,2023-07-23,Lateral Transfer,IC3,IC3,Sales,Sales,Account Management,Account Executive,Senior Account Manager,Senior Account Executive,EMP-0169,EMP-0169
+EMP-0487,2021-06-05,Hire,,IC2,,Marketing,,Growth,,Growth Marketing Manager,,EMP-0046
+EMP-0487,2023-05-03,Promotion,IC2,IC3,Marketing,Marketing,Growth,Growth,Growth Marketing Manager,Senior Growth Marketing Manager,EMP-0046,EMP-0046
+EMP-0487,2023-05-03,Manager Change,IC3,IC3,Marketing,Marketing,Growth,Growth,Senior Growth Marketing Manager,Senior Growth Marketing Manager,EMP-0046,EMP-0170
+EMP-0488,2022-01-12,Hire,,IC1,,Engineering,,Data,,Associate Software Engineer,,EMP-0162
+EMP-0488,2023-08-22,Promotion,IC1,IC2,Engineering,Engineering,Data,Data,Associate Software Engineer,Software Engineer,EMP-0162,EMP-0162
+EMP-0489,2022-04-23,Hire,,IC2,,Engineering,,AI/ML,,Software Engineer,,EMP-0185
+EMP-0489,2023-10-11,Promotion,IC2,IC3,Engineering,Engineering,AI/ML,AI/ML,Software Engineer,Senior ML Engineer,EMP-0185,EMP-0185
+EMP-0490,2024-12-20,Hire,,IC2,,Engineering,,Data,,Software Engineer,,EMP-0034
+EMP-0491,2022-01-04,Hire,,IC3,,Sales,,Sales Engineering,,Senior Sales Engineer,,EMP-0038
+EMP-0491,2023-08-18,Lateral Transfer,IC3,IC3,Sales,Sales,Sales Engineering,Account Executive,Senior Sales Engineer,Senior Account Executive,EMP-0038,EMP-0038
+EMP-0491,2023-08-18,Manager Change,IC3,IC3,Sales,Sales,Account Executive,Account Executive,Senior Account Executive,Senior Account Executive,EMP-0038,EMP-0147
+EMP-0492,2022-05-21,Hire,,IC3,,Engineering,,AI/ML,,Senior ML Engineer,,EMP-0029
+EMP-0492,2023-10-25,Promotion,IC3,IC4,Engineering,Engineering,AI/ML,AI/ML,Senior ML Engineer,Staff ML Engineer,EMP-0029,EMP-0029
+EMP-0493,2023-11-28,Hire,,IC2,,Engineering,,Infrastructure,,Software Engineer,,EMP-0138
+EMP-0494,2024-08-23,Hire,,IC1,,G&A,,Finance,,Financial Analyst I,,EMP-0153
+EMP-0495,2025-02-16,Hire,,IC1,,Marketing,,Product Marketing,,Marketing Coordinator,,EMP-0170
+EMP-0495,2025-03-09,Lateral Transfer,IC1,IC1,Marketing,Marketing,Product Marketing,Growth,Marketing Coordinator,Marketing Coordinator,EMP-0170,EMP-0170
+EMP-0496,2021-08-04,Hire,,IC1,,Marketing,,Content,,Marketing Coordinator,,EMP-0046
+EMP-0496,2023-06-02,Promotion,IC1,IC2,Marketing,Marketing,Content,Content,Marketing Coordinator,Content Marketing Manager,EMP-0046,EMP-0046
+EMP-0496,2023-06-02,Lateral Transfer,IC2,IC2,Marketing,Marketing,Content,Growth,Content Marketing Manager,Growth Marketing Manager,EMP-0046,EMP-0046
+EMP-0496,2023-06-02,Manager Change,IC2,IC2,Marketing,Marketing,Growth,Growth,Growth Marketing Manager,Growth Marketing Manager,EMP-0046,EMP-0170
+EMP-0497,2022-11-28,Hire,,IC1,,Engineering,,Platform,,Associate Software Engineer,,EMP-0158
+EMP-0497,2024-01-29,Promotion,IC1,IC2,Engineering,Engineering,Platform,Platform,Associate Software Engineer,Software Engineer,EMP-0158,EMP-0158
+EMP-0498,2022-12-17,Hire,,IC1,,Engineering,,AI/ML,,Associate Software Engineer,,EMP-0029
+EMP-0498,2024-02-07,Promotion,IC1,IC2,Engineering,Engineering,AI/ML,AI/ML,Associate Software Engineer,Software Engineer,EMP-0029,EMP-0029
+EMP-0499,2022-06-21,Hire,,IC3,,Engineering,,AI/ML,,Senior ML Engineer,,EMP-0044
+EMP-0500,2021-07-20,Hire,,IC1,,Customer Success,,Support,,Customer Support Specialist,,EMP-0139
+EMP-0500,2023-05-26,Promotion,IC1,IC2,Customer Success,Customer Success,Support,Support,Customer Support Specialist,Senior Support Specialist,EMP-0139,EMP-0139
+EMP-0500,2023-05-26,Manager Change,IC2,IC2,Customer Success,Customer Success,Support,Support,Senior Support Specialist,Senior Support Specialist,EMP-0139,EMP-0125
+EMP-0501,2022-05-07,Hire,,IC3,,Engineering,,AI/ML,,Senior ML Engineer,,EMP-0044
+EMP-0501,2023-10-18,Promotion,IC3,IC4,Engineering,Engineering,AI/ML,AI/ML,Senior ML Engineer,Staff ML Engineer,EMP-0044,EMP-0044
+EMP-0502,2021-04-01,Hire,,IC1,,Engineering,,Infrastructure,,Associate Software Engineer,,EMP-0023
+EMP-0502,2023-04-01,Promotion,IC1,IC2,Engineering,Engineering,Infrastructure,Infrastructure,Associate Software Engineer,Software Engineer,EMP-0023,EMP-0023
+EMP-0502,2023-04-01,Manager Change,IC2,IC2,Engineering,Engineering,Infrastructure,Infrastructure,Software Engineer,Software Engineer,EMP-0023,EMP-0138
+EMP-0503,2022-06-29,Hire,,IC1,,Engineering,,Data,,Associate Software Engineer,,EMP-0036
+EMP-0504,2021-04-15,Hire,,IC3,,Sales,,Account Management,,Senior Account Manager,,EMP-0030
+EMP-0504,2023-04-08,Lateral Transfer,IC3,IC3,Sales,Sales,Account Management,Account Executive,Senior Account Manager,Senior Account Executive,EMP-0030,EMP-0030
+EMP-0504,2023-04-08,Manager Change,IC3,IC3,Sales,Sales,Account Executive,Account Executive,Senior Account Executive,Senior Account Executive,EMP-0030,EMP-0146
+EMP-0505,2024-01-03,Hire,,IC3,,G&A,,IT,,Senior Systems Administrator,,EMP-0126
+EMP-0506,2021-05-29,Hire,,IC2,,Product,,Product Management,,Product Manager,,EMP-019
+EMP-0506,2023-04-30,Promotion,IC2,IC3,Product,Product,Product Management,Product Management,Product Manager,Senior Product Manager,EMP-019,EMP-019
+EMP-0506,2023-04-30,Manager Change,IC3,IC3,Product,Product,Product Management,Product Management,Senior Product Manager,Senior Product Manager,EMP-019,EMP-0149
+EMP-0507,2021-09-21,Hire,,IC2,,People,,People Ops,,People Operations Specialist,,EMP-0025
+EMP-0507,2023-06-26,Promotion,IC2,IC3,People,People,People Ops,People Ops,People Operations Specialist,Senior People Operations Specialist,EMP-0025,EMP-0025
+EMP-0507,2023-06-26,Manager Change,IC3,IC3,People,People,People Ops,People Ops,Senior People Operations Specialist,Senior People Operations Specialist,EMP-0025,EMP-0178
+EMP-0508,2022-10-27,Hire,,IC1,,G&A,,Legal,,Legal Coordinator,,EMP-0126
+EMP-0508,2024-01-13,Lateral Transfer,IC1,IC1,G&A,G&A,Legal,IT,Legal Coordinator,IT Support Specialist,EMP-0126,EMP-0126
+EMP-0509,2022-09-14,Hire,,IC2,,Engineering,,Platform,,Software Engineer,,EMP-0142
+EMP-0509,2023-12-22,Promotion,IC2,IC3,Engineering,Engineering,Platform,Platform,Software Engineer,Senior Software Engineer,EMP-0142,EMP-0142
+EMP-0510,2024-09-06,Hire,,IC2,,Engineering,,Infrastructure,,Software Engineer,,EMP-0130
+EMP-0511,2022-08-02,Hire,,IC3,,Engineering,,Platform,,Senior Software Engineer,,EMP-0142
+EMP-0511,2023-12-01,Promotion,IC3,IC4,Engineering,Engineering,Platform,Platform,Senior Software Engineer,Staff Software Engineer,EMP-0142,EMP-0142
+EMP-0512,2021-06-16,Hire,,IC2,,People,,Total Rewards,,Compensation Analyst,,EMP-0025
+EMP-0512,2023-05-09,Promotion,IC2,IC3,People,People,Total Rewards,Total Rewards,Compensation Analyst,Senior Compensation Analyst,EMP-0025,EMP-0025
+EMP-0512,2023-05-09,Lateral Transfer,IC3,IC3,People,People,Total Rewards,Recruiting,Senior Compensation Analyst,Senior Recruiter,EMP-0025,EMP-0025
+EMP-0512,2023-05-09,Manager Change,IC3,IC3,People,People,Recruiting,Recruiting,Senior Recruiter,Senior Recruiter,EMP-0025,EMP-0157
+EMP-0513,2021-12-22,Hire,,IC3,,G&A,,IT,,Senior Systems Administrator,,EMP-012
+EMP-0513,2023-08-11,Lateral Transfer,IC3,IC3,G&A,G&A,IT,Finance,Senior Systems Administrator,Senior Financial Analyst,EMP-012,EMP-012
+EMP-0513,2023-08-11,Manager Change,IC3,IC3,G&A,G&A,Finance,Finance,Senior Financial Analyst,Senior Financial Analyst,EMP-012,EMP-0153
+EMP-0514,2022-06-02,Hire,,IC1,,Sales,,Sales Engineering,,Junior Sales Engineer,,EMP-0143
+EMP-0514,2023-10-31,Lateral Transfer,IC1,IC1,Sales,Sales,Sales Engineering,SDR,Junior Sales Engineer,Sales Development Representative,EMP-0143,EMP-0143
+EMP-0515,2023-08-08,Hire,,IC2,,Customer Success,,Implementation,,Implementation Specialist,,EMP-0037
+EMP-0516,2022-09-22,Hire,,IC1,,Engineering,,AI/ML,,Associate Software Engineer,,EMP-0044
+EMP-0516,2023-12-26,Promotion,IC1,IC2,Engineering,Engineering,AI/ML,AI/ML,Associate Software Engineer,Software Engineer,EMP-0044,EMP-0044
+EMP-0517,2023-10-17,Hire,,IC3,,Engineering,,Infrastructure,,Senior Software Engineer,,EMP-0138
+EMP-0518,2025-02-22,Hire,,IC3,,Engineering,,Platform,,Senior Software Engineer,,EMP-0158
+EMP-0519,2022-12-02,Hire,,IC2,,G&A,,Finance,,Financial Analyst II,,EMP-0153
+EMP-0519,2024-01-31,Promotion,IC2,IC3,G&A,G&A,Finance,Finance,Financial Analyst II,Senior Financial Analyst,EMP-0153,EMP-0153
+EMP-0520,2022-05-29,Hire,,IC2,,G&A,,Facilities,,Facilities Specialist,,EMP-0153
+EMP-0521,2023-09-27,Hire,,IC1,,G&A,,Finance,,Financial Analyst I,,EMP-0153
+EMP-0521,2024-06-28,Promotion,IC1,IC2,G&A,G&A,Finance,Finance,Financial Analyst I,Financial Analyst II,EMP-0153,EMP-0153
+EMP-0522,2024-10-27,Hire,,IC2,,Engineering,,Data,,Software Engineer,,EMP-0036
+EMP-0522,2025-01-12,Promotion,IC2,IC3,Engineering,Engineering,Data,Data,Software Engineer,Senior Data Engineer,EMP-0036,EMP-0036
+EMP-0523,2022-01-06,Hire,,IC1,,Engineering,,Data,,Associate Software Engineer,,EMP-0036
+EMP-0523,2023-08-19,Promotion,IC1,IC2,Engineering,Engineering,Data,Data,Associate Software Engineer,Software Engineer,EMP-0036,EMP-0036
+EMP-0524,2022-11-03,Hire,,IC3,,People,,L&D,,Senior L&D Specialist,,EMP-0025
+EMP-0525,2021-06-25,Hire,,IC3,,Sales,,Sales Engineering,,Senior Sales Engineer,,EMP-0038
+EMP-0525,2023-05-13,Promotion,IC3,IC4,Sales,Sales,Sales Engineering,Sales Engineering,Senior Sales Engineer,Staff Sales Engineer,EMP-0038,EMP-0038
+EMP-0526,2021-08-27,Hire,,IC3,,Engineering,,Infrastructure,,Senior Software Engineer,,EMP-0176
+EMP-0526,2023-06-14,Promotion,IC3,IC4,Engineering,Engineering,Infrastructure,Infrastructure,Senior Software Engineer,Staff Software Engineer,EMP-0176,EMP-0176
+EMP-0527,2022-11-03,Hire,,IC2,,Marketing,,Content,,Content Marketing Manager,,EMP-0156
+EMP-0528,2024-10-14,Hire,,IC2,,Product,,UX Research,,UX Researcher,,EMP-0149
+EMP-0528,2025-01-06,Promotion,IC2,IC3,Product,Product,UX Research,UX Research,UX Researcher,Senior UX Researcher,EMP-0149,EMP-0149
+EMP-0528,2025-01-06,Lateral Transfer,IC3,IC3,Product,Product,UX Research,Product Management,Senior UX Researcher,Senior Product Manager,EMP-0149,EMP-0149
+EMP-0529,2023-08-18,Hire,,IC3,,Engineering,,Platform,,Senior Software Engineer,,EMP-0142
+EMP-0530,2021-12-04,Hire,,IC1,,Sales,,Account Management,,Junior Account Manager,,EMP-0146
+EMP-0530,2023-08-02,Lateral Transfer,IC1,IC1,Sales,Sales,Account Management,Account Executive,Junior Account Manager,Junior Account Executive,EMP-0146,EMP-0146
+EMP-0531,2022-09-08,Hire,,IC1,,Product,,Design,,Associate Product Designer,,EMP-0035
+EMP-0531,2023-12-19,Promotion,IC1,IC2,Product,Product,Design,Design,Associate Product Designer,Product Designer,EMP-0035,EMP-0035
+EMP-0532,2021-10-23,Hire,,IC3,,G&A,,Legal,,Corporate Counsel,,EMP-012
+EMP-0532,2023-07-12,Lateral Transfer,IC3,IC3,G&A,G&A,Legal,Finance,Corporate Counsel,Senior Financial Analyst,EMP-012,EMP-012
+EMP-0532,2023-07-12,Manager Change,IC3,IC3,G&A,G&A,Finance,Finance,Senior Financial Analyst,Senior Financial Analyst,EMP-012,EMP-0153
+EMP-0533,2021-11-07,Hire,,IC1,,Customer Success,,Implementation,,Junior Implementation Specialist,,EMP-0037
+EMP-0534,2022-03-15,Hire,,IC2,,Sales,,Account Management,,Account Manager,,EMP-0030
+EMP-0534,2023-09-22,Promotion,IC2,IC3,Sales,Sales,Account Management,Account Management,Account Manager,Senior Account Manager,EMP-0030,EMP-0030
+EMP-0534,2023-09-22,Manager Change,IC3,IC3,Sales,Sales,Account Management,Account Management,Senior Account Manager,Senior Account Manager,EMP-0030,EMP-0182
+EMP-0535,2022-02-17,Hire,,IC1,,Engineering,,Infrastructure,,Associate Software Engineer,,EMP-0165
+EMP-0535,2023-09-09,Promotion,IC1,IC2,Engineering,Engineering,Infrastructure,Infrastructure,Associate Software Engineer,Software Engineer,EMP-0165,EMP-0165
+EMP-0535,2023-09-09,Lateral Transfer,IC2,IC2,Engineering,Engineering,Infrastructure,Platform,Software Engineer,Software Engineer,EMP-0165,EMP-0165
+EMP-0536,2022-05-29,Hire,,IC1,,Product,,UX Research,,Associate UX Researcher,,EMP-0035
+EMP-0536,2023-10-29,Lateral Transfer,IC1,IC1,Product,Product,UX Research,Design,Associate UX Researcher,Associate Product Designer,EMP-0035,EMP-0035
+EMP-0537,2022-01-20,Hire,,IC2,,Customer Success,,Support,,Senior Support Specialist,,EMP-0125
+EMP-0538,2024-04-01,Hire,,IC3,,Marketing,,Product Marketing,,Senior Product Marketing Manager,,EMP-0170
+EMP-0538,2024-09-30,Lateral Transfer,IC3,IC3,Marketing,Marketing,Product Marketing,Growth,Senior Product Marketing Manager,Senior Growth Marketing Manager,EMP-0170,EMP-0170
+EMP-0539,2022-03-03,Hire,,IC3,,G&A,,Finance,,Senior Financial Analyst,,EMP-012
+EMP-0539,2023-09-16,Promotion,IC3,IC4,G&A,G&A,Finance,Finance,Senior Financial Analyst,Staff Financial Analyst,EMP-012,EMP-012
+EMP-0539,2023-09-16,Manager Change,IC4,IC4,G&A,G&A,Finance,Finance,Staff Financial Analyst,Staff Financial Analyst,EMP-012,EMP-0153
+EMP-0540,2024-06-18,Hire,,IC1,,G&A,,Finance,,Financial Analyst I,,EMP-0153
+EMP-0540,2024-11-08,Promotion,IC1,IC2,G&A,G&A,Finance,Finance,Financial Analyst I,Financial Analyst II,EMP-0153,EMP-0153
+EMP-0541,2021-09-18,Hire,,IC3,,Engineering,,Infrastructure,,Senior Software Engineer,,EMP-0176
+EMP-0542,2022-01-22,Hire,,IC2,,People,,Total Rewards,,Compensation Analyst,,EMP-0025
+EMP-0542,2023-08-27,Promotion,IC2,IC3,People,People,Total Rewards,Total Rewards,Compensation Analyst,Senior Compensation Analyst,EMP-0025,EMP-0025
+EMP-0542,2023-08-27,Manager Change,IC3,IC3,People,People,Total Rewards,Total Rewards,Senior Compensation Analyst,Senior Compensation Analyst,EMP-0025,EMP-0178
+EMP-0543,2022-03-03,Hire,,IC2,,G&A,,Legal,,Paralegal,,EMP-012
+EMP-0543,2023-09-16,Promotion,IC2,IC3,G&A,G&A,Legal,Legal,Paralegal,Corporate Counsel,EMP-012,EMP-012
+EMP-0543,2023-09-16,Manager Change,IC3,IC3,G&A,G&A,Legal,Legal,Corporate Counsel,Corporate Counsel,EMP-012,EMP-0179
+EMP-0544,2022-08-05,Hire,,IC1,,Sales,,Account Executive,,Junior Account Executive,,EMP-0169
+EMP-0544,2023-12-02,Promotion,IC1,IC2,Sales,Sales,Account Executive,Account Executive,Junior Account Executive,Account Executive,EMP-0169,EMP-0169
+EMP-0545,2021-04-14,Hire,,IC2,,Product,,Design,,Product Designer,,EMP-0035
+EMP-0545,2023-04-07,Promotion,IC2,IC3,Product,Product,Design,Design,Product Designer,Senior Product Designer,EMP-0035,EMP-0035
+EMP-0546,2021-02-14,Hire,,IC2,,Customer Success,,Implementation,,Implementation Specialist,,EMP-0022
+EMP-0546,2023-03-09,Lateral Transfer,IC2,IC2,Customer Success,Customer Success,Implementation,CSM,Implementation Specialist,Customer Success Manager,EMP-0022,EMP-0022
+EMP-0546,2023-03-09,Manager Change,IC2,IC2,Customer Success,Customer Success,CSM,CSM,Customer Success Manager,Customer Success Manager,EMP-0022,EMP-0144
+EMP-0547,2022-01-23,Hire,,IC1,,People,,HRBPs,,HR Coordinator,,EMP-0157
+EMP-0547,2023-08-27,Promotion,IC1,IC2,People,People,HRBPs,HRBPs,HR Coordinator,HR Business Partner,EMP-0157,EMP-0157
+EMP-0547,2023-08-27,Lateral Transfer,IC2,IC2,People,People,HRBPs,Recruiting,HR Business Partner,Recruiter,EMP-0157,EMP-0157
+EMP-0548,2021-09-29,Hire,,IC3,,Sales,,Account Management,,Senior Account Manager,,EMP-0146
+EMP-0548,2023-06-30,Lateral Transfer,IC3,IC3,Sales,Sales,Account Management,Account Executive,Senior Account Manager,Senior Account Executive,EMP-0146,EMP-0146
+EMP-0549,2022-02-17,Hire,,IC2,,Sales,,SDR,,Senior SDR,,EMP-0030
+EMP-0550,2021-07-05,Hire,,IC1,,Engineering,,AI/ML,,Associate Software Engineer,,EMP-0029
+EMP-0550,2023-05-18,Promotion,IC1,IC2,Engineering,Engineering,AI/ML,AI/ML,Associate Software Engineer,Software Engineer,EMP-0029,EMP-0029
+EMP-0550,2023-05-18,Manager Change,IC2,IC2,Engineering,Engineering,AI/ML,AI/ML,Software Engineer,Software Engineer,EMP-0029,EMP-0185
+EMP-0551,2022-02-11,Hire,,IC3,,People,,Total Rewards,,Senior Compensation Analyst,,EMP-0025
+EMP-0551,2023-09-06,Promotion,IC3,IC4,People,People,Total Rewards,Total Rewards,Senior Compensation Analyst,Compensation Manager (IC track),EMP-0025,EMP-0025
+EMP-0552,2022-04-30,Hire,,IC2,,People,,Recruiting,,Recruiter,,EMP-0157
+EMP-0552,2023-10-15,Promotion,IC2,IC3,People,People,Recruiting,Recruiting,Recruiter,Senior Recruiter,EMP-0157,EMP-0157
+EMP-0553,2022-11-21,Hire,,IC3,,Sales,,Sales Engineering,,Senior Sales Engineer,,EMP-0038
+EMP-0554,2021-08-07,Hire,,IC1,,Customer Success,,CSM,,Junior Customer Success Manager,,EMP-0139
+EMP-0554,2023-06-04,Promotion,IC1,IC2,Customer Success,Customer Success,CSM,CSM,Junior Customer Success Manager,Customer Success Manager,EMP-0139,EMP-0139
+EMP-0555,2022-04-29,Hire,,IC2,,Marketing,,Product Marketing,,Product Marketing Manager,,EMP-0164
+EMP-0555,2023-10-14,Promotion,IC2,IC3,Marketing,Marketing,Product Marketing,Product Marketing,Product Marketing Manager,Senior Product Marketing Manager,EMP-0164,EMP-0164
+EMP-0556,2022-06-27,Hire,,IC3,,Product,,Product Management,,Senior Product Manager,,EMP-0149
+EMP-0556,2023-11-13,Promotion,IC3,IC4,Product,Product,Product Management,Product Management,Senior Product Manager,Staff Product Manager,EMP-0149,EMP-0149
+EMP-0557,2022-04-06,Hire,,IC1,,G&A,,Facilities,,Office Coordinator,,EMP-012
+EMP-0557,2023-10-03,Promotion,IC1,IC2,G&A,G&A,Facilities,Facilities,Office Coordinator,Facilities Specialist,EMP-012,EMP-012
+EMP-0557,2023-10-03,Manager Change,IC2,IC2,G&A,G&A,Facilities,Facilities,Facilities Specialist,Facilities Specialist,EMP-012,EMP-0153
+EMP-0558,2022-06-28,Hire,,IC3,,Engineering,,Infrastructure,,Senior Software Engineer,,EMP-0138
+EMP-0559,2024-09-15,Hire,,IC1,,Sales,,SDR,,Sales Development Representative,,EMP-0143
+EMP-0560,2021-09-18,Hire,,IC2,,People,,HRBPs,,HR Business Partner,,EMP-0025
+EMP-0560,2023-06-25,Promotion,IC2,IC3,People,People,HRBPs,HRBPs,HR Business Partner,Senior HRBP,EMP-0025,EMP-0025
+EMP-0561,2021-07-14,Hire,,IC1,,Engineering,,AI/ML,,Associate Software Engineer,,EMP-0029
+EMP-0561,2023-05-23,Promotion,IC1,IC2,Engineering,Engineering,AI/ML,AI/ML,Associate Software Engineer,Software Engineer,EMP-0029,EMP-0029
+EMP-0562,2021-10-02,Hire,,IC1,,Sales,,Account Executive,,Junior Account Executive,,EMP-0026
+EMP-0562,2023-07-02,Promotion,IC1,IC2,Sales,Sales,Account Executive,Account Executive,Junior Account Executive,Account Executive,EMP-0026,EMP-0026
+EMP-0562,2023-07-02,Manager Change,IC2,IC2,Sales,Sales,Account Executive,Account Executive,Account Executive,Account Executive,EMP-0026,EMP-0147
+EMP-0563,2021-12-08,Hire,,IC3,,Engineering,,AI/ML,,Senior ML Engineer,,EMP-0185
+EMP-0563,2023-08-04,Promotion,IC3,IC4,Engineering,Engineering,AI/ML,AI/ML,Senior ML Engineer,Staff ML Engineer,EMP-0185,EMP-0185
+EMP-0564,2022-04-18,Hire,,IC3,,Sales,,Account Management,,Senior Account Manager,,EMP-0186
+EMP-0565,2021-08-28,Hire,,IC2,,G&A,,IT,,Systems Administrator,,EMP-012
+EMP-0565,2023-06-14,Promotion,IC2,IC3,G&A,G&A,IT,IT,Systems Administrator,Senior Systems Administrator,EMP-012,EMP-012
+EMP-0565,2023-06-14,Manager Change,IC3,IC3,G&A,G&A,IT,IT,Senior Systems Administrator,Senior Systems Administrator,EMP-012,EMP-0126
+EMP-0566,2024-06-24,Hire,,IC3,,Customer Success,,CSM,,Senior CSM,,EMP-0139
+EMP-0567,2025-02-18,Hire,,IC2,,Sales,,Account Management,,Account Manager,,EMP-0182
+EMP-0568,2021-12-13,Hire,,IC1,,Engineering,,Infrastructure,,Associate Software Engineer,,EMP-0130
+EMP-0568,2023-08-07,Promotion,IC1,IC2,Engineering,Engineering,Infrastructure,Infrastructure,Associate Software Engineer,Software Engineer,EMP-0130,EMP-0130
+EMP-0569,2022-07-20,Hire,,IC3,,Engineering,,Infrastructure,,Senior Software Engineer,,EMP-0176
+EMP-0570,2021-06-11,Hire,,IC3,,Sales,,Account Executive,,Senior Account Executive,,EMP-0026
+EMP-0570,2022-07-14,Manager Change,IC3,IC3,Sales,Sales,Account Executive,Account Executive,Senior Account Executive,Senior Account Executive,EMP-0026,EMP-0169
+EMP-0571,2022-07-17,Hire,,IC1,,Product,,UX Research,,Associate UX Researcher,,EMP-0127
+EMP-0572,2022-06-12,Hire,,IC1,,Sales,,Account Executive,,Junior Account Executive,,EMP-0169
+EMP-0573,2021-07-31,Hire,,IC2,,Engineering,,AI/ML,,Software Engineer,,EMP-0044
+EMP-0574,2022-05-08,Hire,,IC1,,G&A,,Legal,,Legal Coordinator,,EMP-0179
+EMP-0575,2021-03-21,Hire,,IC1,,Product,,UX Research,,Associate UX Researcher,,EMP-019
+EMP-0575,2021-10-17,Manager Change,IC1,IC1,Product,Product,UX Research,UX Research,Associate UX Researcher,Associate UX Researcher,EMP-019,EMP-0127
+EMP-0576,2022-07-01,Hire,,IC3,,Sales,,Account Management,,Senior Account Manager,,EMP-0186
+EMP-0577,2021-02-18,Hire,,IC1,,Engineering,,AI/ML,,Associate Software Engineer,,EMP-0029
+EMP-0578,2021-07-24,Hire,,IC3,,Sales,,SDR,,Staff SDR,,EMP-0030
+EMP-0578,2022-04-26,Manager Change,IC3,IC3,Sales,Sales,SDR,SDR,Staff SDR,Staff SDR,EMP-0030,EMP-0143
+EMP-0579,2022-09-15,Hire,,IC3,,Engineering,,Data,,Senior Data Engineer,,EMP-0181
+EMP-0580,2021-08-22,Hire,,IC3,,Sales,,SDR,,Staff SDR,,EMP-0030
+EMP-0581,2022-09-24,Hire,,IC1,,People,,Total Rewards,,Total Rewards Coordinator,,EMP-0157
+EMP-0582,2021-10-28,Hire,,IC3,,Sales,,Sales Engineering,,Senior Sales Engineer,,EMP-0038
+EMP-0583,2021-04-28,Hire,,IC3,,Marketing,,Brand,,Senior Brand Manager,,EMP-0038
+EMP-0583,2022-08-05,Manager Change,IC3,IC3,Marketing,Marketing,Brand,Brand,Senior Brand Manager,Senior Brand Manager,EMP-0038,EMP-0164
+EMP-0584,2021-10-31,Hire,,IC1,,Sales,,SDR,,Sales Development Representative,,EMP-0030
+EMP-0585,2022-03-31,Hire,,IC2,,Engineering,,Platform,,Software Engineer,,EMP-0124
+EMP-0586,2022-05-12,Hire,,IC3,,Customer Success,,Support,,Staff Support Specialist,,EMP-0125
+EMP-0587,2022-10-01,Hire,,IC1,,Engineering,,Platform,,Associate Software Engineer,,EMP-0158
+EMP-0588,2022-04-11,Hire,,IC1,,Sales,,Account Executive,,Junior Account Executive,,EMP-0146
+EMP-0589,2022-02-14,Hire,,IC1,,Product,,UX Research,,Associate UX Researcher,,EMP-0127
+EMP-0590,2021-08-15,Hire,,IC3,,Engineering,,Infrastructure,,Senior Software Engineer,,EMP-0176
+EMP-0591,2022-04-30,Hire,,IC3,,Product,,Product Management,,Senior Product Manager,,EMP-0149
+EMP-0592,2021-12-24,Hire,,IC2,,Engineering,,Platform,,Software Engineer,,EMP-0165
+EMP-0593,2022-02-28,Hire,,IC3,,Sales,,Account Management,,Senior Account Manager,,EMP-0186
+EMP-0594,2021-12-04,Hire,,IC2,,Engineering,,AI/ML,,Software Engineer,,EMP-0029
+EMP-0595,2021-11-16,Hire,,IC2,,Engineering,,Platform,,Software Engineer,,EMP-0124
+EMP-0596,2021-06-04,Hire,,IC1,,Engineering,,Infrastructure,,Associate Software Engineer,,EMP-0176
+EMP-0597,2022-12-26,Hire,,IC2,,Engineering,,AI/ML,,Software Engineer,,EMP-0044
+EMP-0598,2021-08-24,Hire,,IC2,,Sales,,Account Management,,Account Manager,,EMP-0030
+EMP-0598,2022-06-02,Manager Change,IC2,IC2,Sales,Sales,Account Management,Account Management,Account Manager,Account Manager,EMP-0030,EMP-0186
+EMP-0599,2022-11-09,Hire,,IC2,,Engineering,,AI/ML,,Software Engineer,,EMP-0185
+EMP-0600,2022-03-04,Hire,,IC3,,Customer Success,,CSM,,Senior CSM,,EMP-0139
+EMP-0601,2022-03-03,Hire,,IC4,,Engineering,,Infrastructure,,Staff Software Engineer,,EMP-0130
+EMP-0602,2022-06-22,Hire,,IC3,,Customer Success,,Implementation,,Senior Implementation Specialist,,EMP-0037
+EMP-0603,2022-01-31,Hire,,IC3,,Engineering,,Data,,Senior Data Engineer,,EMP-0034
+EMP-0604,2022-06-26,Hire,,IC4,,Engineering,,Data,,Staff Data Engineer,,EMP-0162

@@ -1,0 +1,605 @@
+employee_id,first_name,last_name,email,department,sub_department,job_title,job_level,hire_date,termination_date,termination_type,termination_reason,employment_status,manager_id,location_city,location_state,race_ethnicity,gender,is_critical_talent
+EMP-001,Maya,Chen,maya.chen@justkaizen.ai,Executive,,CEO,M5,2020-01-15,,,,Active,,Houston,TX,White,Female,True
+EMP-002,David,Okafor,david.okafor@justkaizen.ai,Engineering,(CTO),CTO,M5,2020-01-15,,,,Active,EMP-001,Charlotte,NC,Asian,Male,True
+EMP-003,Marcus,Lee,marcus.lee@justkaizen.ai,Sales,(CRO),CRO,M5,2022-02-01,,,,Active,EMP-001,Arlington,VA,White,Male,True
+EMP-004,Aisha,Patel,aisha.patel@justkaizen.ai,G&A,(CFO),CFO,M5,2021-06-01,,,,Active,EMP-001,Boston,MA,Asian,Female,True
+EMP-005,James,Wallace,james.wallace@justkaizen.ai,Product,(CPO),Chief Product Officer,M5,2023-09-15,,,,Active,EMP-001,Chicago,IL,Hispanic/Latino,Male,True
+EMP-006,Rachel,Torres,rachel.torres@justkaizen.ai,People,(CPO),Chief People Officer,M5,2023-10-01,,,,Active,EMP-001,New York City,NY,White,Female,True
+EMP-007,Kevin,Zhao,kevin.zhao@justkaizen.ai,Engineering,Platform,"VP Engineering, Platform",M4,2020-06-01,,,,Active,EMP-002,Denver,CO,Two or More,Male,True
+EMP-008,Amara,Johnson,amara.johnson@justkaizen.ai,Engineering,AI/ML,"VP Engineering, AI/ML",M4,2021-03-01,,,,Active,EMP-002,Minneapolis,MN,White,Female,True
+EMP-009,Carlos,Mendez,carlos.mendez@justkaizen.ai,Sales,(VP Sales),VP Sales,M4,2022-04-01,,,,Active,EMP-003,Bellevue,WA,Asian,Male,True
+EMP-010,Lisa,Park,lisa.park@justkaizen.ai,Customer Success,(VP CS),VP Customer Success,M4,2021-09-01,,,,Active,EMP-003,San Francisco,CA,Black,Female,True
+EMP-011,Nina,Okonkwo,nina.okonkwo@justkaizen.ai,Marketing,(VP Mktg),VP Marketing,M4,2021-07-01,,,,Active,EMP-001,Chicago,IL,White,Female,True
+EMP-012,Raj,Gupta,raj.gupta@justkaizen.ai,G&A,Finance,VP Finance,M4,2021-08-01,,,,Active,EMP-004,Boston,MA,White,Male,True
+EMP-013,Sarah,Kim,sarah.kim@justkaizen.ai,Engineering,Data,"Director of Engineering, Data",M3,2021-01-15,,,,Active,EMP-002,Miami,FL,White,Female,True
+EMP-014,Jordan,Brooks,jordan.brooks@justkaizen.ai,Engineering,Infrastructure,"Director of Engineering, Infra",M3,2021-02-01,,,,Active,EMP-002,Miami,FL,Asian,Male,True
+EMP-015,Michelle,Torres,michelle.torres@justkaizen.ai,People,Recruiting,Director of Recruiting,M3,2021-05-01,,,,Active,EMP-006,Phoenix,AZ,White,Female,True
+EMP-016,Derek,Washington,derek.washington@justkaizen.ai,People,People Ops,Director of People Ops,M3,2022-01-15,,,,Active,EMP-006,Chicago,IL,Asian,Male,True
+EMP-017,Hannah,Lee,hannah.lee@justkaizen.ai,Product,Product Management,Director of Product,M3,2021-11-01,,,,Active,EMP-005,Chicago,IL,White,Female,True
+EMP-018,Andre,Williams,andre.williams@justkaizen.ai,Sales,Account Executive,"Director of Sales, Enterprise",M3,2022-05-01,,,,Active,EMP-009,Boston,MA,Asian,Male,True
+EMP-019,Priya,Sharma,priya.sharma@justkaizen.ai,Product,Product Management,Co-Founder / CPO,M3,2020-01-15,2023-06-30,Voluntary,Personal Reasons,Terminated,EMP-001,Austin,TX,Hispanic/Latino,Female,False
+EMP-0020,Eric,Lopez,eric.lopez@justkaizen.ai,Customer Success,Implementation,Principal Implementation Lead,IC5,2020-03-28,,,,Active,EMP-0037,Chicago,IL,Asian,Male,True
+EMP-0021,Michael,Murphy,michael.murphy@justkaizen.ai,Engineering,Data,Principal Data Engineer,IC5,2020-01-16,,,,Active,EMP-0034,Orlando,FL,White,Male,True
+EMP-0022,Emily,Taylor,emily.taylor@justkaizen.ai,Customer Success,Implementation,Senior CS Manager,M2,2020-01-24,,,,Active,EMP-010,New York City,NY,Hispanic/Latino,Female,True
+EMP-0023,Matt,Sato,matt.sato@justkaizen.ai,Engineering,Infrastructure,Senior Engineering Manager,M2,2020-01-16,,,,Active,EMP-014,San Francisco,CA,White,Male,True
+EMP-0024,Brianna,Walker,brianna.walker@justkaizen.ai,Product,Design,Principal Product Designer,IC5,2020-02-10,,,,Active,EMP-0035,Denver,CO,Asian,Female,True
+EMP-0025,Nathan,Campbell,nathan.campbell@justkaizen.ai,People,HRBPs,HRBP Manager,M1,2020-01-16,,,,Active,EMP-0043,San Francisco,CA,Black,Male,True
+EMP-0026,Ashley,Garcia,ashley.garcia@justkaizen.ai,Sales,Account Executive,Senior Sales Manager,M2,2020-01-16,,,,Active,EMP-018,New York City,NY,Hispanic/Latino,Female,True
+EMP-0027,Emily,Martinez,emily.martinez@justkaizen.ai,Engineering,Infrastructure,Principal Engineer,IC5,2020-03-13,,,,Active,EMP-0130,Boston,MA,White,Female,True
+EMP-0028,Kim,Jackson,kim.jackson@justkaizen.ai,Engineering,Platform,Senior Engineering Manager,M2,2020-01-16,,,,Active,EMP-013,Pittsburgh,PA,Black,Female,True
+EMP-0029,Ana,Thompson,ana.thompson@justkaizen.ai,Engineering,AI/ML,Engineering Manager,M1,2021-02-14,,,,Active,EMP-0045,Boston,MA,White,Female,True
+EMP-0030,Olivia,Foster,olivia.foster@justkaizen.ai,Sales,SDR,SDR Manager,M1,2021-03-27,,,,Active,EMP-0026,Austin,TX,Asian,Female,True
+EMP-0031,Rebecca,Gonzalez,rebecca.gonzalez@justkaizen.ai,G&A,Finance,Staff Financial Analyst,IC4,2021-04-07,,,,Active,EMP-0153,Arlington,VA,Asian,Female,True
+EMP-0032,Sara,Murphy,sara.murphy@justkaizen.ai,Engineering,Data,Staff Data Engineer,IC4,2021-03-16,,,,Active,EMP-0181,Austin,TX,White,Female,True
+EMP-0033,Marcus,Shah,marcus.shah@justkaizen.ai,Engineering,Platform,Principal Engineer,IC5,2021-01-25,,,,Active,EMP-0124,San Francisco,CA,Other/Decline,Male,True
+EMP-0034,Hassan,Hill,hassan.hill@justkaizen.ai,Engineering,Data,Engineering Manager,M1,2021-05-21,,,,Active,EMP-0134,Arlington,VA,White,Male,True
+EMP-0035,Vanessa,Reed,vanessa.reed@justkaizen.ai,Product,Design,"Product Manager, Lead",M1,2021-04-13,,,,Active,EMP-0155,Los Angeles,CA,White,Female,True
+EMP-0036,Robert,Scott,robert.scott@justkaizen.ai,Engineering,Data,Engineering Manager,M1,2021-01-15,,,,Active,EMP-0134,San Diego,CA,White,Male,True
+EMP-0037,Priya,Ito,priya.ito@justkaizen.ai,Customer Success,Implementation,CS Manager,M1,2021-03-20,,,,Active,EMP-0022,Charlotte,NC,Hispanic/Latino,Female,True
+EMP-0038,Ana,Hall,ana.hall@justkaizen.ai,Sales,Sales Engineering,Sales Manager,M1,2021-04-24,,,,Active,EMP-0041,Chicago,IL,White,Female,True
+EMP-0039,Camila,Miller,camila.miller@justkaizen.ai,Engineering,Infrastructure,Staff Software Engineer,IC4,2021-05-08,,,,Active,EMP-0130,Seattle,WA,White,Female,True
+EMP-0040,Jasmine,Edwards,jasmine.edwards@justkaizen.ai,Engineering,Data,Staff Data Engineer,IC4,2021-05-24,,,,Active,EMP-0034,Seattle,WA,Black,Female,True
+EMP-0041,Jasmine,Miller,jasmine.miller@justkaizen.ai,Sales,Account Management,Senior Sales Manager,M2,2021-02-24,,,,Active,EMP-018,Los Angeles,CA,White,Female,True
+EMP-0042,Vanessa,Watson,vanessa.watson@justkaizen.ai,Customer Success,CSM,Strategic CSM,IC4,2021-05-29,,,,Active,EMP-0139,Arlington,VA,White,Female,True
+EMP-0043,Chloe,Wong,chloe.wong@justkaizen.ai,People,DEIB,DEIB Manager,M2,2021-06-30,,,,Active,EMP-015,Houston,TX,Hispanic/Latino,Female,True
+EMP-0044,Daniela,Phillips,daniela.phillips@justkaizen.ai,Engineering,AI/ML,Engineering Manager,M1,2021-02-16,,,,Active,EMP-0045,San Francisco,CA,White,Female,True
+EMP-0045,Emily,Walsh,emily.walsh@justkaizen.ai,Engineering,AI/ML,Senior Engineering Manager,M2,2021-04-09,,,,Active,EMP-014,Portland,OR,Hispanic/Latino,Female,True
+EMP-0046,Aria,Chen,aria.chen@justkaizen.ai,Marketing,Brand,Senior Marketing Manager,M2,2021-05-27,,,,Active,EMP-011,Chicago,IL,White,Female,True
+EMP-0047,Kate,Jackson,kate.jackson@justkaizen.ai,Sales,Account Management,Junior Account Manager,IC1,2022-08-29,2023-02-18,Layoff,Reduction in Force,Terminated,EMP-0186,Dallas,TX,White,Female,False
+EMP-0048,Diana,Foster,diana.foster@justkaizen.ai,Marketing,Product Marketing,Senior Product Marketing Manager,IC3,2021-08-19,2023-03-15,Layoff,Reduction in Force,Terminated,EMP-0164,Raleigh,NC,Two or More,Female,False
+EMP-0049,Sara,Brown,sara.brown@justkaizen.ai,Engineering,Infrastructure,Senior Software Engineer,IC3,2022-11-26,2023-01-23,Layoff,Reduction in Force,Terminated,EMP-0130,Dallas,TX,Two or More,Female,False
+EMP-0050,Felipe,Brown,felipe.brown@justkaizen.ai,Sales,Account Executive,Account Executive,IC2,2022-01-24,2023-01-27,Layoff,Reduction in Force,Terminated,EMP-0146,Salt Lake City,UT,Two or More,Male,False
+EMP-0051,Carlos,Ramirez,carlos.ramirez@justkaizen.ai,Engineering,Data,Associate Software Engineer,IC1,2021-10-24,2023-03-06,Layoff,Reduction in Force,Terminated,EMP-0036,Bellevue,WA,Asian,Male,False
+EMP-0052,Aria,Young,aria.young@justkaizen.ai,Engineering,AI/ML,Associate Software Engineer,IC1,2022-05-06,2023-01-26,Layoff,Reduction in Force,Terminated,EMP-0185,Chicago,IL,Two or More,Female,False
+EMP-0053,Sofia,Nguyen,sofia.nguyen@justkaizen.ai,Sales,Sales Engineering,Sales Engineer,IC2,2022-02-06,2023-03-12,Layoff,Reduction in Force,Terminated,EMP-0038,San Francisco,CA,White,Female,False
+EMP-0054,Michael,Liu,michael.liu@justkaizen.ai,Marketing,Content,Marketing Coordinator,IC1,2021-10-20,2023-02-10,Layoff,Reduction in Force,Terminated,EMP-0156,Houston,TX,White,Male,False
+EMP-0055,Matt,Lewis,matt.lewis@justkaizen.ai,Marketing,Growth,Marketing Coordinator,IC1,2021-09-16,2023-03-06,Layoff,Reduction in Force,Terminated,EMP-0170,Philadelphia,PA,White,Male,False
+EMP-0056,Maria,Hernandez,maria.hernandez@justkaizen.ai,Sales,Sales Engineering,Senior Sales Engineer,IC3,2022-07-05,2023-02-13,Layoff,Reduction in Force,Terminated,EMP-0038,Miami,FL,Black,Female,False
+EMP-0057,Camila,Mitchell,camila.mitchell@justkaizen.ai,Sales,Sales Engineering,Sales Engineer,IC2,2021-05-04,2023-03-13,Layoff,Reduction in Force,Terminated,EMP-0038,San Francisco,CA,White,Female,False
+EMP-0058,Gabriel,Moore,gabriel.moore@justkaizen.ai,Engineering,Data,Software Engineer,IC2,2022-05-25,2023-02-08,Layoff,Reduction in Force,Terminated,EMP-0162,Los Angeles,CA,Asian,Male,False
+EMP-0059,Aaron,Hernandez,aaron.hernandez@justkaizen.ai,Sales,Sales Engineering,Senior Sales Engineer,IC3,2021-09-05,2023-02-17,Layoff,Reduction in Force,Terminated,EMP-0038,Phoenix,AZ,Other/Decline,Male,False
+EMP-0060,Aria,Perez,aria.perez@justkaizen.ai,Sales,Sales Engineering,Senior Sales Engineer,IC3,2021-08-30,2023-03-13,Layoff,Reduction in Force,Terminated,EMP-0038,Denver,CO,Hispanic/Latino,Female,False
+EMP-0061,Lucas,Perez,lucas.perez@justkaizen.ai,Engineering,Platform,Senior Software Engineer,IC3,2022-07-08,2023-02-22,Layoff,Reduction in Force,Terminated,EMP-0165,Los Angeles,CA,White,Male,False
+EMP-0062,Zoe,Rivera,zoe.rivera@justkaizen.ai,G&A,Finance,Senior Financial Analyst,IC3,2021-06-19,2023-02-22,Layoff,Reduction in Force,Terminated,EMP-0153,Denver,CO,White,Female,False
+EMP-0063,Diana,Sullivan,diana.sullivan@justkaizen.ai,Engineering,Infrastructure,Software Engineer,IC2,2022-08-25,2023-02-18,Layoff,Reduction in Force,Terminated,EMP-0176,Arlington,VA,Asian,Female,False
+EMP-0064,Tara,Young,tara.young@justkaizen.ai,People,Recruiting,Recruiter,IC2,2021-08-30,2023-02-12,Layoff,Reduction in Force,Terminated,EMP-0157,Columbus,OH,Two or More,Female,False
+EMP-0065,Hassan,Wilson,hassan.wilson@justkaizen.ai,Sales,Account Executive,Senior Account Executive,IC3,2021-05-10,2023-02-17,Layoff,Reduction in Force,Terminated,EMP-0147,Orlando,FL,White,Male,False
+EMP-0066,Rebecca,Miller,rebecca.miller@justkaizen.ai,G&A,Legal,Legal Coordinator,IC1,2022-04-22,2023-01-15,Layoff,Reduction in Force,Terminated,EMP-0179,Boulder,CO,White,Female,False
+EMP-0067,Joshua,Sanchez,joshua.sanchez@justkaizen.ai,Sales,SDR,Staff SDR,IC3,2021-11-11,2023-02-01,Layoff,Reduction in Force,Terminated,EMP-0143,Portland,OR,White,Male,False
+EMP-0068,Nathan,Moore,nathan.moore@justkaizen.ai,Customer Success,Implementation,Junior Implementation Specialist,IC1,2021-04-09,2023-03-12,Layoff,Reduction in Force,Terminated,EMP-0037,Denver,CO,Hispanic/Latino,Male,False
+EMP-0069,Chloe,Lopez,chloe.lopez@justkaizen.ai,G&A,Facilities,Office Coordinator,IC1,2021-09-15,2023-01-30,Layoff,Reduction in Force,Terminated,EMP-0153,San Diego,CA,Hispanic/Latino,Female,False
+EMP-0070,Camila,Ramirez,camila.ramirez@justkaizen.ai,Sales,SDR,Sales Development Representative,IC1,2022-10-01,2023-02-21,Layoff,Reduction in Force,Terminated,EMP-0030,Chicago,IL,Asian,Female,False
+EMP-0071,Aaron,Sullivan,aaron.sullivan@justkaizen.ai,Sales,SDR,Sales Development Representative,IC1,2021-10-25,2023-02-17,Layoff,Reduction in Force,Terminated,EMP-0143,San Francisco,CA,Two or More,Male,False
+EMP-0072,Alex,Lopez,alex.lopez@justkaizen.ai,Sales,Account Executive,Senior Account Executive,IC3,2022-02-03,2023-01-27,Layoff,Reduction in Force,Terminated,EMP-0169,Austin,TX,Asian,Female,False
+EMP-0073,Maria,Cohen,maria.cohen@justkaizen.ai,Sales,Sales Engineering,Senior Sales Engineer,IC3,2022-08-08,2023-02-16,Layoff,Reduction in Force,Terminated,EMP-0038,Los Angeles,CA,White,Female,False
+EMP-0074,Lucas,Liu,lucas.liu@justkaizen.ai,Engineering,AI/ML,Associate Software Engineer,IC1,2021-10-25,2023-02-19,Layoff,Reduction in Force,Terminated,EMP-0185,Austin,TX,White,Male,False
+EMP-0075,Rebecca,Young,rebecca.young@justkaizen.ai,Sales,SDR,Senior SDR,IC2,2022-02-24,2023-03-11,Layoff,Reduction in Force,Terminated,EMP-0143,Boulder,CO,White,Female,False
+EMP-0076,Rowan,Okafor,rowan.okafor@justkaizen.ai,G&A,Legal,Paralegal,IC2,2022-09-30,2023-01-26,Layoff,Reduction in Force,Terminated,EMP-0179,Austin,TX,Two or More,Non-Binary,False
+EMP-0077,Laura,Wang,laura.wang@justkaizen.ai,Engineering,Data,Senior Data Engineer,IC3,2021-03-05,2023-03-01,Layoff,Reduction in Force,Terminated,EMP-0034,Boston,MA,White,Female,False
+EMP-0078,Daniel,Chen,daniel.chen@justkaizen.ai,G&A,Facilities,Senior Facilities Specialist,IC3,2021-04-18,2023-02-25,Layoff,Reduction in Force,Terminated,EMP-0126,Austin,TX,White,Male,False
+EMP-0079,Hassan,Wang,hassan.wang@justkaizen.ai,Sales,SDR,Staff SDR,IC3,2022-05-18,2023-01-22,Layoff,Reduction in Force,Terminated,EMP-0030,Orlando,FL,White,Male,False
+EMP-0080,Jorge,Sharma,jorge.sharma@justkaizen.ai,Engineering,Platform,Associate Software Engineer,IC1,2022-07-27,2023-02-18,Layoff,Reduction in Force,Terminated,EMP-0142,Dallas,TX,White,Male,False
+EMP-0081,Chris,Scott,chris.scott@justkaizen.ai,Sales,Account Executive,Senior Account Executive,IC3,2022-07-23,2023-03-10,Layoff,Reduction in Force,Terminated,EMP-0169,Miami,FL,White,Male,False
+EMP-0082,Lucas,Patel,lucas.patel@justkaizen.ai,Engineering,AI/ML,Associate Software Engineer,IC1,2022-11-04,2023-01-29,Layoff,Reduction in Force,Terminated,EMP-0044,New York City,NY,Asian,Male,False
+EMP-0083,Daniela,Jackson,daniela.jackson@justkaizen.ai,People,Total Rewards,Senior Compensation Analyst,IC3,2021-11-23,2023-02-17,Layoff,Reduction in Force,Terminated,EMP-0025,Philadelphia,PA,White,Female,False
+EMP-0084,Thomas,Anderson,thomas.anderson@justkaizen.ai,Customer Success,Support,Staff Support Specialist,IC3,2022-03-23,2023-02-19,Layoff,Reduction in Force,Terminated,EMP-0125,Philadelphia,PA,Asian,Male,False
+EMP-0085,Kim,Robinson,kim.robinson@justkaizen.ai,G&A,Legal,Corporate Counsel,IC3,2022-09-24,2023-01-31,Layoff,Reduction in Force,Terminated,EMP-0179,Boston,MA,Hispanic/Latino,Female,False
+EMP-0086,Kim,Wilson,kim.wilson@justkaizen.ai,G&A,IT,Systems Administrator,IC2,2021-12-08,2023-02-15,Layoff,Reduction in Force,Terminated,EMP-0126,New York City,NY,Two or More,Female,False
+EMP-0087,Andre,Kumar,andre.kumar@justkaizen.ai,Sales,SDR,Sales Development Representative,IC1,2022-07-23,2023-03-10,Layoff,Reduction in Force,Terminated,EMP-0030,San Francisco,CA,Black,Male,False
+EMP-0088,Chloe,Clark,chloe.clark@justkaizen.ai,G&A,IT,Systems Administrator,IC2,2022-08-09,2023-02-15,Layoff,Reduction in Force,Terminated,EMP-0126,Bellevue,WA,White,Female,False
+EMP-0089,Emma,Moore,emma.moore@justkaizen.ai,People,People Ops,People Operations Specialist,IC2,2022-11-15,2023-02-16,Layoff,Reduction in Force,Terminated,EMP-0178,New York City,NY,White,Female,False
+EMP-0090,Daniel,Clark,daniel.clark@justkaizen.ai,Engineering,Data,Associate Software Engineer,IC1,2022-08-24,2023-03-02,Layoff,Reduction in Force,Terminated,EMP-0162,Seattle,WA,Two or More,Male,False
+EMP-0091,Mark,Okafor,mark.okafor@justkaizen.ai,Sales,Account Management,Junior Account Manager,IC1,2022-06-16,2023-02-03,Layoff,Reduction in Force,Terminated,EMP-0182,San Francisco,CA,Black,Male,False
+EMP-0092,Rebecca,Wong,rebecca.wong@justkaizen.ai,Engineering,Data,Software Engineer,IC2,2021-09-15,2023-02-20,Layoff,Reduction in Force,Terminated,EMP-0034,New York City,NY,Other/Decline,Female,False
+EMP-0093,Joshua,Diaz,joshua.diaz@justkaizen.ai,Engineering,Data,Associate Software Engineer,IC1,2022-12-23,2023-02-28,Layoff,Reduction in Force,Terminated,EMP-0181,Austin,TX,White,Male,False
+EMP-0094,Sage,Foster,sage.foster@justkaizen.ai,People,Recruiting,Senior Recruiter,IC3,2021-10-22,2023-02-07,Layoff,Reduction in Force,Terminated,EMP-0157,Arlington,VA,Hispanic/Latino,Non-Binary,False
+EMP-0095,Kate,Hill,kate.hill@justkaizen.ai,Marketing,Product Marketing,Marketing Coordinator,IC1,2021-04-15,2023-01-16,Layoff,Reduction in Force,Terminated,EMP-0164,Chicago,IL,White,Female,False
+EMP-0096,Priya,Zhang,priya.zhang@justkaizen.ai,Customer Success,Implementation,Implementation Specialist,IC2,2021-10-08,2023-02-19,Layoff,Reduction in Force,Terminated,EMP-0037,New York City,NY,White,Female,False
+EMP-0097,Kevin,Reed,kevin.reed@justkaizen.ai,Engineering,Platform,Associate Software Engineer,IC1,2021-05-20,2023-02-26,Layoff,Reduction in Force,Terminated,EMP-0142,San Francisco,CA,Asian,Male,False
+EMP-0098,Claire,Hall,claire.hall@justkaizen.ai,Engineering,AI/ML,Associate Software Engineer,IC1,2021-09-10,2023-01-29,Layoff,Reduction in Force,Terminated,EMP-0044,San Francisco,CA,Asian,Female,False
+EMP-0099,Alex,Edwards,alex.edwards@justkaizen.ai,Sales,Account Management,Junior Account Manager,IC1,2022-03-28,2023-02-27,Layoff,Reduction in Force,Terminated,EMP-0182,Brooklyn,NY,Hispanic/Latino,Female,False
+EMP-0100,Felipe,Murphy,felipe.murphy@justkaizen.ai,Sales,SDR,Senior SDR,IC2,2021-07-08,2023-02-07,Layoff,Reduction in Force,Terminated,EMP-0143,San Francisco,CA,Two or More,Male,False
+EMP-0101,Vanessa,Scott,vanessa.scott@justkaizen.ai,G&A,Legal,Paralegal,IC2,2021-12-07,2023-02-04,Layoff,Reduction in Force,Terminated,EMP-0179,Philadelphia,PA,White,Female,False
+EMP-0102,Vanessa,Foster,vanessa.foster@justkaizen.ai,G&A,Legal,Paralegal,IC2,2022-06-14,2023-02-14,Layoff,Reduction in Force,Terminated,EMP-0179,Austin,TX,White,Female,False
+EMP-0103,River,Sato,river.sato@justkaizen.ai,Sales,Account Management,Junior Account Manager,IC1,2022-11-20,2023-03-01,Layoff,Reduction in Force,Terminated,EMP-0186,Chicago,IL,Black,Non-Binary,False
+EMP-0104,Yuki,White,yuki.white@justkaizen.ai,Sales,Sales Engineering,Sales Engineer,IC2,2022-03-08,2023-03-05,Layoff,Reduction in Force,Terminated,EMP-0038,Chicago,IL,White,Female,False
+EMP-0105,Taylor,Young,taylor.young@justkaizen.ai,Engineering,Data,Software Engineer,IC2,2022-07-11,2023-02-28,Layoff,Reduction in Force,Terminated,EMP-0036,Miami,FL,White,Non-Binary,False
+EMP-0106,Mark,Nguyen,mark.nguyen@justkaizen.ai,G&A,Facilities,Senior Facilities Specialist,IC3,2021-07-10,2023-02-12,Layoff,Reduction in Force,Terminated,EMP-0179,San Francisco,CA,Black,Male,False
+EMP-0107,Mia,Sullivan,mia.sullivan@justkaizen.ai,Marketing,Growth,Growth Marketing Manager,IC2,2022-05-05,2023-03-06,Layoff,Reduction in Force,Terminated,EMP-0170,Los Angeles,CA,White,Female,False
+EMP-0108,Sofia,Miller,sofia.miller@justkaizen.ai,People,People Ops,Senior People Operations Specialist,IC3,2021-10-22,2023-01-30,Layoff,Reduction in Force,Terminated,EMP-0178,Bellevue,WA,Hispanic/Latino,Female,False
+EMP-0109,Gabriel,Foster,gabriel.foster@justkaizen.ai,Engineering,Platform,Senior Software Engineer,IC3,2021-08-04,2023-02-13,Layoff,Reduction in Force,Terminated,EMP-0124,San Diego,CA,Asian,Male,False
+EMP-0110,Lucas,Robinson,lucas.robinson@justkaizen.ai,Engineering,Infrastructure,Senior Software Engineer,IC3,2021-08-26,2023-02-03,Layoff,Reduction in Force,Terminated,EMP-0130,San Diego,CA,Hispanic/Latino,Male,False
+EMP-0111,Tara,Robinson,tara.robinson@justkaizen.ai,Marketing,Content,Marketing Coordinator,IC1,2022-01-22,2023-02-28,Layoff,Reduction in Force,Terminated,EMP-0156,Philadelphia,PA,White,Female,False
+EMP-0112,Marcus,Williams,marcus.williams@justkaizen.ai,Engineering,AI/ML,Software Engineer,IC2,2022-05-21,2023-02-09,Layoff,Reduction in Force,Terminated,EMP-0185,Atlanta,GA,Hispanic/Latino,Male,False
+EMP-0113,Daniel,Roy,daniel.roy@justkaizen.ai,Customer Success,Implementation,Junior Implementation Specialist,IC1,2021-07-07,2023-02-01,Layoff,Reduction in Force,Terminated,EMP-0037,Los Angeles,CA,White,Male,False
+EMP-0114,Laura,Fernandez,laura.fernandez@justkaizen.ai,Sales,Account Executive,Junior Account Executive,IC1,2021-06-22,2023-01-30,Layoff,Reduction in Force,Terminated,EMP-0169,New York City,NY,Black,Female,False
+EMP-0115,Daniel,Hill,daniel.hill@justkaizen.ai,Engineering,Platform,Software Engineer,IC2,2021-12-06,2023-03-10,Layoff,Reduction in Force,Terminated,EMP-0142,Columbus,OH,Hispanic/Latino,Male,False
+EMP-0116,Bay,Campbell,bay.campbell@justkaizen.ai,G&A,Legal,Paralegal,IC2,2022-04-22,2023-02-18,Layoff,Reduction in Force,Terminated,EMP-0179,Denver,CO,White,Non-Binary,False
+EMP-0117,Steven,Hill,steven.hill@justkaizen.ai,Marketing,Brand,Marketing Coordinator,IC1,2021-03-11,2023-01-23,Layoff,Reduction in Force,Terminated,EMP-0164,Los Angeles,CA,White,Male,False
+EMP-0118,Camila,Sullivan,camila.sullivan@justkaizen.ai,Marketing,Brand,Senior Brand Manager,IC3,2021-12-08,2023-02-20,Layoff,Reduction in Force,Terminated,EMP-0170,Salt Lake City,UT,White,Female,False
+EMP-0119,Hannah,Foster,hannah.foster@justkaizen.ai,Customer Success,Support,Senior Support Specialist,IC2,2021-08-21,2023-03-03,Layoff,Reduction in Force,Terminated,EMP-0125,New York City,NY,Asian,Female,False
+EMP-0120,Kate,Fernandez,kate.fernandez@justkaizen.ai,Sales,Account Executive,Junior Account Executive,IC1,2022-02-21,2023-01-28,Layoff,Reduction in Force,Terminated,EMP-0147,Seattle,WA,Two or More,Female,False
+EMP-0121,John,Okafor,john.okafor@justkaizen.ai,Sales,Sales Engineering,Junior Sales Engineer,IC1,2022-06-15,2023-03-05,Layoff,Reduction in Force,Terminated,EMP-0038,Miami,FL,Hispanic/Latino,Male,False
+EMP-0122,Hannah,Clark,hannah.clark@justkaizen.ai,People,People Ops,Senior People Operations Specialist,IC3,2022-03-27,,,,Active,EMP-0178,Boston,MA,Black,Female,False
+EMP-0123,Linda,Khan,linda.khan@justkaizen.ai,Customer Success,CSM,Customer Success Manager,IC2,2021-11-28,,,,Active,EMP-0139,New York City,NY,White,Female,False
+EMP-0124,Jessica,Liu,jessica.liu@justkaizen.ai,Engineering,Platform,Engineering Manager,M1,2021-08-21,,,,Active,EMP-0028,Seattle,WA,White,Female,False
+EMP-0125,Diana,Rodriguez,diana.rodriguez@justkaizen.ai,Customer Success,Support,CS Manager,M1,2021-08-07,,,,Active,EMP-0022,Los Angeles,CA,Hispanic/Latino,Female,True
+EMP-0126,Felipe,Johnson,felipe.johnson@justkaizen.ai,G&A,IT,IT Manager,M1,2022-04-06,,,,Active,EMP-0291,Los Angeles,CA,Two or More,Male,True
+EMP-0127,Rebecca,Thomas,rebecca.thomas@justkaizen.ai,Product,UX Research,"Product Manager, Lead",M1,2022-01-23,,,,Active,EMP-0155,Austin,TX,White,Female,False
+EMP-0128,Laura,Ito,laura.ito@justkaizen.ai,Engineering,AI/ML,Senior ML Engineer,IC3,2022-12-20,,,,Active,EMP-0029,New York City,NY,White,Female,False
+EMP-0129,Patrick,Johnson,patrick.johnson@justkaizen.ai,Engineering,Platform,Senior Software Engineer,IC3,2022-07-11,,,,Active,EMP-0124,Seattle,WA,White,Male,False
+EMP-0130,Elena,Lopez,elena.lopez@justkaizen.ai,Engineering,Infrastructure,Engineering Manager,M1,2021-11-03,,,,Active,EMP-0023,Los Angeles,CA,White,Female,True
+EMP-0131,Jorge,Cohen,jorge.cohen@justkaizen.ai,Sales,Sales Engineering,Sales Engineer,IC2,2022-12-17,,,,Active,EMP-0038,San Francisco,CA,Other/Decline,Male,True
+EMP-0132,Hannah,Smith,hannah.smith@justkaizen.ai,Customer Success,Implementation,Implementation Specialist,IC2,2022-06-05,,,,Active,EMP-0037,New York City,NY,Black,Female,False
+EMP-0133,Raj,Khan,raj.khan@justkaizen.ai,Engineering,AI/ML,Principal ML Engineer,IC5,2022-03-10,,,,Active,EMP-0044,New York City,NY,White,Male,False
+EMP-0134,Jason,Reed,jason.reed@justkaizen.ai,Engineering,Data,Senior Engineering Manager,M2,2021-02-26,,,,Active,EMP-013,Austin,TX,Other/Decline,Male,False
+EMP-0135,Sophia,Wilson,sophia.wilson@justkaizen.ai,Marketing,Content,Senior Content Marketing Manager,IC3,2022-08-27,,,,Active,EMP-0156,San Francisco,CA,White,Female,True
+EMP-0136,Rebecca,Lopez,rebecca.lopez@justkaizen.ai,Customer Success,CSM,Customer Success Manager,IC2,2021-08-18,,,,Active,EMP-0144,Cambridge,MA,Asian,Female,False
+EMP-0137,Nathan,Martinez,nathan.martinez@justkaizen.ai,Sales,Sales Engineering,Sales Engineer,IC2,2022-09-04,,,,Active,EMP-0038,Brooklyn,NY,Hispanic/Latino,Male,False
+EMP-0138,Zoe,Wilson,zoe.wilson@justkaizen.ai,Engineering,Infrastructure,Engineering Manager,M1,2021-11-17,,,,Active,EMP-0023,Brooklyn,NY,White,Female,True
+EMP-0139,Tara,Williams,tara.williams@justkaizen.ai,Customer Success,CSM,CS Manager,M1,2021-05-04,,,,Active,EMP-0022,Bellevue,WA,White,Female,False
+EMP-0140,Kim,Rodriguez,kim.rodriguez@justkaizen.ai,Marketing,Product Marketing,Staff Product Marketing Manager,IC4,2022-08-18,,,,Active,EMP-0164,Arlington,VA,White,Female,False
+EMP-0141,Vanessa,Lee,vanessa.lee@justkaizen.ai,Customer Success,Implementation,Senior Implementation Specialist,IC3,2022-01-25,,,,Active,EMP-0037,Portland,OR,Hispanic/Latino,Female,True
+EMP-0142,Aria,Walker,aria.walker@justkaizen.ai,Engineering,Platform,Engineering Manager,M1,2021-10-11,,,,Active,EMP-0028,Brooklyn,NY,Asian,Female,True
+EMP-0143,Thomas,Campbell,thomas.campbell@justkaizen.ai,Sales,SDR,SDR Manager,M1,2021-11-13,,,,Active,EMP-0041,San Diego,CA,White,Male,False
+EMP-0144,Kevin,Lewis,kevin.lewis@justkaizen.ai,Customer Success,CSM,CS Manager,M1,2021-03-24,,,,Active,EMP-0022,Atlanta,GA,Hispanic/Latino,Male,True
+EMP-0145,Ibrahim,Edwards,ibrahim.edwards@justkaizen.ai,Customer Success,CSM,Senior CSM,IC3,2021-09-27,,,,Active,EMP-0139,San Francisco,CA,White,Male,False
+EMP-0146,Gabriel,Yang,gabriel.yang@justkaizen.ai,Sales,Account Executive,Sales Manager,M1,2021-08-11,,,,Active,EMP-0026,Phoenix,AZ,White,Male,False
+EMP-0147,Eric,Anderson,eric.anderson@justkaizen.ai,Sales,Account Executive,Sales Manager,M1,2022-01-29,,,,Active,EMP-0026,Austin,TX,Hispanic/Latino,Male,True
+EMP-0148,Mia,Anderson,mia.anderson@justkaizen.ai,People,L&D,L&D Specialist,IC2,2022-04-09,,,,Active,EMP-0025,Boulder,CO,Hispanic/Latino,Female,True
+EMP-0149,Noah,Lopez,noah.lopez@justkaizen.ai,Product,Product Management,"Product Manager, Lead",M1,2021-08-15,,,,Active,EMP-0155,San Francisco,CA,White,Male,True
+EMP-0150,Gabriel,Gonzalez,gabriel.gonzalez@justkaizen.ai,Engineering,Platform,Principal Engineer,IC5,2022-03-09,,,,Active,EMP-0142,Austin,TX,White,Male,False
+EMP-0151,Miguel,Singh,miguel.singh@justkaizen.ai,Customer Success,CSM,Senior CSM,IC3,2021-09-14,,,,Active,EMP-0144,San Francisco,CA,Black,Male,False
+EMP-0152,Diana,Brown,diana.brown@justkaizen.ai,People,DEIB,Senior DEIB Specialist,IC3,2022-09-16,,,,Active,EMP-0178,Columbus,OH,White,Female,False
+EMP-0153,Mark,Phillips,mark.phillips@justkaizen.ai,G&A,Finance,Finance Manager,M1,2022-05-27,,,,Active,EMP-0291,San Diego,CA,White,Male,False
+EMP-0154,Joshua,Scott,joshua.scott@justkaizen.ai,Engineering,Data,Senior Data Engineer,IC3,2022-04-12,,,,Active,EMP-0036,Denver,CO,Hispanic/Latino,Male,True
+EMP-0155,Daniel,Murphy,daniel.murphy@justkaizen.ai,Product,UX Research,"Senior Manager, Product",M2,2021-12-02,,,,Active,EMP-017,Austin,TX,Hispanic/Latino,Male,False
+EMP-0156,Joshua,Davis,joshua.davis@justkaizen.ai,Marketing,Content,Marketing Manager,M1,2021-12-24,,,,Active,EMP-0046,Brooklyn,NY,White,Male,False
+EMP-0157,Diana,Taylor,diana.taylor@justkaizen.ai,People,Recruiting,Recruiting Manager,M1,2021-10-06,,,,Active,EMP-0043,San Francisco,CA,Black,Female,True
+EMP-0158,Anthony,Nguyen,anthony.nguyen@justkaizen.ai,Engineering,Platform,Engineering Manager,M1,2021-11-21,,,,Active,EMP-0028,Charlotte,NC,White,Male,True
+EMP-0159,Kevin,Chen,kevin.chen@justkaizen.ai,Engineering,Platform,Senior Software Engineer,IC3,2022-12-30,,,,Active,EMP-0165,Austin,TX,White,Male,False
+EMP-0160,Emily,Campbell,emily.campbell@justkaizen.ai,Marketing,Brand,Senior Brand Manager,IC3,2022-10-02,,,,Active,EMP-0156,Bellevue,WA,Two or More,Female,False
+EMP-0161,Naomi,Cohen,naomi.cohen@justkaizen.ai,People,Recruiting,Senior Recruiter,IC3,2022-08-21,,,,Active,EMP-0157,Atlanta,GA,White,Female,True
+EMP-0162,Ashley,Taylor,ashley.taylor@justkaizen.ai,Engineering,Data,Engineering Manager,M1,2021-10-29,,,,Active,EMP-0134,Los Angeles,CA,Two or More,Female,False
+EMP-0163,Wei,Williams,wei.williams@justkaizen.ai,Engineering,AI/ML,Senior ML Engineer,IC3,2022-11-18,,,,Active,EMP-0185,Houston,TX,Two or More,Male,True
+EMP-0164,Naomi,Lewis,naomi.lewis@justkaizen.ai,Marketing,Product Marketing,Marketing Manager,M1,2022-02-11,,,,Active,EMP-0046,New York City,NY,Black,Female,False
+EMP-0165,Ana,Murphy,ana.murphy@justkaizen.ai,Engineering,Platform,Engineering Manager,M1,2021-10-21,,,,Active,EMP-0028,New York City,NY,White,Female,True
+EMP-0166,Daniel,Hall,daniel.hall@justkaizen.ai,Engineering,Data,Senior Data Engineer,IC3,2022-07-06,,,,Active,EMP-0034,San Francisco,CA,White,Male,False
+EMP-0167,Felipe,Martinez,felipe.martinez@justkaizen.ai,Engineering,Platform,Staff Software Engineer,IC4,2022-06-29,,,,Active,EMP-0124,Dallas,TX,White,Male,False
+EMP-0168,Maria,Martinez,maria.martinez@justkaizen.ai,Customer Success,CSM,Senior CSM,IC3,2022-03-30,,,,Active,EMP-0144,Los Angeles,CA,Black,Female,True
+EMP-0169,Julia,Foster,julia.foster@justkaizen.ai,Sales,Account Executive,Sales Manager,M1,2021-10-24,,,,Active,EMP-0026,New York City,NY,Other/Decline,Female,True
+EMP-0170,Camila,Reed,camila.reed@justkaizen.ai,Marketing,Growth,Marketing Manager,M1,2021-11-21,,,,Active,EMP-0046,Atlanta,GA,White,Female,False
+EMP-0171,Vanessa,Lewis,vanessa.lewis@justkaizen.ai,People,DEIB,DEIB Specialist,IC2,2022-02-10,,,,Active,EMP-0025,Atlanta,GA,White,Female,False
+EMP-0172,Daniel,Nguyen,daniel.nguyen@justkaizen.ai,Engineering,Platform,Senior Software Engineer,IC3,2022-02-08,,,,Active,EMP-0142,Miami,FL,White,Male,False
+EMP-0173,James,Scott,james.scott@justkaizen.ai,Sales,SDR,Senior SDR,IC2,2022-04-24,,,,Active,EMP-0030,Denver,CO,Asian,Male,False
+EMP-0174,David,Wong,david.wong@justkaizen.ai,Engineering,Platform,Senior Software Engineer,IC3,2021-12-27,,,,Active,EMP-0124,San Francisco,CA,Two or More,Male,False
+EMP-0175,Fatima,Yang,fatima.yang@justkaizen.ai,Sales,Account Executive,Senior Account Executive,IC3,2022-06-11,,,,Active,EMP-0169,Minneapolis,MN,White,Female,True
+EMP-0176,Marcus,Okafor,marcus.okafor@justkaizen.ai,Engineering,Infrastructure,Engineering Manager,M1,2021-05-26,,,,Active,EMP-0023,Boston,MA,White,Male,False
+EMP-0177,Jasmine,Hill,jasmine.hill@justkaizen.ai,Engineering,Infrastructure,Software Engineer,IC2,2022-12-18,,,,Active,EMP-0130,San Diego,CA,White,Female,False
+EMP-0178,Brian,Garcia,brian.garcia@justkaizen.ai,People,People Ops,M1 People Ops,M1,2022-01-25,,,,Active,EMP-0043,Brooklyn,NY,Two or More,Male,True
+EMP-0179,Kate,Rodriguez,kate.rodriguez@justkaizen.ai,G&A,Legal,Legal Manager,M1,2022-04-29,,,,Active,EMP-0291,Los Angeles,CA,White,Female,False
+EMP-0180,Jorge,Chen,jorge.chen@justkaizen.ai,Engineering,Platform,Staff Software Engineer,IC4,2022-06-14,,,,Active,EMP-0165,Boulder,CO,Asian,Male,False
+EMP-0181,Arjun,Lopez,arjun.lopez@justkaizen.ai,Engineering,Data,Engineering Manager,M1,2021-04-13,,,,Active,EMP-0134,Bellevue,WA,Asian,Male,False
+EMP-0182,David,Sullivan,david.sullivan@justkaizen.ai,Sales,Account Management,Sales Manager,M1,2022-04-04,,,,Active,EMP-0041,Chicago,IL,White,Male,False
+EMP-0183,Matt,Ramirez,matt.ramirez@justkaizen.ai,Engineering,AI/ML,Senior ML Engineer,IC3,2022-01-07,,,,Active,EMP-0044,Chicago,IL,Asian,Male,True
+EMP-0184,Rachel,Thomas,rachel.thomas@justkaizen.ai,Sales,SDR,Staff SDR,IC3,2022-04-10,,,,Active,EMP-0143,Los Angeles,CA,White,Female,True
+EMP-0185,Jasmine,Tanaka,jasmine.tanaka@justkaizen.ai,Engineering,AI/ML,Engineering Manager,M1,2021-08-10,,,,Active,EMP-0045,San Francisco,CA,Asian,Female,True
+EMP-0186,Priya,Phillips,priya.phillips@justkaizen.ai,Sales,Account Management,Sales Manager,M1,2021-10-06,,,,Active,EMP-0041,San Diego,CA,White,Female,True
+EMP-0187,Laura,White,laura.white@justkaizen.ai,Product,UX Research,Staff UX Researcher,IC4,2022-08-25,,,,Active,EMP-0127,Boulder,CO,Asian,Female,True
+EMP-0188,Alex,Wong,alex.wong@justkaizen.ai,Customer Success,Support,Staff Support Specialist,IC3,2022-10-15,,,,Active,EMP-0125,Los Angeles,CA,White,Female,False
+EMP-0189,Oscar,Young,oscar.young@justkaizen.ai,Engineering,AI/ML,Principal ML Engineer,IC5,2021-12-15,,,,Active,EMP-0029,Brooklyn,NY,Asian,Male,False
+EMP-0190,Aaron,Sharma,aaron.sharma@justkaizen.ai,G&A,Legal,Corporate Counsel,IC3,2022-06-04,2024-07-07,Voluntary,Career Opportunity,Terminated,EMP-0179,Columbus,OH,Asian,Male,False
+EMP-0191,Ibrahim,Nguyen,ibrahim.nguyen@justkaizen.ai,Engineering,AI/ML,Senior ML Engineer,IC3,2022-03-07,2025-03-31,Voluntary,Career Opportunity,Terminated,EMP-0029,San Francisco,CA,Asian,Male,False
+EMP-0192,Anthony,Anderson,anthony.anderson@justkaizen.ai,Engineering,Infrastructure,Senior Software Engineer,IC3,2021-10-27,2025-01-19,Voluntary,Career Opportunity,Terminated,EMP-0138,New York City,NY,Asian,Male,False
+EMP-0193,Noah,Diaz,noah.diaz@justkaizen.ai,Sales,Account Executive,Senior Account Executive,IC3,2022-09-07,2024-11-10,Voluntary,Career Opportunity,Terminated,EMP-0169,Chicago,IL,White,Male,False
+EMP-0194,Nina,Sanchez,nina.sanchez@justkaizen.ai,Engineering,Platform,Software Engineer,IC2,2021-12-11,2024-02-22,Voluntary,Career Opportunity,Terminated,EMP-0158,Austin,TX,White,Female,False
+EMP-0195,Mark,Brown,mark.brown@justkaizen.ai,Engineering,AI/ML,Software Engineer,IC2,2021-08-02,2025-03-31,Voluntary,Career Opportunity,Terminated,EMP-0185,Denver,CO,Black,Male,False
+EMP-0196,John,Sullivan,john.sullivan@justkaizen.ai,People,L&D,Senior L&D Specialist,IC3,2022-02-07,2025-02-14,Voluntary,Career Opportunity,Terminated,EMP-0025,Seattle,WA,Black,Male,False
+EMP-0197,Kai,Lewis,kai.lewis@justkaizen.ai,Engineering,AI/ML,Software Engineer,IC2,2022-08-07,2025-03-31,Voluntary,Career Opportunity,Terminated,EMP-0185,Denver,CO,Hispanic/Latino,Non-Binary,False
+EMP-0198,Naomi,Okafor,naomi.okafor@justkaizen.ai,Sales,SDR,Senior SDR,IC2,2021-11-27,2024-03-28,Voluntary,Career Opportunity,Terminated,EMP-0143,Houston,TX,Asian,Female,False
+EMP-0199,Anthony,Garcia,anthony.garcia@justkaizen.ai,Sales,Account Executive,Senior Account Executive,IC3,2022-06-21,2024-12-26,Voluntary,Career Opportunity,Terminated,EMP-0146,Portland,OR,Other/Decline,Male,False
+EMP-0200,Aisha,Sullivan,aisha.sullivan@justkaizen.ai,Sales,Account Management,Account Manager,IC2,2022-06-03,2025-03-31,Voluntary,Career Opportunity,Terminated,EMP-0186,Brooklyn,NY,Asian,Female,False
+EMP-0201,Grace,Khan,grace.khan@justkaizen.ai,G&A,IT,Senior Systems Administrator,IC3,2021-12-28,2024-05-15,Voluntary,Career Opportunity,Terminated,EMP-0126,Arlington,VA,White,Female,False
+EMP-0202,Chris,Mitchell,chris.mitchell@justkaizen.ai,Marketing,Product Marketing,Product Marketing Manager,IC2,2022-03-05,2025-03-31,Voluntary,Career Opportunity,Terminated,EMP-0164,Richmond,VA,Hispanic/Latino,Male,False
+EMP-0203,Yuki,Tanaka,yuki.tanaka@justkaizen.ai,Marketing,Growth,Growth Marketing Manager,IC2,2022-03-22,2025-03-31,Voluntary,Career Opportunity,Terminated,EMP-0170,Brooklyn,NY,Hispanic/Latino,Female,False
+EMP-0204,Zoe,Kumar,zoe.kumar@justkaizen.ai,Engineering,AI/ML,Senior ML Engineer,IC3,2022-08-19,2024-11-25,Voluntary,Career Opportunity,Terminated,EMP-0029,Houston,TX,White,Female,False
+EMP-0205,Quinn,Rodriguez,quinn.rodriguez@justkaizen.ai,Engineering,Data,Software Engineer,IC2,2022-02-21,2024-03-23,Voluntary,Career Opportunity,Terminated,EMP-0181,New York City,NY,Hispanic/Latino,Non-Binary,False
+EMP-0206,Jason,Gonzalez,jason.gonzalez@justkaizen.ai,People,HRBPs,HR Business Partner,IC2,2022-09-16,2024-12-08,Voluntary,Career Opportunity,Terminated,EMP-0025,Miami,FL,Asian,Male,False
+EMP-0207,Omar,Smith,omar.smith@justkaizen.ai,Engineering,Data,Software Engineer,IC2,2022-05-31,2024-08-07,Voluntary,Career Opportunity,Terminated,EMP-0181,Phoenix,AZ,White,Male,False
+EMP-0208,Yuki,Clark,yuki.clark@justkaizen.ai,Sales,SDR,Senior SDR,IC2,2021-10-11,2023-11-27,Voluntary,Career Opportunity,Terminated,EMP-0030,Los Angeles,CA,Hispanic/Latino,Female,False
+EMP-0209,Robert,Lewis,robert.lewis@justkaizen.ai,Engineering,Data,Software Engineer,IC2,2022-09-25,2024-12-23,Voluntary,Career Opportunity,Terminated,EMP-0162,Atlanta,GA,White,Male,False
+EMP-0210,Tara,Torres,tara.torres@justkaizen.ai,Engineering,AI/ML,Senior ML Engineer,IC3,2022-01-15,2024-10-21,Voluntary,Career Opportunity,Terminated,EMP-0185,Orlando,FL,White,Female,False
+EMP-0211,Jason,Wright,jason.wright@justkaizen.ai,Sales,Account Executive,Senior Account Executive,IC3,2022-01-04,2024-02-04,Voluntary,Career Opportunity,Terminated,EMP-0146,San Francisco,CA,White,Male,False
+EMP-0212,Chloe,Rodriguez,chloe.rodriguez@justkaizen.ai,Marketing,Product Marketing,Product Marketing Manager,IC2,2021-08-03,2024-07-05,Voluntary,Career Opportunity,Terminated,EMP-0164,Houston,TX,White,Female,False
+EMP-0213,Anthony,Perez,anthony.perez@justkaizen.ai,Sales,SDR,Senior SDR,IC2,2022-03-26,2025-02-02,Voluntary,Career Opportunity,Terminated,EMP-0143,Richmond,VA,White,Male,False
+EMP-0214,Mark,Williams,mark.williams@justkaizen.ai,Customer Success,CSM,Senior CSM,IC3,2022-02-14,2024-09-30,Voluntary,Career Opportunity,Terminated,EMP-0144,Chicago,IL,White,Male,False
+EMP-0215,Liam,Walker,liam.walker@justkaizen.ai,Sales,Account Executive,Account Executive,IC2,2022-09-22,2025-03-31,Voluntary,Career Opportunity,Terminated,EMP-0146,Austin,TX,Asian,Male,False
+EMP-0216,Olivia,Clark,olivia.clark@justkaizen.ai,G&A,Legal,Corporate Counsel,IC3,2022-02-02,2024-12-19,Voluntary,Career Opportunity,Terminated,EMP-0179,Denver,CO,Black,Female,False
+EMP-0217,Ibrahim,Fernandez,ibrahim.fernandez@justkaizen.ai,Engineering,Platform,Software Engineer,IC2,2022-01-12,2024-11-22,Voluntary,Career Opportunity,Terminated,EMP-0142,Cambridge,MA,Hispanic/Latino,Male,False
+EMP-0218,Steven,Young,steven.young@justkaizen.ai,Engineering,AI/ML,Software Engineer,IC2,2022-08-09,2025-03-31,Voluntary,Career Opportunity,Terminated,EMP-0029,New York City,NY,Asian,Male,False
+EMP-0219,Eric,Sullivan,eric.sullivan@justkaizen.ai,Engineering,Infrastructure,Senior Software Engineer,IC3,2022-05-24,2024-07-25,Voluntary,Career Opportunity,Terminated,EMP-0138,Chicago,IL,White,Male,False
+EMP-0220,Noah,Murphy,noah.murphy@justkaizen.ai,Engineering,Infrastructure,Software Engineer,IC2,2022-02-22,2024-04-16,Voluntary,Career Opportunity,Terminated,EMP-0138,New York City,NY,White,Male,False
+EMP-0221,Felipe,Ito,felipe.ito@justkaizen.ai,Engineering,Platform,Senior Software Engineer,IC3,2022-12-31,2025-03-31,Voluntary,Career Opportunity,Terminated,EMP-0124,Austin,TX,White,Male,False
+EMP-0222,Lucas,Sato,lucas.sato@justkaizen.ai,Sales,SDR,Senior SDR,IC2,2022-03-21,2024-08-01,Voluntary,Career Opportunity,Terminated,EMP-0030,Los Angeles,CA,Other/Decline,Male,False
+EMP-0223,Andre,Chen,andre.chen@justkaizen.ai,Engineering,Platform,Software Engineer,IC2,2022-04-06,2024-08-22,Voluntary,Career Opportunity,Terminated,EMP-0142,Los Angeles,CA,White,Male,False
+EMP-0224,Olivia,Tanaka,olivia.tanaka@justkaizen.ai,Customer Success,Support,Senior Support Specialist,IC2,2021-06-19,2024-04-07,Voluntary,Career Opportunity,Terminated,EMP-0125,San Diego,CA,White,Female,False
+EMP-0225,Ana,Morris,ana.morris@justkaizen.ai,Customer Success,Implementation,Senior Implementation Specialist,IC3,2021-03-12,2023-06-09,Voluntary,Career Opportunity,Terminated,EMP-0037,Raleigh,NC,White,Female,False
+EMP-0226,Chloe,Diaz,chloe.diaz@justkaizen.ai,Sales,Sales Engineering,Senior Sales Engineer,IC3,2021-11-12,2024-03-14,Voluntary,Career Opportunity,Terminated,EMP-0038,San Diego,CA,White,Female,False
+EMP-0227,Joshua,Miller,joshua.miller@justkaizen.ai,Engineering,AI/ML,Software Engineer,IC2,2022-07-30,2024-10-23,Voluntary,Career Opportunity,Terminated,EMP-0044,Cambridge,MA,White,Male,False
+EMP-0228,Eric,Khan,eric.khan@justkaizen.ai,People,People Ops,People Operations Specialist,IC2,2022-05-16,2024-12-29,Voluntary,Career Opportunity,Terminated,EMP-0178,Raleigh,NC,Asian,Male,False
+EMP-0229,Henry,Reed,henry.reed@justkaizen.ai,Engineering,Platform,Software Engineer,IC2,2022-06-20,2024-06-26,Voluntary,Career Opportunity,Terminated,EMP-0124,San Diego,CA,Asian,Male,False
+EMP-0230,Oscar,Ramirez,oscar.ramirez@justkaizen.ai,Product,Product Management,Product Manager,IC2,2022-05-25,2024-06-20,Voluntary,Career Opportunity,Terminated,EMP-0149,Dallas,TX,Asian,Male,False
+EMP-0231,Samuel,Morris,samuel.morris@justkaizen.ai,Engineering,Data,Software Engineer,IC2,2021-01-21,2023-03-22,Voluntary,Career Opportunity,Terminated,EMP-0181,San Francisco,CA,White,Male,False
+EMP-0232,Daniela,Brown,daniela.brown@justkaizen.ai,Sales,Account Management,Strategic Account Manager,IC4,2021-06-26,,,,Active,EMP-0182,New York City,NY,Asian,Female,False
+EMP-0233,Michael,Rodriguez,michael.rodriguez@justkaizen.ai,Engineering,Platform,Staff Software Engineer,IC4,2022-10-30,,,,Active,EMP-0158,Detroit,MI,Asian,Male,False
+EMP-0234,Claire,Thompson,claire.thompson@justkaizen.ai,Sales,Account Management,Strategic Account Manager,IC4,2022-03-31,,,,Active,EMP-0186,Los Angeles,CA,Hispanic/Latino,Female,False
+EMP-0235,Steven,Johnson,steven.johnson@justkaizen.ai,Customer Success,Support,Support Lead,IC4,2021-08-23,,,,Active,EMP-0125,San Diego,CA,White,Male,False
+EMP-0236,Ava,Thompson,ava.thompson@justkaizen.ai,Sales,Account Executive,Enterprise Account Executive,IC4,2021-10-28,,,,Active,EMP-0147,Seattle,WA,Hispanic/Latino,Female,False
+EMP-0237,Andre,Wright,andre.wright@justkaizen.ai,Engineering,AI/ML,Staff ML Engineer,IC4,2022-06-01,,,,Active,EMP-0044,Boston,MA,Asian,Male,False
+EMP-0238,Thomas,Hill,thomas.hill@justkaizen.ai,G&A,IT,IT Manager (IC track),IC4,2022-06-27,,,,Active,EMP-0126,Los Angeles,CA,White,Male,False
+EMP-0239,Raj,Rivera,raj.rivera@justkaizen.ai,People,HRBPs,Principal HRBP,IC4,2021-07-20,,,,Active,EMP-0025,San Diego,CA,Black,Male,False
+EMP-0240,Yuki,Mitchell,yuki.mitchell@justkaizen.ai,G&A,IT,Senior Systems Administrator,IC3,2021-09-20,2023-08-28,Involuntary,Performance,Terminated,EMP-0126,Charlotte,NC,White,Female,False
+EMP-0241,Jamie,Williams,jamie.williams@justkaizen.ai,Engineering,Data,Software Engineer,IC2,2022-04-02,2023-06-24,Involuntary,Performance,Terminated,EMP-0036,San Francisco,CA,Asian,Non-Binary,False
+EMP-0242,Sophia,Khan,sophia.khan@justkaizen.ai,Engineering,AI/ML,Associate Software Engineer,IC1,2022-03-22,2024-06-22,Involuntary,Performance,Terminated,EMP-0044,New York City,NY,Asian,Female,False
+EMP-0243,Brian,Rivera,brian.rivera@justkaizen.ai,Customer Success,CSM,Senior CSM,IC3,2022-12-26,2024-06-07,Involuntary,Performance,Terminated,EMP-0144,Houston,TX,Black,Male,False
+EMP-0244,Jordan,Rivera,jordan.rivera@justkaizen.ai,Engineering,Infrastructure,Associate Software Engineer,IC1,2021-05-28,2023-02-16,Involuntary,Performance,Terminated,EMP-0138,Boston,MA,Asian,Non-Binary,False
+EMP-0245,Miguel,Hernandez,miguel.hernandez@justkaizen.ai,Engineering,Infrastructure,Associate Software Engineer,IC1,2022-05-25,2023-09-26,Involuntary,Performance,Terminated,EMP-0130,San Diego,CA,Other/Decline,Male,False
+EMP-0246,Ana,Cohen,ana.cohen@justkaizen.ai,Sales,Account Management,Account Manager,IC2,2021-11-17,2023-06-07,Involuntary,Performance,Terminated,EMP-0182,San Francisco,CA,Hispanic/Latino,Female,False
+EMP-0247,Wei,Young,wei.young@justkaizen.ai,People,L&D,Senior L&D Specialist,IC3,2022-05-01,2023-07-16,Involuntary,Performance,Terminated,EMP-0025,San Diego,CA,White,Male,False
+EMP-0248,Jason,Jones,jason.jones@justkaizen.ai,Engineering,Data,Associate Software Engineer,IC1,2022-02-02,2023-06-26,Involuntary,Performance,Terminated,EMP-0162,Boston,MA,Asian,Male,False
+EMP-0249,Reese,Sato,reese.sato@justkaizen.ai,Engineering,Platform,Senior Software Engineer,IC3,2021-03-09,2022-05-21,Involuntary,Performance,Terminated,EMP-0165,Orlando,FL,White,Non-Binary,False
+EMP-0250,Alex,Johnson,alex.johnson@justkaizen.ai,Sales,Account Management,Account Manager,IC2,2022-01-22,2023-08-23,Involuntary,Performance,Terminated,EMP-0186,Seattle,WA,Black,Female,False
+EMP-0251,Robert,Lewis,robert.lewis2@justkaizen.ai,Customer Success,Support,Customer Support Specialist,IC1,2021-09-09,2023-08-25,Involuntary,Performance,Terminated,EMP-0125,Salt Lake City,UT,Two or More,Male,False
+EMP-0252,Jasmine,Mitchell,jasmine.mitchell@justkaizen.ai,Engineering,Platform,Associate Software Engineer,IC1,2021-08-12,2023-09-14,Involuntary,Performance,Terminated,EMP-0158,Dallas,TX,Asian,Female,False
+EMP-0253,Henry,Morris,henry.morris@justkaizen.ai,Engineering,Platform,Software Engineer,IC2,2022-05-03,2024-01-05,Involuntary,Performance,Terminated,EMP-0158,New York City,NY,Asian,Male,False
+EMP-0254,Liam,Watson,liam.watson@justkaizen.ai,Sales,Account Executive,Senior Account Executive,IC3,2022-07-24,2023-07-23,Involuntary,Performance,Terminated,EMP-0146,San Francisco,CA,White,Male,False
+EMP-0255,Anthony,Jones,anthony.jones@justkaizen.ai,Sales,Account Executive,Enterprise Account Executive,IC4,2023-11-13,2025-03-31,Voluntary,Company Culture,Terminated,EMP-0147,Miami,FL,White,Male,False
+EMP-0256,Taylor,Rodriguez,taylor.rodriguez@justkaizen.ai,Engineering,Data,Senior Data Engineer,IC3,2022-01-31,2024-01-18,Voluntary,Manager Relationship,Terminated,EMP-0181,San Diego,CA,Hispanic/Latino,Non-Binary,False
+EMP-0257,Matt,Kim,matt.kim@justkaizen.ai,Sales,Account Executive,Senior Account Executive,IC3,2021-02-07,2022-08-20,Voluntary,Career Opportunity,Terminated,EMP-0169,Brooklyn,NY,Black,Male,False
+EMP-0258,Tara,Hernandez,tara.hernandez@justkaizen.ai,Product,Product Management,Product Manager,IC2,2021-07-06,2023-04-07,Voluntary,Career Opportunity,Terminated,EMP-0149,Los Angeles,CA,Asian,Female,False
+EMP-0259,Naomi,Ramirez,naomi.ramirez@justkaizen.ai,Engineering,AI/ML,Senior ML Engineer,IC3,2023-09-24,2025-03-31,Voluntary,Career Opportunity,Terminated,EMP-0044,San Francisco,CA,Other/Decline,Female,False
+EMP-0260,Kit,Johnson,kit.johnson@justkaizen.ai,Engineering,Platform,Staff Software Engineer,IC4,2022-01-08,2023-03-22,Voluntary,Manager Relationship,Terminated,EMP-0142,Columbus,OH,Asian,Non-Binary,False
+EMP-0261,Diana,Hall,diana.hall@justkaizen.ai,People,Recruiting,Senior Recruiter,IC3,2021-07-03,2022-10-20,Voluntary,Manager Relationship,Terminated,EMP-0157,Cambridge,MA,White,Female,False
+EMP-0262,Miguel,Cohen,miguel.cohen@justkaizen.ai,Sales,SDR,Lead SDR,IC4,2023-09-01,2025-03-31,Voluntary,Manager Relationship,Terminated,EMP-0030,Los Angeles,CA,Hispanic/Latino,Male,False
+EMP-0263,Fatima,Singh,fatima.singh@justkaizen.ai,Marketing,Growth,Growth Marketing Manager,IC2,2022-05-03,2023-10-06,Voluntary,Career Opportunity,Terminated,EMP-0170,Houston,TX,White,Female,False
+EMP-0264,Thomas,Khan,thomas.khan@justkaizen.ai,Product,Design,Product Designer,IC2,2022-05-26,2023-06-18,Voluntary,Company Culture,Terminated,EMP-0035,Austin,TX,Asian,Male,False
+EMP-0265,Kate,Rodriguez,kate.rodriguez2@justkaizen.ai,G&A,Facilities,Staff Facilities Specialist,IC4,2023-07-28,2025-03-31,Voluntary,Manager Relationship,Terminated,EMP-0179,Denver,CO,Two or More,Female,False
+EMP-0266,Jessica,Okafor,jessica.okafor@justkaizen.ai,Sales,Account Executive,Senior Account Executive,IC3,2022-04-22,2024-04-10,Voluntary,Manager Relationship,Terminated,EMP-0147,Salt Lake City,UT,White,Female,False
+EMP-0267,Daniel,Jones,daniel.jones@justkaizen.ai,Customer Success,Implementation,Implementation Specialist,IC2,2021-10-30,2023-09-27,Voluntary,Manager Relationship,Terminated,EMP-0037,Portland,OR,White,Male,False
+EMP-0268,Imani,Taylor,imani.taylor@justkaizen.ai,Marketing,Content,Senior Content Marketing Manager,IC3,2021-11-08,2024-02-18,Voluntary,Manager Relationship,Terminated,EMP-0156,Brooklyn,NY,Hispanic/Latino,Female,False
+EMP-0269,Emma,Jackson,emma.jackson@justkaizen.ai,Marketing,Content,Content Marketing Manager,IC2,2022-05-08,2023-06-27,Voluntary,Manager Relationship,Terminated,EMP-0156,Richmond,VA,Asian,Female,False
+EMP-0270,Jason,Lewis,jason.lewis@justkaizen.ai,Sales,SDR,Lead SDR,IC4,2022-07-25,2024-04-09,Voluntary,Manager Relationship,Terminated,EMP-0030,Houston,TX,White,Male,False
+EMP-0271,Camila,Anderson,camila.anderson@justkaizen.ai,Engineering,Platform,Senior Software Engineer,IC3,2021-10-01,2023-02-15,Voluntary,Manager Relationship,Terminated,EMP-0158,New York City,NY,White,Female,False
+EMP-0272,Brian,Sharma,brian.sharma@justkaizen.ai,Engineering,Platform,Staff Software Engineer,IC4,2021-09-12,2023-07-26,Voluntary,Company Culture,Terminated,EMP-0124,Chicago,IL,Other/Decline,Male,False
+EMP-0273,Sophia,Shah,sophia.shah@justkaizen.ai,G&A,IT,IT Manager (IC track),IC4,2022-04-12,2023-07-01,Voluntary,Career Opportunity,Terminated,EMP-0126,Los Angeles,CA,Hispanic/Latino,Female,False
+EMP-0274,James,Wright,james.wright@justkaizen.ai,Engineering,AI/ML,Software Engineer,IC2,2021-02-13,2023-04-16,Voluntary,Manager Relationship,Terminated,EMP-0044,Miami,FL,Hispanic/Latino,Male,False
+EMP-0275,Joshua,Brown,joshua.brown@justkaizen.ai,Engineering,Data,Senior Data Engineer,IC3,2022-05-16,,,,Active,EMP-0162,Denver,CO,White,Male,False
+EMP-0276,Matt,Moore,matt.moore@justkaizen.ai,Product,Design,Senior Product Designer,IC3,2022-03-05,,,,Active,EMP-0035,Seattle,WA,White,Male,False
+EMP-0277,Mark,Murphy,mark.murphy@justkaizen.ai,Engineering,Infrastructure,Senior Software Engineer,IC3,2022-06-22,,,,Active,EMP-0176,Chicago,IL,Asian,Male,False
+EMP-0278,Jasmine,Sato,jasmine.sato@justkaizen.ai,Marketing,Content,Staff Content Strategist,IC4,2022-04-02,,,,Active,EMP-0156,Charlotte,NC,White,Female,False
+EMP-0279,Thomas,Rivera,thomas.rivera@justkaizen.ai,Customer Success,Support,Support Lead,IC4,2022-08-17,,,,Active,EMP-0125,Portland,OR,White,Male,False
+EMP-0280,Oscar,Davis,oscar.davis@justkaizen.ai,Engineering,Data,Staff Data Engineer,IC4,2021-01-12,,,,Active,EMP-0162,Detroit,MI,Asian,Male,False
+EMP-0281,Claire,Morris,claire.morris@justkaizen.ai,G&A,Legal,Senior Corporate Counsel,IC4,2022-07-28,,,,Active,EMP-0179,Los Angeles,CA,White,Female,False
+EMP-0282,Joshua,Hill,joshua.hill@justkaizen.ai,Marketing,Growth,Staff Growth Marketing Manager,IC4,2022-10-07,,,,Active,EMP-0170,Arlington,VA,Black,Male,False
+EMP-0283,Mia,Walsh,mia.walsh@justkaizen.ai,Customer Success,CSM,Senior CSM,IC3,2022-12-13,,,,Active,EMP-0139,Los Angeles,CA,White,Female,False
+EMP-0284,Fatima,Khan,fatima.khan@justkaizen.ai,Customer Success,CSM,Senior CSM,IC3,2021-10-12,,,,Active,EMP-0144,New York City,NY,White,Female,False
+EMP-0285,Naomi,Johnson,naomi.johnson@justkaizen.ai,Engineering,AI/ML,Principal ML Engineer,IC5,2022-06-30,,,,Active,EMP-0185,Boston,MA,Asian,Female,False
+EMP-0286,Arjun,Thomas,arjun.thomas@justkaizen.ai,Engineering,AI/ML,Senior ML Engineer,IC3,2022-09-21,,,,Active,EMP-0044,Brooklyn,NY,White,Male,False
+EMP-0287,Gabriel,Ramirez,gabriel.ramirez@justkaizen.ai,Engineering,Infrastructure,Senior Software Engineer,IC3,2022-06-24,,,,Active,EMP-0130,Dallas,TX,Asian,Male,False
+EMP-0288,Noah,Thomas,noah.thomas@justkaizen.ai,Engineering,Infrastructure,Senior Software Engineer,IC3,2022-02-07,,,,Active,EMP-0130,New York City,NY,Black,Male,False
+EMP-0289,Miguel,Roy,miguel.roy@justkaizen.ai,Engineering,AI/ML,Staff ML Engineer,IC4,2021-01-31,,,,Active,EMP-0029,Los Angeles,CA,Hispanic/Latino,Male,False
+EMP-0290,Imani,Anderson,imani.anderson@justkaizen.ai,Customer Success,CSM,Strategic CSM,IC4,2022-08-01,,,,Active,EMP-0139,Salt Lake City,UT,White,Female,False
+EMP-0291,Oscar,Thomas,oscar.thomas@justkaizen.ai,G&A,Facilities,Facilities Manager,M2,2022-01-20,,,,Active,EMP-012,Seattle,WA,White,Male,False
+EMP-0292,Zoe,Johnson,zoe.johnson@justkaizen.ai,Customer Success,Implementation,Implementation Lead,IC4,2021-05-14,,,,Active,EMP-0037,New York City,NY,Asian,Female,False
+EMP-0293,Imani,Edwards,imani.edwards@justkaizen.ai,Sales,Account Executive,Account Executive,IC2,2021-05-27,,,,Active,EMP-0169,Miami,FL,White,Female,False
+EMP-0294,Robert,Wang,robert.wang@justkaizen.ai,Product,Product Management,Staff Product Manager,IC4,2022-03-04,,,,Active,EMP-0149,Seattle,WA,Asian,Male,False
+EMP-0295,Diana,Jackson,diana.jackson@justkaizen.ai,Marketing,Brand,Senior Brand Manager,IC3,2021-07-08,,,,Active,EMP-0164,Arlington,VA,White,Female,False
+EMP-0296,Lucas,Okafor,lucas.okafor@justkaizen.ai,Sales,Sales Engineering,Staff Sales Engineer,IC4,2021-11-19,,,,Active,EMP-0038,San Diego,CA,White,Male,False
+EMP-0297,Aisha,Walker,aisha.walker@justkaizen.ai,People,L&D,Staff L&D,IC4,2022-01-16,,,,Active,EMP-0178,San Francisco,CA,Hispanic/Latino,Female,False
+EMP-0298,Ryan,Patel,ryan.patel@justkaizen.ai,Engineering,Platform,Senior Software Engineer,IC3,2022-08-15,,,,Active,EMP-0142,San Francisco,CA,Black,Male,False
+EMP-0299,Miguel,Mitchell,miguel.mitchell@justkaizen.ai,Sales,Account Executive,Enterprise Account Executive,IC4,2021-07-28,,,,Active,EMP-0146,Nashville,TN,White,Male,False
+EMP-0300,Matt,Clark,matt.clark@justkaizen.ai,People,HRBPs,HR Business Partner,IC2,2022-05-20,,,,Active,EMP-0025,Los Angeles,CA,Two or More,Male,False
+EMP-0301,Grace,Park,grace.park@justkaizen.ai,Customer Success,Implementation,Senior Implementation Specialist,IC3,2022-04-23,,,,Active,EMP-0037,Cambridge,MA,White,Female,False
+EMP-0302,Tara,Wong,tara.wong@justkaizen.ai,Engineering,Data,Senior Data Engineer,IC3,2022-01-07,,,,Active,EMP-0162,Seattle,WA,White,Female,False
+EMP-0303,Michael,Patel,michael.patel@justkaizen.ai,Engineering,AI/ML,Staff ML Engineer,IC4,2021-12-23,,,,Active,EMP-0029,Orlando,FL,White,Male,False
+EMP-0304,Chloe,Clark,chloe.clark2@justkaizen.ai,Customer Success,Support,Senior Support Specialist,IC2,2022-04-14,,,,Active,EMP-0125,Brooklyn,NY,Black,Female,False
+EMP-0305,Sara,Khan,sara.khan@justkaizen.ai,Customer Success,CSM,Strategic CSM,IC4,2022-03-13,,,,Active,EMP-0144,Seattle,WA,Asian,Female,False
+EMP-0306,Joshua,Yang,joshua.yang@justkaizen.ai,Engineering,Infrastructure,Staff Software Engineer,IC4,2021-02-02,,,,Active,EMP-0138,San Diego,CA,White,Male,False
+EMP-0307,Brian,Clark,brian.clark@justkaizen.ai,Engineering,Data,Senior Data Engineer,IC3,2022-09-09,,,,Active,EMP-0162,San Francisco,CA,Hispanic/Latino,Male,False
+EMP-0308,Nathan,Rodriguez,nathan.rodriguez@justkaizen.ai,People,Recruiting,Staff Recruiter,IC4,2021-08-22,,,,Active,EMP-0157,Houston,TX,Asian,Male,False
+EMP-0309,Sophia,Ramirez,sophia.ramirez@justkaizen.ai,Product,Design,Staff Product Designer,IC4,2021-02-06,,,,Active,EMP-0035,San Diego,CA,Asian,Female,False
+EMP-0310,Kit,Robinson,kit.robinson@justkaizen.ai,Engineering,Data,Staff Data Engineer,IC4,2022-08-05,,,,Active,EMP-0181,San Diego,CA,Other/Decline,Non-Binary,False
+EMP-0311,Sophia,Singh,sophia.singh@justkaizen.ai,Sales,Account Executive,Senior Account Executive,IC3,2022-04-15,,,,Active,EMP-0146,Seattle,WA,Hispanic/Latino,Female,False
+EMP-0312,Carlos,Williams,carlos.williams@justkaizen.ai,Marketing,Growth,Senior Growth Marketing Manager,IC3,2022-08-29,,,,Active,EMP-0170,Bellevue,WA,White,Male,False
+EMP-0313,Emma,Martinez,emma.martinez@justkaizen.ai,People,L&D,Senior L&D Specialist,IC3,2021-07-26,,,,Active,EMP-0178,Austin,TX,White,Female,False
+EMP-0314,Anthony,Park,anthony.park@justkaizen.ai,Engineering,AI/ML,Staff ML Engineer,IC4,2021-05-03,,,,Active,EMP-0044,Houston,TX,Hispanic/Latino,Male,False
+EMP-0315,Nina,Walsh,nina.walsh@justkaizen.ai,Sales,Account Executive,Senior Account Executive,IC3,2023-07-30,,,,Active,EMP-0147,Portland,OR,Black,Female,False
+EMP-0316,John,Chen,john.chen@justkaizen.ai,Sales,SDR,Lead SDR,IC4,2022-08-20,,,,Active,EMP-0143,Austin,TX,White,Male,False
+EMP-0317,Laura,Martinez,laura.martinez@justkaizen.ai,People,DEIB,Senior DEIB Specialist,IC3,2021-04-04,,,,Active,EMP-0157,Cambridge,MA,Two or More,Female,False
+EMP-0318,Carlos,Foster,carlos.foster@justkaizen.ai,Sales,Account Management,Strategic Account Manager,IC4,2022-08-03,,,,Active,EMP-0182,San Francisco,CA,Asian,Male,False
+EMP-0319,Samuel,Williams,samuel.williams@justkaizen.ai,Marketing,Product Marketing,Senior Product Marketing Manager,IC3,2022-06-06,,,,Active,EMP-0164,San Francisco,CA,Asian,Male,False
+EMP-0320,Emma,Wang,emma.wang@justkaizen.ai,Product,Design,Associate Product Designer,IC1,2022-06-17,2023-01-16,Voluntary,Compensation,Terminated,EMP-0035,New York City,NY,White,Female,False
+EMP-0321,Aisha,Lopez,aisha.lopez@justkaizen.ai,Engineering,Platform,Associate Software Engineer,IC1,2024-08-23,2025-03-31,Voluntary,Compensation,Terminated,EMP-0142,Los Angeles,CA,Asian,Female,False
+EMP-0322,Nathan,Jackson,nathan.jackson@justkaizen.ai,Engineering,Data,Software Engineer,IC2,2023-09-05,2024-04-19,Voluntary,Role Misalignment,Terminated,EMP-0181,San Diego,CA,Hispanic/Latino,Male,False
+EMP-0323,Eric,Moore,eric.moore@justkaizen.ai,People,People Ops,People Operations Specialist,IC2,2022-03-13,2022-10-20,Voluntary,Personal Reasons,Terminated,EMP-0178,Seattle,WA,White,Male,False
+EMP-0324,Steven,Shah,steven.shah@justkaizen.ai,Engineering,Platform,Associate Software Engineer,IC1,2022-01-09,2022-11-04,Voluntary,Role Misalignment,Terminated,EMP-0165,San Francisco,CA,Asian,Male,False
+EMP-0325,Ibrahim,Mitchell,ibrahim.mitchell@justkaizen.ai,Sales,Account Executive,Account Executive,IC2,2024-05-15,2024-09-21,Voluntary,Compensation,Terminated,EMP-0147,San Francisco,CA,White,Male,False
+EMP-0326,Andre,Zhang,andre.zhang@justkaizen.ai,Engineering,Data,Associate Software Engineer,IC1,2024-12-21,2025-03-31,Voluntary,Compensation,Terminated,EMP-0036,Denver,CO,White,Male,False
+EMP-0327,Nina,Williams,nina.williams@justkaizen.ai,Sales,Account Executive,Junior Account Executive,IC1,2022-03-17,2023-01-29,Voluntary,Personal Reasons,Terminated,EMP-0169,Boston,MA,Hispanic/Latino,Female,False
+EMP-0328,Hannah,Thomas,hannah.thomas@justkaizen.ai,Engineering,AI/ML,Associate Software Engineer,IC1,2022-07-29,2023-03-09,Voluntary,Compensation,Terminated,EMP-0029,Cambridge,MA,Black,Female,False
+EMP-0329,Jorge,Hernandez,jorge.hernandez@justkaizen.ai,Sales,SDR,Sales Development Representative,IC1,2022-04-08,2022-10-29,Voluntary,Personal Reasons,Terminated,EMP-0143,Dallas,TX,Two or More,Male,False
+EMP-0330,Patrick,Nguyen,patrick.nguyen@justkaizen.ai,Sales,Account Management,Junior Account Manager,IC1,2022-06-01,2022-09-23,Voluntary,Company Culture,Terminated,EMP-0186,Los Angeles,CA,Other/Decline,Male,False
+EMP-0331,Hassan,Sharma,hassan.sharma@justkaizen.ai,Customer Success,Implementation,Implementation Specialist,IC2,2022-01-04,2022-03-19,Voluntary,Company Culture,Terminated,EMP-0037,Los Angeles,CA,Asian,Male,False
+EMP-0332,Mark,Rivera,mark.rivera@justkaizen.ai,Engineering,Platform,Associate Software Engineer,IC1,2022-01-25,2022-05-08,Voluntary,Role Misalignment,Terminated,EMP-0124,Raleigh,NC,Two or More,Male,False
+EMP-0333,Ibrahim,Rodriguez,ibrahim.rodriguez@justkaizen.ai,Customer Success,Implementation,Implementation Specialist,IC2,2022-01-14,2022-11-28,Voluntary,Role Misalignment,Terminated,EMP-0037,San Francisco,CA,Other/Decline,Male,False
+EMP-0334,Isabella,Smith,isabella.smith@justkaizen.ai,Marketing,Brand,Marketing Coordinator,IC1,2022-04-29,2022-12-02,Voluntary,Role Misalignment,Terminated,EMP-0164,San Diego,CA,White,Female,False
+EMP-0335,Alex,Jones,alex.jones@justkaizen.ai,Sales,SDR,Sales Development Representative,IC1,2022-10-28,2023-05-18,Voluntary,Company Culture,Terminated,EMP-0030,San Francisco,CA,White,Female,False
+EMP-0336,Ava,Thompson,ava.thompson2@justkaizen.ai,G&A,Facilities,Office Coordinator,IC1,2022-01-08,2022-08-18,Voluntary,Compensation,Terminated,EMP-0153,San Francisco,CA,White,Female,False
+EMP-0337,Jason,Wang,jason.wang@justkaizen.ai,Sales,SDR,Sales Development Representative,IC1,2024-07-31,2024-11-30,Voluntary,Role Misalignment,Terminated,EMP-0030,San Francisco,CA,Hispanic/Latino,Male,False
+EMP-0338,Linda,Hill,linda.hill@justkaizen.ai,Engineering,AI/ML,Software Engineer,IC2,2022-05-01,2022-12-23,Voluntary,Role Misalignment,Terminated,EMP-0044,Minneapolis,MN,Asian,Female,False
+EMP-0339,Vanessa,Davis,vanessa.davis@justkaizen.ai,Engineering,Infrastructure,Associate Software Engineer,IC1,2022-10-19,2023-09-01,Voluntary,Personal Reasons,Terminated,EMP-0138,San Diego,CA,White,Female,False
+EMP-0340,Julia,White,julia.white@justkaizen.ai,Product,UX Research,UX Researcher,IC2,2024-02-05,2024-11-17,Voluntary,Personal Reasons,Terminated,EMP-0127,New York City,NY,Black,Female,False
+EMP-0341,Anthony,Davis,anthony.davis@justkaizen.ai,Customer Success,CSM,Junior Customer Success Manager,IC1,2022-11-06,2023-01-16,Voluntary,Role Misalignment,Terminated,EMP-0144,New York City,NY,White,Male,False
+EMP-0342,Grace,Thompson,grace.thompson@justkaizen.ai,Engineering,Infrastructure,Associate Software Engineer,IC1,2022-12-05,2023-05-26,Voluntary,Compensation,Terminated,EMP-0176,San Francisco,CA,Asian,Female,False
+EMP-0343,Felipe,Jones,felipe.jones@justkaizen.ai,Product,Product Management,Associate Product Manager,IC1,2022-04-14,2022-12-25,Voluntary,Personal Reasons,Terminated,EMP-0149,Houston,TX,White,Male,False
+EMP-0344,Jessica,Diaz,jessica.diaz@justkaizen.ai,Engineering,Data,Associate Software Engineer,IC1,2022-12-28,2023-09-15,Voluntary,Compensation,Terminated,EMP-0034,Cambridge,MA,Asian,Female,False
+EMP-0345,Grace,Roy,grace.roy@justkaizen.ai,Sales,Account Executive,Junior Account Executive,IC1,2024-11-09,2025-03-31,Voluntary,Compensation,Terminated,EMP-0146,San Francisco,CA,White,Female,False
+EMP-0346,Imani,Robinson,imani.robinson@justkaizen.ai,Marketing,Growth,Growth Marketing Manager,IC2,2022-08-07,2023-03-18,Voluntary,Role Misalignment,Terminated,EMP-0170,San Diego,CA,Asian,Female,False
+EMP-0347,Joshua,Shah,joshua.shah@justkaizen.ai,Product,Product Management,Associate Product Manager,IC1,2024-10-17,2025-03-31,Voluntary,Company Culture,Terminated,EMP-0149,New York City,NY,Hispanic/Latino,Male,False
+EMP-0348,Joshua,Okafor,joshua.okafor@justkaizen.ai,Engineering,Data,Associate Software Engineer,IC1,2022-02-23,2022-05-13,Voluntary,Role Misalignment,Terminated,EMP-0181,Columbus,OH,White,Male,False
+EMP-0349,Ava,Park,ava.park@justkaizen.ai,Sales,Sales Engineering,Junior Sales Engineer,IC1,2024-05-28,2025-03-25,Voluntary,Role Misalignment,Terminated,EMP-0038,San Francisco,CA,White,Female,False
+EMP-0350,Skyler,Young,skyler.young@justkaizen.ai,Sales,SDR,Sales Development Representative,IC1,2023-10-24,2024-01-10,Voluntary,Role Misalignment,Terminated,EMP-0143,Houston,TX,Black,Non-Binary,False
+EMP-0351,Julia,Cohen,julia.cohen@justkaizen.ai,Sales,SDR,Sales Development Representative,IC1,2022-05-03,2022-08-08,Voluntary,Personal Reasons,Terminated,EMP-0030,Raleigh,NC,Asian,Female,False
+EMP-0352,Arjun,Edwards,arjun.edwards@justkaizen.ai,Sales,Account Management,Account Manager,IC2,2022-02-23,2022-05-23,Voluntary,Role Misalignment,Terminated,EMP-0182,Austin,TX,Black,Male,False
+EMP-0353,Anthony,Torres,anthony.torres@justkaizen.ai,Engineering,Data,Software Engineer,IC2,2022-06-21,2023-04-09,Voluntary,Personal Reasons,Terminated,EMP-0034,Denver,CO,Black,Male,False
+EMP-0354,Aisha,Sato,aisha.sato@justkaizen.ai,Engineering,Platform,Software Engineer,IC2,2024-02-07,2024-04-13,Voluntary,Compensation,Terminated,EMP-0165,Raleigh,NC,White,Female,False
+EMP-0355,Carlos,Wang,carlos.wang@justkaizen.ai,G&A,Legal,Paralegal,IC2,2022-03-24,,,,Active,EMP-0179,Denver,CO,White,Male,False
+EMP-0356,Rebecca,Phillips,rebecca.phillips@justkaizen.ai,Sales,Account Management,Account Manager,IC2,2025-03-01,,,,Active,EMP-0186,Seattle,WA,Asian,Female,False
+EMP-0357,Noah,Shah,noah.shah@justkaizen.ai,Engineering,Platform,Associate Software Engineer,IC1,2024-11-07,,,,Active,EMP-0158,Cambridge,MA,Asian,Male,False
+EMP-0358,James,Murphy,james.murphy@justkaizen.ai,Engineering,Data,Associate Software Engineer,IC1,2022-04-11,,,,Active,EMP-0034,New York City,NY,Black,Male,False
+EMP-0359,Aria,Scott,aria.scott@justkaizen.ai,G&A,IT,Senior Systems Administrator,IC3,2023-09-04,,,,Active,EMP-0126,Austin,TX,White,Female,False
+EMP-0360,Casey,Zhang,casey.zhang@justkaizen.ai,Engineering,Infrastructure,Associate Software Engineer,IC1,2022-06-21,,,,Active,EMP-0138,Detroit,MI,Black,Non-Binary,False
+EMP-0361,Priya,Wilson,priya.wilson@justkaizen.ai,Marketing,Content,Content Marketing Manager,IC2,2023-10-04,,,,Active,EMP-0156,Boston,MA,White,Female,False
+EMP-0362,Diana,Murphy,diana.murphy@justkaizen.ai,G&A,Finance,Senior Financial Analyst,IC3,2021-05-19,,,,Active,EMP-0153,Brooklyn,NY,White,Female,False
+EMP-0363,Sophia,Edwards,sophia.edwards@justkaizen.ai,People,L&D,L&D Coordinator,IC1,2022-08-26,,,,Active,EMP-0157,San Diego,CA,White,Female,False
+EMP-0364,Wei,Fernandez,wei.fernandez@justkaizen.ai,Customer Success,CSM,Junior Customer Success Manager,IC1,2021-09-28,,,,Active,EMP-0139,Chicago,IL,Hispanic/Latino,Male,False
+EMP-0365,Robert,Lee,robert.lee@justkaizen.ai,Engineering,AI/ML,Associate Software Engineer,IC1,2024-08-28,,,,Active,EMP-0185,Los Angeles,CA,Asian,Male,False
+EMP-0366,Ibrahim,Ito,ibrahim.ito@justkaizen.ai,Engineering,Data,Software Engineer,IC2,2021-01-03,,,,Active,EMP-0162,Dallas,TX,Asian,Male,False
+EMP-0367,Ibrahim,Tanaka,ibrahim.tanaka@justkaizen.ai,Sales,Account Executive,Account Executive,IC2,2021-06-25,,,,Active,EMP-0146,Detroit,MI,Black,Male,False
+EMP-0368,Steven,Murphy,steven.murphy@justkaizen.ai,Engineering,Infrastructure,Staff Software Engineer,IC4,2021-07-24,,,,Active,EMP-0138,Portland,OR,Asian,Male,False
+EMP-0369,Claire,Williams,claire.williams@justkaizen.ai,Sales,Account Management,Senior Account Manager,IC3,2025-02-10,,,,Active,EMP-0186,San Francisco,CA,White,Female,False
+EMP-0370,Olivia,Campbell,olivia.campbell@justkaizen.ai,Engineering,AI/ML,Senior ML Engineer,IC3,2024-05-22,,,,Active,EMP-0185,Bellevue,WA,Hispanic/Latino,Female,False
+EMP-0371,Aaron,Wright,aaron.wright@justkaizen.ai,Engineering,Data,Software Engineer,IC2,2022-03-26,,,,Active,EMP-0034,Cambridge,MA,Asian,Male,False
+EMP-0372,Priya,Singh,priya.singh@justkaizen.ai,G&A,IT,Systems Administrator,IC2,2022-05-01,,,,Active,EMP-0126,Salt Lake City,UT,Asian,Female,False
+EMP-0373,Mia,Clark,mia.clark@justkaizen.ai,Engineering,Infrastructure,Software Engineer,IC2,2021-11-30,,,,Active,EMP-0176,Los Angeles,CA,Two or More,Female,False
+EMP-0374,Yuki,Walsh,yuki.walsh@justkaizen.ai,Sales,Account Executive,Enterprise Account Executive,IC4,2021-11-18,,,,Active,EMP-0169,Minneapolis,MN,Hispanic/Latino,Female,False
+EMP-0375,Emily,Moore,emily.moore@justkaizen.ai,Marketing,Growth,Staff Growth Marketing Manager,IC4,2025-01-13,,,,Active,EMP-0170,San Francisco,CA,White,Female,False
+EMP-0376,Michael,Reed,michael.reed@justkaizen.ai,People,People Ops,People Operations Specialist,IC2,2022-08-19,,,,Active,EMP-0178,Chicago,IL,White,Male,False
+EMP-0377,Brian,Wright,brian.wright@justkaizen.ai,Engineering,Infrastructure,Senior Software Engineer,IC3,2021-09-04,,,,Active,EMP-0138,Minneapolis,MN,Asian,Male,False
+EMP-0378,Miguel,Foster,miguel.foster@justkaizen.ai,G&A,Facilities,Office Coordinator,IC1,2022-06-06,,,,Active,EMP-0126,Detroit,MI,Hispanic/Latino,Male,False
+EMP-0379,Patrick,Anderson,patrick.anderson@justkaizen.ai,Engineering,AI/ML,Senior ML Engineer,IC3,2021-12-12,,,,Active,EMP-0029,Raleigh,NC,Asian,Male,False
+EMP-0380,Yuki,Martinez,yuki.martinez@justkaizen.ai,Sales,Account Executive,Account Executive,IC2,2021-12-15,,,,Active,EMP-0169,Los Angeles,CA,White,Female,False
+EMP-0381,Felipe,Brown,felipe.brown2@justkaizen.ai,Sales,Account Executive,Senior Account Executive,IC3,2022-09-05,,,,Active,EMP-0147,New York City,NY,Hispanic/Latino,Male,False
+EMP-0382,Taylor,Wright,taylor.wright@justkaizen.ai,Engineering,Platform,Software Engineer,IC2,2022-07-10,,,,Active,EMP-0142,San Diego,CA,Asian,Non-Binary,False
+EMP-0383,Oscar,Sanchez,oscar.sanchez@justkaizen.ai,Sales,Account Executive,Account Executive,IC2,2022-06-08,,,,Active,EMP-0147,Seattle,WA,Asian,Male,False
+EMP-0384,Claire,Rodriguez,claire.rodriguez@justkaizen.ai,G&A,Facilities,Senior Facilities Specialist,IC3,2021-09-08,,,,Active,EMP-0179,New York City,NY,White,Female,False
+EMP-0385,Ashley,Smith,ashley.smith@justkaizen.ai,Sales,Account Management,Account Manager,IC2,2021-07-18,,,,Active,EMP-0182,Seattle,WA,Black,Female,False
+EMP-0386,Grace,Edwards,grace.edwards@justkaizen.ai,Sales,Account Management,Senior Account Manager,IC3,2023-09-15,,,,Active,EMP-0182,Houston,TX,White,Female,False
+EMP-0387,Daniel,Rivera,daniel.rivera@justkaizen.ai,Customer Success,CSM,Senior CSM,IC3,2021-10-14,,,,Active,EMP-0139,Seattle,WA,White,Male,False
+EMP-0388,Oscar,Wright,oscar.wright@justkaizen.ai,Engineering,Platform,Senior Software Engineer,IC3,2022-08-19,,,,Active,EMP-0158,Boston,MA,Asian,Male,False
+EMP-0389,Steven,White,steven.white@justkaizen.ai,Engineering,Data,Senior Data Engineer,IC3,2022-08-03,,,,Active,EMP-0036,Los Angeles,CA,White,Male,False
+EMP-0390,Patrick,Scott,patrick.scott@justkaizen.ai,Customer Success,CSM,Junior Customer Success Manager,IC1,2021-09-04,,,,Active,EMP-0144,Pittsburgh,PA,White,Male,False
+EMP-0391,Laura,Hernandez,laura.hernandez@justkaizen.ai,Engineering,AI/ML,Senior ML Engineer,IC3,2022-06-09,,,,Active,EMP-0029,San Francisco,CA,White,Female,False
+EMP-0392,Vanessa,Nguyen,vanessa.nguyen@justkaizen.ai,Engineering,Platform,Associate Software Engineer,IC1,2024-05-03,,,,Active,EMP-0124,Austin,TX,Asian,Female,False
+EMP-0393,Matt,Johnson,matt.johnson@justkaizen.ai,Sales,Sales Engineering,Sales Engineer,IC2,2022-03-03,,,,Active,EMP-0038,Detroit,MI,Hispanic/Latino,Male,False
+EMP-0394,Sophia,Campbell,sophia.campbell@justkaizen.ai,G&A,IT,Senior Systems Administrator,IC3,2022-10-01,,,,Active,EMP-0126,Bellevue,WA,Hispanic/Latino,Female,False
+EMP-0395,Andre,Diaz,andre.diaz@justkaizen.ai,Engineering,AI/ML,Senior ML Engineer,IC3,2025-03-30,,,,Active,EMP-0029,San Diego,CA,Hispanic/Latino,Male,False
+EMP-0396,Aaron,Chen,aaron.chen@justkaizen.ai,Engineering,AI/ML,Staff ML Engineer,IC4,2022-05-14,,,,Active,EMP-0185,New York City,NY,White,Male,False
+EMP-0397,James,Sullivan,james.sullivan@justkaizen.ai,Engineering,Platform,Senior Software Engineer,IC3,2022-08-27,,,,Active,EMP-0165,New York City,NY,White,Male,False
+EMP-0398,Miguel,Patel,miguel.patel@justkaizen.ai,Sales,Sales Engineering,Senior Sales Engineer,IC3,2021-10-07,,,,Active,EMP-0038,New York City,NY,White,Male,False
+EMP-0399,Matt,Okafor,matt.okafor@justkaizen.ai,Marketing,Content,Senior Content Marketing Manager,IC3,2022-04-21,,,,Active,EMP-0156,New York City,NY,White,Male,False
+EMP-0400,Camila,Kumar,camila.kumar@justkaizen.ai,People,Total Rewards,Compensation Analyst,IC2,2022-01-28,,,,Active,EMP-0178,Atlanta,GA,Black,Female,False
+EMP-0401,Ibrahim,Khan,ibrahim.khan@justkaizen.ai,Engineering,Data,Staff Data Engineer,IC4,2021-01-01,,,,Active,EMP-0036,Seattle,WA,White,Male,False
+EMP-0402,Fatima,Okafor,fatima.okafor@justkaizen.ai,Sales,SDR,Staff SDR,IC3,2022-02-11,,,,Active,EMP-0030,Arlington,VA,Other/Decline,Female,False
+EMP-0403,Omar,Gonzalez,omar.gonzalez@justkaizen.ai,Sales,Account Management,Junior Account Manager,IC1,2022-09-22,,,,Active,EMP-0182,New York City,NY,White,Male,False
+EMP-0404,Patrick,Tanaka,patrick.tanaka@justkaizen.ai,Customer Success,Implementation,Senior Implementation Specialist,IC3,2025-01-09,,,,Active,EMP-0037,San Francisco,CA,White,Male,False
+EMP-0405,Nathan,Smith,nathan.smith@justkaizen.ai,Marketing,Growth,Growth Marketing Manager,IC2,2021-08-23,,,,Active,EMP-0170,San Diego,CA,White,Male,False
+EMP-0406,Oscar,Foster,oscar.foster@justkaizen.ai,Engineering,Data,Senior Data Engineer,IC3,2022-06-04,,,,Active,EMP-0181,Houston,TX,White,Male,False
+EMP-0407,Sofia,Lee,sofia.lee@justkaizen.ai,Engineering,Platform,Senior Software Engineer,IC3,2021-09-04,,,,Active,EMP-0142,Houston,TX,Two or More,Female,False
+EMP-0408,Henry,Phillips,henry.phillips@justkaizen.ai,Engineering,Infrastructure,Senior Software Engineer,IC3,2021-11-04,,,,Active,EMP-0176,New York City,NY,White,Male,False
+EMP-0409,Naomi,Cohen,naomi.cohen2@justkaizen.ai,Product,Product Management,Senior Product Manager,IC3,2021-11-20,,,,Active,EMP-0149,Phoenix,AZ,White,Female,False
+EMP-0410,Naomi,Edwards,naomi.edwards@justkaizen.ai,Sales,SDR,Senior SDR,IC2,2021-10-06,,,,Active,EMP-0143,Denver,CO,Asian,Female,False
+EMP-0411,Chloe,Garcia,chloe.garcia@justkaizen.ai,Engineering,Platform,Associate Software Engineer,IC1,2022-10-16,,,,Active,EMP-0165,New York City,NY,Asian,Female,False
+EMP-0412,Jessica,Ito,jessica.ito@justkaizen.ai,Sales,Account Executive,Senior Account Executive,IC3,2021-10-15,,,,Active,EMP-0147,Bellevue,WA,Hispanic/Latino,Female,False
+EMP-0413,Ryan,Wang,ryan.wang@justkaizen.ai,Sales,Sales Engineering,Sales Engineer,IC2,2022-09-27,,,,Active,EMP-0038,Los Angeles,CA,Black,Male,False
+EMP-0414,Hannah,Yang,hannah.yang@justkaizen.ai,Product,Product Management,Senior Product Manager,IC3,2022-02-12,,,,Active,EMP-0149,Houston,TX,Asian,Female,False
+EMP-0415,John,Young,john.young@justkaizen.ai,Engineering,AI/ML,Senior ML Engineer,IC3,2021-10-01,,,,Active,EMP-0185,Chicago,IL,Hispanic/Latino,Male,False
+EMP-0416,Henry,Watson,henry.watson@justkaizen.ai,Engineering,AI/ML,Software Engineer,IC2,2022-07-29,,,,Active,EMP-0029,Portland,OR,White,Male,False
+EMP-0417,Daniel,Shah,daniel.shah@justkaizen.ai,Engineering,Infrastructure,Senior Software Engineer,IC3,2024-02-02,,,,Active,EMP-0176,Los Angeles,CA,Black,Male,False
+EMP-0418,Anthony,Scott,anthony.scott@justkaizen.ai,Sales,Account Executive,Junior Account Executive,IC1,2022-04-12,,,,Active,EMP-0147,San Francisco,CA,White,Male,False
+EMP-0419,Brian,Wright,brian.wright2@justkaizen.ai,Engineering,Platform,Staff Software Engineer,IC4,2021-04-07,,,,Active,EMP-0158,Cambridge,MA,Hispanic/Latino,Male,False
+EMP-0420,Bay,Young,bay.young@justkaizen.ai,Engineering,Platform,Senior Software Engineer,IC3,2022-09-24,,,,Active,EMP-0158,Chicago,IL,White,Non-Binary,False
+EMP-0421,Gabriel,Robinson,gabriel.robinson@justkaizen.ai,Sales,Sales Engineering,Sales Engineer,IC2,2022-03-25,,,,Active,EMP-0038,Bellevue,WA,White,Male,False
+EMP-0422,Hannah,Sharma,hannah.sharma@justkaizen.ai,G&A,IT,Systems Administrator,IC2,2022-09-06,,,,Active,EMP-0126,Denver,CO,White,Female,False
+EMP-0423,Camila,Hill,camila.hill@justkaizen.ai,Product,Product Management,Staff Product Manager,IC4,2021-11-06,,,,Active,EMP-0149,New York City,NY,White,Female,False
+EMP-0424,Carlos,Tanaka,carlos.tanaka@justkaizen.ai,G&A,Legal,Corporate Counsel,IC3,2022-03-05,,,,Active,EMP-0179,Boulder,CO,White,Male,False
+EMP-0425,Wei,Park,wei.park@justkaizen.ai,Sales,Sales Engineering,Senior Sales Engineer,IC3,2022-02-07,,,,Active,EMP-0038,Minneapolis,MN,White,Male,False
+EMP-0426,Julia,Garcia,julia.garcia@justkaizen.ai,Sales,Account Executive,Senior Account Executive,IC3,2022-07-17,,,,Active,EMP-0147,Austin,TX,White,Female,False
+EMP-0427,Steven,Khan,steven.khan@justkaizen.ai,Sales,Account Executive,Enterprise Account Executive,IC4,2022-04-16,,,,Active,EMP-0146,Chicago,IL,Hispanic/Latino,Male,False
+EMP-0428,Lucas,Rodriguez,lucas.rodriguez@justkaizen.ai,Sales,SDR,Sales Development Representative,IC1,2022-08-22,,,,Active,EMP-0143,New York City,NY,Hispanic/Latino,Male,False
+EMP-0429,Matt,Kim,matt.kim2@justkaizen.ai,Product,Product Management,Product Manager,IC2,2022-07-29,,,,Active,EMP-0149,Raleigh,NC,White,Male,False
+EMP-0430,Michael,Clark,michael.clark@justkaizen.ai,Engineering,Infrastructure,Senior Software Engineer,IC3,2025-03-03,,,,Active,EMP-0130,Brooklyn,NY,Asian,Male,False
+EMP-0431,John,Ito,john.ito@justkaizen.ai,Product,Product Management,Product Manager,IC2,2021-09-22,,,,Active,EMP-0149,New York City,NY,Asian,Male,False
+EMP-0432,James,Mitchell,james.mitchell@justkaizen.ai,Engineering,Platform,Senior Software Engineer,IC3,2022-06-14,,,,Active,EMP-0158,Austin,TX,Asian,Male,False
+EMP-0433,Ibrahim,Johnson,ibrahim.johnson@justkaizen.ai,Engineering,Data,Senior Data Engineer,IC3,2023-07-09,,,,Active,EMP-0034,Dallas,TX,White,Male,False
+EMP-0434,Andre,Anderson,andre.anderson@justkaizen.ai,Engineering,Platform,Software Engineer,IC2,2021-01-19,,,,Active,EMP-0165,San Diego,CA,Asian,Male,False
+EMP-0435,Isabella,Foster,isabella.foster@justkaizen.ai,Sales,Sales Engineering,Senior Sales Engineer,IC3,2021-03-23,,,,Active,EMP-0038,New York City,NY,Asian,Female,False
+EMP-0436,Andre,Phillips,andre.phillips@justkaizen.ai,G&A,IT,IT Support Specialist,IC1,2022-07-04,,,,Active,EMP-0126,Cambridge,MA,White,Male,False
+EMP-0437,River,Khan,river.khan@justkaizen.ai,Engineering,AI/ML,Senior ML Engineer,IC3,2022-03-23,,,,Active,EMP-0044,Boston,MA,White,Non-Binary,False
+EMP-0438,David,Kim,david.kim@justkaizen.ai,Engineering,Infrastructure,Senior Software Engineer,IC3,2021-10-14,,,,Active,EMP-0130,Boston,MA,White,Male,False
+EMP-0439,Jasmine,Wright,jasmine.wright@justkaizen.ai,Product,Design,Senior Product Designer,IC3,2022-05-25,,,,Active,EMP-0035,Chicago,IL,Asian,Female,False
+EMP-0440,Sofia,Chen,sofia.chen@justkaizen.ai,Customer Success,Support,Staff Support Specialist,IC3,2021-10-22,,,,Active,EMP-0125,Los Angeles,CA,Hispanic/Latino,Female,False
+EMP-0441,Grace,Wilson,grace.wilson@justkaizen.ai,Sales,Account Management,Senior Account Manager,IC3,2022-05-22,,,,Active,EMP-0182,Los Angeles,CA,White,Female,False
+EMP-0442,Sophia,Young,sophia.young@justkaizen.ai,Marketing,Product Marketing,Product Marketing Manager,IC2,2021-10-13,,,,Active,EMP-0164,Phoenix,AZ,Asian,Female,False
+EMP-0443,Isabella,Wilson,isabella.wilson@justkaizen.ai,Engineering,AI/ML,Software Engineer,IC2,2024-12-11,,,,Active,EMP-0185,Brooklyn,NY,Black,Female,False
+EMP-0444,Samuel,Hill,samuel.hill@justkaizen.ai,Product,UX Research,Associate UX Researcher,IC1,2025-02-15,,,,Active,EMP-0127,Seattle,WA,White,Male,False
+EMP-0445,Anthony,Watson,anthony.watson@justkaizen.ai,Engineering,AI/ML,Senior ML Engineer,IC3,2022-07-29,,,,Active,EMP-0185,Nashville,TN,Asian,Male,False
+EMP-0446,Marcus,Davis,marcus.davis@justkaizen.ai,Sales,SDR,Sales Development Representative,IC1,2025-01-29,,,,Active,EMP-0030,Austin,TX,Hispanic/Latino,Male,False
+EMP-0447,Anthony,Rodriguez,anthony.rodriguez@justkaizen.ai,People,People Ops,People Operations Coordinator,IC1,2024-02-03,,,,Active,EMP-0178,San Francisco,CA,White,Male,False
+EMP-0448,Patrick,Thomas,patrick.thomas@justkaizen.ai,Engineering,Infrastructure,Associate Software Engineer,IC1,2022-09-22,,,,Active,EMP-0130,Austin,TX,White,Male,False
+EMP-0449,Sofia,Murphy,sofia.murphy@justkaizen.ai,People,Recruiting,Recruiting Coordinator,IC1,2025-03-26,,,,Active,EMP-0157,Boston,MA,White,Female,False
+EMP-0450,Hannah,Morris,hannah.morris@justkaizen.ai,Sales,SDR,Sales Development Representative,IC1,2022-10-13,,,,Active,EMP-0143,Columbus,OH,White,Female,False
+EMP-0451,Patrick,Rivera,patrick.rivera@justkaizen.ai,Engineering,Platform,Software Engineer,IC2,2022-05-16,,,,Active,EMP-0165,San Diego,CA,Hispanic/Latino,Male,False
+EMP-0452,Julia,Kim,julia.kim@justkaizen.ai,G&A,Facilities,Senior Facilities Specialist,IC3,2021-11-06,,,,Active,EMP-0179,Miami,FL,White,Female,False
+EMP-0453,Priya,Campbell,priya.campbell@justkaizen.ai,G&A,IT,Systems Administrator,IC2,2022-01-20,,,,Active,EMP-0126,San Diego,CA,White,Female,False
+EMP-0454,Mark,Smith,mark.smith@justkaizen.ai,Engineering,AI/ML,Associate Software Engineer,IC1,2022-03-07,,,,Active,EMP-0029,Detroit,MI,Asian,Male,False
+EMP-0455,Naomi,Miller,naomi.miller@justkaizen.ai,Marketing,Growth,Senior Growth Marketing Manager,IC3,2024-02-08,,,,Active,EMP-0170,New York City,NY,Hispanic/Latino,Female,False
+EMP-0456,Jorge,Wang,jorge.wang@justkaizen.ai,Engineering,Platform,Software Engineer,IC2,2024-10-03,,,,Active,EMP-0124,Brooklyn,NY,White,Male,False
+EMP-0457,Ana,Jones,ana.jones@justkaizen.ai,G&A,Finance,Financial Analyst II,IC2,2022-11-24,,,,Active,EMP-0153,Los Angeles,CA,Hispanic/Latino,Female,False
+EMP-0458,Samuel,Kim,samuel.kim@justkaizen.ai,Engineering,Data,Senior Data Engineer,IC3,2021-11-12,,,,Active,EMP-0036,Bellevue,WA,Asian,Male,False
+EMP-0459,Omar,Sato,omar.sato@justkaizen.ai,Engineering,Platform,Senior Software Engineer,IC3,2022-08-29,,,,Active,EMP-0124,Austin,TX,Other/Decline,Male,False
+EMP-0460,Noah,Brown,noah.brown@justkaizen.ai,Engineering,Platform,Senior Software Engineer,IC3,2021-12-25,,,,Active,EMP-0165,San Francisco,CA,White,Male,False
+EMP-0461,Diana,Davis,diana.davis@justkaizen.ai,People,Recruiting,Recruiter,IC2,2022-04-09,,,,Active,EMP-0157,Arlington,VA,White,Female,False
+EMP-0462,Marcus,Hall,marcus.hall@justkaizen.ai,Marketing,Content,Marketing Coordinator,IC1,2022-05-19,,,,Active,EMP-0156,Richmond,VA,Asian,Male,False
+EMP-0463,Kevin,Singh,kevin.singh@justkaizen.ai,Marketing,Brand,Staff Brand Manager,IC4,2021-04-12,,,,Active,EMP-0156,San Francisco,CA,White,Male,False
+EMP-0464,Matt,Watson,matt.watson@justkaizen.ai,Engineering,Data,Staff Data Engineer,IC4,2021-10-02,,,,Active,EMP-0036,Los Angeles,CA,Hispanic/Latino,Male,False
+EMP-0465,Emma,Reed,emma.reed@justkaizen.ai,Customer Success,Support,Senior Support Specialist,IC2,2023-10-18,,,,Active,EMP-0125,San Francisco,CA,Black,Female,False
+EMP-0466,Skyler,Cohen,skyler.cohen@justkaizen.ai,Sales,Account Executive,Senior Account Executive,IC3,2022-10-21,,,,Active,EMP-0146,Chicago,IL,Asian,Non-Binary,False
+EMP-0467,Linda,Foster,linda.foster@justkaizen.ai,Customer Success,Support,Staff Support Specialist,IC3,2022-06-11,,,,Active,EMP-0125,Cambridge,MA,Hispanic/Latino,Female,False
+EMP-0468,River,Harris,river.harris@justkaizen.ai,Engineering,Infrastructure,Software Engineer,IC2,2024-05-03,,,,Active,EMP-0176,Los Angeles,CA,White,Non-Binary,False
+EMP-0469,Rachel,Mitchell,rachel.mitchell@justkaizen.ai,Customer Success,Implementation,Senior Implementation Specialist,IC3,2022-05-25,,,,Active,EMP-0037,Los Angeles,CA,White,Female,False
+EMP-0470,Omar,Ito,omar.ito@justkaizen.ai,Product,UX Research,UX Researcher,IC2,2022-05-06,,,,Active,EMP-0127,Los Angeles,CA,Asian,Male,False
+EMP-0471,Lucas,Smith,lucas.smith@justkaizen.ai,Engineering,Infrastructure,Associate Software Engineer,IC1,2022-08-14,,,,Active,EMP-0176,San Diego,CA,Asian,Male,False
+EMP-0472,Jasmine,Shah,jasmine.shah@justkaizen.ai,Sales,SDR,Senior SDR,IC2,2022-08-11,,,,Active,EMP-0143,Austin,TX,White,Female,False
+EMP-0473,Eric,Patel,eric.patel@justkaizen.ai,People,HRBPs,Senior HRBP,IC3,2021-09-15,,,,Active,EMP-0025,Brooklyn,NY,Two or More,Male,False
+EMP-0474,Ava,Thomas,ava.thomas@justkaizen.ai,Engineering,Platform,Software Engineer,IC2,2022-02-08,,,,Active,EMP-0158,New York City,NY,Asian,Female,False
+EMP-0475,Skyler,Nguyen,skyler.nguyen@justkaizen.ai,Engineering,Infrastructure,Senior Software Engineer,IC3,2021-04-06,,,,Active,EMP-0138,Arlington,VA,Asian,Non-Binary,False
+EMP-0476,Anthony,Diaz,anthony.diaz@justkaizen.ai,Marketing,Brand,Brand Manager,IC2,2023-09-05,,,,Active,EMP-0156,San Diego,CA,Black,Male,False
+EMP-0477,Fatima,Gonzalez,fatima.gonzalez@justkaizen.ai,Marketing,Content,Senior Content Marketing Manager,IC3,2021-06-07,,,,Active,EMP-0156,New York City,NY,Asian,Female,False
+EMP-0478,Gabriel,Jones,gabriel.jones@justkaizen.ai,Engineering,Platform,Staff Software Engineer,IC4,2022-03-22,,,,Active,EMP-0158,San Francisco,CA,Hispanic/Latino,Male,False
+EMP-0479,Oscar,Campbell,oscar.campbell@justkaizen.ai,Engineering,Platform,Staff Software Engineer,IC4,2021-07-23,,,,Active,EMP-0165,Boston,MA,White,Male,False
+EMP-0480,Wei,Wilson,wei.wilson@justkaizen.ai,Product,Design,Product Designer,IC2,2022-08-13,,,,Active,EMP-0035,Portland,OR,Asian,Male,False
+EMP-0481,Jasmine,Anderson,jasmine.anderson@justkaizen.ai,Sales,SDR,Senior SDR,IC2,2021-09-22,,,,Active,EMP-0030,Seattle,WA,Black,Female,False
+EMP-0482,Alex,Singh,alex.singh@justkaizen.ai,Marketing,Growth,Senior Growth Marketing Manager,IC3,2021-12-28,,,,Active,EMP-0170,Portland,OR,White,Female,False
+EMP-0483,James,Lewis,james.lewis@justkaizen.ai,Engineering,Platform,Software Engineer,IC2,2022-01-11,,,,Active,EMP-0124,Austin,TX,Two or More,Male,False
+EMP-0484,Isabella,Lee,isabella.lee@justkaizen.ai,Engineering,Infrastructure,Staff Software Engineer,IC4,2021-02-14,,,,Active,EMP-0176,Columbus,OH,White,Female,False
+EMP-0485,Rachel,Park,rachel.park@justkaizen.ai,Sales,SDR,Senior SDR,IC2,2022-08-24,,,,Active,EMP-0030,Seattle,WA,Asian,Female,False
+EMP-0486,Noah,Walsh,noah.walsh@justkaizen.ai,Sales,Account Executive,Senior Account Executive,IC3,2021-11-14,,,,Active,EMP-0169,San Diego,CA,White,Male,False
+EMP-0487,Zoe,Robinson,zoe.robinson@justkaizen.ai,Marketing,Growth,Senior Growth Marketing Manager,IC3,2021-06-05,,,,Active,EMP-0170,Boston,MA,Two or More,Female,False
+EMP-0488,Daniel,Lopez,daniel.lopez@justkaizen.ai,Engineering,Data,Software Engineer,IC2,2022-01-12,,,,Active,EMP-0162,Salt Lake City,UT,White,Male,False
+EMP-0489,Steven,Shah,steven.shah2@justkaizen.ai,Engineering,AI/ML,Senior ML Engineer,IC3,2022-04-23,,,,Active,EMP-0185,New York City,NY,Other/Decline,Male,False
+EMP-0490,Robert,Thompson,robert.thompson@justkaizen.ai,Engineering,Data,Software Engineer,IC2,2024-12-20,,,,Active,EMP-0034,Atlanta,GA,White,Male,False
+EMP-0491,Daniela,Mitchell,daniela.mitchell@justkaizen.ai,Sales,Account Executive,Senior Account Executive,IC3,2022-01-04,,,,Active,EMP-0147,Detroit,MI,White,Female,False
+EMP-0492,Diana,Wilson,diana.wilson@justkaizen.ai,Engineering,AI/ML,Staff ML Engineer,IC4,2022-05-21,,,,Active,EMP-0029,Los Angeles,CA,Asian,Female,False
+EMP-0493,Miguel,Chen,miguel.chen@justkaizen.ai,Engineering,Infrastructure,Software Engineer,IC2,2023-11-28,,,,Active,EMP-0138,Boston,MA,White,Male,False
+EMP-0494,Imani,Hernandez,imani.hernandez@justkaizen.ai,G&A,Finance,Financial Analyst I,IC1,2024-08-23,,,,Active,EMP-0153,New York City,NY,Black,Female,False
+EMP-0495,Ana,Fernandez,ana.fernandez@justkaizen.ai,Marketing,Growth,Marketing Coordinator,IC1,2025-02-16,,,,Active,EMP-0170,San Francisco,CA,Hispanic/Latino,Female,False
+EMP-0496,Carlos,Wang,carlos.wang2@justkaizen.ai,Marketing,Growth,Growth Marketing Manager,IC2,2021-08-04,,,,Active,EMP-0170,Los Angeles,CA,White,Male,False
+EMP-0497,Henry,Perez,henry.perez@justkaizen.ai,Engineering,Platform,Software Engineer,IC2,2022-11-28,,,,Active,EMP-0158,Los Angeles,CA,Hispanic/Latino,Male,False
+EMP-0498,Andre,Lee,andre.lee@justkaizen.ai,Engineering,AI/ML,Software Engineer,IC2,2022-12-17,,,,Active,EMP-0029,Austin,TX,Two or More,Male,False
+EMP-0499,Mark,Mitchell,mark.mitchell@justkaizen.ai,Engineering,AI/ML,Senior ML Engineer,IC3,2022-06-21,,,,Active,EMP-0044,Seattle,WA,White,Male,False
+EMP-0500,Casey,Hernandez,casey.hernandez@justkaizen.ai,Customer Success,Support,Senior Support Specialist,IC2,2021-07-20,,,,Active,EMP-0125,Charlotte,NC,Hispanic/Latino,Non-Binary,False
+EMP-0501,Mia,Davis,mia.davis@justkaizen.ai,Engineering,AI/ML,Staff ML Engineer,IC4,2022-05-07,,,,Active,EMP-0044,Denver,CO,White,Female,False
+EMP-0502,Eric,Robinson,eric.robinson@justkaizen.ai,Engineering,Infrastructure,Software Engineer,IC2,2021-04-01,,,,Active,EMP-0138,Dallas,TX,Asian,Male,False
+EMP-0503,Anthony,Ito,anthony.ito@justkaizen.ai,Engineering,Data,Associate Software Engineer,IC1,2022-06-29,,,,Active,EMP-0036,New York City,NY,Asian,Male,False
+EMP-0504,Chris,Cohen,chris.cohen@justkaizen.ai,Sales,Account Executive,Senior Account Executive,IC3,2021-04-15,,,,Active,EMP-0146,New York City,NY,White,Male,False
+EMP-0505,Priya,Campbell,priya.campbell2@justkaizen.ai,G&A,IT,Senior Systems Administrator,IC3,2024-01-03,,,,Active,EMP-0126,San Francisco,CA,White,Female,False
+EMP-0506,Ava,Shah,ava.shah@justkaizen.ai,Product,Product Management,Senior Product Manager,IC3,2021-05-29,,,,Active,EMP-0149,New York City,NY,Asian,Female,False
+EMP-0507,Robin,Jones,robin.jones@justkaizen.ai,People,People Ops,Senior People Operations Specialist,IC3,2021-09-21,,,,Active,EMP-0178,San Francisco,CA,Other/Decline,Non-Binary,False
+EMP-0508,Aaron,Lee,aaron.lee@justkaizen.ai,G&A,IT,IT Support Specialist,IC1,2022-10-27,,,,Active,EMP-0126,New York City,NY,White,Male,False
+EMP-0509,James,Sharma,james.sharma@justkaizen.ai,Engineering,Platform,Senior Software Engineer,IC3,2022-09-14,,,,Active,EMP-0142,Houston,TX,Hispanic/Latino,Male,False
+EMP-0510,David,Young,david.young@justkaizen.ai,Engineering,Infrastructure,Software Engineer,IC2,2024-09-06,,,,Active,EMP-0130,Dallas,TX,Asian,Male,False
+EMP-0511,Carlos,Walsh,carlos.walsh@justkaizen.ai,Engineering,Platform,Staff Software Engineer,IC4,2022-08-02,,,,Active,EMP-0142,San Francisco,CA,White,Male,False
+EMP-0512,Robert,Yang,robert.yang@justkaizen.ai,People,Recruiting,Senior Recruiter,IC3,2021-06-16,,,,Active,EMP-0157,Brooklyn,NY,White,Male,False
+EMP-0513,Aria,Mitchell,aria.mitchell@justkaizen.ai,G&A,Finance,Senior Financial Analyst,IC3,2021-12-22,,,,Active,EMP-0153,Los Angeles,CA,Black,Female,False
+EMP-0514,Marcus,Perez,marcus.perez@justkaizen.ai,Sales,SDR,Sales Development Representative,IC1,2022-06-02,,,,Active,EMP-0143,Salt Lake City,UT,Black,Male,False
+EMP-0515,Ibrahim,Ito,ibrahim.ito2@justkaizen.ai,Customer Success,Implementation,Implementation Specialist,IC2,2023-08-08,,,,Active,EMP-0037,Nashville,TN,Hispanic/Latino,Male,False
+EMP-0516,Thomas,Wright,thomas.wright@justkaizen.ai,Engineering,AI/ML,Software Engineer,IC2,2022-09-22,,,,Active,EMP-0044,San Francisco,CA,White,Male,False
+EMP-0517,Daniel,Hernandez,daniel.hernandez@justkaizen.ai,Engineering,Infrastructure,Senior Software Engineer,IC3,2023-10-17,,,,Active,EMP-0138,Chicago,IL,White,Male,False
+EMP-0518,Arjun,Reed,arjun.reed@justkaizen.ai,Engineering,Platform,Senior Software Engineer,IC3,2025-02-22,,,,Active,EMP-0158,Boston,MA,Hispanic/Latino,Male,False
+EMP-0519,Wei,Lewis,wei.lewis@justkaizen.ai,G&A,Finance,Senior Financial Analyst,IC3,2022-12-02,,,,Active,EMP-0153,Seattle,WA,Hispanic/Latino,Male,False
+EMP-0520,Omar,Campbell,omar.campbell@justkaizen.ai,G&A,Facilities,Facilities Specialist,IC2,2022-05-29,,,,Active,EMP-0153,Philadelphia,PA,White,Male,False
+EMP-0521,Tara,Anderson,tara.anderson@justkaizen.ai,G&A,Finance,Financial Analyst II,IC2,2023-09-27,,,,Active,EMP-0153,San Francisco,CA,Black,Female,False
+EMP-0522,Carlos,Thomas,carlos.thomas@justkaizen.ai,Engineering,Data,Senior Data Engineer,IC3,2024-10-27,,,,Active,EMP-0036,New York City,NY,Asian,Male,False
+EMP-0523,Oscar,Ito,oscar.ito@justkaizen.ai,Engineering,Data,Software Engineer,IC2,2022-01-06,,,,Active,EMP-0036,San Francisco,CA,Asian,Male,False
+EMP-0524,Maria,Hill,maria.hill@justkaizen.ai,People,L&D,Senior L&D Specialist,IC3,2022-11-03,,,,Active,EMP-0025,Brooklyn,NY,Asian,Female,False
+EMP-0525,Robert,Khan,robert.khan@justkaizen.ai,Sales,Sales Engineering,Staff Sales Engineer,IC4,2021-06-25,,,,Active,EMP-0038,Philadelphia,PA,White,Male,False
+EMP-0526,James,Sharma,james.sharma2@justkaizen.ai,Engineering,Infrastructure,Staff Software Engineer,IC4,2021-08-27,,,,Active,EMP-0176,San Diego,CA,Asian,Male,False
+EMP-0527,Sara,White,sara.white@justkaizen.ai,Marketing,Content,Content Marketing Manager,IC2,2022-11-03,,,,Active,EMP-0156,Los Angeles,CA,Black,Female,False
+EMP-0528,Marcus,Gonzalez,marcus.gonzalez@justkaizen.ai,Product,Product Management,Senior Product Manager,IC3,2024-10-14,,,,Active,EMP-0149,Boston,MA,White,Male,False
+EMP-0529,Michael,Diaz,michael.diaz@justkaizen.ai,Engineering,Platform,Senior Software Engineer,IC3,2023-08-18,,,,Active,EMP-0142,Brooklyn,NY,White,Male,False
+EMP-0530,Sara,Clark,sara.clark@justkaizen.ai,Sales,Account Executive,Junior Account Executive,IC1,2021-12-04,,,,Active,EMP-0146,San Francisco,CA,Black,Female,False
+EMP-0531,Lucas,Mitchell,lucas.mitchell@justkaizen.ai,Product,Design,Product Designer,IC2,2022-09-08,,,,Active,EMP-0035,New York City,NY,Asian,Male,False
+EMP-0532,Samuel,Clark,samuel.clark@justkaizen.ai,G&A,Finance,Senior Financial Analyst,IC3,2021-10-23,,,,Active,EMP-0153,New York City,NY,Two or More,Male,False
+EMP-0533,Mia,Miller,mia.miller@justkaizen.ai,Customer Success,Implementation,Junior Implementation Specialist,IC1,2021-11-07,,,,Active,EMP-0037,San Diego,CA,Asian,Female,False
+EMP-0534,Wei,Walker,wei.walker@justkaizen.ai,Sales,Account Management,Senior Account Manager,IC3,2022-03-15,,,,Active,EMP-0182,San Francisco,CA,White,Male,False
+EMP-0535,Thomas,Wong,thomas.wong@justkaizen.ai,Engineering,Platform,Software Engineer,IC2,2022-02-17,,,,Active,EMP-0165,Chicago,IL,White,Male,False
+EMP-0536,Felipe,Scott,felipe.scott@justkaizen.ai,Product,Design,Associate Product Designer,IC1,2022-05-29,,,,Active,EMP-0035,New York City,NY,White,Male,False
+EMP-0537,Thomas,Reed,thomas.reed@justkaizen.ai,Customer Success,Support,Senior Support Specialist,IC2,2022-01-20,,,,Active,EMP-0125,Raleigh,NC,Hispanic/Latino,Male,False
+EMP-0538,Kai,Chen,kai.chen@justkaizen.ai,Marketing,Growth,Senior Growth Marketing Manager,IC3,2024-04-01,,,,Active,EMP-0170,San Francisco,CA,Asian,Non-Binary,False
+EMP-0539,River,Anderson,river.anderson@justkaizen.ai,G&A,Finance,Staff Financial Analyst,IC4,2022-03-03,,,,Active,EMP-0153,Arlington,VA,Hispanic/Latino,Non-Binary,False
+EMP-0540,Sophia,Edwards,sophia.edwards2@justkaizen.ai,G&A,Finance,Financial Analyst II,IC2,2024-06-18,,,,Active,EMP-0153,Bellevue,WA,White,Female,False
+EMP-0541,James,Johnson,james.johnson@justkaizen.ai,Engineering,Infrastructure,Senior Software Engineer,IC3,2021-09-18,,,,Active,EMP-0176,Seattle,WA,White,Male,False
+EMP-0542,Zoe,Walker,zoe.walker@justkaizen.ai,People,Total Rewards,Senior Compensation Analyst,IC3,2022-01-22,,,,Active,EMP-0178,New York City,NY,White,Female,False
+EMP-0543,Henry,Khan,henry.khan@justkaizen.ai,G&A,Legal,Corporate Counsel,IC3,2022-03-03,,,,Active,EMP-0179,Brooklyn,NY,Two or More,Male,False
+EMP-0544,Zoe,Jackson,zoe.jackson@justkaizen.ai,Sales,Account Executive,Account Executive,IC2,2022-08-05,,,,Active,EMP-0169,Chicago,IL,Hispanic/Latino,Female,False
+EMP-0545,Cameron,Sanchez,cameron.sanchez@justkaizen.ai,Product,Design,Senior Product Designer,IC3,2021-04-14,,,,Active,EMP-0035,Seattle,WA,White,Non-Binary,False
+EMP-0546,Zoe,Miller,zoe.miller@justkaizen.ai,Customer Success,CSM,Customer Success Manager,IC2,2021-02-14,,,,Active,EMP-0144,Nashville,TN,Two or More,Female,False
+EMP-0547,Kevin,Mitchell,kevin.mitchell@justkaizen.ai,People,Recruiting,Recruiter,IC2,2022-01-23,,,,Active,EMP-0157,Denver,CO,Black,Male,False
+EMP-0548,Anthony,Smith,anthony.smith@justkaizen.ai,Sales,Account Executive,Senior Account Executive,IC3,2021-09-29,,,,Active,EMP-0146,Columbus,OH,White,Male,False
+EMP-0549,Carlos,Clark,carlos.clark@justkaizen.ai,Sales,SDR,Senior SDR,IC2,2022-02-17,,,,Active,EMP-0030,Phoenix,AZ,Hispanic/Latino,Male,False
+EMP-0550,Ana,Murphy,ana.murphy2@justkaizen.ai,Engineering,AI/ML,Software Engineer,IC2,2021-07-05,,,,Active,EMP-0185,Cambridge,MA,Asian,Female,False
+EMP-0551,Vanessa,Hernandez,vanessa.hernandez@justkaizen.ai,People,Total Rewards,Compensation Manager (IC track),IC4,2022-02-11,,,,Active,EMP-0025,New York City,NY,White,Female,False
+EMP-0552,Mia,Cohen,mia.cohen@justkaizen.ai,People,Recruiting,Senior Recruiter,IC3,2022-04-30,,,,Active,EMP-0157,Cambridge,MA,Asian,Female,False
+EMP-0553,Emma,Hill,emma.hill@justkaizen.ai,Sales,Sales Engineering,Senior Sales Engineer,IC3,2022-11-21,,,,Active,EMP-0038,San Francisco,CA,White,Female,False
+EMP-0554,Ibrahim,Ramirez,ibrahim.ramirez@justkaizen.ai,Customer Success,CSM,Customer Success Manager,IC2,2021-08-07,,,,Active,EMP-0139,Chicago,IL,White,Male,False
+EMP-0555,Aria,Wright,aria.wright@justkaizen.ai,Marketing,Product Marketing,Senior Product Marketing Manager,IC3,2022-04-29,,,,Active,EMP-0164,Seattle,WA,White,Female,False
+EMP-0556,Laura,Hernandez,laura.hernandez2@justkaizen.ai,Product,Product Management,Staff Product Manager,IC4,2022-06-27,,,,Active,EMP-0149,Austin,TX,White,Female,False
+EMP-0557,Zoe,Sullivan,zoe.sullivan@justkaizen.ai,G&A,Facilities,Facilities Specialist,IC2,2022-04-06,,,,Active,EMP-0153,Houston,TX,White,Female,False
+EMP-0558,Daniela,Cohen,daniela.cohen@justkaizen.ai,Engineering,Infrastructure,Senior Software Engineer,IC3,2022-06-28,,,,Active,EMP-0138,Raleigh,NC,Asian,Female,False
+EMP-0559,Ryan,Kumar,ryan.kumar@justkaizen.ai,Sales,SDR,Sales Development Representative,IC1,2024-09-15,,,,Active,EMP-0143,Portland,OR,Other/Decline,Male,False
+EMP-0560,Ava,Taylor,ava.taylor@justkaizen.ai,People,HRBPs,Senior HRBP,IC3,2021-09-18,,,,Active,EMP-0025,Cambridge,MA,Two or More,Female,False
+EMP-0561,Kevin,Garcia,kevin.garcia@justkaizen.ai,Engineering,AI/ML,Software Engineer,IC2,2021-07-14,,,,Active,EMP-0029,Los Angeles,CA,White,Male,False
+EMP-0562,Miguel,Khan,miguel.khan@justkaizen.ai,Sales,Account Executive,Account Executive,IC2,2021-10-02,,,,Active,EMP-0147,New York City,NY,White,Male,False
+EMP-0563,Vanessa,Lopez,vanessa.lopez@justkaizen.ai,Engineering,AI/ML,Staff ML Engineer,IC4,2021-12-08,,,,Active,EMP-0185,New York City,NY,White,Female,False
+EMP-0564,Emily,Walker,emily.walker@justkaizen.ai,Sales,Account Management,Senior Account Manager,IC3,2022-04-18,,,,Active,EMP-0186,Atlanta,GA,White,Female,False
+EMP-0565,Aisha,Campbell,aisha.campbell@justkaizen.ai,G&A,IT,Senior Systems Administrator,IC3,2021-08-28,,,,Active,EMP-0126,Chicago,IL,Black,Female,False
+EMP-0566,Eric,Roy,eric.roy@justkaizen.ai,Customer Success,CSM,Senior CSM,IC3,2024-06-24,,,,Active,EMP-0139,Chicago,IL,Hispanic/Latino,Male,False
+EMP-0567,Wei,Roy,wei.roy@justkaizen.ai,Sales,Account Management,Account Manager,IC2,2025-02-18,,,,Active,EMP-0182,Boston,MA,White,Male,False
+EMP-0568,Carlos,Walsh,carlos.walsh2@justkaizen.ai,Engineering,Infrastructure,Software Engineer,IC2,2021-12-13,,,,Active,EMP-0130,Atlanta,GA,Asian,Male,False
+EMP-0569,Arjun,Rivera,arjun.rivera@justkaizen.ai,Engineering,Infrastructure,Senior Software Engineer,IC3,2022-07-20,2024-02-05,Voluntary,Role Misalignment,Terminated,EMP-0176,Los Angeles,CA,Hispanic/Latino,Male,False
+EMP-0570,Linda,Torres,linda.torres@justkaizen.ai,Sales,Account Executive,Senior Account Executive,IC3,2021-06-11,2023-08-17,Voluntary,Role Misalignment,Terminated,EMP-0169,Chicago,IL,Hispanic/Latino,Female,False
+EMP-0571,Marcus,Anderson,marcus.anderson@justkaizen.ai,Product,UX Research,Associate UX Researcher,IC1,2022-07-17,2025-01-07,Voluntary,Compensation,Terminated,EMP-0127,San Francisco,CA,Asian,Male,False
+EMP-0572,Marcus,Rodriguez,marcus.rodriguez@justkaizen.ai,Sales,Account Executive,Junior Account Executive,IC1,2022-06-12,2023-06-27,Voluntary,Compensation,Terminated,EMP-0169,San Francisco,CA,Hispanic/Latino,Male,False
+EMP-0573,Fatima,Zhang,fatima.zhang@justkaizen.ai,Engineering,AI/ML,Software Engineer,IC2,2021-07-31,2023-01-17,Voluntary,Compensation,Terminated,EMP-0044,Los Angeles,CA,Asian,Female,False
+EMP-0574,Naomi,Gonzalez,naomi.gonzalez@justkaizen.ai,G&A,Legal,Legal Coordinator,IC1,2022-05-08,2023-11-18,Voluntary,Compensation,Terminated,EMP-0179,New York City,NY,Asian,Female,False
+EMP-0575,Andre,Wang,andre.wang@justkaizen.ai,Product,UX Research,Associate UX Researcher,IC1,2021-03-21,2022-05-16,Voluntary,Relocation,Terminated,EMP-0127,New York City,NY,Black,Male,False
+EMP-0576,Marcus,Morris,marcus.morris@justkaizen.ai,Sales,Account Management,Senior Account Manager,IC3,2022-07-01,2023-03-17,Voluntary,Relocation,Terminated,EMP-0186,Brooklyn,NY,Black,Male,False
+EMP-0577,Morgan,Walker,morgan.walker@justkaizen.ai,Engineering,AI/ML,Associate Software Engineer,IC1,2021-02-18,2024-05-06,Voluntary,Compensation,Terminated,EMP-0029,San Francisco,CA,Hispanic/Latino,Non-Binary,False
+EMP-0578,Carlos,Harris,carlos.harris@justkaizen.ai,Sales,SDR,Staff SDR,IC3,2021-07-24,2023-01-28,Voluntary,Work-Life Balance,Terminated,EMP-0143,Brooklyn,NY,Asian,Male,False
+EMP-0579,Ryan,Roy,ryan.roy@justkaizen.ai,Engineering,Data,Senior Data Engineer,IC3,2022-09-15,2024-01-01,Voluntary,Work-Life Balance,Terminated,EMP-0181,Philadelphia,PA,White,Male,False
+EMP-0580,Thomas,Sato,thomas.sato@justkaizen.ai,Sales,SDR,Staff SDR,IC3,2021-08-22,2024-09-27,Voluntary,Personal Reasons,Terminated,EMP-0030,New York City,NY,White,Male,False
+EMP-0581,Hannah,Patel,hannah.patel@justkaizen.ai,People,Total Rewards,Total Rewards Coordinator,IC1,2022-09-24,2023-06-06,Voluntary,Relocation,Terminated,EMP-0157,San Francisco,CA,Other/Decline,Female,False
+EMP-0582,Vanessa,Nguyen,vanessa.nguyen2@justkaizen.ai,Sales,Sales Engineering,Senior Sales Engineer,IC3,2021-10-28,2024-09-30,Voluntary,Compensation,Terminated,EMP-0038,Columbus,OH,Asian,Female,False
+EMP-0583,Julia,Smith,julia.smith@justkaizen.ai,Marketing,Brand,Senior Brand Manager,IC3,2021-04-28,2023-11-12,Voluntary,Personal Reasons,Terminated,EMP-0164,Dallas,TX,White,Female,False
+EMP-0584,Mia,Kim,mia.kim@justkaizen.ai,Sales,SDR,Sales Development Representative,IC1,2021-10-31,2022-05-15,Voluntary,Role Misalignment,Terminated,EMP-0030,Cambridge,MA,White,Female,False
+EMP-0585,Steven,Sullivan,steven.sullivan@justkaizen.ai,Engineering,Platform,Software Engineer,IC2,2022-03-31,2023-05-10,Voluntary,Work-Life Balance,Terminated,EMP-0124,Boston,MA,Two or More,Male,False
+EMP-0586,Drew,Taylor,drew.taylor@justkaizen.ai,Customer Success,Support,Staff Support Specialist,IC3,2022-05-12,2023-09-03,Voluntary,Compensation,Terminated,EMP-0125,Cambridge,MA,Black,Non-Binary,False
+EMP-0587,Leslie,Miller,leslie.miller@justkaizen.ai,Engineering,Platform,Associate Software Engineer,IC1,2022-10-01,2023-05-06,Voluntary,Work-Life Balance,Terminated,EMP-0158,Los Angeles,CA,Hispanic/Latino,Non-Binary,False
+EMP-0588,Nathan,Shah,nathan.shah@justkaizen.ai,Sales,Account Executive,Junior Account Executive,IC1,2022-04-11,2023-03-12,Voluntary,Work-Life Balance,Terminated,EMP-0146,Austin,TX,Black,Male,False
+EMP-0589,Ana,Walsh,ana.walsh@justkaizen.ai,Product,UX Research,Associate UX Researcher,IC1,2022-02-14,2023-09-15,Voluntary,Compensation,Terminated,EMP-0127,New York City,NY,Asian,Female,False
+EMP-0590,Casey,Davis,casey.davis@justkaizen.ai,Engineering,Infrastructure,Senior Software Engineer,IC3,2021-08-15,2023-06-25,Voluntary,Work-Life Balance,Terminated,EMP-0176,New York City,NY,Two or More,Non-Binary,False
+EMP-0591,David,White,david.white@justkaizen.ai,Product,Product Management,Senior Product Manager,IC3,2022-04-30,2025-01-13,Voluntary,Personal Reasons,Terminated,EMP-0149,Los Angeles,CA,Asian,Male,False
+EMP-0592,Hassan,Foster,hassan.foster@justkaizen.ai,Engineering,Platform,Software Engineer,IC2,2021-12-24,2023-09-16,Voluntary,Role Misalignment,Terminated,EMP-0165,New York City,NY,Asian,Male,False
+EMP-0593,Kate,White,kate.white@justkaizen.ai,Sales,Account Management,Senior Account Manager,IC3,2022-02-28,2023-01-26,Voluntary,Relocation,Terminated,EMP-0186,San Francisco,CA,Black,Female,False
+EMP-0594,James,Wilson,james.wilson@justkaizen.ai,Engineering,AI/ML,Software Engineer,IC2,2021-12-04,2023-03-03,Voluntary,Compensation,Terminated,EMP-0029,Boulder,CO,Asian,Male,False
+EMP-0595,David,Smith,david.smith@justkaizen.ai,Engineering,Platform,Software Engineer,IC2,2021-11-16,2024-08-02,Voluntary,Compensation,Terminated,EMP-0124,Denver,CO,Asian,Male,False
+EMP-0596,Jamie,Thomas,jamie.thomas@justkaizen.ai,Engineering,Infrastructure,Associate Software Engineer,IC1,2021-06-04,2023-11-09,Voluntary,Personal Reasons,Terminated,EMP-0176,Cambridge,MA,Two or More,Non-Binary,False
+EMP-0597,John,Hall,john.hall@justkaizen.ai,Engineering,AI/ML,Software Engineer,IC2,2022-12-26,2023-07-24,Voluntary,Work-Life Balance,Terminated,EMP-0044,New York City,NY,White,Male,False
+EMP-0598,Jessica,Wilson,jessica.wilson@justkaizen.ai,Sales,Account Management,Account Manager,IC2,2021-08-24,2023-03-12,Voluntary,Role Misalignment,Terminated,EMP-0186,San Francisco,CA,White,Female,False
+EMP-0599,Isabella,Anderson,isabella.anderson@justkaizen.ai,Engineering,AI/ML,Software Engineer,IC2,2022-11-09,2024-07-06,Voluntary,Compensation,Terminated,EMP-0185,New York City,NY,White,Female,False
+EMP-0600,Robin,Gonzalez,robin.gonzalez@justkaizen.ai,Customer Success,CSM,Senior CSM,IC3,2022-03-04,2024-03-10,Voluntary,Work-Life Balance,Terminated,EMP-0139,Bellevue,WA,Asian,Non-Binary,False
+EMP-0601,Brian,Taylor,brian.taylor@justkaizen.ai,Engineering,Infrastructure,Staff Software Engineer,IC4,2022-03-03,2022-12-21,Voluntary,Compensation,Terminated,EMP-0130,Philadelphia,PA,White,Male,False
+EMP-0602,Emma,Scott,emma.scott@justkaizen.ai,Customer Success,Implementation,Senior Implementation Specialist,IC3,2022-06-22,2025-03-01,Voluntary,Role Misalignment,Terminated,EMP-0037,New York City,NY,White,Female,False
+EMP-0603,Linda,Young,linda.young@justkaizen.ai,Engineering,Data,Senior Data Engineer,IC3,2022-01-31,2025-02-21,Voluntary,Work-Life Balance,Terminated,EMP-0034,San Diego,CA,White,Female,False
+EMP-0604,Ibrahim,Mitchell,ibrahim.mitchell2@justkaizen.ai,Engineering,Data,Staff Data Engineer,IC4,2022-06-26,2024-08-10,Voluntary,Career Opportunity,Terminated,EMP-0162,Philadelphia,PA,White,Male,False

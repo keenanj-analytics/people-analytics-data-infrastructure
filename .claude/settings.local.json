@@ -1,0 +1,15 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python3 scripts/data_generation/01_generate_employee_profiles.py)",
+      "Bash(python3 -c ' *)",
+      "Bash(python3 scripts/data_generation/02_designate_manager_layer.py)",
+      "Bash(python3 scripts/data_generation/03_resolve_manager_hierarchy.py)",
+      "Bash(python3 scripts/data_generation/04_audit_subdept_level_grid.py)",
+      "Bash(python3 scripts/data_generation/05_align_subdept_level_grid.py)",
+      "Bash(python3 scripts/data_generation/06_build_demographics.py)",
+      "Bash(python3 scripts/data_generation/07_materialize_raw_employees.py)",
+      "Bash(python3 scripts/data_generation/08_complete_raw_job_history.py)"
+    ]
+  }
+}

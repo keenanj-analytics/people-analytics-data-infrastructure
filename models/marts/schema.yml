@@ -1,0 +1,381 @@
+version: 2
+
+models:
+  - name: fct_workforce_overview
+    description: |
+      Headline workforce time series. One row per (department,
+      year_quarter) across 21 quarters x 7 departments = 147 rows.
+      Carries start / end headcount snapshots, period flow (hires,
+      terminations split by type), net change, average period
+      headcount, and attrition rate. Q1 2023 layoff is visible in
+      the layoff_terminations column; the Section 1 hypergrowth peak
+      (2022-Q2) is visible in hires_in_period.
+    tests:
+      - dbt_utils.unique_combination_of_columns:
+          combination_of_columns:
+            - year_quarter
+            - department
+    columns:
+      - name: year_quarter
+        description: Cycle identifier in YYYY-QN format.
+        tests:
+          - not_null
+      - name: quarter_start_date
+        description: Calendar start of the quarter.
+        tests:
+          - not_null
+      - name: quarter_end_date
+        description: Calendar end of the quarter.
+        tests:
+          - not_null
+      - name: department
+        description: One of the 7 standard departments.
+        tests:
+          - not_null
+          - accepted_values:
+              values:
+                - Engineering
+                - Sales
+                - Customer Success
+                - Marketing
+                - Product
+                - G&A
+                - People
+      - name: start_headcount
+        description: Active employees on day_before quarter_start_date.
+        tests:
+          - not_null
+          - dbt_utils.expression_is_true:
+              expression: ">= 0"
+      - name: end_headcount
+        description: Active employees on quarter_end_date.
+        tests:
+          - not_null
+          - dbt_utils.expression_is_true:
+              expression: ">= 0"
+      - name: net_change
+        description: end_headcount - start_headcount.
+        tests:
+          - not_null
+      - name: avg_period_headcount
+        description: (start_headcount + end_headcount) / 2.
+        tests:
+          - not_null
+      - name: hires_in_period
+        description: |
+          Count of employees with hire_date between quarter_start_date
+          and quarter_end_date (inclusive).
+        tests:
+          - not_null
+          - dbt_utils.expression_is_true:
+              expression: ">= 0"
+      - name: terminations_in_period
+        description: |
+          Count with termination_date between quarter_start_date and
+          quarter_end_date.
+        tests:
+          - not_null
+          - dbt_utils.expression_is_true:
+              expression: ">= 0"
+      - name: voluntary_terminations
+        tests:
+          - not_null
+      - name: involuntary_terminations
+        tests:
+          - not_null
+      - name: layoff_terminations
+        description: |
+          Layoff-type terminations only. The Q1 2023 row across
+          departments should sum to 75 per Section 1 spec.
+        tests:
+          - not_null
+      - name: attrition_rate_pct
+        description: |
+          terminations_in_period / avg_period_headcount * 100. NULL
+          when avg_period_headcount is 0 (departments before they had
+          any employees).
+
+  - name: fct_compensation_parity
+    description: |
+      Per-active-employee compensation snapshot with peer-cohort
+      percentiles for pay parity analysis. Cohort is defined as
+      (department, job_level). Granularity: one row per active
+      employee.
+    columns:
+      - name: employee_id
+        description: Primary key.
+        tests:
+          - not_null
+          - unique
+          - relationships:
+              to: ref('int_employee_dimension')
+              field: employee_id
+      - name: department
+        tests:
+          - not_null
+      - name: job_level
+        tests:
+          - not_null
+      - name: salary
+        tests:
+          - not_null
+          - dbt_utils.expression_is_true:
+              expression: "> 0"
+      - name: compa_ratio
+        tests:
+          - not_null
+      - name: band_position
+        tests:
+          - not_null
+          - dbt_utils.expression_is_true:
+              expression: "between 0 and 1"
+      - name: compa_ratio_percentile_within_dept_level
+        description: PERCENT_RANK over (department, job_level) ordered by compa_ratio.
+        tests:
+          - not_null
+          - dbt_utils.expression_is_true:
+              expression: "between 0 and 1"
+      - name: salary_percentile_within_dept_level
+        tests:
+          - not_null
+          - dbt_utils.expression_is_true:
+              expression: "between 0 and 1"
+      - name: cohort_size
+        description: Count of active employees in the (department, job_level) cohort.
+        tests:
+          - not_null
+          - dbt_utils.expression_is_true:
+              expression: ">= 1"
+      - name: compa_ratio_quartile_label
+        tests:
+          - not_null
+          - accepted_values:
+              values: [Top Quartile, Q3, Q2, Bottom Quartile]
+
+  - name: fct_performance_distribution
+    description: |
+      Per (employee, review_cycle) wide row carrying ratings + trend
+      signals + current dimension context (dept, level, demographics,
+      tenure, comp). Granularity matches int_employee_performance_history.
+      Note: dept / level / comp are CURRENT, not at-time-of-cycle.
+    tests:
+      - dbt_utils.unique_combination_of_columns:
+          combination_of_columns:
+            - employee_id
+            - review_cycle
+    columns:
+      - name: employee_id
+        tests:
+          - not_null
+      - name: review_cycle
+        tests:
+          - not_null
+      - name: cycle_end_date
+        tests:
+          - not_null
+      - name: cycle_year
+        tests:
+          - not_null
+      - name: cycle_half
+        tests:
+          - not_null
+          - accepted_values:
+              values: [H1, H2]
+      - name: department
+        tests:
+          - not_null
+      - name: job_level
+        tests:
+          - not_null
+      - name: overall_rating
+        tests:
+          - not_null
+          - accepted_values:
+              values:
+                - Significantly Exceeds
+                - Exceeds
+                - Meets
+                - Partially Meets
+                - Does Not Meet
+      - name: overall_rating_numeric
+        tests:
+          - not_null
+          - dbt_utils.expression_is_true:
+              expression: "between 1 and 5"
+      - name: is_top_performer
+        tests:
+          - not_null
+      - name: rating_distribution_band
+        tests:
+          - not_null
+          - accepted_values:
+              values: [High, On Target, Below]
+
+  - name: fct_recruiting_velocity
+    description: |
+      Per-requisition velocity dashboard with funnel volumes,
+      time-to-fill / time-to-offer, conversion rates, department peer
+      averages, and the dominant source channel for each requisition.
+    columns:
+      - name: requisition_id
+        description: Primary key. One row per requisition.
+        tests:
+          - not_null
+          - unique
+          - relationships:
+              to: ref('int_recruiting_funnel_metrics')
+              field: requisition_id
+      - name: department
+        tests:
+          - not_null
+      - name: hire_year_quarter
+        description: YYYY-Qn for grouping in BI.
+        tests:
+          - not_null
+      - name: total_applications
+        tests:
+          - not_null
+          - dbt_utils.expression_is_true:
+              expression: ">= 1"
+      - name: count_hired
+        tests:
+          - not_null
+          - dbt_utils.expression_is_true:
+              expression: "= 1"
+      - name: time_to_fill_days
+        tests:
+          - not_null
+          - dbt_utils.expression_is_true:
+              expression: ">= 0"
+      - name: time_to_offer_days
+        tests:
+          - not_null
+      - name: top_source_for_requisition
+        description: Most-common source across the requisition's applications.
+        tests:
+          - not_null
+          - accepted_values:
+              values:
+                - Referral
+                - LinkedIn
+                - Job Board
+                - Agency
+                - Internal
+                - Career Page
+                - Event
+      - name: top_source_share
+        description: top_source_count / total_applications.
+        tests:
+          - not_null
+          - dbt_utils.expression_is_true:
+              expression: "between 0 and 1"
+
+  - name: fct_engagement_trends
+    description: |
+      Theme-level engagement trends with company-wide comparison
+      columns. ~896 rows: 16 cycles x 7 departments x 8 themes.
+      is_post_layoff_period flag delineates the 2023-Q1+ cycles
+      where Section 10's layoff-trauma signal is visible.
+    tests:
+      - dbt_utils.unique_combination_of_columns:
+          combination_of_columns:
+            - survey_cycle
+            - department
+            - theme
+    columns:
+      - name: survey_cycle
+        tests:
+          - not_null
+      - name: cycle_year
+        tests:
+          - not_null
+      - name: department
+        tests:
+          - not_null
+      - name: theme
+        tests:
+          - not_null
+          - accepted_values:
+              values:
+                - Employee Engagement
+                - Manager Effectiveness
+                - Career Growth & Development
+                - Work-Life Balance
+                - Recognition
+                - Company Culture
+                - Communication
+                - Resources & Enablement
+      - name: theme_avg_score
+        tests:
+          - not_null
+          - dbt_utils.expression_is_true:
+              expression: "between 1 and 5"
+      - name: theme_avg_favorable_pct
+        tests:
+          - not_null
+          - dbt_utils.expression_is_true:
+              expression: "between 0 and 1"
+      - name: enps_score
+        tests:
+          - not_null
+      - name: company_theme_avg_score
+        tests:
+          - not_null
+      - name: theme_score_vs_company_avg
+        tests:
+          - not_null
+      - name: is_post_layoff_period
+        tests:
+          - not_null
+
+  - name: fct_attrition_drivers
+    description: |
+      One row per terminated employee with attribution columns
+      explaining why they left. terminated_within_6mo_of_manager_change
+      surfaces the Manager Change Casualty archetype's defining pattern;
+      was_declining_performer surfaces the Performance Managed Out
+      archetype's pattern.
+    columns:
+      - name: employee_id
+        description: Primary key.
+        tests:
+          - not_null
+          - unique
+          - relationships:
+              to: ref('int_employee_dimension')
+              field: employee_id
+      - name: department
+        tests:
+          - not_null
+      - name: termination_date
+        tests:
+          - not_null
+      - name: termination_type
+        tests:
+          - not_null
+          - accepted_values:
+              values: [Voluntary, Involuntary, Layoff]
+      - name: termination_reason
+        tests:
+          - not_null
+      - name: tenure_at_termination_months
+        tests:
+          - not_null
+          - dbt_utils.expression_is_true:
+              expression: ">= 0"
+      - name: tenure_at_termination_years
+        tests:
+          - not_null
+      - name: terminated_within_6mo_of_manager_change
+        description: |
+          TRUE when the employee had a Manager Change event within 6
+          months of their termination_date. Manager Change Casualty
+          archetype's defining flag.
+        tests:
+          - not_null
+      - name: was_declining_performer
+        description: |
+          TRUE when the last review's overall_rating_delta is negative.
+          Performance Managed Out archetype's defining flag.
+        tests:
+          - not_null

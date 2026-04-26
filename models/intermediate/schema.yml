@@ -372,3 +372,363 @@ models:
               expression: "between -4 and 4"
               config:
                 where: "self_optimism_delta is not null"
+
+  - name: int_employee_event_sequence
+    description: |
+      Chronologically ordered career-event stream with prev / next event
+      metadata per row. Same row count and granularity as
+      stg_job_history (~1,045 rows) plus six derived columns:
+      event_sequence, total_events_for_employee, is_latest_event,
+      prev_event_date / type, next_event_date / type,
+      days_since_prev_event, days_until_next_event. Used by marts that
+      need time-between calculations (e.g., promotion cadence, time-
+      between-manager-changes) and by the latest-event filter
+      (is_latest_event = true) for dimension lookups.
+    tests:
+      - dbt_utils.unique_combination_of_columns:
+          combination_of_columns:
+            - employee_id
+            - event_sequence
+    columns:
+      - name: employee_id
+        description: |
+          FK to stg_employees. Every employee has at least one row
+          (their Hire event); count of rows per employee equals
+          total_events_for_employee.
+        tests:
+          - not_null
+          - relationships:
+              to: ref('stg_employees')
+              field: employee_id
+
+      - name: effective_date
+        description: Carried forward from stg_job_history.
+        tests:
+          - not_null
+
+      - name: change_type
+        description: Carried forward from stg_job_history.
+        tests:
+          - not_null
+          - accepted_values:
+              values:
+                - Hire
+                - Promotion
+                - Lateral Transfer
+                - Department Transfer
+                - Title Change
+                - Manager Change
+
+      - name: event_sequence
+        description: |
+          1-based ordinal of this event within the employee's history,
+          ordered by (effective_date, change_type). event_sequence = 1
+          is always the Hire event.
+        tests:
+          - not_null
+          - dbt_utils.expression_is_true:
+              expression: ">= 1"
+
+      - name: total_events_for_employee
+        description: |
+          Total number of rows for this employee in this model
+          (denormalized; same value across every row that shares
+          employee_id). Equal to max(event_sequence) per employee.
+        tests:
+          - not_null
+          - dbt_utils.expression_is_true:
+              expression: ">= 1"
+
+      - name: is_latest_event
+        description: |
+          TRUE when event_sequence = total_events_for_employee (the
+          most recent event for the employee). FALSE otherwise. Useful
+          for filtering to current-state lookups without joining back
+          to stg_employees.
+        tests:
+          - not_null
+
+      - name: old_job_level
+        description: Carried forward from stg_job_history.
+
+      - name: new_job_level
+        description: Carried forward from stg_job_history.
+        tests:
+          - not_null
+
+      - name: old_department
+        description: Carried forward from stg_job_history.
+
+      - name: new_department
+        description: Carried forward from stg_job_history.
+        tests:
+          - not_null
+
+      - name: old_sub_department
+        description: Carried forward from stg_job_history.
+
+      - name: new_sub_department
+        description: Carried forward from stg_job_history.
+
+      - name: old_job_title
+        description: Carried forward from stg_job_history.
+
+      - name: new_job_title
+        description: Carried forward from stg_job_history.
+        tests:
+          - not_null
+
+      - name: old_manager_id
+        description: Carried forward from stg_job_history.
+
+      - name: new_manager_id
+        description: Carried forward from stg_job_history.
+
+      - name: prev_event_date
+        description: |
+          effective_date of the immediately preceding event for this
+          employee, ordered by event_sequence. Null on event_sequence = 1
+          (the Hire row).
+
+      - name: prev_event_type
+        description: |
+          change_type of the immediately preceding event. Null on
+          event_sequence = 1.
+
+      - name: next_event_date
+        description: |
+          effective_date of the immediately following event for this
+          employee. Null on the latest event (is_latest_event = TRUE).
+
+      - name: next_event_type
+        description: |
+          change_type of the immediately following event. Null on the
+          latest event.
+
+      - name: days_since_prev_event
+        description: |
+          effective_date minus prev_event_date in days. Always >= 0
+          when populated (events are chronologically ordered). Null on
+          event_sequence = 1.
+        tests:
+          - dbt_utils.expression_is_true:
+              expression: ">= 0"
+              config:
+                where: "days_since_prev_event is not null"
+
+      - name: days_until_next_event
+        description: |
+          next_event_date minus effective_date in days. Always >= 0 when
+          populated. Null on the latest event for an employee.
+        tests:
+          - dbt_utils.expression_is_true:
+              expression: ">= 0"
+              config:
+                where: "days_until_next_event is not null"
+
+  - name: int_recruiting_funnel_metrics
+    description: |
+      One row per requisition with funnel stage counts, the spec's two
+      time-to metrics (time_to_fill_days, time_to_offer_days), and five
+      stage conversion rates. Source-level slicing belongs in a
+      downstream mart; this model stays at requisition grain.
+    columns:
+      - name: requisition_id
+        description: Primary key. One row per recruiting requisition.
+        tests:
+          - not_null
+          - unique
+
+      - name: department
+        description: |
+          Department the requisition belongs to. Same as the eventual
+          hire's at-hire department.
+        tests:
+          - not_null
+          - accepted_values:
+              values:
+                - Engineering
+                - Sales
+                - Customer Success
+                - Marketing
+                - Product
+                - G&A
+                - People
+
+      - name: sub_department
+        description: Sub-department of the requisition.
+
+      - name: job_title
+        description: Posted title of the requisition.
+        tests:
+          - not_null
+
+      - name: recruiter
+        description: Assigned recruiter at the time the requisition opened.
+        tests:
+          - not_null
+
+      - name: hiring_manager
+        description: Hiring manager who owns the requisition.
+        tests:
+          - not_null
+
+      - name: total_applications
+        description: |
+          Count of applications received for this requisition.
+          Includes Hired, Rejected, and Withdrawn rows.
+        tests:
+          - not_null
+          - dbt_utils.expression_is_true:
+              expression: ">= 1"
+
+      - name: reached_phone_screen
+        description: |
+          Count of applications where phone_screen_date is populated.
+          Cumulative -- includes anyone who advanced beyond Phone
+          Screen as well.
+        tests:
+          - not_null
+          - dbt_utils.expression_is_true:
+              expression: ">= 1"
+
+      - name: reached_onsite
+        description: |
+          Count where onsite_date is populated. Cumulative.
+        tests:
+          - not_null
+          - dbt_utils.expression_is_true:
+              expression: ">= 1"
+
+      - name: reached_offer
+        description: |
+          Count where offer_date is populated. Cumulative.
+        tests:
+          - not_null
+          - dbt_utils.expression_is_true:
+              expression: ">= 1"
+
+      - name: count_hired
+        description: |
+          Count where current_stage = 'Hired'. Should be exactly 1 per
+          requisition in this dataset (one hire per req by construction).
+        tests:
+          - not_null
+          - dbt_utils.expression_is_true:
+              expression: "= 1"
+
+      - name: count_rejected
+        description: Count where current_stage = 'Rejected'.
+        tests:
+          - not_null
+          - dbt_utils.expression_is_true:
+              expression: ">= 0"
+
+      - name: count_withdrawn
+        description: Count where current_stage = 'Withdrawn'.
+        tests:
+          - not_null
+          - dbt_utils.expression_is_true:
+              expression: ">= 0"
+
+      - name: first_application_date
+        description: Earliest application_date for this requisition.
+        tests:
+          - not_null
+
+      - name: last_application_date
+        description: Latest application_date for this requisition.
+        tests:
+          - not_null
+
+      - name: hired_application_date
+        description: |
+          The Hired candidate's own application_date. Anchor for
+          time_to_fill / time_to_offer calculations.
+        tests:
+          - not_null
+
+      - name: hired_phone_screen_date
+        description: The Hired candidate's phone_screen_date.
+        tests:
+          - not_null
+
+      - name: hired_onsite_date
+        description: The Hired candidate's onsite_date.
+        tests:
+          - not_null
+
+      - name: hired_offer_date
+        description: The Hired candidate's offer_date.
+        tests:
+          - not_null
+
+      - name: hire_date
+        description: |
+          The Hired candidate's hire_date. Matches stg_employees.hire_date
+          for the same person (Section 12 HR17).
+        tests:
+          - not_null
+
+      - name: time_to_fill_days
+        description: |
+          hire_date minus hired_application_date in days. Per data dict
+          definition.
+        tests:
+          - not_null
+          - dbt_utils.expression_is_true:
+              expression: ">= 0"
+
+      - name: time_to_offer_days
+        description: |
+          hired_offer_date minus hired_application_date in days. Per
+          data dict definition.
+        tests:
+          - not_null
+          - dbt_utils.expression_is_true:
+              expression: ">= 0"
+
+      - name: rate_applied_to_phone
+        description: |
+          reached_phone_screen / total_applications. Spec target 25%
+          (Section 9); actual rate is higher in this dataset because
+          the Applied-stage rejection pool is capped during generation.
+        tests:
+          - not_null
+          - dbt_utils.expression_is_true:
+              expression: "between 0 and 1"
+
+      - name: rate_phone_to_onsite
+        description: |
+          reached_onsite / reached_phone_screen. Combined Phone Screen
+          -> Technical -> Onsite rate (Technical not tracked as a
+          separate date column). Spec target 0.45 * 0.55 = 0.2475.
+        tests:
+          - not_null
+          - dbt_utils.expression_is_true:
+              expression: "between 0 and 1"
+
+      - name: rate_onsite_to_offer
+        description: |
+          reached_offer / reached_onsite. Spec target 40% (Section 9).
+        tests:
+          - not_null
+          - dbt_utils.expression_is_true:
+              expression: "between 0 and 1"
+
+      - name: rate_offer_to_hired
+        description: |
+          count_hired / reached_offer. Spec target 85% (Section 9).
+        tests:
+          - not_null
+          - dbt_utils.expression_is_true:
+              expression: "between 0 and 1"
+
+      - name: rate_overall_conversion
+        description: |
+          count_hired / total_applications. Spec target 2.1% (Section 9);
+          actual is higher due to the Applied-stage cap.
+        tests:
+          - not_null
+          - dbt_utils.expression_is_true:
+              expression: "between 0 and 1"

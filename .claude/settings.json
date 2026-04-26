@@ -7,6 +7,9 @@
       "Bash(python3 scripts/data_generation/11_build_raw_recruiting.py)",
       "Bash(python3 scripts/data_generation/12_build_raw_engagement.py)",
       "Bash(python3 scripts/data_generation/13_validate_and_export.py)"
+    ],
+    "additionalDirectories": [
+      "/Users/keenanj/Documents/Claude Code/JustKaizen-Data-Infrastructure/data/raw"
     ]
   }
 }

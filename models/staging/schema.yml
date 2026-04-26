@@ -1,0 +1,824 @@
+version: 2
+
+models:
+  - name: stg_employees
+    description: |
+      Staging view over raw_employees (ADP). Cleans and types the seeded
+      CSV. Calculated fields (tenure_months, is_active, compa_ratio,
+      has_recent_promotion) are layered downstream in intermediate / marts.
+    columns:
+      - name: employee_id
+        description: Unique identifier assigned at hire. Format EMP-NNNN. Primary key.
+        tests:
+          - not_null
+          - unique
+
+      - name: manager_id
+        description: |
+          The employee_id of this employee's direct manager. Null only
+          for the CEO (EMP-001 Maya Chen, who reports to the Board).
+          Self-referential FK to stg_employees.employee_id.
+        tests:
+          - relationships:
+              to: ref('stg_employees')
+              field: employee_id
+              config:
+                where: "manager_id is not null"
+
+      - name: first_name
+        description: Legal first name as recorded in the HRIS.
+        tests:
+          - not_null
+
+      - name: last_name
+        description: Legal last name as recorded in the HRIS.
+        tests:
+          - not_null
+
+      - name: email
+        description: |
+          Company-issued work email address. Deactivated upon
+          termination. Globally unique across active and terminated
+          rows; numeric suffix appended on name collisions
+          (e.g. priya.smith2@justkaizen.ai).
+        tests:
+          - not_null
+          - unique
+
+      - name: department
+        description: |
+          Primary organizational department. One of seven standard
+          departments plus 'Executive' (CEO-only).
+        tests:
+          - not_null
+          - accepted_values:
+              values:
+                - Engineering
+                - Sales
+                - Customer Success
+                - Marketing
+                - Product
+                - G&A
+                - People
+                - Executive
+
+      - name: sub_department
+        description: |
+          Functional sub-group within the department. Null only for
+          the CEO (Executive department has no sub-department slot).
+          Leadership-only sub-departments are wrapped in parentheses
+          (e.g. '(CTO)', '(VP Sales)') to distinguish them from
+          regular sub-departments staffed by ICs and managers.
+
+      - name: job_title
+        description: |
+          Current job title. For leadership uses the Section 2 spec
+          title verbatim (e.g. 'VP Engineering, Platform'); for non-
+          leadership uses the Job Architecture title for the
+          (department, sub_department, job_level) cell.
+        tests:
+          - not_null
+
+      - name: job_level
+        description: |
+          Standardized job level. IC1-IC5 for individual contributors,
+          M1-M5 for managers and executives.
+        tests:
+          - not_null
+          - accepted_values:
+              values:
+                - IC1
+                - IC2
+                - IC3
+                - IC4
+                - IC5
+                - M1
+                - M2
+                - M3
+                - M4
+                - M5
+
+      - name: hire_date
+        description: The official start date of employment.
+        tests:
+          - not_null
+
+      - name: termination_date
+        description: |
+          Date employment ended. Null for active employees. When
+          populated, always strictly greater than hire_date (validated
+          upstream in the Python coherence checks).
+
+      - name: employment_status
+        description: |
+          Active (currently employed) or Terminated (departed). Derived
+          from termination_date in the source pipeline; tracked
+          explicitly for fast filtering.
+        tests:
+          - not_null
+          - accepted_values:
+              values:
+                - Active
+                - Terminated
+
+      - name: termination_type
+        description: |
+          Classification of how employment ended. One of Voluntary,
+          Involuntary, or Layoff. Null for active employees.
+        tests:
+          - accepted_values:
+              values:
+                - Voluntary
+                - Involuntary
+                - Layoff
+              config:
+                where: "termination_type is not null"
+
+      - name: termination_reason
+        description: |
+          Coded departure reason recorded by People Ops during
+          offboarding. Null for active employees. Reason values are
+          archetype-driven (e.g. layoff casualties carry 'Reduction in
+          Force'; manager change casualties carry 'Manager Relationship'
+          50% / 'Company Culture' 30% / 'Career Opportunity' 20%).
+
+      - name: location_city
+        description: |
+          The city where the employee is primarily based. All employees
+          are remote-first; home city tracked for tax and compliance.
+        tests:
+          - not_null
+
+      - name: location_state
+        description: |
+          The US state code (or international country) where the
+          employee is based.
+        tests:
+          - not_null
+
+      - name: gender
+        description: |
+          Self-reported gender identity collected during onboarding.
+          Used for DEIB reporting only.
+        tests:
+          - accepted_values:
+              values:
+                - Male
+                - Female
+                - Non-Binary
+              config:
+                where: "gender is not null"
+
+      - name: race_ethnicity
+        description: |
+          Self-reported race / ethnicity collected during onboarding.
+          Used for DEIB reporting only.
+        tests:
+          - accepted_values:
+              values:
+                - White
+                - Asian
+                - Hispanic/Latino
+                - Black
+                - Two or More
+                - Other/Decline
+              config:
+                where: "race_ethnicity is not null"
+
+      - name: is_critical_talent
+        description: |
+          People Ops flag indicating whether leadership has designated
+          this employee as critical to retain. Updated quarterly during
+          talent review. Always true for active leadership and active
+          founders (per Section 5); ~40% of active high-flyers; false
+          for everyone else.
+        tests:
+          - not_null
+
+  - name: stg_job_history
+    description: |
+      Staging view over raw_job_history (ADP). One row per career event
+      per employee. Old/new fields capture the state on either side of
+      the change; old_* are null on Hire rows. Calculated fields
+      (months_since_last_promotion, total_promotions,
+      has_manager_change_last_12mo, career_velocity) derive in
+      intermediate / marts.
+    columns:
+      - name: employee_id
+        description: |
+          FK to stg_employees. Every employee has at least one row
+          (the Hire event); active employees typically have 1-5 rows.
+        tests:
+          - not_null
+          - relationships:
+              to: ref('stg_employees')
+              field: employee_id
+
+      - name: effective_date
+        description: |
+          The date the change officially took effect in the HRIS.
+          Strictly between the employee's hire_date and termination_date
+          (or current date for active employees) per Section 12 HR4.
+        tests:
+          - not_null
+
+      - name: change_type
+        description: |
+          Classification of the event. "Title Change" rows in this
+          dataset specifically encode the Manager Step-Back archetype's
+          M1 -> IC4 demotion (no native "Step-back" change_type exists
+          in the spec).
+        tests:
+          - not_null
+          - accepted_values:
+              values:
+                - Hire
+                - Promotion
+                - Lateral Transfer
+                - Department Transfer
+                - Title Change
+                - Manager Change
+
+      - name: old_job_level
+        description: |
+          Job level immediately before this change. Null for Hire events
+          (no prior state).
+        tests:
+          - accepted_values:
+              values:
+                - IC1
+                - IC2
+                - IC3
+                - IC4
+                - IC5
+                - M1
+                - M2
+                - M3
+                - M4
+                - M5
+              config:
+                where: "old_job_level is not null"
+
+      - name: new_job_level
+        description: |
+          Job level after this change. For Hire events, the starting
+          level. Always populated.
+        tests:
+          - not_null
+          - accepted_values:
+              values:
+                - IC1
+                - IC2
+                - IC3
+                - IC4
+                - IC5
+                - M1
+                - M2
+                - M3
+                - M4
+                - M5
+
+      - name: old_department
+        description: Department before this change. Null for Hire events.
+
+      - name: new_department
+        description: |
+          Department after this change. Always populated.
+          No Department Transfer rows exist in this dataset (only Lateral
+          Transfer within a department, plus the manager / level events).
+        tests:
+          - not_null
+
+      - name: old_sub_department
+        description: Sub-department before this change. Null for Hire events.
+
+      - name: new_sub_department
+        description: |
+          Sub-department after this change. Null only on Hire / event
+          rows for the CEO (Executive department has no sub-department).
+
+      - name: old_job_title
+        description: Job title before this change. Null for Hire events.
+
+      - name: new_job_title
+        description: Job title after this change. Always populated.
+        tests:
+          - not_null
+
+      - name: old_manager_id
+        description: |
+          Manager_id before this change. Null for Hire events.
+          Self-FK to stg_employees.employee_id.
+        tests:
+          - relationships:
+              to: ref('stg_employees')
+              field: employee_id
+              config:
+                where: "old_manager_id is not null"
+
+      - name: new_manager_id
+        description: |
+          Manager_id after this change. Null only on Maya Chen's Hire
+          row (CEO reports to the Board, not an employee).
+          Self-FK to stg_employees.employee_id.
+        tests:
+          - relationships:
+              to: ref('stg_employees')
+              field: employee_id
+              config:
+                where: "new_manager_id is not null"
+
+  - name: stg_compensation
+    description: |
+      Staging view over raw_compensation (Pave). One row per compensation
+      event per employee. Calculated compa_ratio (salary / comp_band_mid)
+      and band_position ((salary - comp_band_min) / (comp_band_max -
+      comp_band_min)) derive in intermediate / marts where they can be
+      reused across consumers. Section 12 invariants (salary within band,
+      one New Hire row per employee at hire_date, no records after
+      termination, Promotion rows match raw_job_history on the same date)
+      are validated upstream.
+    columns:
+      - name: employee_id
+        description: |
+          FK to stg_employees. Every employee has at least one comp row
+          (the New Hire record at hire_date).
+        tests:
+          - not_null
+          - relationships:
+              to: ref('stg_employees')
+              field: employee_id
+
+      - name: effective_date
+        description: |
+          The date this compensation record became effective. Always
+          between the employee's hire_date (inclusive) and termination
+          date (or current date for active employees) per Section 12 HR8.
+        tests:
+          - not_null
+
+      - name: change_reason
+        description: |
+          The reason for the comp change. Equity Adjustment is part of
+          the spec's domain but is not generated in this dataset.
+        tests:
+          - not_null
+          - accepted_values:
+              values:
+                - New Hire
+                - Annual Review
+                - Promotion
+                - Market Adjustment
+                - Equity Adjustment
+
+      - name: salary
+        description: |
+          Annual base salary in USD. Excludes equity, bonus, and other
+          variable compensation. Always within [comp_band_min,
+          comp_band_max] for the cell (Section 12 HR7).
+        tests:
+          - not_null
+
+      - name: comp_band_min
+        description: |
+          Minimum of the function-specific compensation band for the
+          employee's (department, sub_department, job_level) at this
+          effective_date. Adjusted for the year of the record per the
+          spec's historical band multipliers (2020 = 0.85x, 2021 = 0.88x,
+          2022 = 0.92x, 2023 = 0.95x, 2024 = 0.98x, 2025 = 1.00x).
+        tests:
+          - not_null
+
+      - name: comp_band_mid
+        description: |
+          Midpoint of the comp band. Used as the denominator for
+          compa_ratio in downstream models (compa_ratio = salary /
+          comp_band_mid).
+        tests:
+          - not_null
+
+      - name: comp_band_max
+        description: |
+          Maximum of the comp band. Salary is clipped to this ceiling
+          when bumps would otherwise exceed it.
+        tests:
+          - not_null
+
+  - name: stg_performance
+    description: |
+      Staging view over raw_performance (Lattice). One row per (employee,
+      review_cycle). 27 standard cycles span 2020-H2 through 2024-H2.
+      Eligible employees are those with at least 90 days tenure by the
+      cycle's completion date (Jul 15 / Jan 15) and not yet terminated.
+      Calculated fields (rating_numeric, is_top_performer) derive in
+      intermediate / marts.
+    columns:
+      - name: employee_id
+        description: |
+          FK to stg_employees. Not every employee has a review row --
+          2025 Q1 hires and short-tenured Early Churners may have no
+          rows because no eligible cycle has elapsed yet.
+        tests:
+          - not_null
+          - relationships:
+              to: ref('stg_employees')
+              field: employee_id
+
+      - name: review_cycle
+        description: |
+          Identifier for the review period. Format YYYY-HN (e.g.
+          '2024-H2'). H1 covers Jan-Jun completed Jul 15; H2 covers
+          Jul-Dec completed Jan 15 of the following year.
+        tests:
+          - not_null
+          - accepted_values:
+              values:
+                - 2020-H2
+                - 2021-H1
+                - 2021-H2
+                - 2022-H1
+                - 2022-H2
+                - 2023-H1
+                - 2023-H2
+                - 2024-H1
+                - 2024-H2
+
+      - name: review_completed_date
+        description: |
+          The date the review cycle was finalized. Always within +/-7
+          days of the canonical cycle date (Jul 15 / Jan 15) per
+          Section 12 HR13.
+        tests:
+          - not_null
+
+      - name: review_status
+        description: |
+          Whether the review was completed for this employee. Spec
+          target distribution: 95% Completed / 4% Incomplete / 1%
+          Exempt. Exempt is reserved for M5 leadership reviews.
+        tests:
+          - not_null
+          - accepted_values:
+              values:
+                - Completed
+                - Incomplete
+                - Exempt
+
+      - name: overall_rating
+        description: |
+          Final calibrated performance rating for the cycle. Mapped to
+          rating_numeric (SE=5, E=4, M=3, PM=2, DNM=1) in downstream
+          models for quantitative analysis.
+        tests:
+          - not_null
+          - accepted_values:
+              values:
+                - Significantly Exceeds
+                - Exceeds
+                - Meets
+                - Partially Meets
+                - Does Not Meet
+
+      - name: manager_rating
+        description: |
+          Direct manager's assessment before calibration. Same 5-point
+          scale as overall_rating. Matches overall_rating ~90% of the
+          time; occasionally drifts +/- 1 level reflecting calibration
+          adjustments.
+        tests:
+          - not_null
+          - accepted_values:
+              values:
+                - Significantly Exceeds
+                - Exceeds
+                - Meets
+                - Partially Meets
+                - Does Not Meet
+
+      - name: self_rating
+        description: |
+          The employee's self-assessment submitted during the review
+          cycle. Same 5-point scale. Nullable per spec (not every
+          employee submits a self assessment); always populated in this
+          dataset. ~30% of self ratings are one level higher than the
+          calibrated overall rating, reflecting typical optimism bias.
+        tests:
+          - accepted_values:
+              values:
+                - Significantly Exceeds
+                - Exceeds
+                - Meets
+                - Partially Meets
+                - Does Not Meet
+              config:
+                where: "self_rating is not null"
+
+  - name: stg_recruiting
+    description: |
+      Staging view over raw_recruiting (Ashby). One row per candidate
+      application across ~592 requisitions. The 12 Q1 2020 hires
+      (Maya, David, Priya, plus 9 founders) have no requisition by
+      design -- they predate the company's ATS adoption per the spec
+      narrative. Calculated funnel metrics (time_to_fill, time_to_offer,
+      per-stage conversion rates) derive in intermediate / marts.
+    columns:
+      - name: application_id
+        description: Unique per application. Format APP-NNNNN.
+        tests:
+          - not_null
+          - unique
+
+      - name: requisition_id
+        description: |
+          Unique per open job requisition. Format REQ-NNNN. One
+          requisition per Hired application; multiple candidate
+          applications share a requisition_id.
+        tests:
+          - not_null
+
+      - name: candidate_name
+        description: |
+          Full name as entered in the ATS. Not unique -- name
+          collisions across candidates are expected at this volume.
+          For Hired applications, matches the corresponding employee's
+          first_name + last_name in stg_employees.
+        tests:
+          - not_null
+
+      - name: job_title
+        description: |
+          The requisition's posted job title. For Hired rows, matches
+          the corresponding stg_job_history Hire row's new_job_title
+          (Section 12 HR17). All applicants on the same requisition
+          share the title.
+        tests:
+          - not_null
+
+      - name: department
+        description: |
+          The requisition's owning department. Matches the Hired
+          candidate's at-hire department (Section 12 HR17).
+        tests:
+          - not_null
+          - accepted_values:
+              values:
+                - Engineering
+                - Sales
+                - Customer Success
+                - Marketing
+                - Product
+                - G&A
+                - People
+
+      - name: sub_department
+        description: |
+          The requisition's owning sub-department. Always populated in
+          this dataset; spec marks the field nullable.
+
+      - name: recruiter
+        description: |
+          Name of the recruiter assigned to the requisition. Resolved
+          from the People / Recruiting team active when the
+          requisition opened. Pre-Q3-2020 requisitions (before the
+          first Recruiting hire) carry the placeholder value
+          "Talent Acquisition Team".
+        tests:
+          - not_null
+
+      - name: hiring_manager
+        description: |
+          Name of the hiring manager who owns the requisition. Resolved
+          from the at-hire manager_id of the eventually-hired candidate
+          (looked up in raw_employees / stg_employees via
+          new_manager_id on the Hire row).
+        tests:
+          - not_null
+
+      - name: source
+        description: |
+          The channel through which the candidate entered the pipeline.
+          Section 9 specifies department-specific source mixes (e.g.
+          Engineering preferences Referral 35% / LinkedIn 28%).
+        tests:
+          - not_null
+          - accepted_values:
+              values:
+                - Referral
+                - LinkedIn
+                - Job Board
+                - Agency
+                - Internal
+                - Career Page
+                - Event
+
+      - name: current_stage
+        description: |
+          The most recent stage the candidate reached. This dataset only
+          contains terminal-state rows (Hired / Rejected / Withdrawn);
+          the data dictionary's full domain is retained for future runs
+          that include in-flight applications.
+        tests:
+          - not_null
+          - accepted_values:
+              values:
+                - Applied
+                - Phone Screen
+                - Technical
+                - Onsite
+                - Offer
+                - Hired
+                - Rejected
+                - Withdrawn
+
+      - name: application_date
+        description: |
+          Date the candidate submitted their application. Always
+          populated; always strictly less than hire_date when hire_date
+          is populated (Section 12 HR18).
+        tests:
+          - not_null
+
+      - name: phone_screen_date
+        description: |
+          Date the candidate completed the recruiter phone screen. Null
+          if the candidate exited at the Applied stage.
+
+      - name: onsite_date
+        description: |
+          Date the candidate completed the onsite or panel interview.
+          Null if the candidate exited at Phone Screen or Technical.
+
+      - name: offer_date
+        description: |
+          Date a formal offer was extended. Null if no offer was made.
+
+      - name: hire_date
+        description: |
+          Date the candidate started employment. Populated only on
+          Hired rows; matches stg_employees.hire_date for the same
+          person (Section 12 HR17).
+
+      - name: offer_accepted
+        description: |
+          TRUE on Hired rows; FALSE on Offer-stage Withdrawn rows
+          (offer made but declined); null otherwise.
+
+      - name: rejection_reason
+        description: |
+          The reason the candidate was rejected or withdrew. Section 9
+          specifies stage-specific reason mixes. Null on Hired rows.
+
+  - name: stg_engagement
+    description: |
+      Staging view over raw_engagement (Lattice, ANONYMIZED). One row
+      per (survey_cycle, department, sub_department, question_id).
+      No employee_id field by design -- all metrics aggregated at the
+      department level to preserve anonymity. The CEO (Maya, Executive
+      department) is excluded from aggregation since the dept has only
+      one employee. Calculated rollups (theme averages, cycle-over-
+      cycle deltas, top-quartile flags) derive in intermediate / marts.
+    columns:
+      - name: survey_cycle
+        description: |
+          Quarterly survey identifier. Format YYYY-QN (e.g. 2024-Q3).
+          Surveys run quarterly: Q1 (Mar), Q2 (Jun), Q3 (Sep), Q4 (Dec).
+          First cycle: 2021-Q2. Last cycle in this dataset: 2025-Q1.
+        tests:
+          - not_null
+          - accepted_values:
+              values:
+                - 2021-Q2
+                - 2021-Q3
+                - 2021-Q4
+                - 2022-Q1
+                - 2022-Q2
+                - 2022-Q3
+                - 2022-Q4
+                - 2023-Q1
+                - 2023-Q2
+                - 2023-Q3
+                - 2023-Q4
+                - 2024-Q1
+                - 2024-Q2
+                - 2024-Q3
+                - 2024-Q4
+                - 2025-Q1
+
+      - name: department
+        description: |
+          Department the aggregated responses belong to. The CEO
+          (Executive department) is excluded -- a department of one
+          would violate anonymization.
+        tests:
+          - not_null
+          - accepted_values:
+              values:
+                - Engineering
+                - Sales
+                - Customer Success
+                - Marketing
+                - Product
+                - G&A
+                - People
+
+      - name: sub_department
+        description: |
+          Sub-department for more granular analysis. Populated only
+          when the sub-dept has 5+ respondents per Section 12 anonymity
+          rule. Always null in this dataset (the current build emits
+          only dept-level rows); the column is present for forward
+          compatibility with future runs that include sub-dept detail.
+
+      - name: question_id
+        description: |
+          Question identifier. Format theme abbreviation + sequence
+          number (e.g. MGE3). 27 standard questions across 8 themes
+          per Section 10.
+        tests:
+          - not_null
+          - accepted_values:
+              values:
+                - ENG1
+                - ENG2
+                - ENG3
+                - ENG4
+                - MGE1
+                - MGE2
+                - MGE3
+                - MGE4
+                - MGE5
+                - CGD1
+                - CGD2
+                - CGD3
+                - WLB1
+                - WLB2
+                - WLB3
+                - REC1
+                - REC2
+                - REC3
+                - CUL1
+                - CUL2
+                - CUL3
+                - COM1
+                - COM2
+                - COM3
+                - RES1
+                - RES2
+                - RES3
+
+      - name: question_text
+        description: Full text of the survey question as presented to employees.
+        tests:
+          - not_null
+
+      - name: theme
+        description: |
+          Thematic category the question belongs to. Used for grouping
+          related questions in analysis.
+        tests:
+          - not_null
+          - accepted_values:
+              values:
+                - Employee Engagement
+                - Manager Effectiveness
+                - Career Growth & Development
+                - Work-Life Balance
+                - Recognition
+                - Company Culture
+                - Communication
+                - Resources & Enablement
+
+      - name: avg_score
+        description: |
+          Mean response score across all respondents in the department
+          for this question. Scale: 1 (Strongly Disagree) to 5 (Strongly
+          Agree). Always between 1.0 and 5.0 inclusive.
+        tests:
+          - not_null
+
+      - name: favorable_pct
+        description: |
+          Percentage of respondents who selected 4 (Agree) or 5
+          (Strongly Agree). Stored as a decimal between 0 and 1.
+          Multiply by 100 in downstream models for display.
+        tests:
+          - not_null
+
+      - name: response_count
+        description: |
+          Number of employees in the department who answered this
+          question. Always 78%-88% of the department's active headcount
+          at the survey cycle date (Section 12 HR19, HR20). The same
+          value applies across every question_id within a (cycle,
+          department) since the survey is taken once per respondent.
+        tests:
+          - not_null
+
+      - name: enps_score
+        description: |
+          Employee Net Promoter Score for this (department, cycle).
+          Calculated as % Promoters (9-10) minus % Detractors (0-6) on
+          a 0-10 scale. Range: -100 to 100. Denormalized -- same value
+          across every row that shares (survey_cycle, department).
+        tests:
+          - not_null

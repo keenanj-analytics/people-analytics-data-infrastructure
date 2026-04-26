@@ -1,0 +1,147 @@
+# JustKaizen AI - dbt project configuration.
+#
+# Profile note:
+#   This project expects a 'justkaizen' profile in ~/.dbt/profiles.yml
+#   pointing at a BigQuery dataset. Example:
+#
+#     justkaizen:
+#       target: dev
+#       outputs:
+#         dev:
+#           type: bigquery
+#           method: oauth                  # or service-account
+#           project: <your-gcp-project-id>
+#           dataset: justkaizen_dev
+#           threads: 4
+#           timeout_seconds: 300
+#           location: US
+#
+# Run order:
+#   dbt seed                          # load CSVs from seeds/ into BigQuery
+#   dbt run --select staging          # build staging views
+#   dbt test --select staging         # run column tests on staging
+
+name: 'justkaizen_analytics'
+version: '1.0.0'
+config-version: 2
+
+profile: 'justkaizen'
+
+model-paths:    ["models"]
+analysis-paths: ["analyses"]
+test-paths:     ["tests"]
+seed-paths:     ["seeds"]
+macro-paths:    ["macros"]
+snapshot-paths: ["snapshots"]
+
+target-path: "target"
+clean-targets:
+  - "target"
+  - "dbt_packages"
+
+models:
+  justkaizen_analytics:
+    +persist_docs:
+      relation: true
+      columns:  true
+    staging:
+      +materialized: view
+      +schema:       staging
+    intermediate:
+      +materialized: ephemeral
+      +schema:       intermediate
+    marts:
+      +materialized: table
+      +schema:       marts
+
+# Seed configuration. Each raw_* CSV is loaded into a BigQuery table in
+# the `raw` dataset. Column types are pinned so dbt does not infer
+# DATE columns as STRING or BOOL columns as INT64.
+seeds:
+  justkaizen_analytics:
+    +schema: raw
+    raw_employees:
+      +column_types:
+        employee_id:        string
+        first_name:         string
+        last_name:          string
+        email:              string
+        department:         string
+        sub_department:     string
+        job_title:          string
+        job_level:          string
+        hire_date:          date
+        termination_date:   date
+        termination_type:   string
+        termination_reason: string
+        employment_status:  string
+        manager_id:         string
+        location_city:      string
+        location_state:     string
+        race_ethnicity:     string
+        gender:             string
+        is_critical_talent: bool
+    raw_job_history:
+      +column_types:
+        employee_id:        string
+        effective_date:     date
+        change_type:        string
+        old_job_level:      string
+        new_job_level:      string
+        old_department:     string
+        new_department:     string
+        old_sub_department: string
+        new_sub_department: string
+        old_job_title:      string
+        new_job_title:      string
+        old_manager_id:     string
+        new_manager_id:     string
+    raw_compensation:
+      +column_types:
+        employee_id:    string
+        salary:         float64
+        comp_band_min:  float64
+        comp_band_mid:  float64
+        comp_band_max:  float64
+        effective_date: date
+        change_reason:  string
+    raw_performance:
+      +column_types:
+        employee_id:           string
+        review_cycle:          string
+        overall_rating:        string
+        manager_rating:        string
+        self_rating:           string
+        review_completed_date: date
+        review_status:         string
+    raw_recruiting:
+      +column_types:
+        application_id:    string
+        requisition_id:    string
+        candidate_name:    string
+        job_title:         string
+        department:        string
+        sub_department:    string
+        recruiter:         string
+        hiring_manager:    string
+        source:            string
+        current_stage:     string
+        application_date:  date
+        phone_screen_date: date
+        onsite_date:       date
+        offer_date:        date
+        hire_date:         date
+        offer_accepted:    bool
+        rejection_reason:  string
+    raw_engagement:
+      +column_types:
+        survey_cycle:   string
+        department:     string
+        sub_department: string
+        question_id:    string
+        question_text:  string
+        theme:          string
+        avg_score:      float64
+        response_count: int64
+        favorable_pct:  float64
+        enps_score:     float64

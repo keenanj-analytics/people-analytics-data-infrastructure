@@ -732,3 +732,299 @@ models:
           - not_null
           - dbt_utils.expression_is_true:
               expression: "between 0 and 1"
+
+  - name: int_engagement_theme_rollup
+    description: |
+      The 27 standard engagement questions rolled up to the 8 theme
+      level per (survey_cycle, department, sub_department). One row per
+      (cycle, dept, sub_dept, theme); compound key in practice is
+      (cycle, dept, theme) since sub_department is null on every row in
+      the current build (raw_engagement emits dept-level only). Adds
+      cycle_end_date for chronological ordering plus prior-cycle and
+      delta columns for trend dashboards.
+    tests:
+      - dbt_utils.unique_combination_of_columns:
+          combination_of_columns:
+            - survey_cycle
+            - department
+            - theme
+    columns:
+      - name: survey_cycle
+        description: Carried forward from stg_engagement.
+        tests:
+          - not_null
+
+      - name: cycle_end_date
+        description: |
+          Calendar date the cycle's quarter closed. Q1 -> Mar 31,
+          Q2 -> Jun 30, Q3 -> Sep 30, Q4 -> Dec 31. Used as the
+          ordering key for cycle-over-cycle trend windows.
+        tests:
+          - not_null
+
+      - name: department
+        description: Carried forward from stg_engagement.
+        tests:
+          - not_null
+          - accepted_values:
+              values:
+                - Engineering
+                - Sales
+                - Customer Success
+                - Marketing
+                - Product
+                - G&A
+                - People
+
+      - name: sub_department
+        description: |
+          Always null in this build. Reserved for forward compatibility
+          when the generator emits sub-department rows for sub-depts
+          with 5+ respondents.
+
+      - name: theme
+        description: One of the 8 spec themes.
+        tests:
+          - not_null
+          - accepted_values:
+              values:
+                - Employee Engagement
+                - Manager Effectiveness
+                - Career Growth & Development
+                - Work-Life Balance
+                - Recognition
+                - Company Culture
+                - Communication
+                - Resources & Enablement
+
+      - name: questions_in_theme
+        description: |
+          Count of question rows rolled into this theme aggregate.
+          Should equal the number of standard questions defined for
+          the theme (4 for ENG, 5 for MGE, 3 for the rest).
+        tests:
+          - not_null
+          - dbt_utils.expression_is_true:
+              expression: "between 3 and 5"
+
+      - name: response_count
+        description: |
+          Carried forward from stg_engagement. Same value across every
+          row in the same (cycle, dept) since the survey is taken once
+          per respondent.
+        tests:
+          - not_null
+
+      - name: theme_avg_score
+        description: |
+          Mean of avg_score across the questions in this theme.
+          Range [1, 5] on the Likert scale.
+        tests:
+          - not_null
+          - dbt_utils.expression_is_true:
+              expression: "between 1 and 5"
+
+      - name: theme_avg_favorable_pct
+        description: |
+          Mean of favorable_pct across the questions in this theme.
+          Range [0, 1].
+        tests:
+          - not_null
+          - dbt_utils.expression_is_true:
+              expression: "between 0 and 1"
+
+      - name: enps_score
+        description: |
+          Carried forward from stg_engagement. Range [-100, 100].
+        tests:
+          - not_null
+
+      - name: prior_theme_avg_score
+        description: |
+          theme_avg_score from the immediately preceding cycle for the
+          same (department, theme). Null on the first cycle a
+          (dept, theme) appears.
+
+      - name: prior_theme_avg_favorable_pct
+        description: |
+          theme_avg_favorable_pct from the immediately preceding cycle.
+          Null on the first appearance.
+
+      - name: theme_score_delta
+        description: |
+          theme_avg_score - prior_theme_avg_score, rounded to 2
+          decimals. Range [-4, 4]. Null on the first cycle.
+        tests:
+          - dbt_utils.expression_is_true:
+              expression: "between -4 and 4"
+              config:
+                where: "theme_score_delta is not null"
+
+      - name: theme_favorable_pct_delta
+        description: |
+          theme_avg_favorable_pct - prior_theme_avg_favorable_pct,
+          rounded to 4 decimals. Range [-1, 1]. Null on the first cycle.
+        tests:
+          - dbt_utils.expression_is_true:
+              expression: "between -1 and 1"
+              config:
+                where: "theme_favorable_pct_delta is not null"
+
+  - name: int_employee_dimension
+    description: |
+      Wide single-row-per-employee dimension combining stg_employees,
+      int_employee_tenure, int_employee_compensation_current, and the
+      latest row from int_employee_performance_history. Pre-joins these
+      so marts can pull employee identity, tenure, current comp, and
+      latest review outcome in a single ref() instead of four joins.
+      Performance columns are nullable -- not every employee has
+      reviews (2025-Q1 hires, very-short-tenure Early Churners).
+    columns:
+      - name: employee_id
+        description: Primary key; one row per employee. FK to stg_employees.
+        tests:
+          - not_null
+          - unique
+          - relationships:
+              to: ref('stg_employees')
+              field: employee_id
+
+      # Identity
+      - name: first_name
+        tests: [not_null]
+      - name: last_name
+        tests: [not_null]
+      - name: email
+        tests:
+          - not_null
+          - unique
+
+      # Org placement
+      - name: department
+        tests:
+          - not_null
+      - name: sub_department
+      - name: job_title
+        tests:
+          - not_null
+      - name: job_level
+        tests:
+          - not_null
+      - name: manager_id
+        description: |
+          Self-FK to int_employee_dimension.employee_id.
+          Null only for the CEO.
+        tests:
+          - relationships:
+              to: ref('int_employee_dimension')
+              field: employee_id
+              config:
+                where: "manager_id is not null"
+
+      # Employment timeline
+      - name: hire_date
+        tests:
+          - not_null
+      - name: termination_date
+      - name: employment_status
+        tests:
+          - not_null
+          - accepted_values:
+              values: [Active, Terminated]
+      - name: is_active
+        description: |
+          Convenience boolean derived from employment_status. TRUE when
+          employment_status = 'Active'.
+        tests:
+          - not_null
+      - name: termination_type
+      - name: termination_reason
+
+      # Demographics
+      - name: gender
+      - name: race_ethnicity
+      - name: location_city
+        tests:
+          - not_null
+      - name: location_state
+        tests:
+          - not_null
+      - name: is_critical_talent
+        tests:
+          - not_null
+
+      # Tenure (from int_employee_tenure)
+      - name: reference_date
+        tests:
+          - not_null
+      - name: tenure_months
+        tests:
+          - not_null
+      - name: tenure_years
+        tests:
+          - not_null
+      - name: total_promotions
+        tests:
+          - not_null
+      - name: last_promotion_date
+      - name: months_since_last_promotion
+      - name: time_in_current_role_months
+        tests:
+          - not_null
+      - name: last_manager_change_date
+      - name: has_manager_change_last_12mo
+        tests:
+          - not_null
+      - name: career_velocity_per_year
+        tests:
+          - not_null
+
+      # Compensation (from int_employee_compensation_current)
+      - name: salary
+        tests:
+          - not_null
+      - name: comp_band_min
+        tests:
+          - not_null
+      - name: comp_band_mid
+        tests:
+          - not_null
+      - name: comp_band_max
+        tests:
+          - not_null
+      - name: compa_ratio
+        tests:
+          - not_null
+      - name: band_position
+        tests:
+          - not_null
+      - name: current_comp_change_reason
+        tests:
+          - not_null
+      - name: current_comp_effective_date
+        tests:
+          - not_null
+
+      # Latest performance (nullable -- not every employee has reviews)
+      - name: latest_review_cycle
+        description: |
+          Most recent review_cycle for the employee. Null when the
+          employee has no reviews (2025-Q1 hires, very-short-tenure
+          Early Churners).
+      - name: latest_review_cycle_end_date
+        description: cycle_end_date of latest_review_cycle. Null if no reviews.
+      - name: latest_overall_rating
+        description: overall_rating of the most recent review. Null if no reviews.
+      - name: latest_overall_rating_numeric
+        description: |
+          Numeric mapping of latest_overall_rating (SE=5...DNM=1).
+          Null if no reviews.
+      - name: latest_review_status
+        description: review_status of the most recent review. Null if no reviews.
+      - name: is_currently_top_performer
+        description: |
+          is_top_performer flag from the most recent review (TRUE when
+          the latest two consecutive cycles are both Exceeds or
+          Significantly Exceeds). Null if the employee has fewer than
+          two reviews (cycle_sequence < 2 cannot establish the
+          consecutive condition); FALSE on cycle_sequence = 1.

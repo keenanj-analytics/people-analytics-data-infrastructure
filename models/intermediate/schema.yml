@@ -116,3 +116,259 @@ models:
           - not_null
           - dbt_utils.expression_is_true:
               expression: ">= 0"
+
+  - name: int_employee_compensation_current
+    description: |
+      One row per employee with their most-recent compensation record
+      plus the spec's two calculated metrics (compa_ratio and
+      band_position). "Most recent" is the row with the latest
+      effective_date in stg_compensation; for terminated employees this
+      is whatever record was active at termination (Section 12 HR8
+      prohibits records after termination_date).
+    columns:
+      - name: employee_id
+        description: FK to stg_employees. One row per employee. Primary key.
+        tests:
+          - not_null
+          - unique
+          - relationships:
+              to: ref('stg_employees')
+              field: employee_id
+
+      - name: current_comp_effective_date
+        description: |
+          Effective date of the latest comp record for this employee.
+          Always >= hire_date and <= reference_date in
+          int_employee_tenure.
+        tests:
+          - not_null
+
+      - name: current_comp_change_reason
+        description: |
+          The change_reason of the latest comp record. Indicates the
+          source of the current salary value (e.g. 'Annual Review',
+          'Promotion', 'Market Adjustment', or 'New Hire' for employees
+          who have never had a subsequent comp event).
+        tests:
+          - not_null
+          - accepted_values:
+              values:
+                - New Hire
+                - Annual Review
+                - Promotion
+                - Market Adjustment
+                - Equity Adjustment
+
+      - name: salary
+        description: |
+          Annual base salary in USD as of current_comp_effective_date.
+          Always within [comp_band_min, comp_band_max] (Section 12 HR7).
+        tests:
+          - not_null
+          - dbt_utils.expression_is_true:
+              expression: "> 0"
+
+      - name: comp_band_min
+        description: |
+          Minimum of the function-specific comp band for the employee's
+          (department, sub_department, job_level) at
+          current_comp_effective_date.
+        tests:
+          - not_null
+
+      - name: comp_band_mid
+        description: |
+          Midpoint of the comp band. Denominator for compa_ratio.
+        tests:
+          - not_null
+
+      - name: comp_band_max
+        description: |
+          Maximum of the comp band. Salary is clipped to this ceiling.
+        tests:
+          - not_null
+
+      - name: compa_ratio
+        description: |
+          salary / comp_band_mid, rounded to 4 decimals. Typical range
+          0.85 to 1.20 since salary is bounded to [band_min, band_max].
+          A compa_ratio < 1.00 indicates below-midpoint pay; > 1.00
+          above-midpoint. Section 5 archetype rules anchor target
+          ranges (e.g. High-flyer 1.05-1.15, Steady contributor
+          0.95-1.05, Founder 1.10-1.20).
+        tests:
+          - not_null
+          - dbt_utils.expression_is_true:
+              expression: "> 0"
+
+      - name: band_position
+        description: |
+          (salary - comp_band_min) / (comp_band_max - comp_band_min),
+          rounded to 4 decimals. Range [0, 1]. 0 = at band minimum,
+          0.5 = at midpoint, 1 = at band ceiling. Useful for spotting
+          employees compressed against the band ceiling who may need a
+          band re-evaluation or promotion to grow further.
+        tests:
+          - not_null
+          - dbt_utils.expression_is_true:
+              expression: "between 0 and 1"
+
+  - name: int_employee_performance_history
+    description: |
+      Per-cycle performance history with rating_numeric, is_top_performer
+      (2-consecutive-cycle definition per data dict), and trend signals
+      (cycle_sequence, prior_overall_rating, overall_rating_delta,
+      self_optimism_delta). One row per (employee_id, review_cycle).
+      Marts that only need the latest row per employee should filter on
+      cycle_sequence equal to the per-employee max.
+    tests:
+      - dbt_utils.unique_combination_of_columns:
+          combination_of_columns:
+            - employee_id
+            - review_cycle
+    columns:
+      - name: employee_id
+        description: |
+          FK to stg_employees. Not every employee appears here -- 2025-Q1
+          hires and very-short-tenure Early Churners have no eligible
+          review cycles.
+        tests:
+          - not_null
+          - relationships:
+              to: ref('stg_employees')
+              field: employee_id
+
+      - name: review_cycle
+        description: |
+          Cycle identifier in YYYY-HN format. Carried forward from
+          stg_performance.
+        tests:
+          - not_null
+
+      - name: cycle_end_date
+        description: |
+          Calendar date the cycle's review window closed. Parsed from
+          review_cycle. H1 -> July 15 of YYYY; H2 -> January 15 of YYYY+1.
+          Used as the ordering key for cycle_sequence and lag windows.
+        tests:
+          - not_null
+
+      - name: cycle_sequence
+        description: |
+          1-based ordinal of this cycle within the employee's review
+          history. cycle_sequence = 1 is the first eligible cycle for
+          the employee.
+        tests:
+          - not_null
+          - dbt_utils.expression_is_true:
+              expression: ">= 1"
+
+      - name: review_completed_date
+        description: Carried forward from stg_performance.
+        tests:
+          - not_null
+
+      - name: review_status
+        description: |
+          Carried forward from stg_performance. Calculated fields apply
+          uniformly across status; marts that exclude Exempt or
+          Incomplete should filter at consumption time.
+        tests:
+          - not_null
+          - accepted_values:
+              values:
+                - Completed
+                - Incomplete
+                - Exempt
+
+      - name: overall_rating
+        description: Carried forward from stg_performance.
+        tests:
+          - not_null
+          - accepted_values:
+              values:
+                - Significantly Exceeds
+                - Exceeds
+                - Meets
+                - Partially Meets
+                - Does Not Meet
+
+      - name: overall_rating_numeric
+        description: |
+          Numeric mapping of overall_rating per data dict
+          (SE=5 / E=4 / M=3 / PM=2 / DNM=1). Used for arithmetic
+          aggregation downstream (averages, deltas, trends).
+        tests:
+          - not_null
+          - dbt_utils.expression_is_true:
+              expression: "between 1 and 5"
+
+      - name: manager_rating
+        description: Carried forward from stg_performance.
+        tests:
+          - not_null
+
+      - name: manager_rating_numeric
+        description: Numeric mapping of manager_rating (same scale as overall).
+        tests:
+          - not_null
+          - dbt_utils.expression_is_true:
+              expression: "between 1 and 5"
+
+      - name: self_rating
+        description: |
+          Carried forward from stg_performance. Nullable per spec.
+
+      - name: self_rating_numeric
+        description: |
+          Numeric mapping of self_rating. Null when self_rating is
+          null.
+        tests:
+          - dbt_utils.expression_is_true:
+              expression: "between 1 and 5"
+              config:
+                where: "self_rating_numeric is not null"
+
+      - name: prior_overall_rating
+        description: |
+          The overall_rating from the immediately previous cycle for
+          this employee, ordered by cycle_end_date. Null on
+          cycle_sequence = 1.
+
+      - name: prior_overall_rating_numeric
+        description: |
+          Numeric mapping of prior_overall_rating. Null on
+          cycle_sequence = 1.
+
+      - name: overall_rating_delta
+        description: |
+          overall_rating_numeric minus prior_overall_rating_numeric.
+          Range [-4, +4]. Null on cycle_sequence = 1. Positive =
+          improving; negative = declining (the canonical signal for
+          Performance Managed Out trajectories).
+        tests:
+          - dbt_utils.expression_is_true:
+              expression: "between -4 and 4"
+              config:
+                where: "overall_rating_delta is not null"
+
+      - name: is_top_performer
+        description: |
+          Spec calculated field: TRUE when overall_rating IN
+          ('Significantly Exceeds', 'Exceeds') for this cycle AND the
+          prior cycle (2 consecutive cycles). Always FALSE on
+          cycle_sequence = 1 (no prior cycle to compare).
+        tests:
+          - not_null
+
+      - name: self_optimism_delta
+        description: |
+          self_rating_numeric minus overall_rating_numeric. Range
+          [-4, +4]. Positive = self-rating exceeds calibrated overall
+          (typical optimism bias, ~30% of reviews). Null when
+          self_rating is null.
+        tests:
+          - dbt_utils.expression_is_true:
+              expression: "between -4 and 4"
+              config:
+                where: "self_optimism_delta is not null"

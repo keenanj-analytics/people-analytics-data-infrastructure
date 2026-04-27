@@ -733,6 +733,46 @@ models:
           - dbt_utils.expression_is_true:
               expression: "between 0 and 1"
 
+      - name: top_application_channel
+        description: |
+          Most-common stg_recruiting.source value across the
+          requisition's applications. Ties broken alphabetically.
+          Renamed from `source` upstream because BigQuery treats the
+          bare `source` identifier as reserved (MERGE INTO ... USING
+          source ...) and downstream consumers using SELECT * would
+          inherit the parser ambiguity.
+        tests:
+          - not_null
+          - accepted_values:
+              values:
+                - Referral
+                - LinkedIn
+                - Job Board
+                - Agency
+                - Internal
+                - Career Page
+                - Event
+
+      - name: top_application_channel_count
+        description: |
+          Count of applications attributed to top_application_channel.
+          Always >= 1 (every requisition has at least one application).
+        tests:
+          - not_null
+          - dbt_utils.expression_is_true:
+              expression: ">= 1"
+
+      - name: top_application_channel_share
+        description: |
+          top_application_channel_count / total_applications. Range [0, 1].
+          Higher values mean the requisition's applicant pool was
+          concentrated in one channel; lower values mean a more even
+          source mix.
+        tests:
+          - not_null
+          - dbt_utils.expression_is_true:
+              expression: "between 0 and 1"
+
   - name: int_engagement_theme_rollup
     description: |
       The 27 standard engagement questions rolled up to the 8 theme

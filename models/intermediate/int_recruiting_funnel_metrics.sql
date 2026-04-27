@@ -7,7 +7,8 @@
     Purpose
     -------
     One row per requisition with funnel-stage volumes, per-stage
-    conversion rates, and the spec's two time-to metrics. This is the
+    conversion rates, the spec's two time-to metrics, and the dominant
+    application channel ("source") for each requisition. This is the
     natural granularity for the recruiting Tableau workbook (per-
     requisition velocity dashboard, time-to-fill by department, source
     mix per requisition).
@@ -42,6 +43,26 @@
         rate_offer_to_hired        count_hired / reached_offer
         rate_overall_conversion    count_hired / total_applications
 
+    Top application channel (source mix, per requisition):
+        top_application_channel        most-common stg_recruiting.source
+                                       value across the requisition's
+                                       applications, ties broken
+                                       alphabetically.
+        top_application_channel_count  count of applications attributed
+                                       to top_application_channel.
+        top_application_channel_share  count / total_applications.
+
+    Naming note
+    -----------
+    The seed `source` column is aliased to `application_channel`
+    upstream in stg_recruiting. BigQuery treats the bare identifier
+    `source` as reserved (`MERGE INTO target USING source ...` syntax)
+    and the parser misreads it in GROUP BY / ORDER BY / PARTITION BY
+    positions as a row-as-struct expression, surfacing as
+        "Ordering by expressions of type STRUCT is not allowed".
+    Aliasing once at the staging boundary keeps every downstream
+    model (intermediate, marts, analyses) bare-source-free.
+
     Spec target conversions (Section 9):
         Applied -> Phone Screen:           25%
         Phone Screen -> Technical:         45%   (not tracked separately)
@@ -54,21 +75,11 @@
     because the Applied-stage rejection pool is capped during generation
     to keep total recruiting rows in the spec's 8-10K range. See
     11_build_raw_recruiting.py docstring for the trade-off.
-
-    What this model does NOT compute
-    --------------------------------
-    Per-source funnel rates and source-level time-to metrics belong in
-    a downstream mart (fct_recruiting_funnel_by_source) where they can
-    be sliced for the dashboard. This model stays at requisition grain.
 */
 
 {{ config(materialized='view') }}
 
-with applications as (
-    select * from {{ ref('stg_recruiting') }}
-),
-
-per_requisition as (
+with per_requisition as (
     select
         requisition_id,
 
@@ -100,27 +111,56 @@ per_requisition as (
         max(case when current_stage = 'Hired' then onsite_date       end) as hired_onsite_date,
         max(case when current_stage = 'Hired' then offer_date        end) as hired_offer_date,
         max(case when current_stage = 'Hired' then hire_date         end) as hire_date
-    from applications
+    from {{ ref('stg_recruiting') }}
     group by requisition_id
+),
+
+-- Per (requisition, channel) application counts.
+channel_counts_per_req as (
+    select
+        requisition_id,
+        application_channel,
+        count(*) as channel_count
+    from {{ ref('stg_recruiting') }}
+    group by requisition_id, application_channel
+),
+
+-- Pick the dominant channel per requisition (ties broken alphabetically).
+top_channel_per_req as (
+    select
+        requisition_id,
+        application_channel as top_application_channel,
+        channel_count       as top_application_channel_count
+    from channel_counts_per_req
+    qualify row_number() over (
+        partition by requisition_id
+        order by channel_count desc, application_channel
+    ) = 1
 ),
 
 final as (
     select
-        *,
+        pr.*,
 
         -- Time-to metrics (per data dict)
-        date_diff(hire_date,        hired_application_date, day) as time_to_fill_days,
-        date_diff(hired_offer_date, hired_application_date, day) as time_to_offer_days,
+        date_diff(pr.hire_date,        pr.hired_application_date, day) as time_to_fill_days,
+        date_diff(pr.hired_offer_date, pr.hired_application_date, day) as time_to_offer_days,
 
         -- Stage conversion rates. SAFE_DIVIDE returns NULL on a 0
         -- denominator (defensive; in this dataset every requisition
         -- has at least one Hired row so denominators are >= 1).
-        round(safe_divide(reached_phone_screen, total_applications),  4) as rate_applied_to_phone,
-        round(safe_divide(reached_onsite,       reached_phone_screen),4) as rate_phone_to_onsite,
-        round(safe_divide(reached_offer,        reached_onsite),      4) as rate_onsite_to_offer,
-        round(safe_divide(count_hired,          reached_offer),       4) as rate_offer_to_hired,
-        round(safe_divide(count_hired,          total_applications),  4) as rate_overall_conversion
-    from per_requisition
+        round(safe_divide(pr.reached_phone_screen, pr.total_applications),  4) as rate_applied_to_phone,
+        round(safe_divide(pr.reached_onsite,       pr.reached_phone_screen),4) as rate_phone_to_onsite,
+        round(safe_divide(pr.reached_offer,        pr.reached_onsite),      4) as rate_onsite_to_offer,
+        round(safe_divide(pr.count_hired,          pr.reached_offer),       4) as rate_offer_to_hired,
+        round(safe_divide(pr.count_hired,          pr.total_applications),  4) as rate_overall_conversion,
+
+        -- Top channel
+        tc.top_application_channel,
+        tc.top_application_channel_count,
+        round(safe_divide(tc.top_application_channel_count, pr.total_applications), 4) as top_application_channel_share
+    from per_requisition       as pr
+    left join top_channel_per_req as tc on pr.requisition_id = tc.requisition_id
 )
 
 select * from final

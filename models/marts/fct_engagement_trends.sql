@@ -38,7 +38,7 @@
 
 {{ config(materialized='table') }}
 
-with rollup as (
+with theme_rollup as (
     select * from {{ ref('int_engagement_theme_rollup') }}
 ),
 
@@ -51,7 +51,7 @@ with_company_avgs as (
         avg(theme_avg_favorable_pct) over (
             partition by survey_cycle, theme
         ) as company_theme_avg_favorable_pct
-    from rollup
+    from theme_rollup
 ),
 
 final as (

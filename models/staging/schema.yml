@@ -594,11 +594,16 @@ models:
         tests:
           - not_null
 
-      - name: source
+      - name: application_channel
         description: |
           The channel through which the candidate entered the pipeline.
           Section 9 specifies department-specific source mixes (e.g.
-          Engineering preferences Referral 35% / LinkedIn 28%).
+          Engineering preferences Referral 35% / LinkedIn 28%). The
+          seed column is `source`; aliased to `application_channel` at
+          this staging boundary so no downstream model references the
+          bare `source` identifier (BigQuery treats it as reserved in
+          MERGE INTO ... USING source ... syntax and the parser
+          misreads it in GROUP BY / ORDER BY / PARTITION BY positions).
         tests:
           - not_null
           - accepted_values:

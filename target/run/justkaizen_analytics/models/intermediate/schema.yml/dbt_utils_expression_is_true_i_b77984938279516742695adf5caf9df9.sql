@@ -1,0 +1,23 @@
+
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+
+
+
+select
+    1
+from `just-kaizen-ai`.`raw_intermediate`.`int_employee_event_sequence`
+
+where not(total_events_for_employee >= 1)
+
+
+  
+  
+      
+    ) dbt_internal_test

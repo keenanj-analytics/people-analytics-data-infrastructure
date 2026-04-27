@@ -6,7 +6,8 @@
       "Bash(python3 scripts/data_generation/10_build_raw_performance.py)",
       "Bash(python3 scripts/data_generation/11_build_raw_recruiting.py)",
       "Bash(python3 scripts/data_generation/12_build_raw_engagement.py)",
-      "Bash(python3 scripts/data_generation/13_validate_and_export.py)"
+      "Bash(python3 scripts/data_generation/13_validate_and_export.py)",
+      "Bash(grep -nE '\\(^|[^a-zA-Z_]\\)source\\([^a-zA-Z_]|$\\)' \"/Users/keenanj/Documents/Claude Code/JustKaizen-Data-Infrastructure/models/staging/stg_recruiting.sql\" \"/Users/keenanj/Documents/Claude Code/JustKaizen-Data-Infrastructure/models/intermediate/int_recruiting_funnel_metrics.sql\" \"/Users/keenanj/Documents/Claude Code/JustKaizen-Data-Infrastructure/models/marts/fct_recruiting_velocity.sql\")"
     ],
     "additionalDirectories": [
       "/Users/keenanj/Documents/Claude Code/JustKaizen-Data-Infrastructure/data/raw"

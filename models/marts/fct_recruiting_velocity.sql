@@ -1,15 +1,21 @@
 /*
     Model:        fct_recruiting_velocity
     Layer:        marts
-    Sources:      int_recruiting_funnel_metrics, stg_recruiting
+    Sources:      int_recruiting_funnel_metrics
     Materialized: table  (per dbt_project.yml marts defaults)
 
     Purpose
     -------
     Per-requisition velocity dashboard. Granularity: one row per
     requisition (~592 rows). Carries all funnel + time-to metrics from
-    int_recruiting_funnel_metrics, plus department-level peer averages
-    and the dominant source channel for each requisition's applicants.
+    int_recruiting_funnel_metrics, plus department-level peer averages.
+
+    Channel logic (top_application_channel) is computed upstream in
+    int_recruiting_funnel_metrics so this mart stays focused on
+    department-peer-comparison metrics. The mart's output column names
+    (top_source_for_requisition, top_source_count, top_source_share)
+    are preserved as the public contract for downstream consumers --
+    only the upstream column names changed.
 
     Calculated fields beyond int_recruiting_funnel_metrics
     ------------------------------------------------------
@@ -17,13 +23,10 @@
             Time bucketing on hire_date for grouping in BI.
         dept_avg_time_to_fill_days, dept_avg_time_to_offer_days
             Department-level peer averages (window).
-        time_to_fill_vs_dept_avg
+        time_to_fill_vs_dept_avg, time_to_offer_vs_dept_avg
             Per-requisition deviation from dept average.
-        top_source_for_requisition
-            Most common source across all applications on the
-            requisition. Useful for the source-mix dashboard tab.
-        top_source_share
-            Share of total_applications attributed to top_source.
+        dept_avg_overall_conversion
+            Department-level peer average of the Applied -> Hired rate.
 */
 
 {{ config(materialized='table') }}
@@ -32,37 +35,13 @@ with funnel as (
     select * from {{ ref('int_recruiting_funnel_metrics') }}
 ),
 
-source_counts_per_req as (
-    select
-        requisition_id,
-        source,
-        count(*) as source_count
-    from {{ ref('stg_recruiting') }}
-    group by requisition_id, source
-),
-
-top_source as (
-    select
-        requisition_id,
-        source        as top_source_for_requisition,
-        source_count  as top_source_count
-    from source_counts_per_req
-    qualify row_number() over (
-        partition by requisition_id
-        order by source_count desc, source
-    ) = 1
-),
-
-with_dept_avgs_and_top_source as (
+with_dept_avgs as (
     select
         f.*,
-        avg(f.time_to_fill_days)  over (partition by f.department) as dept_avg_time_to_fill_days,
-        avg(f.time_to_offer_days) over (partition by f.department) as dept_avg_time_to_offer_days,
-        avg(f.rate_overall_conversion) over (partition by f.department) as dept_avg_overall_conversion,
-        ts.top_source_for_requisition,
-        ts.top_source_count
+        avg(f.time_to_fill_days)       over (partition by f.department) as dept_avg_time_to_fill_days,
+        avg(f.time_to_offer_days)      over (partition by f.department) as dept_avg_time_to_offer_days,
+        avg(f.rate_overall_conversion) over (partition by f.department) as dept_avg_overall_conversion
     from funnel as f
-    left join top_source as ts on f.requisition_id = ts.requisition_id
 ),
 
 final as (
@@ -111,11 +90,14 @@ final as (
         rate_overall_conversion,
         round(dept_avg_overall_conversion, 4) as dept_avg_overall_conversion,
 
-        -- Source mix
-        top_source_for_requisition,
-        top_source_count,
-        round(safe_divide(top_source_count, total_applications), 4) as top_source_share
-    from with_dept_avgs_and_top_source
+        -- Channel mix (computed upstream in int_recruiting_funnel_metrics).
+        -- Public column names preserved for downstream / Tableau parity;
+        -- internal renames keep the bare `source` identifier out of
+        -- BigQuery's parser path.
+        top_application_channel       as top_source_for_requisition,
+        top_application_channel_count as top_source_count,
+        top_application_channel_share as top_source_share
+    from with_dept_avgs
 )
 
 select * from final

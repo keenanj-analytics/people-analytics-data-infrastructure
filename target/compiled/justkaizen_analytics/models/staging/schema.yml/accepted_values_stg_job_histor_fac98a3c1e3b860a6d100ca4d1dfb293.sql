@@ -1,0 +1,22 @@
+
+    
+    
+
+with all_values as (
+
+    select
+        old_job_level as value_field,
+        count(*) as n_records
+
+    from (select * from `just-kaizen-ai`.`raw_staging`.`stg_job_history` where old_job_level is not null) dbt_subquery
+    group by old_job_level
+
+)
+
+select *
+from all_values
+where value_field not in (
+    'IC1','IC2','IC3','IC4','IC5','M1','M2','M3','M4','M5'
+)
+
+

@@ -33,6 +33,14 @@
     - Q1 2020 hires (12 employees: Maya, David, Priya, plus 9 founders)
       are excluded by design -- the company's spec narrative places
       Ashby adoption at Q2 2020 onward.
+    - The seed column `source` is aliased to `application_channel`
+      here. BigQuery treats the bare identifier `source` as reserved
+      (`MERGE INTO target USING source ...` syntax) and the parser
+      misreads it in GROUP BY / ORDER BY / PARTITION BY positions as a
+      row-as-struct expression, surfacing as
+          "Ordering by expressions of type STRUCT is not allowed".
+      Aliasing once here at the staging boundary keeps every downstream
+      model (intermediate, marts, analyses) bare-source-free.
     - Stage-dependent nullability (per spec):
         phone_screen_date  populated only if candidate reached Phone
                            Screen or beyond
@@ -50,7 +58,7 @@
 
 
 
-with source as (
+with raw_data as (
     select * from `just-kaizen-ai`.`raw_raw`.`raw_recruiting`
 ),
 
@@ -70,7 +78,7 @@ renamed as (
         sub_department,
         recruiter,
         hiring_manager,
-        source,
+        source as application_channel,
 
         -- Funnel state
         current_stage,
@@ -85,7 +93,7 @@ renamed as (
         -- Outcome
         offer_accepted,
         rejection_reason
-    from source
+    from raw_data
 )
 
 select * from renamed;

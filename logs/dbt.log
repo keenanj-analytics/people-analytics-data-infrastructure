@@ -1,0 +1,2944 @@
+[0m05:46:39.208232 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1051afc10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x106261520>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x106261340>]}
+
+
+============================== 05:46:39.210754 | c7c79108-ecb2-40f1-b99f-0ebde71bfa76 ==============================
+[0m05:46:39.210754 [info ] [MainThread]: Running with dbt=1.11.0-b3
+[0m05:46:39.211056 [debug] [MainThread]: running dbt with arguments {'write_json': 'True', 'send_anonymous_usage_stats': 'True', 'indirect_selection': 'eager', 'invocation_command': 'dbt debug', 'warn_error': 'None', 'target_path': 'None', 'debug': 'False', 'log_path': '/Users/keenanj/Documents/Claude Code/JustKaizen-Data-Infrastructure/logs', 'fail_fast': 'False', 'printer_width': '80', 'profiles_dir': '/Users/keenanj/.dbt', 'use_experimental_parser': 'False', 'version_check': 'True', 'introspect': 'True', 'empty': 'None', 'quiet': 'False', 'no_print': 'None', 'cache_selected_only': 'False', 'log_cache_events': 'False', 'use_colors': 'True', 'static_parser': 'True', 'log_format': 'default', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'partial_parse': 'True'}
+[0m05:46:39.219435 [info ] [MainThread]: dbt version: 1.11.0-b3
+[0m05:46:39.219657 [info ] [MainThread]: python version: 3.9.6
+[0m05:46:39.219813 [info ] [MainThread]: python path: /Library/Developer/CommandLineTools/usr/bin/python3
+[0m05:46:39.219969 [info ] [MainThread]: os info: macOS-15.6.1-arm64-arm-64bit
+[0m05:46:44.527799 [info ] [MainThread]: Using profiles dir at /Users/keenanj/.dbt
+[0m05:46:44.528220 [info ] [MainThread]: Using profiles.yml file at /Users/keenanj/.dbt/profiles.yml
+[0m05:46:44.528391 [info ] [MainThread]: Using dbt_project.yml file at /Users/keenanj/Documents/Claude Code/JustKaizen-Data-Infrastructure/dbt_project.yml
+[0m05:46:44.528551 [info ] [MainThread]: adapter type: bigquery
+[0m05:46:44.528698 [info ] [MainThread]: adapter version: 1.10.2
+[0m05:46:44.591024 [info ] [MainThread]: Configuration:
+[0m05:46:44.591310 [info ] [MainThread]:   profiles.yml file [[32mOK found and valid[0m]
+[0m05:46:44.591466 [info ] [MainThread]:   dbt_project.yml file [[32mOK found and valid[0m]
+[0m05:46:44.591617 [info ] [MainThread]: Required dependencies:
+[0m05:46:44.591844 [debug] [MainThread]: Executing "git --help"
+[0m05:46:44.626851 [debug] [MainThread]: STDOUT: "b"usage: git [-v | --version] [-h | --help] [-C <path>] [-c <name>=<value>]\n           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]\n           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--bare]\n           [--git-dir=<path>] [--work-tree=<path>] [--namespace=<name>]\n           [--super-prefix=<path>] [--config-env=<name>=<envvar>]\n           <command> [<args>]\n\nThese are common Git commands used in various situations:\n\nstart a working area (see also: git help tutorial)\n   clone     Clone a repository into a new directory\n   init      Create an empty Git repository or reinitialize an existing one\n\nwork on the current change (see also: git help everyday)\n   add       Add file contents to the index\n   mv        Move or rename a file, a directory, or a symlink\n   restore   Restore working tree files\n   rm        Remove files from the working tree and from the index\n\nexamine the history and state (see also: git help revisions)\n   bisect    Use binary search to find the commit that introduced a bug\n   diff      Show changes between commits, commit and working tree, etc\n   grep      Print lines matching a pattern\n   log       Show commit logs\n   show      Show various types of objects\n   status    Show the working tree status\n\ngrow, mark and tweak your common history\n   branch    List, create, or delete branches\n   commit    Record changes to the repository\n   merge     Join two or more development histories together\n   rebase    Reapply commits on top of another base tip\n   reset     Reset current HEAD to the specified state\n   switch    Switch branches\n   tag       Create, list, delete or verify a tag object signed with GPG\n\ncollaborate (see also: git help workflows)\n   fetch     Download objects and refs from another repository\n   pull      Fetch from and integrate with another repository or a local branch\n   push      Update remote refs along with associated objects\n\n'git help -a' and 'git help -g' list available subcommands and some\nconcept guides. See 'git help <command>' or 'git help <concept>'\nto read about a specific subcommand or concept.\nSee 'git help git' for an overview of the system.\n""
+[0m05:46:44.627887 [debug] [MainThread]: STDERR: "b''"
+[0m05:46:44.628192 [info ] [MainThread]:  - git [[32mOK found[0m]
+
+[0m05:46:44.628424 [info ] [MainThread]: Connection:
+[0m05:46:44.628753 [info ] [MainThread]:   method: service-account
+[0m05:46:44.628915 [info ] [MainThread]:   database: just-kaizen-ai
+[0m05:46:44.629055 [info ] [MainThread]:   execution_project: just-kaizen-ai
+[0m05:46:44.629192 [info ] [MainThread]:   schema: raw
+[0m05:46:44.629332 [info ] [MainThread]:   location: US
+[0m05:46:44.629472 [info ] [MainThread]:   priority: None
+[0m05:46:44.629610 [info ] [MainThread]:   maximum_bytes_billed: None
+[0m05:46:44.629748 [info ] [MainThread]:   impersonate_service_account: None
+[0m05:46:44.629886 [info ] [MainThread]:   job_retry_deadline_seconds: None
+[0m05:46:44.630023 [info ] [MainThread]:   job_retries: 1
+[0m05:46:44.630159 [info ] [MainThread]:   job_creation_timeout_seconds: None
+[0m05:46:44.630295 [info ] [MainThread]:   job_execution_timeout_seconds: None
+[0m05:46:44.630429 [info ] [MainThread]:   timeout_seconds: None
+[0m05:46:44.630562 [info ] [MainThread]:   client_id: None
+[0m05:46:44.630698 [info ] [MainThread]:   token_uri: None
+[0m05:46:44.630833 [info ] [MainThread]:   compute_region: None
+[0m05:46:44.630969 [info ] [MainThread]:   dataproc_cluster_name: None
+[0m05:46:44.631104 [info ] [MainThread]:   gcs_bucket: None
+[0m05:46:44.631238 [info ] [MainThread]:   dataproc_batch: None
+[0m05:46:44.631649 [info ] [MainThread]: Registered adapter: bigquery=1.10.2
+[0m05:46:44.780077 [debug] [MainThread]: Acquiring new bigquery connection 'debug'
+[0m05:46:44.780431 [debug] [MainThread]: On debug: select 1 as id
+[0m05:46:44.780617 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m05:46:46.415882 [debug] [MainThread]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=just-kaizen-ai&j=bq:US:a1c5c6c8-0d40-45bd-a1a1-771470ed3c2f&page=queryresults
+[0m05:46:47.153661 [info ] [MainThread]:   Connection test: [[32mOK connection ok[0m]
+
+[0m05:46:47.157221 [info ] [MainThread]: [32mAll checks passed![0m
+[0m05:46:47.164016 [debug] [MainThread]: Resource report: {"command_name": "debug", "command_success": true, "command_wall_clock_time": 8.003976, "process_in_blocks": "0", "process_kernel_time": 0.576472, "process_mem_max_rss": "341753856", "process_out_blocks": "0", "process_user_time": 2.939768}
+[0m05:46:47.169513 [debug] [MainThread]: Command `dbt debug` succeeded at 05:46:47.166834 after 8.01 seconds
+[0m05:46:47.172513 [debug] [MainThread]: Connection 'debug' was properly closed.
+[0m05:46:47.174102 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1051afc10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x106229fa0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1433d51c0>]}
+[0m05:46:47.176339 [debug] [MainThread]: Flushing usage events
+[0m05:46:47.827693 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m05:49:06.540551 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x104eecb50>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1062b55b0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1062b53d0>]}
+
+
+============================== 05:49:06.544690 | 96b228a5-f0ea-4eac-aea1-e63b3d0b0069 ==============================
+[0m05:49:06.544690 [info ] [MainThread]: Running with dbt=1.11.0-b3
+[0m05:49:06.545054 [debug] [MainThread]: running dbt with arguments {'send_anonymous_usage_stats': 'True', 'version_check': 'True', 'use_colors': 'True', 'log_path': '/Users/keenanj/Documents/Claude Code/JustKaizen-Data-Infrastructure/logs', 'printer_width': '80', 'log_format': 'default', 'profiles_dir': '/Users/keenanj/.dbt', 'debug': 'False', 'introspect': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'warn_error': 'None', 'indirect_selection': 'eager', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'static_parser': 'True', 'write_json': 'True', 'invocation_command': 'dbt deps', 'cache_selected_only': 'False', 'empty': 'None', 'no_print': 'None', 'quiet': 'False', 'use_experimental_parser': 'False', 'fail_fast': 'False', 'target_path': 'None'}
+[0m05:49:06.639826 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '96b228a5-f0ea-4eac-aea1-e63b3d0b0069', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x103083190>]}
+[0m05:49:06.652261 [debug] [MainThread]: Set downloads directory='/var/folders/1v/m0k_yf8d3b78qby25n_s7m6c0000gn/T/dbt-downloads-_ussnq8b'
+[0m05:49:06.652561 [debug] [MainThread]: Making package index registry request: GET https://hub.getdbt.com/api/v1/index.json
+[0m05:49:06.964832 [debug] [MainThread]: Response from registry index: GET https://hub.getdbt.com/api/v1/index.json 200
+[0m05:49:06.968077 [debug] [MainThread]: Making package registry request: GET https://hub.getdbt.com/api/v1/dbt-labs/dbt_utils.json
+[0m05:49:07.101101 [debug] [MainThread]: Response from registry: GET https://hub.getdbt.com/api/v1/dbt-labs/dbt_utils.json 200
+[0m05:49:07.125558 [info ] [MainThread]: Updating lock file in file path: /Users/keenanj/Documents/Claude Code/JustKaizen-Data-Infrastructure/package-lock.yml
+[0m05:49:07.128199 [debug] [MainThread]: Set downloads directory='/var/folders/1v/m0k_yf8d3b78qby25n_s7m6c0000gn/T/dbt-downloads-3lzh36_6'
+[0m05:49:07.133233 [info ] [MainThread]: Installing dbt-labs/dbt_utils
+[0m05:49:07.911284 [info ] [MainThread]: Installed from version 1.3.3
+[0m05:49:07.911616 [info ] [MainThread]: Up to date!
+[0m05:49:07.911835 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'package', 'label': '96b228a5-f0ea-4eac-aea1-e63b3d0b0069', 'property_': 'install', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x106354580>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x106354970>]}
+[0m05:49:07.914423 [debug] [MainThread]: Resource report: {"command_name": "deps", "command_success": true, "command_wall_clock_time": 1.4289013, "process_in_blocks": "0", "process_kernel_time": 0.202269, "process_mem_max_rss": "123781120", "process_out_blocks": "0", "process_user_time": 1.624933}
+[0m05:49:07.914777 [debug] [MainThread]: Command `dbt deps` succeeded at 05:49:07.914697 after 1.43 seconds
+[0m05:49:07.915002 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x104eecb50>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1009492b0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1064208b0>]}
+[0m05:49:07.915195 [debug] [MainThread]: Flushing usage events
+[0m05:49:08.664988 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m05:49:30.358109 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10725c640>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x11052abe0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x11052aa00>]}
+
+
+============================== 05:49:30.361788 | a2ccebac-0dd2-4a4b-9d54-4574faef7959 ==============================
+[0m05:49:30.361788 [info ] [MainThread]: Running with dbt=1.11.0-b3
+[0m05:49:30.362109 [debug] [MainThread]: running dbt with arguments {'debug': 'False', 'partial_parse': 'True', 'invocation_command': 'dbt seed', 'target_path': 'None', 'write_json': 'True', 'warn_error': 'None', 'use_experimental_parser': 'False', 'quiet': 'False', 'printer_width': '80', 'log_cache_events': 'False', 'cache_selected_only': 'False', 'fail_fast': 'False', 'version_check': 'True', 'log_path': '/Users/keenanj/Documents/Claude Code/JustKaizen-Data-Infrastructure/logs', 'no_print': 'None', 'profiles_dir': '/Users/keenanj/.dbt', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'log_format': 'default', 'send_anonymous_usage_stats': 'True', 'use_colors': 'True', 'introspect': 'True', 'static_parser': 'True', 'indirect_selection': 'eager', 'empty': 'None'}
+[0m05:49:32.426256 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'a2ccebac-0dd2-4a4b-9d54-4574faef7959', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1446d3b20>]}
+[0m05:49:32.460218 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': 'a2ccebac-0dd2-4a4b-9d54-4574faef7959', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1450eb9a0>]}
+[0m05:49:32.460620 [info ] [MainThread]: Registered adapter: bigquery=1.10.2
+[0m05:49:32.632394 [debug] [MainThread]: checksum: e63134dccc1251cfb572caf0e4aa952f030c125ee3634f3bf2c0a2e1bb6ae349, vars: {}, profile: , target: , version: 1.11.0b3
+[0m05:49:32.632893 [info ] [MainThread]: Unable to do partial parsing because saved manifest not found. Starting full parse.
+[0m05:49:32.633123 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'partial_parser', 'label': 'a2ccebac-0dd2-4a4b-9d54-4574faef7959', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x145474be0>]}
+[0m05:49:33.688643 [warn ] [MainThread]: [[33mWARNING[0m][MissingArgumentsPropertyInGenericTestDeprecation]: Deprecated
+functionality
+Found top-level arguments to test `relationships` defined on 'stg_employees' in
+package 'justkaizen_analytics' (models/staging/schema.yml). Arguments to generic
+tests should be nested under the `arguments` property.
+[0m05:49:33.690537 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'deprecation', 'label': 'a2ccebac-0dd2-4a4b-9d54-4574faef7959', 'property_': 'warn', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x145e801f0>]}
+[0m05:49:34.504191 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': 'a2ccebac-0dd2-4a4b-9d54-4574faef7959', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x145b36220>]}
+[0m05:49:34.620884 [debug] [MainThread]: Wrote artifact WritableManifest to /Users/keenanj/Documents/Claude Code/JustKaizen-Data-Infrastructure/target/manifest.json
+[0m05:49:34.623313 [debug] [MainThread]: Wrote artifact SemanticManifest to /Users/keenanj/Documents/Claude Code/JustKaizen-Data-Infrastructure/target/semantic_manifest.json
+[0m05:49:34.649605 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': 'a2ccebac-0dd2-4a4b-9d54-4574faef7959', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1451d0580>]}
+[0m05:49:34.649929 [info ] [MainThread]: Found 19 models, 4 analyses, 6 seeds, 338 data tests, 624 macros
+[0m05:49:34.650117 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'a2ccebac-0dd2-4a4b-9d54-4574faef7959', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1461e72e0>]}
+[0m05:49:34.653418 [info ] [MainThread]: 
+[0m05:49:34.653621 [info ] [MainThread]: Concurrency: 4 threads (target='dev')
+[0m05:49:34.653773 [info ] [MainThread]: 
+[0m05:49:34.654051 [debug] [MainThread]: Acquiring new bigquery connection 'master'
+[0m05:49:34.656609 [debug] [ThreadPool]: Acquiring new bigquery connection 'list_just-kaizen-ai'
+[0m05:49:34.656818 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m05:49:35.312498 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_just-kaizen-ai, now create_just-kaizen-ai_raw_raw)
+[0m05:49:35.313451 [debug] [ThreadPool]: Creating schema "database: "just-kaizen-ai"
+schema: "raw_raw"
+"
+[0m05:49:35.327585 [debug] [ThreadPool]: On create_just-kaizen-ai_raw_raw: /* {"app": "dbt", "dbt_version": "1.11.0b3", "profile_name": "justkaizen", "target_name": "dev", "connection_name": "create_just-kaizen-ai_raw_raw"} */
+create schema if not exists `just-kaizen-ai`.`raw_raw`
+  
+[0m05:49:35.328082 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m05:49:36.141118 [debug] [ThreadPool]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=just-kaizen-ai&j=bq:US:bf337b98-6349-4caf-9fd5-4d2389d60034&page=queryresults
+[0m05:49:37.025635 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly create_just-kaizen-ai_raw_raw, now list_just-kaizen-ai_raw_staging)
+[0m05:49:37.025969 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m05:49:37.026226 [debug] [ThreadPool]: Acquiring new bigquery connection 'list_just-kaizen-ai_raw_intermediate'
+[0m05:49:37.026538 [debug] [ThreadPool]: Acquiring new bigquery connection 'list_just-kaizen-ai_raw_marts'
+[0m05:49:37.026833 [debug] [ThreadPool]: Acquiring new bigquery connection 'list_just-kaizen-ai_raw_raw'
+[0m05:49:37.027026 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m05:49:37.080206 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m05:49:37.080367 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m05:49:38.250074 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'a2ccebac-0dd2-4a4b-9d54-4574faef7959', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x145b717c0>]}
+[0m05:49:38.251729 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m05:49:38.309261 [debug] [Thread-1  ]: Began running node seed.justkaizen_analytics.raw_compensation
+[0m05:49:38.309553 [debug] [Thread-2  ]: Began running node seed.justkaizen_analytics.raw_employees
+[0m05:49:38.309767 [debug] [Thread-3  ]: Began running node seed.justkaizen_analytics.raw_engagement
+[0m05:49:38.310512 [debug] [Thread-4  ]: Began running node seed.justkaizen_analytics.raw_job_history
+[0m05:49:38.310304 [info ] [Thread-1  ]: 1 of 6 START seed file raw_raw.raw_compensation ................................ [RUN]
+[0m05:49:38.310836 [info ] [Thread-2  ]: 2 of 6 START seed file raw_raw.raw_employees ................................... [RUN]
+[0m05:49:38.311093 [info ] [Thread-3  ]: 3 of 6 START seed file raw_raw.raw_engagement .................................. [RUN]
+[0m05:49:38.311349 [info ] [Thread-4  ]: 4 of 6 START seed file raw_raw.raw_job_history ................................. [RUN]
+[0m05:49:38.311647 [debug] [Thread-1  ]: Re-using an available connection from the pool (formerly list_just-kaizen-ai_raw_staging, now seed.justkaizen_analytics.raw_compensation)
+[0m05:49:38.311848 [debug] [Thread-2  ]: Re-using an available connection from the pool (formerly list_just-kaizen-ai_raw_intermediate, now seed.justkaizen_analytics.raw_employees)
+[0m05:49:38.312033 [debug] [Thread-3  ]: Re-using an available connection from the pool (formerly list_just-kaizen-ai_raw_marts, now seed.justkaizen_analytics.raw_engagement)
+[0m05:49:38.312233 [debug] [Thread-4  ]: Re-using an available connection from the pool (formerly list_just-kaizen-ai_raw_raw, now seed.justkaizen_analytics.raw_job_history)
+[0m05:49:38.312450 [debug] [Thread-1  ]: Began compiling node seed.justkaizen_analytics.raw_compensation
+[0m05:49:38.312635 [debug] [Thread-2  ]: Began compiling node seed.justkaizen_analytics.raw_employees
+[0m05:49:38.312812 [debug] [Thread-3  ]: Began compiling node seed.justkaizen_analytics.raw_engagement
+[0m05:49:38.312983 [debug] [Thread-4  ]: Began compiling node seed.justkaizen_analytics.raw_job_history
+[0m05:49:38.313211 [debug] [Thread-1  ]: Began executing node seed.justkaizen_analytics.raw_compensation
+[0m05:49:38.313382 [debug] [Thread-2  ]: Began executing node seed.justkaizen_analytics.raw_employees
+[0m05:49:38.313552 [debug] [Thread-3  ]: Began executing node seed.justkaizen_analytics.raw_engagement
+[0m05:49:38.313720 [debug] [Thread-4  ]: Began executing node seed.justkaizen_analytics.raw_job_history
+[0m05:49:38.387364 [debug] [Thread-1  ]: Opening a new connection, currently in state closed
+[0m05:49:38.388111 [debug] [Thread-3  ]: Opening a new connection, currently in state closed
+[0m05:49:38.389096 [debug] [Thread-2  ]: Opening a new connection, currently in state closed
+[0m05:49:38.395760 [debug] [Thread-4  ]: Opening a new connection, currently in state closed
+[0m05:49:41.746063 [debug] [Thread-1  ]: On seed.justkaizen_analytics.raw_compensation: /* {"app": "dbt", "dbt_version": "1.11.0b3", "profile_name": "justkaizen", "target_name": "dev", "node_id": "seed.justkaizen_analytics.raw_compensation"} */
+
+    alter table `just-kaizen-ai`.`raw_raw`.`raw_compensation` set OPTIONS()
+  
+[0m05:49:42.418426 [debug] [Thread-1  ]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=just-kaizen-ai&j=bq:US:bbb0ee99-791a-4b35-bc3c-c66aee035e4b&page=queryresults
+[0m05:49:42.560911 [debug] [Thread-3  ]: On seed.justkaizen_analytics.raw_engagement: /* {"app": "dbt", "dbt_version": "1.11.0b3", "profile_name": "justkaizen", "target_name": "dev", "node_id": "seed.justkaizen_analytics.raw_engagement"} */
+
+    alter table `just-kaizen-ai`.`raw_raw`.`raw_engagement` set OPTIONS()
+  
+[0m05:49:42.755061 [debug] [Thread-2  ]: On seed.justkaizen_analytics.raw_employees: /* {"app": "dbt", "dbt_version": "1.11.0b3", "profile_name": "justkaizen", "target_name": "dev", "node_id": "seed.justkaizen_analytics.raw_employees"} */
+
+    alter table `just-kaizen-ai`.`raw_raw`.`raw_employees` set OPTIONS()
+  
+[0m05:49:42.782504 [debug] [Thread-1  ]: Writing runtime SQL for node "seed.justkaizen_analytics.raw_compensation"
+[0m05:49:42.820147 [debug] [Thread-1  ]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'a2ccebac-0dd2-4a4b-9d54-4574faef7959', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x104ea7130>]}
+[0m05:49:42.820869 [info ] [Thread-1  ]: 1 of 6 OK loaded seed file raw_raw.raw_compensation ............................ [[32mINSERT 2312[0m in 4.51s]
+[0m05:49:42.821355 [debug] [Thread-1  ]: Finished running node seed.justkaizen_analytics.raw_compensation
+[0m05:49:42.821714 [debug] [Thread-1  ]: Began running node seed.justkaizen_analytics.raw_performance
+[0m05:49:42.822416 [info ] [Thread-1  ]: 5 of 6 START seed file raw_raw.raw_performance ................................. [RUN]
+[0m05:49:42.822782 [debug] [Thread-1  ]: Re-using an available connection from the pool (formerly seed.justkaizen_analytics.raw_compensation, now seed.justkaizen_analytics.raw_performance)
+[0m05:49:42.823051 [debug] [Thread-1  ]: Began compiling node seed.justkaizen_analytics.raw_performance
+[0m05:49:42.823317 [debug] [Thread-1  ]: Began executing node seed.justkaizen_analytics.raw_performance
+[0m05:49:42.853131 [debug] [Thread-1  ]: Opening a new connection, currently in state closed
+[0m05:49:42.966982 [debug] [Thread-3  ]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=just-kaizen-ai&j=bq:US:007e3d72-8af2-43f7-9e44-07547e85cc6e&page=queryresults
+[0m05:49:43.093512 [debug] [Thread-4  ]: On seed.justkaizen_analytics.raw_job_history: /* {"app": "dbt", "dbt_version": "1.11.0b3", "profile_name": "justkaizen", "target_name": "dev", "node_id": "seed.justkaizen_analytics.raw_job_history"} */
+
+    alter table `just-kaizen-ai`.`raw_raw`.`raw_job_history` set OPTIONS()
+  
+[0m05:49:43.169058 [debug] [Thread-2  ]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=just-kaizen-ai&j=bq:US:a1f94fd4-a57e-4ca1-8299-6835e92ed309&page=queryresults
+[0m05:49:43.473020 [debug] [Thread-3  ]: Writing runtime SQL for node "seed.justkaizen_analytics.raw_engagement"
+[0m05:49:43.484035 [debug] [Thread-3  ]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'a2ccebac-0dd2-4a4b-9d54-4574faef7959', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1466ef190>]}
+[0m05:49:43.484646 [info ] [Thread-3  ]: 3 of 6 OK loaded seed file raw_raw.raw_engagement .............................. [[32mINSERT 3024[0m in 5.17s]
+[0m05:49:43.485070 [debug] [Thread-3  ]: Finished running node seed.justkaizen_analytics.raw_engagement
+[0m05:49:43.485349 [debug] [Thread-3  ]: Began running node seed.justkaizen_analytics.raw_recruiting
+[0m05:49:43.485725 [info ] [Thread-3  ]: 6 of 6 START seed file raw_raw.raw_recruiting .................................. [RUN]
+[0m05:49:43.486038 [debug] [Thread-3  ]: Re-using an available connection from the pool (formerly seed.justkaizen_analytics.raw_engagement, now seed.justkaizen_analytics.raw_recruiting)
+[0m05:49:43.486235 [debug] [Thread-3  ]: Began compiling node seed.justkaizen_analytics.raw_recruiting
+[0m05:49:43.486422 [debug] [Thread-3  ]: Began executing node seed.justkaizen_analytics.raw_recruiting
+[0m05:49:43.570759 [debug] [Thread-4  ]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=just-kaizen-ai&j=bq:US:531ea934-1101-4e76-93c2-a0df3cd2aa15&page=queryresults
+[0m05:49:43.577519 [debug] [Thread-3  ]: Opening a new connection, currently in state closed
+[0m05:49:43.685795 [debug] [Thread-2  ]: Writing runtime SQL for node "seed.justkaizen_analytics.raw_employees"
+[0m05:49:43.689984 [debug] [Thread-2  ]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'a2ccebac-0dd2-4a4b-9d54-4574faef7959', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1467ec910>]}
+[0m05:49:43.690387 [info ] [Thread-2  ]: 2 of 6 OK loaded seed file raw_raw.raw_employees ............................... [[32mINSERT 604[0m in 5.38s]
+[0m05:49:43.690754 [debug] [Thread-2  ]: Finished running node seed.justkaizen_analytics.raw_employees
+[0m05:49:44.851486 [debug] [Thread-4  ]: Writing runtime SQL for node "seed.justkaizen_analytics.raw_job_history"
+[0m05:49:44.912504 [debug] [Thread-4  ]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'a2ccebac-0dd2-4a4b-9d54-4574faef7959', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x147238e20>]}
+[0m05:49:44.921257 [info ] [Thread-4  ]: 4 of 6 OK loaded seed file raw_raw.raw_job_history ............................. [[32mINSERT 1045[0m in 6.60s]
+[0m05:49:44.921831 [debug] [Thread-4  ]: Finished running node seed.justkaizen_analytics.raw_job_history
+[0m05:49:46.283378 [debug] [Thread-1  ]: On seed.justkaizen_analytics.raw_performance: /* {"app": "dbt", "dbt_version": "1.11.0b3", "profile_name": "justkaizen", "target_name": "dev", "node_id": "seed.justkaizen_analytics.raw_performance"} */
+
+    alter table `just-kaizen-ai`.`raw_raw`.`raw_performance` set OPTIONS()
+  
+[0m05:49:46.612375 [debug] [Thread-1  ]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=just-kaizen-ai&j=bq:US:726b11fd-2826-48a6-b0d9-cf27f0fda08d&page=queryresults
+[0m05:49:47.008075 [debug] [Thread-1  ]: Writing runtime SQL for node "seed.justkaizen_analytics.raw_performance"
+[0m05:49:47.025253 [debug] [Thread-1  ]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'a2ccebac-0dd2-4a4b-9d54-4574faef7959', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10713aaf0>]}
+[0m05:49:47.026297 [info ] [Thread-1  ]: 5 of 6 OK loaded seed file raw_raw.raw_performance ............................. [[32mINSERT 2676[0m in 4.20s]
+[0m05:49:47.028162 [debug] [Thread-1  ]: Finished running node seed.justkaizen_analytics.raw_performance
+[0m05:49:47.832943 [debug] [Thread-3  ]: On seed.justkaizen_analytics.raw_recruiting: /* {"app": "dbt", "dbt_version": "1.11.0b3", "profile_name": "justkaizen", "target_name": "dev", "node_id": "seed.justkaizen_analytics.raw_recruiting"} */
+
+    alter table `just-kaizen-ai`.`raw_raw`.`raw_recruiting` set OPTIONS()
+  
+[0m05:49:48.229432 [debug] [Thread-3  ]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=just-kaizen-ai&j=bq:US:5d23868a-4ccf-46ed-9111-436e9495bcd1&page=queryresults
+[0m05:49:48.711583 [debug] [Thread-3  ]: Writing runtime SQL for node "seed.justkaizen_analytics.raw_recruiting"
+[0m05:49:48.724499 [debug] [Thread-3  ]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'a2ccebac-0dd2-4a4b-9d54-4574faef7959', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x15ea46df0>]}
+[0m05:49:48.725321 [info ] [Thread-3  ]: 6 of 6 OK loaded seed file raw_raw.raw_recruiting .............................. [[32mINSERT 9348[0m in 5.24s]
+[0m05:49:48.725737 [debug] [Thread-3  ]: Finished running node seed.justkaizen_analytics.raw_recruiting
+[0m05:49:48.728892 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m05:49:48.794035 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m05:49:48.794291 [debug] [MainThread]: Connection 'seed.justkaizen_analytics.raw_performance' was properly closed.
+[0m05:49:48.794433 [debug] [MainThread]: Connection 'seed.justkaizen_analytics.raw_employees' was properly closed.
+[0m05:49:48.794587 [debug] [MainThread]: Connection 'seed.justkaizen_analytics.raw_recruiting' was properly closed.
+[0m05:49:48.794718 [debug] [MainThread]: Connection 'seed.justkaizen_analytics.raw_job_history' was properly closed.
+[0m05:49:48.794988 [info ] [MainThread]: 
+[0m05:49:48.795207 [info ] [MainThread]: Finished running 6 seeds in 0 hours 0 minutes and 14.14 seconds (14.14s).
+[0m05:49:48.796155 [debug] [MainThread]: Command end result
+[0m05:49:48.875927 [debug] [MainThread]: Wrote artifact WritableManifest to /Users/keenanj/Documents/Claude Code/JustKaizen-Data-Infrastructure/target/manifest.json
+[0m05:49:48.878968 [debug] [MainThread]: Wrote artifact SemanticManifest to /Users/keenanj/Documents/Claude Code/JustKaizen-Data-Infrastructure/target/semantic_manifest.json
+[0m05:49:48.886754 [debug] [MainThread]: Wrote artifact RunExecutionResult to /Users/keenanj/Documents/Claude Code/JustKaizen-Data-Infrastructure/target/run_results.json
+[0m05:49:48.887041 [info ] [MainThread]: 
+[0m05:49:48.887433 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m05:49:48.887637 [info ] [MainThread]: 
+[0m05:49:48.888194 [info ] [MainThread]: Done. PASS=6 WARN=0 ERROR=0 SKIP=0 NO-OP=0 TOTAL=6
+[0m05:49:48.888690 [warn ] [MainThread]: [[33mWARNING[0m][DeprecationsSummary]: Deprecated functionality
+Summary of encountered deprecations:
+- MissingArgumentsPropertyInGenericTestDeprecation: 114 occurrences
+To see all deprecation instances instead of just the first occurrence of each,
+run command again with the `--show-all-deprecations` flag. You may also need to
+run with `--no-partial-parse` as some deprecations are only encountered during
+parsing.
+[0m05:49:48.911654 [debug] [MainThread]: Resource report: {"command_name": "seed", "command_success": true, "command_wall_clock_time": 18.600424, "process_in_blocks": "0", "process_kernel_time": 0.786869, "process_mem_max_rss": "365805568", "process_out_blocks": "0", "process_user_time": 6.072202}
+[0m05:49:48.912014 [debug] [MainThread]: Command `dbt seed` succeeded at 05:49:48.911957 after 18.60 seconds
+[0m05:49:48.912298 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10725c640>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x107505c70>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x147b8b700>]}
+[0m05:49:48.912581 [debug] [MainThread]: Flushing usage events
+[0m05:49:49.761351 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m05:51:12.419762 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1069af940>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x107d76400>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x107d76220>]}
+
+
+============================== 05:51:12.423435 | 7a4afeb8-d111-4aed-bc20-d052db2953bc ==============================
+[0m05:51:12.423435 [info ] [MainThread]: Running with dbt=1.11.0-b3
+[0m05:51:12.423807 [debug] [MainThread]: running dbt with arguments {'profiles_dir': '/Users/keenanj/.dbt', 'use_colors': 'True', 'send_anonymous_usage_stats': 'True', 'partial_parse': 'True', 'log_format': 'default', 'invocation_command': 'dbt run', 'introspect': 'True', 'no_print': 'None', 'log_cache_events': 'False', 'quiet': 'False', 'write_json': 'True', 'log_path': '/Users/keenanj/Documents/Claude Code/JustKaizen-Data-Infrastructure/logs', 'debug': 'False', 'fail_fast': 'False', 'use_experimental_parser': 'False', 'printer_width': '80', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'warn_error': 'None', 'version_check': 'True', 'empty': 'False', 'indirect_selection': 'eager', 'cache_selected_only': 'False', 'static_parser': 'True', 'target_path': 'None'}
+[0m05:51:14.437668 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '7a4afeb8-d111-4aed-bc20-d052db2953bc', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x104b10910>]}
+[0m05:51:14.470960 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '7a4afeb8-d111-4aed-bc20-d052db2953bc', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x14d3526a0>]}
+[0m05:51:14.471411 [info ] [MainThread]: Registered adapter: bigquery=1.10.2
+[0m05:51:14.642006 [debug] [MainThread]: checksum: e63134dccc1251cfb572caf0e4aa952f030c125ee3634f3bf2c0a2e1bb6ae349, vars: {}, profile: , target: , version: 1.11.0b3
+[0m05:51:14.808801 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m05:51:14.809096 [debug] [MainThread]: Partial parsing enabled, no changes found, skipping parsing
+[0m05:51:14.854918 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '7a4afeb8-d111-4aed-bc20-d052db2953bc', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x14df1f130>]}
+[0m05:51:14.965568 [debug] [MainThread]: Wrote artifact WritableManifest to /Users/keenanj/Documents/Claude Code/JustKaizen-Data-Infrastructure/target/manifest.json
+[0m05:51:14.969491 [debug] [MainThread]: Wrote artifact SemanticManifest to /Users/keenanj/Documents/Claude Code/JustKaizen-Data-Infrastructure/target/semantic_manifest.json
+[0m05:51:15.181169 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '7a4afeb8-d111-4aed-bc20-d052db2953bc', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x14d375be0>]}
+[0m05:51:15.181589 [info ] [MainThread]: Found 19 models, 4 analyses, 6 seeds, 338 data tests, 624 macros
+[0m05:51:15.181805 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '7a4afeb8-d111-4aed-bc20-d052db2953bc', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x14d4200a0>]}
+[0m05:51:15.186364 [info ] [MainThread]: 
+[0m05:51:15.186692 [info ] [MainThread]: Concurrency: 4 threads (target='dev')
+[0m05:51:15.187065 [info ] [MainThread]: 
+[0m05:51:15.188244 [debug] [MainThread]: Acquiring new bigquery connection 'master'
+[0m05:51:15.194432 [debug] [ThreadPool]: Acquiring new bigquery connection 'list_just-kaizen-ai'
+[0m05:51:15.195253 [debug] [ThreadPool]: Acquiring new bigquery connection 'list_just-kaizen-ai'
+[0m05:51:15.195478 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m05:51:15.195840 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m05:51:15.196075 [debug] [ThreadPool]: Acquiring new bigquery connection 'list_just-kaizen-ai'
+[0m05:51:15.196476 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m05:51:15.798760 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_just-kaizen-ai, now create_just-kaizen-ai_raw_staging)
+[0m05:51:15.799523 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_just-kaizen-ai, now create_just-kaizen-ai_raw_intermediate)
+[0m05:51:15.799994 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_just-kaizen-ai, now create_just-kaizen-ai_raw_marts)
+[0m05:51:15.800555 [debug] [ThreadPool]: Creating schema "database: "just-kaizen-ai"
+schema: "raw_staging"
+"
+[0m05:51:15.801063 [debug] [ThreadPool]: Creating schema "database: "just-kaizen-ai"
+schema: "raw_intermediate"
+"
+[0m05:51:15.801529 [debug] [ThreadPool]: Creating schema "database: "just-kaizen-ai"
+schema: "raw_marts"
+"
+[0m05:51:15.815228 [debug] [ThreadPool]: On create_just-kaizen-ai_raw_staging: /* {"app": "dbt", "dbt_version": "1.11.0b3", "profile_name": "justkaizen", "target_name": "dev", "connection_name": "create_just-kaizen-ai_raw_staging"} */
+create schema if not exists `just-kaizen-ai`.`raw_staging`
+  
+[0m05:51:15.817573 [debug] [ThreadPool]: On create_just-kaizen-ai_raw_intermediate: /* {"app": "dbt", "dbt_version": "1.11.0b3", "profile_name": "justkaizen", "target_name": "dev", "connection_name": "create_just-kaizen-ai_raw_intermediate"} */
+create schema if not exists `just-kaizen-ai`.`raw_intermediate`
+  
+[0m05:51:15.819734 [debug] [ThreadPool]: On create_just-kaizen-ai_raw_marts: /* {"app": "dbt", "dbt_version": "1.11.0b3", "profile_name": "justkaizen", "target_name": "dev", "connection_name": "create_just-kaizen-ai_raw_marts"} */
+create schema if not exists `just-kaizen-ai`.`raw_marts`
+  
+[0m05:51:15.820031 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m05:51:15.820262 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m05:51:15.820492 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m05:51:16.614206 [debug] [ThreadPool]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=just-kaizen-ai&j=bq:US:fe2d6f7e-3e8b-4642-95a6-6d35c76a775c&page=queryresults
+[0m05:51:16.792193 [debug] [ThreadPool]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=just-kaizen-ai&j=bq:US:1addf1f8-b917-4fd3-b183-f954e09be37b&page=queryresults
+[0m05:51:16.793959 [debug] [ThreadPool]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=just-kaizen-ai&j=bq:US:d296a77e-e40a-4c44-8499-a1b44768447e&page=queryresults
+[0m05:51:17.854439 [debug] [ThreadPool]: Acquiring new bigquery connection 'list_just-kaizen-ai_raw_staging'
+[0m05:51:17.854924 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m05:51:17.855278 [debug] [ThreadPool]: Acquiring new bigquery connection 'list_just-kaizen-ai_raw_intermediate'
+[0m05:51:17.855756 [debug] [ThreadPool]: Acquiring new bigquery connection 'list_just-kaizen-ai_raw_raw'
+[0m05:51:17.855994 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m05:51:17.856206 [debug] [ThreadPool]: Acquiring new bigquery connection 'list_just-kaizen-ai_raw_marts'
+[0m05:51:17.919270 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m05:51:17.919618 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m05:51:18.604592 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '7a4afeb8-d111-4aed-bc20-d052db2953bc', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x107de8be0>]}
+[0m05:51:18.606154 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m05:51:18.677100 [debug] [Thread-1  ]: Began running node model.justkaizen_analytics.stg_compensation
+[0m05:51:18.677410 [debug] [Thread-2  ]: Began running node model.justkaizen_analytics.stg_employees
+[0m05:51:18.677613 [debug] [Thread-3  ]: Began running node model.justkaizen_analytics.stg_engagement
+[0m05:51:18.678118 [debug] [Thread-4  ]: Began running node model.justkaizen_analytics.stg_job_history
+[0m05:51:18.677934 [info ] [Thread-1  ]: 1 of 19 START sql view model raw_staging.stg_compensation ...................... [RUN]
+[0m05:51:18.678459 [info ] [Thread-2  ]: 2 of 19 START sql view model raw_staging.stg_employees ......................... [RUN]
+[0m05:51:18.678712 [info ] [Thread-3  ]: 3 of 19 START sql view model raw_staging.stg_engagement ........................ [RUN]
+[0m05:51:18.678971 [info ] [Thread-4  ]: 4 of 19 START sql view model raw_staging.stg_job_history ....................... [RUN]
+[0m05:51:18.679269 [debug] [Thread-1  ]: Re-using an available connection from the pool (formerly list_just-kaizen-ai_raw_staging, now model.justkaizen_analytics.stg_compensation)
+[0m05:51:18.679482 [debug] [Thread-2  ]: Re-using an available connection from the pool (formerly list_just-kaizen-ai_raw_intermediate, now model.justkaizen_analytics.stg_employees)
+[0m05:51:18.679776 [debug] [Thread-3  ]: Re-using an available connection from the pool (formerly list_just-kaizen-ai_raw_raw, now model.justkaizen_analytics.stg_engagement)
+[0m05:51:18.680006 [debug] [Thread-4  ]: Re-using an available connection from the pool (formerly list_just-kaizen-ai_raw_marts, now model.justkaizen_analytics.stg_job_history)
+[0m05:51:18.680237 [debug] [Thread-1  ]: Began compiling node model.justkaizen_analytics.stg_compensation
+[0m05:51:18.680419 [debug] [Thread-2  ]: Began compiling node model.justkaizen_analytics.stg_employees
+[0m05:51:18.680598 [debug] [Thread-3  ]: Began compiling node model.justkaizen_analytics.stg_engagement
+[0m05:51:18.680789 [debug] [Thread-4  ]: Began compiling node model.justkaizen_analytics.stg_job_history
+[0m05:51:18.687865 [debug] [Thread-1  ]: Writing injected SQL for node "model.justkaizen_analytics.stg_compensation"
+[0m05:51:18.690449 [debug] [Thread-2  ]: Writing injected SQL for node "model.justkaizen_analytics.stg_employees"
+[0m05:51:18.692731 [debug] [Thread-3  ]: Writing injected SQL for node "model.justkaizen_analytics.stg_engagement"
+[0m05:51:18.697264 [debug] [Thread-4  ]: Writing injected SQL for node "model.justkaizen_analytics.stg_job_history"
+[0m05:51:18.698540 [debug] [Thread-3  ]: Began executing node model.justkaizen_analytics.stg_engagement
+[0m05:51:18.704549 [debug] [Thread-2  ]: Began executing node model.justkaizen_analytics.stg_employees
+[0m05:51:18.711025 [debug] [Thread-4  ]: Began executing node model.justkaizen_analytics.stg_job_history
+[0m05:51:18.711217 [debug] [Thread-1  ]: Began executing node model.justkaizen_analytics.stg_compensation
+[0m05:51:18.717792 [debug] [Thread-3  ]: Writing runtime sql for node "model.justkaizen_analytics.stg_engagement"
+[0m05:51:18.718078 [debug] [Thread-2  ]: Writing runtime sql for node "model.justkaizen_analytics.stg_employees"
+[0m05:51:18.720721 [debug] [Thread-4  ]: Writing runtime sql for node "model.justkaizen_analytics.stg_job_history"
+[0m05:51:18.726030 [debug] [Thread-1  ]: Writing runtime sql for node "model.justkaizen_analytics.stg_compensation"
+[0m05:51:18.727146 [debug] [Thread-2  ]: On model.justkaizen_analytics.stg_employees: /* {"app": "dbt", "dbt_version": "1.11.0b3", "profile_name": "justkaizen", "target_name": "dev", "node_id": "model.justkaizen_analytics.stg_employees"} */
+
+
+  create or replace view `just-kaizen-ai`.`raw_staging`.`stg_employees`
+  OPTIONS(
+      description="""Staging view over raw_employees (ADP). Cleans and types the seeded\nCSV. Calculated fields (tenure_months, is_active, compa_ratio,\nhas_recent_promotion) are layered downstream in intermediate / marts.\n"""
+    )
+  as /*
+    Model:        stg_employees
+    Layer:        staging
+    Source:       seeds/raw_employees.csv  (ADP - Core Employee Records)
+    Materialized: view  (per dbt_project.yml staging defaults)
+
+    Purpose
+    -------
+    Type-cast and lightly clean the seeded raw_employees CSV. Output is a
+    1:1 typed view of the source rows. No business logic, joins, or
+    calculated fields are introduced in staging; downstream models in
+    intermediate/ and marts/ derive tenure_months, is_active, compa_ratio,
+    has_recent_promotion, and other analyst-facing measures.
+
+    Source dependencies
+    -------------------
+    - seeds/raw_employees.csv (loaded into the `raw` dataset by `dbt seed`)
+
+    Business rules applied
+    ----------------------
+    - is_critical_talent receives an explicit BOOL cast (defensive; the
+      seed column_types in dbt_project.yml already enforce BOOL on load,
+      but the cast here documents intent).
+    - hire_date and termination_date are passed through unchanged. Their
+      type is fixed to DATE by the seed config.
+    - All STRING fields pass through as-is. Section 12 cross-table
+      coherence is validated in the upstream Python pipeline
+      (scripts/data_generation/13_validate_and_export.py); this model
+      trusts the loaded shape.
+*/
+
+
+
+with source as (
+    select * from `just-kaizen-ai`.`raw_raw`.`raw_employees`
+),
+
+renamed as (
+    select
+        -- Identifiers
+        employee_id,
+        manager_id,
+
+        -- Personal
+        first_name,
+        last_name,
+        email,
+
+        -- Org placement
+        department,
+        sub_department,
+        job_title,
+        job_level,
+
+        -- Employment timeline
+        hire_date,
+        termination_date,
+        employment_status,
+        termination_type,
+        termination_reason,
+
+        -- Demographics (DEIB reporting only)
+        gender,
+        race_ethnicity,
+
+        -- Location (US-only, remote-first)
+        location_city,
+        location_state,
+
+        -- Talent designation (People Ops flag, refreshed quarterly)
+        cast(is_critical_talent as bool) as is_critical_talent
+    from source
+)
+
+select * from renamed;
+
+
+[0m05:51:18.727677 [debug] [Thread-1  ]: On model.justkaizen_analytics.stg_compensation: /* {"app": "dbt", "dbt_version": "1.11.0b3", "profile_name": "justkaizen", "target_name": "dev", "node_id": "model.justkaizen_analytics.stg_compensation"} */
+
+
+  create or replace view `just-kaizen-ai`.`raw_staging`.`stg_compensation`
+  OPTIONS(
+      description="""Staging view over raw_compensation (Pave). One row per compensation\nevent per employee. Calculated compa_ratio (salary / comp_band_mid)\nand band_position ((salary - comp_band_min) / (comp_band_max -\ncomp_band_min)) derive in intermediate / marts where they can be\nreused across consumers. Section 12 invariants (salary within band,\none New Hire row per employee at hire_date, no records after\ntermination, Promotion rows match raw_job_history on the same date)\nare validated upstream.\n"""
+    )
+  as /*
+    Model:        stg_compensation
+    Layer:        staging
+    Source:       seeds/raw_compensation.csv  (Pave - Compensation Data)
+    Materialized: view  (per dbt_project.yml staging defaults)
+
+    Purpose
+    -------
+    Type-cast and lightly clean the seeded raw_compensation CSV. One row
+    per comp event per employee. Output is a typed 1:1 view of the source
+    rows; calculated compa_ratio and band_position derive in intermediate
+    / marts where they can be reused across consumers.
+
+    Source dependencies
+    -------------------
+    - seeds/raw_compensation.csv (loaded into raw.raw_compensation by dbt seed)
+
+    Business rules applied
+    ----------------------
+    - All four salary columns (salary, comp_band_min/mid/max) are FLOAT64
+      per spec. The Python pipeline rounds salary to the nearest $500 but
+      the type stays FLOAT to match the data dictionary.
+    - Section 12 HR7 enforces salary in [comp_band_min, comp_band_max]
+      upstream; HR6 enforces a New Hire row per employee with
+      effective_date = stg_employees.hire_date; HR8 enforces no comp
+      records after termination_date; HR9 enforces every Promotion row
+      in raw_job_history has a matching Pave row on the same date; HR10
+      enforces no orphan comp record on Lateral Transfer / Manager
+      Change events. None of those are re-checked here -- staging trusts
+      the loaded shape.
+
+    Per-event semantics
+    -------------------
+    change_reason values present in this dataset:
+        New Hire           one per employee, effective_date = hire_date
+        Promotion          matches every Promotion row in raw_job_history
+        Annual Review      Jan 15 each year of tenure (skips < 6mo and
+                            Promotion years)
+        Market Adjustment  2023-09-01 for every employee active that day
+        Equity Adjustment  reserved by spec; not generated in this dataset
+*/
+
+
+
+with source as (
+    select * from `just-kaizen-ai`.`raw_raw`.`raw_compensation`
+),
+
+renamed as (
+    select
+        -- Foreign key to stg_employees
+        employee_id,
+
+        -- Event identity
+        effective_date,
+        change_reason,
+
+        -- Compensation snapshot at this effective_date
+        salary,
+        comp_band_min,
+        comp_band_mid,
+        comp_band_max
+    from source
+)
+
+select * from renamed;
+
+
+[0m05:51:18.728027 [debug] [Thread-3  ]: On model.justkaizen_analytics.stg_engagement: /* {"app": "dbt", "dbt_version": "1.11.0b3", "profile_name": "justkaizen", "target_name": "dev", "node_id": "model.justkaizen_analytics.stg_engagement"} */
+
+
+  create or replace view `just-kaizen-ai`.`raw_staging`.`stg_engagement`
+  OPTIONS(
+      description="""Staging view over raw_engagement (Lattice, ANONYMIZED). One row\nper (survey_cycle, department, sub_department, question_id).\nNo employee_id field by design -- all metrics aggregated at the\ndepartment level to preserve anonymity. The CEO (Maya, Executive\ndepartment) is excluded from aggregation since the dept has only\none employee. Calculated rollups (theme averages, cycle-over-\ncycle deltas, top-quartile flags) derive in intermediate / marts.\n"""
+    )
+  as /*
+    Model:        stg_engagement
+    Layer:        staging
+    Source:       seeds/raw_engagement.csv  (Lattice - Engagement Survey, ANONYMIZED)
+    Materialized: view  (per dbt_project.yml staging defaults)
+
+    Purpose
+    -------
+    Type-cast and lightly clean the seeded raw_engagement CSV. One row
+    per (survey_cycle, department, sub_department, question_id). Output
+    is a typed 1:1 view of the source rows; calculated theme rollups,
+    cycle-over-cycle trend deltas, and question rollups derive in
+    intermediate / marts.
+
+    Privacy
+    -------
+    This table is anonymized -- no employee_id field exists. All metrics
+    are aggregated at the (cycle, department) granularity, with optional
+    sub-department detail when the sub-dept has 5+ respondents per
+    Section 12 anonymity rule. Sub-department rows are not generated in
+    this dataset; the column is present for forward compatibility.
+
+    Source dependencies
+    -------------------
+    - seeds/raw_engagement.csv (loaded into raw.raw_engagement by dbt seed)
+
+    Business rules applied
+    ----------------------
+    - Maya Chen (the sole Executive department employee) is excluded
+      from the per-(cycle, department) aggregation by design --
+      reporting on a single person would violate anonymization.
+    - response_count is selected as INT64 to fall in the integer range
+      [ceil(0.78 * active_count), floor(0.88 * active_count)] per
+      Section 12 HR20. For the smallest departments where the integer
+      rate is unattainable, the closest integer to 0.83 * active_count
+      is used.
+    - enps_score is the same value across every row that shares
+      (survey_cycle, department) -- denormalized per the schema.
+    - Section 12 HR19 enforces response_count <= active dept headcount;
+      HR20 enforces the 78-88% rate.
+
+    Calculated fields routed downstream
+    -----------------------------------
+        favorable_pct_pct       favorable_pct * 100 for percentage display
+        score_vs_baseline       avg_score - company-wide baseline (Section 10)
+        cycle_over_cycle_delta  current cycle's avg_score minus prior cycle's
+        is_top_quartile         within-theme percentile flag
+*/
+
+
+
+with source as (
+    select * from `just-kaizen-ai`.`raw_raw`.`raw_engagement`
+),
+
+renamed as (
+    select
+        -- Cycle + dimension identity
+        survey_cycle,
+        department,
+        sub_department,
+
+        -- Question identity
+        question_id,
+        question_text,
+        theme,
+
+        -- Aggregate metrics
+        avg_score,
+        favorable_pct,
+        response_count,
+
+        -- Department-level eNPS (denormalized -- same value across all
+        -- rows that share survey_cycle + department)
+        enps_score
+    from source
+)
+
+select * from renamed;
+
+
+[0m05:51:18.728414 [debug] [Thread-4  ]: On model.justkaizen_analytics.stg_job_history: /* {"app": "dbt", "dbt_version": "1.11.0b3", "profile_name": "justkaizen", "target_name": "dev", "node_id": "model.justkaizen_analytics.stg_job_history"} */
+
+
+  create or replace view `just-kaizen-ai`.`raw_staging`.`stg_job_history`
+  OPTIONS(
+      description="""Staging view over raw_job_history (ADP). One row per career event\nper employee. Old/new fields capture the state on either side of\nthe change; old_* are null on Hire rows. Calculated fields\n(months_since_last_promotion, total_promotions,\nhas_manager_change_last_12mo, career_velocity) derive in\nintermediate / marts.\n"""
+    )
+  as /*
+    Model:        stg_job_history
+    Layer:        staging
+    Source:       seeds/raw_job_history.csv  (ADP - Job Change History)
+    Materialized: view  (per dbt_project.yml staging defaults)
+
+    Purpose
+    -------
+    Type-cast and lightly clean the seeded raw_job_history CSV. One row per
+    career event per employee, ordered chronologically. Output is a typed
+    1:1 view of the source rows; no calculated time-to-promotion,
+    career_velocity, total_promotions, or has_manager_change_last_12mo
+    fields are introduced here -- those derive in intermediate / marts.
+
+    Source dependencies
+    -------------------
+    - seeds/raw_job_history.csv (loaded into raw.raw_job_history by dbt seed)
+
+    Business rules applied
+    ----------------------
+    - All old_* fields (old_job_level / old_department / old_sub_department
+      / old_job_title / old_manager_id) are null on Hire rows -- the Hire
+      event has no prior state.
+    - Title Change rows in this dataset specifically encode the Manager
+      Step-Back archetype's M1 -> IC4 demotion. The data dictionary's
+      change_type domain has no native "Step-back" / "Demotion" value, so
+      Title Change is the closest fit.
+    - Sequential level progression on Promotion rows (one IC step at a
+      time, IC -> M jumps directly to M1, M -> M one step at a time) is
+      validated upstream by HR5 in Section 12 coherence.
+    - Section 12 also enforces no events after termination_date (HR4),
+      most-recent-event matches stg_employees current state (HR3), and
+      Hire row's effective_date equals stg_employees.hire_date (HR1).
+*/
+
+
+
+with source as (
+    select * from `just-kaizen-ai`.`raw_raw`.`raw_job_history`
+),
+
+renamed as (
+    select
+        -- Foreign key to stg_employees
+        employee_id,
+
+        -- Event identity
+        effective_date,
+        change_type,
+
+        -- Level transition
+        old_job_level,
+        new_job_level,
+
+        -- Department / sub-department transition
+        old_department,
+        new_department,
+        old_sub_department,
+        new_sub_department,
+
+        -- Title transition
+        old_job_title,
+        new_job_title,
+
+        -- Manager transition
+        old_manager_id,
+        new_manager_id
+    from source
+)
+
+select * from renamed;
+
+
+[0m05:51:18.728730 [debug] [Thread-2  ]: Opening a new connection, currently in state closed
+[0m05:51:18.728922 [debug] [Thread-1  ]: Opening a new connection, currently in state closed
+[0m05:51:18.729159 [debug] [Thread-3  ]: Opening a new connection, currently in state closed
+[0m05:51:18.729332 [debug] [Thread-4  ]: Opening a new connection, currently in state closed
+[0m05:51:19.690660 [debug] [Thread-1  ]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=just-kaizen-ai&j=bq:US:42561435-0580-4094-83e9-cc97c0612cfe&page=queryresults
+[0m05:51:19.708003 [debug] [Thread-4  ]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=just-kaizen-ai&j=bq:US:3356d26d-d5f5-4792-a145-f72980f6a81a&page=queryresults
+[0m05:51:19.720107 [debug] [Thread-2  ]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=just-kaizen-ai&j=bq:US:bcac02ec-9020-4c31-ab42-7e4ad058cd1c&page=queryresults
+[0m05:51:19.744173 [debug] [Thread-3  ]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=just-kaizen-ai&j=bq:US:c044a42d-c1b3-40a6-b317-9139dea6e543&page=queryresults
+[0m05:51:21.333014 [debug] [Thread-1  ]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '7a4afeb8-d111-4aed-bc20-d052db2953bc', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x14e66ceb0>]}
+[0m05:51:21.335533 [info ] [Thread-1  ]: 1 of 19 OK created sql view model raw_staging.stg_compensation ................. [[32mCREATE VIEW (0 processed)[0m in 2.65s]
+[0m05:51:21.336794 [debug] [Thread-1  ]: Finished running node model.justkaizen_analytics.stg_compensation
+[0m05:51:21.337401 [debug] [Thread-1  ]: Began running node model.justkaizen_analytics.stg_performance
+[0m05:51:21.338444 [info ] [Thread-1  ]: 5 of 19 START sql view model raw_staging.stg_performance ....................... [RUN]
+[0m05:51:21.339566 [debug] [Thread-1  ]: Re-using an available connection from the pool (formerly model.justkaizen_analytics.stg_compensation, now model.justkaizen_analytics.stg_performance)
+[0m05:51:21.340045 [debug] [Thread-1  ]: Began compiling node model.justkaizen_analytics.stg_performance
+[0m05:51:21.348201 [debug] [Thread-1  ]: Writing injected SQL for node "model.justkaizen_analytics.stg_performance"
+[0m05:51:21.355533 [debug] [Thread-3  ]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '7a4afeb8-d111-4aed-bc20-d052db2953bc', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x14e6e11f0>]}
+[0m05:51:21.356182 [debug] [Thread-1  ]: Began executing node model.justkaizen_analytics.stg_performance
+[0m05:51:21.361085 [debug] [Thread-1  ]: Writing runtime sql for node "model.justkaizen_analytics.stg_performance"
+[0m05:51:21.362021 [info ] [Thread-3  ]: 3 of 19 OK created sql view model raw_staging.stg_engagement ................... [[32mCREATE VIEW (0 processed)[0m in 2.68s]
+[0m05:51:21.363429 [debug] [Thread-3  ]: Finished running node model.justkaizen_analytics.stg_engagement
+[0m05:51:21.363862 [debug] [Thread-3  ]: Began running node model.justkaizen_analytics.stg_recruiting
+[0m05:51:21.364319 [info ] [Thread-3  ]: 6 of 19 START sql view model raw_staging.stg_recruiting ........................ [RUN]
+[0m05:51:21.365094 [debug] [Thread-3  ]: Re-using an available connection from the pool (formerly model.justkaizen_analytics.stg_engagement, now model.justkaizen_analytics.stg_recruiting)
+[0m05:51:21.365841 [debug] [Thread-1  ]: On model.justkaizen_analytics.stg_performance: /* {"app": "dbt", "dbt_version": "1.11.0b3", "profile_name": "justkaizen", "target_name": "dev", "node_id": "model.justkaizen_analytics.stg_performance"} */
+
+
+  create or replace view `just-kaizen-ai`.`raw_staging`.`stg_performance`
+  OPTIONS(
+      description="""Staging view over raw_performance (Lattice). One row per (employee,\nreview_cycle). 27 standard cycles span 2020-H2 through 2024-H2.\nEligible employees are those with at least 90 days tenure by the\ncycle's completion date (Jul 15 / Jan 15) and not yet terminated.\nCalculated fields (rating_numeric, is_top_performer) derive in\nintermediate / marts.\n"""
+    )
+  as /*
+    Model:        stg_performance
+    Layer:        staging
+    Source:       seeds/raw_performance.csv  (Lattice - Performance Reviews)
+    Materialized: view  (per dbt_project.yml staging defaults)
+
+    Purpose
+    -------
+    Type-cast and lightly clean the seeded raw_performance CSV. One row
+    per (employee, review_cycle). Output is a typed 1:1 view of the
+    source rows; calculated fields (rating_numeric, is_top_performer)
+    derive in intermediate / marts where they can be reused.
+
+    Source dependencies
+    -------------------
+    - seeds/raw_performance.csv (loaded into raw.raw_performance by dbt seed)
+
+    Business rules applied
+    ----------------------
+    - All STRING / DATE columns pass through unchanged. self_rating is
+      nullable per spec (not every employee submits a self assessment);
+      every other column is non-null in this dataset.
+    - The H1 / H2 cycle schedule (Jul 15 / Jan 15 +/- 7 days) and the
+      hire-date + 90-day eligibility rule are validated upstream by
+      Section 12 HR11 and HR13.
+    - Promotion coherence (employee promoted at date X must show Exceeds
+      or higher in the cycle ending immediately before X) is validated
+      upstream by HR14. The post-process upgrade pass in
+      10_build_raw_performance.py guarantees zero violations on the
+      seeded data.
+
+    Calculated fields routed downstream
+    -----------------------------------
+        rating_numeric    SE=5, E=4, M=3, PM=2, DNM=1 (per data dict)
+        is_top_performer  TRUE when overall_rating IN ('Significantly
+                          Exceeds', 'Exceeds') for 2 consecutive cycles
+        cycle_end_date    parsed from review_cycle (e.g. '2024-H2' ->
+                          2025-01-15) for join logic
+*/
+
+
+
+with source as (
+    select * from `just-kaizen-ai`.`raw_raw`.`raw_performance`
+),
+
+renamed as (
+    select
+        -- Foreign key to stg_employees
+        employee_id,
+
+        -- Cycle identity
+        review_cycle,
+        review_completed_date,
+        review_status,
+
+        -- Ratings (same 5-point scale across all three)
+        overall_rating,
+        manager_rating,
+        self_rating
+    from source
+)
+
+select * from renamed;
+
+
+[0m05:51:21.366327 [debug] [Thread-3  ]: Began compiling node model.justkaizen_analytics.stg_recruiting
+[0m05:51:21.368132 [debug] [Thread-1  ]: Opening a new connection, currently in state closed
+[0m05:51:21.386971 [debug] [Thread-3  ]: Writing injected SQL for node "model.justkaizen_analytics.stg_recruiting"
+[0m05:51:21.486790 [debug] [Thread-3  ]: Began executing node model.justkaizen_analytics.stg_recruiting
+[0m05:51:21.493111 [debug] [Thread-3  ]: Writing runtime sql for node "model.justkaizen_analytics.stg_recruiting"
+[0m05:51:21.495128 [debug] [Thread-3  ]: On model.justkaizen_analytics.stg_recruiting: /* {"app": "dbt", "dbt_version": "1.11.0b3", "profile_name": "justkaizen", "target_name": "dev", "node_id": "model.justkaizen_analytics.stg_recruiting"} */
+
+
+  create or replace view `just-kaizen-ai`.`raw_staging`.`stg_recruiting`
+  OPTIONS(
+      description="""Staging view over raw_recruiting (Ashby). One row per candidate\napplication across ~592 requisitions. The 12 Q1 2020 hires\n(Maya, David, Priya, plus 9 founders) have no requisition by\ndesign -- they predate the company's ATS adoption per the spec\nnarrative. Calculated funnel metrics (time_to_fill, time_to_offer,\nper-stage conversion rates) derive in intermediate / marts.\n"""
+    )
+  as /*
+    Model:        stg_recruiting
+    Layer:        staging
+    Source:       seeds/raw_recruiting.csv  (Ashby - Recruiting Pipeline)
+    Materialized: view  (per dbt_project.yml staging defaults)
+
+    Purpose
+    -------
+    Type-cast and lightly clean the seeded raw_recruiting CSV. One row
+    per candidate application (~9,300 rows across ~592 requisitions).
+    Output is a typed 1:1 view of the source rows; calculated funnel
+    metrics (time_to_fill, time_to_offer, stage conversion rates) derive
+    in intermediate / marts.
+
+    Source dependencies
+    -------------------
+    - seeds/raw_recruiting.csv (loaded into raw.raw_recruiting by dbt seed)
+
+    Business rules applied
+    ----------------------
+    - This dataset only contains terminal-state rows: current_stage is
+      always Hired, Rejected, or Withdrawn. The data dictionary's full
+      domain (Applied / Phone Screen / Technical / Onsite / Offer /
+      Hired / Rejected / Withdrawn) is preserved in accepted_values so
+      future runs that include in-flight applications pass without a
+      schema change.
+    - Q1 2020 hires (12 employees: Maya, David, Priya, plus 9 founders)
+      are excluded by design -- the company's spec narrative places
+      Ashby adoption at Q2 2020 onward.
+    - Stage-dependent nullability (per spec):
+        phone_screen_date  populated only if candidate reached Phone
+                           Screen or beyond
+        onsite_date        populated only if reached Onsite or beyond
+        offer_date         populated only if Offer was extended
+        hire_date          populated only if current_stage = Hired
+        offer_accepted     TRUE on Hired rows; FALSE on Offer-stage
+                           Withdrawn rows; null otherwise
+        rejection_reason   populated on Rejected / Withdrawn rows; null
+                           on Hired rows
+    - Section 12 HR17 enforces (hire_date, department, candidate_name)
+      uniqueness on Hired rows against stg_employees; HR18 enforces
+      application_date < hire_date when hire_date is populated.
+*/
+
+
+
+with source as (
+    select * from `just-kaizen-ai`.`raw_raw`.`raw_recruiting`
+),
+
+renamed as (
+    select
+        -- Identifiers
+        application_id,
+        requisition_id,
+
+        -- Candidate
+        candidate_name,
+
+        -- Requisition placement (matches the at-hire state of the hired
+        -- candidate, NOT the candidate's own placement)
+        job_title,
+        department,
+        sub_department,
+        recruiter,
+        hiring_manager,
+        source,
+
+        -- Funnel state
+        current_stage,
+
+        -- Stage timestamps (cumulative; populated only if reached)
+        application_date,
+        phone_screen_date,
+        onsite_date,
+        offer_date,
+        hire_date,
+
+        -- Outcome
+        offer_accepted,
+        rejection_reason
+    from source
+)
+
+select * from renamed;
+
+
+[0m05:51:21.496372 [debug] [Thread-3  ]: Opening a new connection, currently in state closed
+[0m05:51:21.601524 [debug] [Thread-2  ]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '7a4afeb8-d111-4aed-bc20-d052db2953bc', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x14e7e7e20>]}
+[0m05:51:21.602971 [info ] [Thread-2  ]: 2 of 19 OK created sql view model raw_staging.stg_employees .................... [[32mCREATE VIEW (0 processed)[0m in 2.92s]
+[0m05:51:21.604588 [debug] [Thread-2  ]: Finished running node model.justkaizen_analytics.stg_employees
+[0m05:51:21.605680 [debug] [Thread-2  ]: Began running node model.justkaizen_analytics.int_employee_compensation_current
+[0m05:51:21.606624 [info ] [Thread-2  ]: 7 of 19 START sql view model raw_intermediate.int_employee_compensation_current  [RUN]
+[0m05:51:21.607054 [debug] [Thread-2  ]: Re-using an available connection from the pool (formerly model.justkaizen_analytics.stg_employees, now model.justkaizen_analytics.int_employee_compensation_current)
+[0m05:51:21.607394 [debug] [Thread-2  ]: Began compiling node model.justkaizen_analytics.int_employee_compensation_current
+[0m05:51:21.614530 [debug] [Thread-2  ]: Writing injected SQL for node "model.justkaizen_analytics.int_employee_compensation_current"
+[0m05:51:21.615536 [debug] [Thread-2  ]: Began executing node model.justkaizen_analytics.int_employee_compensation_current
+[0m05:51:21.618726 [debug] [Thread-2  ]: Writing runtime sql for node "model.justkaizen_analytics.int_employee_compensation_current"
+[0m05:51:21.619673 [debug] [Thread-2  ]: On model.justkaizen_analytics.int_employee_compensation_current: /* {"app": "dbt", "dbt_version": "1.11.0b3", "profile_name": "justkaizen", "target_name": "dev", "node_id": "model.justkaizen_analytics.int_employee_compensation_current"} */
+
+
+  create or replace view `just-kaizen-ai`.`raw_intermediate`.`int_employee_compensation_current`
+  OPTIONS(
+      description="""One row per employee with their most-recent compensation record\nplus the spec's two calculated metrics (compa_ratio and\nband_position). \"Most recent\" is the row with the latest\neffective_date in stg_compensation; for terminated employees this\nis whatever record was active at termination (Section 12 HR8\nprohibits records after termination_date).\n"""
+    )
+  as /*
+    Model:        int_employee_compensation_current
+    Layer:        intermediate
+    Sources:      stg_compensation
+    Materialized: view  (per dbt_project.yml intermediate defaults)
+
+    Purpose
+    -------
+    One row per employee with their most recent compensation snapshot
+    plus the spec's two calculated comp metrics. "Most recent" means
+    the row with the latest effective_date in stg_compensation; for
+    terminated employees this is whatever record was active at
+    termination, since Section 12 HR8 prohibits comp records after
+    termination_date.
+
+    Calculated fields
+    -----------------
+        compa_ratio    salary / comp_band_mid (per data dict)
+                       Rounded to 4 decimals. Typical range 0.85 - 1.20
+                       since salary is clipped to [band_min, band_max].
+        band_position  (salary - comp_band_min) / (comp_band_max - comp_band_min)
+                       Range [0, 1]. 0 = at band minimum, 1 = at band ceiling.
+                       Uses SAFE_DIVIDE to handle the edge case where
+                       comp_band_min == comp_band_max (no rows in this
+                       dataset, but defensive).
+
+    Edge cases
+    ----------
+    - Employees with a single comp record (the New Hire row) get that
+      row as "latest" -- no ambiguity.
+    - Same-day comp records (e.g. Promotion + Annual Review on the same
+      Jan 15) are deduplicated by row_number with a deterministic
+      tiebreaker on change_reason for reproducibility.
+*/
+
+
+
+with comp as (
+    select * from `just-kaizen-ai`.`raw_staging`.`stg_compensation`
+),
+
+ranked as (
+    select
+        *,
+        row_number() over (
+            partition by employee_id
+            order by effective_date desc, change_reason
+        ) as rn
+    from comp
+),
+
+latest as (
+    select * except (rn)
+    from ranked
+    where rn = 1
+),
+
+final as (
+    select
+        employee_id,
+
+        -- Provenance of the snapshot
+        effective_date as current_comp_effective_date,
+        change_reason  as current_comp_change_reason,
+
+        -- Compensation snapshot
+        salary,
+        comp_band_min,
+        comp_band_mid,
+        comp_band_max,
+
+        -- Calculated metrics
+        round(salary / comp_band_mid, 4) as compa_ratio,
+        round(
+            safe_divide(salary - comp_band_min, comp_band_max - comp_band_min),
+            4
+        ) as band_position
+    from latest
+)
+
+select * from final;
+
+
+[0m05:51:21.620879 [debug] [Thread-2  ]: Opening a new connection, currently in state closed
+[0m05:51:21.798612 [debug] [Thread-4  ]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '7a4afeb8-d111-4aed-bc20-d052db2953bc', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x14eba0df0>]}
+[0m05:51:21.799164 [info ] [Thread-4  ]: 4 of 19 OK created sql view model raw_staging.stg_job_history .................. [[32mCREATE VIEW (0 processed)[0m in 3.12s]
+[0m05:51:21.799544 [debug] [Thread-4  ]: Finished running node model.justkaizen_analytics.stg_job_history
+[0m05:51:21.799806 [debug] [Thread-4  ]: Began running node model.justkaizen_analytics.int_engagement_theme_rollup
+[0m05:51:21.800169 [info ] [Thread-4  ]: 8 of 19 START sql view model raw_intermediate.int_engagement_theme_rollup ...... [RUN]
+[0m05:51:21.800571 [debug] [Thread-4  ]: Re-using an available connection from the pool (formerly model.justkaizen_analytics.stg_job_history, now model.justkaizen_analytics.int_engagement_theme_rollup)
+[0m05:51:21.800840 [debug] [Thread-4  ]: Began compiling node model.justkaizen_analytics.int_engagement_theme_rollup
+[0m05:51:21.803748 [debug] [Thread-4  ]: Writing injected SQL for node "model.justkaizen_analytics.int_engagement_theme_rollup"
+[0m05:51:21.804262 [debug] [Thread-4  ]: Began executing node model.justkaizen_analytics.int_engagement_theme_rollup
+[0m05:51:21.807427 [debug] [Thread-4  ]: Writing runtime sql for node "model.justkaizen_analytics.int_engagement_theme_rollup"
+[0m05:51:21.808033 [debug] [Thread-4  ]: On model.justkaizen_analytics.int_engagement_theme_rollup: /* {"app": "dbt", "dbt_version": "1.11.0b3", "profile_name": "justkaizen", "target_name": "dev", "node_id": "model.justkaizen_analytics.int_engagement_theme_rollup"} */
+
+
+  create or replace view `just-kaizen-ai`.`raw_intermediate`.`int_engagement_theme_rollup`
+  OPTIONS(
+      description="""The 27 standard engagement questions rolled up to the 8 theme\nlevel per (survey_cycle, department, sub_department). One row per\n(cycle, dept, sub_dept, theme); compound key in practice is\n(cycle, dept, theme) since sub_department is null on every row in\nthe current build (raw_engagement emits dept-level only). Adds\ncycle_end_date for chronological ordering plus prior-cycle and\ndelta columns for trend dashboards.\n"""
+    )
+  as /*
+    Model:        int_engagement_theme_rollup
+    Layer:        intermediate
+    Sources:      stg_engagement
+    Materialized: view  (per dbt_project.yml intermediate defaults)
+
+    Purpose
+    -------
+    Roll the 27 standard engagement questions up to the 8 theme level
+    so dashboards can chart "Manager Effectiveness over time" without
+    aggregating five MGE rows per cycle in the BI tool. One row per
+    (survey_cycle, department, sub_department, theme).
+
+    Calculated fields
+    -----------------
+        theme_avg_score              mean of avg_score across questions in the theme
+        theme_avg_favorable_pct      mean of favorable_pct across questions in the theme
+        questions_in_theme           count of questions rolled into this theme row
+        cycle_end_date               parsed from survey_cycle (Q1 -> Mar 31, etc.)
+        prior_theme_avg_score        lag for cycle-over-cycle trend
+        theme_score_delta            theme_avg_score - prior_theme_avg_score
+        prior_theme_avg_favorable_pct, theme_favorable_pct_delta
+                                     same trend pattern for the favorable percentage
+
+    response_count and enps_score are denormalized per (cycle, dept) in
+    stg_engagement -- the same values across every question -- so we
+    pass them through with any_value() rather than aggregating.
+
+    Granularity caveat
+    ------------------
+    sub_department is currently null on every input row (raw_engagement
+    emits dept-level only in this build). The compound key here is
+    therefore (survey_cycle, department, theme) in practice, with
+    sub_department reserved for forward compatibility when the
+    generator emits sub-dept rows for sub-depts with 5+ respondents.
+*/
+
+
+
+with engagement as (
+    select * from `just-kaizen-ai`.`raw_staging`.`stg_engagement`
+),
+
+per_theme as (
+    select
+        survey_cycle,
+        department,
+        sub_department,
+        theme,
+
+        round(avg(avg_score),     2) as theme_avg_score,
+        round(avg(favorable_pct), 4) as theme_avg_favorable_pct,
+        count(*)                     as questions_in_theme,
+
+        -- Denormalized in source -- same value across all question rows
+        any_value(response_count) as response_count,
+        any_value(enps_score)     as enps_score
+    from engagement
+    group by survey_cycle, department, sub_department, theme
+),
+
+with_cycle_date as (
+    select
+        *,
+        case substr(survey_cycle, 6, 2)
+            when 'Q1' then date(cast(left(survey_cycle, 4) as int64),  3, 31)
+            when 'Q2' then date(cast(left(survey_cycle, 4) as int64),  6, 30)
+            when 'Q3' then date(cast(left(survey_cycle, 4) as int64),  9, 30)
+            when 'Q4' then date(cast(left(survey_cycle, 4) as int64), 12, 31)
+        end as cycle_end_date
+    from per_theme
+),
+
+with_trends as (
+    select
+        *,
+        lag(theme_avg_score) over (
+            partition by department, sub_department, theme
+            order by cycle_end_date
+        ) as prior_theme_avg_score,
+        lag(theme_avg_favorable_pct) over (
+            partition by department, sub_department, theme
+            order by cycle_end_date
+        ) as prior_theme_avg_favorable_pct
+    from with_cycle_date
+),
+
+final as (
+    select
+        survey_cycle,
+        cycle_end_date,
+        department,
+        sub_department,
+        theme,
+        questions_in_theme,
+        response_count,
+        theme_avg_score,
+        theme_avg_favorable_pct,
+        enps_score,
+        prior_theme_avg_score,
+        prior_theme_avg_favorable_pct,
+        case
+            when prior_theme_avg_score is not null
+                then round(theme_avg_score - prior_theme_avg_score, 2)
+            else null
+        end as theme_score_delta,
+        case
+            when prior_theme_avg_favorable_pct is not null
+                then round(theme_avg_favorable_pct - prior_theme_avg_favorable_pct, 4)
+            else null
+        end as theme_favorable_pct_delta
+    from with_trends
+)
+
+select * from final;
+
+
+[0m05:51:21.808400 [debug] [Thread-4  ]: Opening a new connection, currently in state closed
+[0m05:51:22.559255 [debug] [Thread-1  ]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=just-kaizen-ai&j=bq:US:ef5f86ab-87db-47c6-830b-a2a2828a74eb&page=queryresults
+[0m05:51:22.561747 [debug] [Thread-3  ]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=just-kaizen-ai&j=bq:US:47ed391f-8be1-415a-82c4-e83e340ccaa5&page=queryresults
+[0m05:51:22.723350 [debug] [Thread-2  ]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=just-kaizen-ai&j=bq:US:0b28c658-c4bf-40a6-a62b-b4a668ce8454&page=queryresults
+[0m05:51:22.798039 [debug] [Thread-4  ]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=just-kaizen-ai&j=bq:US:f229fe08-721b-4126-a238-e0c7775fcde6&page=queryresults
+[0m05:51:24.163819 [debug] [Thread-1  ]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '7a4afeb8-d111-4aed-bc20-d052db2953bc', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x14eb88460>]}
+[0m05:51:24.164575 [debug] [Thread-2  ]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '7a4afeb8-d111-4aed-bc20-d052db2953bc', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x14ec060a0>]}
+[0m05:51:24.165863 [info ] [Thread-1  ]: 5 of 19 OK created sql view model raw_staging.stg_performance .................. [[32mCREATE VIEW (0 processed)[0m in 2.82s]
+[0m05:51:24.167258 [debug] [Thread-1  ]: Finished running node model.justkaizen_analytics.stg_performance
+[0m05:51:24.166859 [info ] [Thread-2  ]: 7 of 19 OK created sql view model raw_intermediate.int_employee_compensation_current  [[32mCREATE VIEW (0 processed)[0m in 2.55s]
+[0m05:51:24.167732 [debug] [Thread-1  ]: Began running node model.justkaizen_analytics.int_employee_event_sequence
+[0m05:51:24.168945 [debug] [Thread-2  ]: Finished running node model.justkaizen_analytics.int_employee_compensation_current
+[0m05:51:24.169372 [info ] [Thread-1  ]: 9 of 19 START sql view model raw_intermediate.int_employee_event_sequence ...... [RUN]
+[0m05:51:24.169905 [debug] [Thread-2  ]: Began running node model.justkaizen_analytics.int_employee_tenure
+[0m05:51:24.170424 [debug] [Thread-1  ]: Re-using an available connection from the pool (formerly model.justkaizen_analytics.stg_performance, now model.justkaizen_analytics.int_employee_event_sequence)
+[0m05:51:24.170792 [info ] [Thread-2  ]: 10 of 19 START sql view model raw_intermediate.int_employee_tenure ............. [RUN]
+[0m05:51:24.171179 [debug] [Thread-1  ]: Began compiling node model.justkaizen_analytics.int_employee_event_sequence
+[0m05:51:24.171428 [debug] [Thread-2  ]: Re-using an available connection from the pool (formerly model.justkaizen_analytics.int_employee_compensation_current, now model.justkaizen_analytics.int_employee_tenure)
+[0m05:51:24.178625 [debug] [Thread-1  ]: Writing injected SQL for node "model.justkaizen_analytics.int_employee_event_sequence"
+[0m05:51:24.179021 [debug] [Thread-2  ]: Began compiling node model.justkaizen_analytics.int_employee_tenure
+[0m05:51:24.183524 [debug] [Thread-2  ]: Writing injected SQL for node "model.justkaizen_analytics.int_employee_tenure"
+[0m05:51:24.185700 [debug] [Thread-2  ]: Began executing node model.justkaizen_analytics.int_employee_tenure
+[0m05:51:24.185970 [debug] [Thread-1  ]: Began executing node model.justkaizen_analytics.int_employee_event_sequence
+[0m05:51:24.192289 [debug] [Thread-2  ]: Writing runtime sql for node "model.justkaizen_analytics.int_employee_tenure"
+[0m05:51:24.197006 [debug] [Thread-1  ]: Writing runtime sql for node "model.justkaizen_analytics.int_employee_event_sequence"
+[0m05:51:24.198507 [debug] [Thread-2  ]: On model.justkaizen_analytics.int_employee_tenure: /* {"app": "dbt", "dbt_version": "1.11.0b3", "profile_name": "justkaizen", "target_name": "dev", "node_id": "model.justkaizen_analytics.int_employee_tenure"} */
+
+
+  create or replace view `just-kaizen-ai`.`raw_intermediate`.`int_employee_tenure`
+  OPTIONS(
+      description="""Per-employee tenure and career-velocity calculations. One row per\nemployee. Reference date for \"current\" is var('current_date'),\ndefaulting to 2025-03-31 (the synthetic dataset's current\nquarter); for terminated employees the reference date is their\ntermination_date so tenure stops at departure.\n"""
+    )
+  as /*
+    Model:        int_employee_tenure
+    Layer:        intermediate
+    Sources:      stg_employees, stg_job_history
+    Materialized: view  (per dbt_project.yml intermediate defaults)
+
+    Purpose
+    -------
+    One row per employee with all tenure / career-velocity calculations
+    that downstream marts need. Centralizing these here means the math
+    is defined once and consumed many times -- changes to the spec
+    formulas only touch this file.
+
+    Reference date
+    --------------
+    All calculations anchor on a "snapshot date" rather than wall-clock
+    today, so the synthetic dataset's analytics stay stable as the real
+    date drifts forward. The default snapshot is var('current_date')
+    (2025-03-31, the spec's current quarter); for active employees the
+    reference date used in calculations is the snapshot, for terminated
+    employees it is their termination_date.
+
+    Calculated fields
+    -----------------
+        tenure_months                   reference_date - hire_date in months
+        tenure_years                    reference_date - hire_date in days / 365.25
+        total_promotions                count of Promotion events
+        last_promotion_date             max(effective_date where Promotion); null if never promoted
+        months_since_last_promotion     reference_date - last_promotion_date; null if never promoted
+        time_in_current_role_months     reference_date - max(effective_date across all change_types)
+        last_manager_change_date        max(effective_date where Manager Change); null if no MC
+        has_manager_change_last_12mo    bool: any MC within 12 months of reference_date
+        career_velocity_per_year        total_promotions divided by tenure in years
+
+    Edge cases
+    ----------
+    - Employees with no Promotion events: total_promotions = 0;
+      last_promotion_date / months_since_last_promotion are NULL;
+      career_velocity_per_year is 0.
+    - Employees whose Hire date equals the reference date (tenure 0
+      days): career_velocity_per_year is 0 (avoids divide-by-zero).
+    - has_manager_change_last_12mo is false (not null) when no Manager
+      Change has ever occurred for the employee.
+*/
+
+
+
+with employees as (
+    select * from `just-kaizen-ai`.`raw_staging`.`stg_employees`
+),
+
+job_history as (
+    select * from `just-kaizen-ai`.`raw_staging`.`stg_job_history`
+),
+
+snapshot as (
+    select cast('2025-03-31' as date) as snapshot_date
+),
+
+-- Reference date per employee: termination_date if terminated, else snapshot.
+employee_reference_date as (
+    select
+        employees.employee_id,
+        employees.hire_date,
+        employees.termination_date,
+        coalesce(employees.termination_date, snapshot.snapshot_date) as reference_date
+    from employees
+    cross join snapshot
+),
+
+-- Promotion stats per employee.
+promotion_stats as (
+    select
+        employee_id,
+        count(*)                  as total_promotions,
+        max(effective_date)       as last_promotion_date
+    from job_history
+    where change_type = 'Promotion'
+    group by employee_id
+),
+
+-- Most recent Manager Change per employee.
+manager_change_recency as (
+    select
+        employee_id,
+        max(effective_date) as last_manager_change_date
+    from job_history
+    where change_type = 'Manager Change'
+    group by employee_id
+),
+
+-- Most recent event of any change_type per employee. The Hire row
+-- guarantees this is non-null for every employee.
+last_event as (
+    select
+        employee_id,
+        max(effective_date) as last_event_date
+    from job_history
+    group by employee_id
+),
+
+final as (
+    select
+        e.employee_id,
+
+        -- Anchor dates
+        e.hire_date,
+        e.termination_date,
+        e.reference_date,
+
+        -- Tenure
+        date_diff(e.reference_date, e.hire_date, month)            as tenure_months,
+        round(date_diff(e.reference_date, e.hire_date, day) / 365.25, 2) as tenure_years,
+
+        -- Promotion stats
+        coalesce(ps.total_promotions, 0) as total_promotions,
+        ps.last_promotion_date,
+        case
+            when ps.last_promotion_date is not null
+                then date_diff(e.reference_date, ps.last_promotion_date, month)
+            else null
+        end as months_since_last_promotion,
+
+        -- Time in current role (from most recent event of any kind).
+        -- COALESCE on hire_date is defensive; the Hire event guarantees
+        -- last_event_date is always populated.
+        date_diff(
+            e.reference_date,
+            coalesce(le.last_event_date, e.hire_date),
+            month
+        ) as time_in_current_role_months,
+
+        -- Manager change recency
+        mcr.last_manager_change_date,
+        case
+            when mcr.last_manager_change_date is not null
+                and date_diff(e.reference_date, mcr.last_manager_change_date, month) <= 12
+                then true
+            else false
+        end as has_manager_change_last_12mo,
+
+        -- Career velocity (promotions per tenure-year). Avoid
+        -- divide-by-zero for same-day hires.
+        case
+            when date_diff(e.reference_date, e.hire_date, day) > 0
+                then round(
+                    coalesce(ps.total_promotions, 0)
+                    * 365.25
+                    / date_diff(e.reference_date, e.hire_date, day),
+                    3
+                )
+            else 0
+        end as career_velocity_per_year
+    from employee_reference_date as e
+    left join promotion_stats        as ps  on e.employee_id = ps.employee_id
+    left join manager_change_recency as mcr on e.employee_id = mcr.employee_id
+    left join last_event             as le  on e.employee_id = le.employee_id
+)
+
+select * from final;
+
+
+[0m05:51:24.201314 [debug] [Thread-2  ]: Opening a new connection, currently in state closed
+[0m05:51:24.201739 [debug] [Thread-1  ]: On model.justkaizen_analytics.int_employee_event_sequence: /* {"app": "dbt", "dbt_version": "1.11.0b3", "profile_name": "justkaizen", "target_name": "dev", "node_id": "model.justkaizen_analytics.int_employee_event_sequence"} */
+
+
+  create or replace view `just-kaizen-ai`.`raw_intermediate`.`int_employee_event_sequence`
+  OPTIONS(
+      description="""Chronologically ordered career-event stream with prev / next event\nmetadata per row. Same row count and granularity as\nstg_job_history (~1,045 rows) plus six derived columns:\nevent_sequence, total_events_for_employee, is_latest_event,\nprev_event_date / type, next_event_date / type,\ndays_since_prev_event, days_until_next_event. Used by marts that\nneed time-between calculations (e.g., promotion cadence, time-\nbetween-manager-changes) and by the latest-event filter\n(is_latest_event = true) for dimension lookups.\n"""
+    )
+  as /*
+    Model:        int_employee_event_sequence
+    Layer:        intermediate
+    Sources:      stg_job_history
+    Materialized: view  (per dbt_project.yml intermediate defaults)
+
+    Purpose
+    -------
+    Chronologically ordered career-event stream with prev / next event
+    metadata per row. One row per (employee_id, event) -- the same
+    granularity as stg_job_history -- enriched with window calculations
+    that downstream marts and the org-evolution dashboard need:
+
+    - event_sequence:           1-based ordinal per employee (Hire = 1)
+    - is_latest_event:          flag on the most recent row per employee
+    - prev_event_date / type:   the immediately preceding event
+    - next_event_date / type:   the immediately following event
+    - days_since_prev_event:    interval to the previous event
+    - days_until_next_event:    interval to the next event
+
+    Tiebreaker on same-date events
+    ------------------------------
+    Ordering uses (effective_date, change_type) so same-day events are
+    deterministic. 'Hire' sorts first alphabetically -- which is the
+    correct semantic placement since the Hire event is always the first
+    event for an employee. Other same-day events (Promotion + Manager
+    Change is the most common collision) get an alphabetical order;
+    this is arbitrary but stable across runs.
+
+    What this model does NOT compute
+    --------------------------------
+    Per-employee aggregates (total_promotions, last_promotion_date,
+    has_manager_change_last_12mo, career_velocity_per_year) live in
+    int_employee_tenure. This model preserves row-level granularity so
+    downstream consumers can filter / pivot to whichever event subset
+    they need.
+*/
+
+
+
+with events as (
+    select * from `just-kaizen-ai`.`raw_staging`.`stg_job_history`
+),
+
+with_ordering as (
+    select
+        *,
+        row_number() over (
+            partition by employee_id
+            order by effective_date, change_type
+        ) as event_sequence,
+        count(*) over (
+            partition by employee_id
+        ) as total_events_for_employee
+    from events
+),
+
+with_neighbors as (
+    select
+        *,
+
+        -- Previous event
+        lag(effective_date) over (
+            partition by employee_id
+            order by event_sequence
+        ) as prev_event_date,
+        lag(change_type) over (
+            partition by employee_id
+            order by event_sequence
+        ) as prev_event_type,
+
+        -- Next event
+        lead(effective_date) over (
+            partition by employee_id
+            order by event_sequence
+        ) as next_event_date,
+        lead(change_type) over (
+            partition by employee_id
+            order by event_sequence
+        ) as next_event_type
+    from with_ordering
+),
+
+final as (
+    select
+        -- Identity & ordering
+        employee_id,
+        effective_date,
+        change_type,
+        event_sequence,
+        total_events_for_employee,
+        case
+            when event_sequence = total_events_for_employee then true
+            else false
+        end as is_latest_event,
+
+        -- Old / new state (carried forward from stg_job_history)
+        old_job_level,
+        new_job_level,
+        old_department,
+        new_department,
+        old_sub_department,
+        new_sub_department,
+        old_job_title,
+        new_job_title,
+        old_manager_id,
+        new_manager_id,
+
+        -- Neighbor metadata
+        prev_event_date,
+        prev_event_type,
+        next_event_date,
+        next_event_type,
+
+        -- Time gaps
+        case
+            when prev_event_date is not null
+                then date_diff(effective_date, prev_event_date, day)
+            else null
+        end as days_since_prev_event,
+        case
+            when next_event_date is not null
+                then date_diff(next_event_date, effective_date, day)
+            else null
+        end as days_until_next_event
+    from with_neighbors
+)
+
+select * from final;
+
+
+[0m05:51:24.202477 [debug] [Thread-1  ]: Opening a new connection, currently in state closed
+[0m05:51:24.433010 [debug] [Thread-4  ]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '7a4afeb8-d111-4aed-bc20-d052db2953bc', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x14e6a4b20>]}
+[0m05:51:24.433687 [info ] [Thread-4  ]: 8 of 19 OK created sql view model raw_intermediate.int_engagement_theme_rollup . [[32mCREATE VIEW (0 processed)[0m in 2.63s]
+[0m05:51:24.434018 [debug] [Thread-4  ]: Finished running node model.justkaizen_analytics.int_engagement_theme_rollup
+[0m05:51:24.434230 [debug] [Thread-4  ]: Began running node model.justkaizen_analytics.int_employee_performance_history
+[0m05:51:24.434680 [info ] [Thread-4  ]: 11 of 19 START sql view model raw_intermediate.int_employee_performance_history  [RUN]
+[0m05:51:24.435126 [debug] [Thread-4  ]: Re-using an available connection from the pool (formerly model.justkaizen_analytics.int_engagement_theme_rollup, now model.justkaizen_analytics.int_employee_performance_history)
+[0m05:51:24.435446 [debug] [Thread-4  ]: Began compiling node model.justkaizen_analytics.int_employee_performance_history
+[0m05:51:24.438466 [debug] [Thread-4  ]: Writing injected SQL for node "model.justkaizen_analytics.int_employee_performance_history"
+[0m05:51:24.439090 [debug] [Thread-4  ]: Began executing node model.justkaizen_analytics.int_employee_performance_history
+[0m05:51:24.441595 [debug] [Thread-4  ]: Writing runtime sql for node "model.justkaizen_analytics.int_employee_performance_history"
+[0m05:51:24.442463 [debug] [Thread-4  ]: On model.justkaizen_analytics.int_employee_performance_history: /* {"app": "dbt", "dbt_version": "1.11.0b3", "profile_name": "justkaizen", "target_name": "dev", "node_id": "model.justkaizen_analytics.int_employee_performance_history"} */
+
+
+  create or replace view `just-kaizen-ai`.`raw_intermediate`.`int_employee_performance_history`
+  OPTIONS(
+      description="""Per-cycle performance history with rating_numeric, is_top_performer\n(2-consecutive-cycle definition per data dict), and trend signals\n(cycle_sequence, prior_overall_rating, overall_rating_delta,\nself_optimism_delta). One row per (employee_id, review_cycle).\nMarts that only need the latest row per employee should filter on\ncycle_sequence equal to the per-employee max.\n"""
+    )
+  as /*
+    Model:        int_employee_performance_history
+    Layer:        intermediate
+    Sources:      stg_performance
+    Materialized: view  (per dbt_project.yml intermediate defaults)
+
+    Purpose
+    -------
+    Per-cycle performance history with the spec's two calculated fields
+    plus auxiliary trend signals downstream consumers will need. One row
+    per (employee_id, review_cycle), preserving the full history. Marts
+    that only need the latest row per employee can filter on
+    cycle_sequence = max(cycle_sequence) over (...) downstream.
+
+    Calculated fields
+    -----------------
+        rating_numeric (per rating column)
+            SE=5, E=4, M=3, PM=2, DNM=1 per data dict. Computed for
+            overall_rating, manager_rating, and self_rating
+            independently. Self_rating_numeric is null when self_rating
+            is null.
+
+        cycle_end_date
+            Parsed from review_cycle (e.g. '2024-H2' -> 2025-01-15).
+            H1 cycles complete July 15 of the same year; H2 cycles
+            complete January 15 of the following year (per Section 7).
+
+        cycle_sequence
+            1-based ordinal of the cycle within the employee's review
+            history. Ordered by cycle_end_date ascending. The first
+            review the employee was eligible for is cycle_sequence = 1.
+
+        prior_overall_rating, prior_overall_rating_numeric
+            The overall_rating from the immediately previous cycle for
+            this employee. Null on cycle_sequence = 1.
+
+        overall_rating_delta
+            overall_rating_numeric minus prior_overall_rating_numeric.
+            Positive = improving, negative = declining. Null on
+            cycle_sequence = 1.
+
+        is_top_performer (per data dict)
+            TRUE when overall_rating IN ('Significantly Exceeds',
+            'Exceeds') AND prior_overall_rating IN the same set. The
+            "2 consecutive cycles" definition. Null cannot occur --
+            cycles without a prior rating evaluate to FALSE.
+
+        self_optimism_delta
+            self_rating_numeric minus overall_rating_numeric. Positive
+            indicates the employee rated themselves higher than the
+            calibrated overall. Null when self_rating is null.
+
+    Note on review_status
+    ---------------------
+    The calculations apply uniformly across review_status. Marts that
+    want to exclude Exempt (M5 leadership) or Incomplete reviews from
+    headline performance metrics should filter at consumption time.
+*/
+
+
+
+with perf as (
+    select * from `just-kaizen-ai`.`raw_staging`.`stg_performance`
+),
+
+with_numerics as (
+    select
+        *,
+
+        -- Rating to numeric (SE=5, E=4, M=3, PM=2, DNM=1)
+        case overall_rating
+            when 'Significantly Exceeds' then 5
+            when 'Exceeds'                then 4
+            when 'Meets'                  then 3
+            when 'Partially Meets'        then 2
+            when 'Does Not Meet'          then 1
+        end as overall_rating_numeric,
+
+        case manager_rating
+            when 'Significantly Exceeds' then 5
+            when 'Exceeds'                then 4
+            when 'Meets'                  then 3
+            when 'Partially Meets'        then 2
+            when 'Does Not Meet'          then 1
+        end as manager_rating_numeric,
+
+        case self_rating
+            when 'Significantly Exceeds' then 5
+            when 'Exceeds'                then 4
+            when 'Meets'                  then 3
+            when 'Partially Meets'        then 2
+            when 'Does Not Meet'          then 1
+        end as self_rating_numeric,
+
+        -- Cycle string -> date. H1 ends July 15 same year; H2 ends Jan 15 of the following year.
+        case right(review_cycle, 2)
+            when 'H1' then date(cast(left(review_cycle, 4) as int64),     7, 15)
+            when 'H2' then date(cast(left(review_cycle, 4) as int64) + 1, 1, 15)
+        end as cycle_end_date
+    from perf
+),
+
+with_ordering as (
+    select
+        *,
+
+        -- Per-employee chronological ordering
+        row_number() over (
+            partition by employee_id
+            order by cycle_end_date
+        ) as cycle_sequence,
+
+        -- Prior cycle's rating (lag)
+        lag(overall_rating) over (
+            partition by employee_id
+            order by cycle_end_date
+        ) as prior_overall_rating,
+
+        lag(overall_rating_numeric) over (
+            partition by employee_id
+            order by cycle_end_date
+        ) as prior_overall_rating_numeric
+    from with_numerics
+),
+
+final as (
+    select
+        -- Identity
+        employee_id,
+        review_cycle,
+        cycle_end_date,
+        cycle_sequence,
+
+        -- Cycle metadata
+        review_completed_date,
+        review_status,
+
+        -- Ratings (string + numeric pairs)
+        overall_rating,
+        overall_rating_numeric,
+        manager_rating,
+        manager_rating_numeric,
+        self_rating,
+        self_rating_numeric,
+
+        -- Trend signals
+        prior_overall_rating,
+        prior_overall_rating_numeric,
+        case
+            when prior_overall_rating_numeric is not null
+                then overall_rating_numeric - prior_overall_rating_numeric
+            else null
+        end as overall_rating_delta,
+
+        -- Spec calculated field: 2-consecutive-cycle top performer
+        case
+            when overall_rating       in ('Significantly Exceeds', 'Exceeds')
+             and prior_overall_rating in ('Significantly Exceeds', 'Exceeds')
+                then true
+            else false
+        end as is_top_performer,
+
+        -- Self-assessment optimism gap
+        case
+            when self_rating_numeric is not null
+                then self_rating_numeric - overall_rating_numeric
+            else null
+        end as self_optimism_delta
+    from with_ordering
+)
+
+select * from final;
+
+
+[0m05:51:24.443007 [debug] [Thread-4  ]: Opening a new connection, currently in state closed
+[0m05:51:24.502491 [debug] [Thread-3  ]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '7a4afeb8-d111-4aed-bc20-d052db2953bc', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x14e6e11f0>]}
+[0m05:51:24.503319 [info ] [Thread-3  ]: 6 of 19 OK created sql view model raw_staging.stg_recruiting ................... [[32mCREATE VIEW (0 processed)[0m in 3.14s]
+[0m05:51:24.503755 [debug] [Thread-3  ]: Finished running node model.justkaizen_analytics.stg_recruiting
+[0m05:51:24.503981 [debug] [Thread-3  ]: Began running node model.justkaizen_analytics.fct_engagement_trends
+[0m05:51:24.504301 [info ] [Thread-3  ]: 12 of 19 START sql table model raw_marts.fct_engagement_trends ................. [RUN]
+[0m05:51:24.504743 [debug] [Thread-3  ]: Re-using an available connection from the pool (formerly model.justkaizen_analytics.stg_recruiting, now model.justkaizen_analytics.fct_engagement_trends)
+[0m05:51:24.505091 [debug] [Thread-3  ]: Began compiling node model.justkaizen_analytics.fct_engagement_trends
+[0m05:51:24.507742 [debug] [Thread-3  ]: Writing injected SQL for node "model.justkaizen_analytics.fct_engagement_trends"
+[0m05:51:24.508401 [debug] [Thread-3  ]: Began executing node model.justkaizen_analytics.fct_engagement_trends
+[0m05:51:24.528385 [debug] [Thread-3  ]: Writing runtime sql for node "model.justkaizen_analytics.fct_engagement_trends"
+[0m05:51:24.529080 [debug] [Thread-3  ]: On model.justkaizen_analytics.fct_engagement_trends: /* {"app": "dbt", "dbt_version": "1.11.0b3", "profile_name": "justkaizen", "target_name": "dev", "node_id": "model.justkaizen_analytics.fct_engagement_trends"} */
+
+  
+    
+
+    create or replace table `just-kaizen-ai`.`raw_marts`.`fct_engagement_trends`
+      
+    
+    
+
+    
+    OPTIONS(
+      description="""Theme-level engagement trends with company-wide comparison\ncolumns. ~896 rows: 16 cycles x 7 departments x 8 themes.\nis_post_layoff_period flag delineates the 2023-Q1+ cycles\nwhere Section 10's layoff-trauma signal is visible.\n"""
+    )
+    as (
+      /*
+    Model:        fct_engagement_trends
+    Layer:        marts
+    Sources:      int_engagement_theme_rollup
+    Materialized: table  (per dbt_project.yml marts defaults)
+
+    Purpose
+    -------
+    Theme-level engagement trends with company-wide comparison columns.
+    One row per (survey_cycle, department, theme); ~896 rows
+    (16 cycles x 7 departments x 8 themes).
+
+    Calculated fields beyond int_engagement_theme_rollup
+    ----------------------------------------------------
+        cycle_year, cycle_quarter
+            Time bucketing for filter / group-by in BI.
+
+        theme_avg_favorable_pct_display
+            theme_avg_favorable_pct * 100 (rounded), so dashboards
+            can render percentages without re-multiplying.
+
+        company_theme_avg_score
+            Average theme_avg_score for that (cycle, theme) across
+            all 7 departments. Window aggregate.
+
+        company_theme_avg_favorable_pct
+            Same shape on favorable_pct.
+
+        theme_score_vs_company_avg
+            theme_avg_score minus company_theme_avg_score for the
+            same (cycle, theme). Positive = department outperforms
+            company on this theme.
+
+        is_post_layoff_period
+            TRUE on cycles 2023-Q1 onward (the post-layoff trauma
+            window per Section 10). Useful for showing the dip.
+*/
+
+
+
+with rollup as (
+    select * from `just-kaizen-ai`.`raw_intermediate`.`int_engagement_theme_rollup`
+),
+
+with_company_avgs as (
+    select
+        *,
+        avg(theme_avg_score) over (
+            partition by survey_cycle, theme
+        ) as company_theme_avg_score,
+        avg(theme_avg_favorable_pct) over (
+            partition by survey_cycle, theme
+        ) as company_theme_avg_favorable_pct
+    from rollup
+),
+
+final as (
+    select
+        -- Cycle identity
+        survey_cycle,
+        cycle_end_date,
+        extract(year    from cycle_end_date) as cycle_year,
+        extract(quarter from cycle_end_date) as cycle_quarter,
+
+        -- Dimensions
+        department,
+        sub_department,
+        theme,
+        questions_in_theme,
+        response_count,
+
+        -- Theme score + favorable
+        theme_avg_score,
+        theme_avg_favorable_pct,
+        round(theme_avg_favorable_pct * 100, 1) as theme_avg_favorable_pct_display,
+        enps_score,
+
+        -- Company comparison
+        round(company_theme_avg_score,         2) as company_theme_avg_score,
+        round(company_theme_avg_favorable_pct, 4) as company_theme_avg_favorable_pct,
+        round(theme_avg_score - company_theme_avg_score, 2) as theme_score_vs_company_avg,
+        round(theme_avg_favorable_pct - company_theme_avg_favorable_pct, 4) as theme_favorable_pct_vs_company_avg,
+
+        -- Trend
+        prior_theme_avg_score,
+        theme_score_delta,
+        prior_theme_avg_favorable_pct,
+        theme_favorable_pct_delta,
+
+        -- Layoff window flag (Section 10 narrative: 2023-Q1 layoff hits;
+        -- 2023-Q2 / Q3 trough; 2023-Q4 onward gradual recovery)
+        case when survey_cycle >= '2023-Q1' then true else false end as is_post_layoff_period
+    from with_company_avgs
+)
+
+select * from final
+order by cycle_end_date, department, theme
+    );
+  
+[0m05:51:24.529498 [debug] [Thread-3  ]: Opening a new connection, currently in state closed
+[0m05:51:25.180678 [debug] [Thread-3  ]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=just-kaizen-ai&j=bq:US:06fd5322-bef0-4b44-8460-7c4178b91778&page=queryresults
+[0m05:51:25.183768 [error] [Thread-3  ]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=just-kaizen-ai&j=bq:US:06fd5322-bef0-4b44-8460-7c4178b91778&page=queryresults
+[0m05:51:25.237752 [debug] [Thread-1  ]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=just-kaizen-ai&j=bq:US:3e18f5fc-e05f-4772-bdf1-826dcef1261e&page=queryresults
+[0m05:51:25.264233 [debug] [Thread-3  ]: Database Error in model fct_engagement_trends (models/marts/fct_engagement_trends.sql)
+  Syntax error: Unexpected keyword ROLLUP at [56:6]
+  compiled code at target/run/justkaizen_analytics/models/marts/fct_engagement_trends.sql
+[0m05:51:25.264926 [debug] [Thread-3  ]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '7a4afeb8-d111-4aed-bc20-d052db2953bc', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x14ebc64c0>]}
+[0m05:51:25.265460 [error] [Thread-3  ]: 12 of 19 ERROR creating sql table model raw_marts.fct_engagement_trends ........ [[31mERROR[0m in 0.76s]
+[0m05:51:25.265798 [debug] [Thread-3  ]: Finished running node model.justkaizen_analytics.fct_engagement_trends
+[0m05:51:25.266060 [debug] [Thread-3  ]: Began running node model.justkaizen_analytics.int_recruiting_funnel_metrics
+[0m05:51:25.266360 [debug] [Thread-7  ]: Marking all children of 'model.justkaizen_analytics.fct_engagement_trends' to be skipped because of status 'error'.  Reason: Database Error in model fct_engagement_trends (models/marts/fct_engagement_trends.sql)
+  Syntax error: Unexpected keyword ROLLUP at [56:6]
+  compiled code at target/run/justkaizen_analytics/models/marts/fct_engagement_trends.sql.
+[0m05:51:25.266638 [info ] [Thread-3  ]: 13 of 19 START sql view model raw_intermediate.int_recruiting_funnel_metrics ... [RUN]
+[0m05:51:25.267166 [debug] [Thread-3  ]: Re-using an available connection from the pool (formerly model.justkaizen_analytics.fct_engagement_trends, now model.justkaizen_analytics.int_recruiting_funnel_metrics)
+[0m05:51:25.267470 [debug] [Thread-3  ]: Began compiling node model.justkaizen_analytics.int_recruiting_funnel_metrics
+[0m05:51:25.270873 [debug] [Thread-3  ]: Writing injected SQL for node "model.justkaizen_analytics.int_recruiting_funnel_metrics"
+[0m05:51:25.271705 [debug] [Thread-3  ]: Began executing node model.justkaizen_analytics.int_recruiting_funnel_metrics
+[0m05:51:25.275165 [debug] [Thread-3  ]: Writing runtime sql for node "model.justkaizen_analytics.int_recruiting_funnel_metrics"
+[0m05:51:25.275928 [debug] [Thread-3  ]: On model.justkaizen_analytics.int_recruiting_funnel_metrics: /* {"app": "dbt", "dbt_version": "1.11.0b3", "profile_name": "justkaizen", "target_name": "dev", "node_id": "model.justkaizen_analytics.int_recruiting_funnel_metrics"} */
+
+
+  create or replace view `just-kaizen-ai`.`raw_intermediate`.`int_recruiting_funnel_metrics`
+  OPTIONS(
+      description="""One row per requisition with funnel stage counts, the spec's two\ntime-to metrics (time_to_fill_days, time_to_offer_days), and five\nstage conversion rates. Source-level slicing belongs in a\ndownstream mart; this model stays at requisition grain.\n"""
+    )
+  as /*
+    Model:        int_recruiting_funnel_metrics
+    Layer:        intermediate
+    Sources:      stg_recruiting
+    Materialized: view  (per dbt_project.yml intermediate defaults)
+
+    Purpose
+    -------
+    One row per requisition with funnel-stage volumes, per-stage
+    conversion rates, and the spec's two time-to metrics. This is the
+    natural granularity for the recruiting Tableau workbook (per-
+    requisition velocity dashboard, time-to-fill by department, source
+    mix per requisition).
+
+    Granularity
+    -----------
+    One row per requisition_id. ~592 rows (one per ATS-era hire).
+
+    Calculated fields
+    -----------------
+    Funnel stage counts (cumulative -- a candidate at Onsite is counted
+    in reached_phone_screen, reached_onsite, but not reached_offer):
+        total_applications        count(*) per requisition
+        reached_phone_screen      count where phone_screen_date is not null
+        reached_onsite            count where onsite_date is not null
+        reached_offer             count where offer_date is not null
+        count_hired               count where current_stage = 'Hired'
+        count_rejected            count where current_stage = 'Rejected'
+        count_withdrawn           count where current_stage = 'Withdrawn'
+
+    Time-to metrics (per data dict, from the Hired candidate's timeline):
+        time_to_fill_days   hire_date - hired_application_date
+        time_to_offer_days  hired_offer_date - hired_application_date
+
+    Stage conversion rates (decimals in [0, 1]):
+        rate_applied_to_phone      reached_phone_screen / total_applications
+        rate_phone_to_onsite       reached_onsite / reached_phone_screen
+                                     (collapses Phone Screen -> Technical ->
+                                      Onsite into one rate since Technical
+                                      isn't tracked as a separate date)
+        rate_onsite_to_offer       reached_offer / reached_onsite
+        rate_offer_to_hired        count_hired / reached_offer
+        rate_overall_conversion    count_hired / total_applications
+
+    Spec target conversions (Section 9):
+        Applied -> Phone Screen:           25%
+        Phone Screen -> Technical:         45%   (not tracked separately)
+        Technical -> Onsite:               55%
+        Onsite -> Offer:                   40%
+        Offer -> Hired:                    85%
+        Overall Applied -> Hired:          ~2.1% (theoretical)
+
+    The dataset's actual conversions are inflated above these targets
+    because the Applied-stage rejection pool is capped during generation
+    to keep total recruiting rows in the spec's 8-10K range. See
+    11_build_raw_recruiting.py docstring for the trade-off.
+
+    What this model does NOT compute
+    --------------------------------
+    Per-source funnel rates and source-level time-to metrics belong in
+    a downstream mart (fct_recruiting_funnel_by_source) where they can
+    be sliced for the dashboard. This model stays at requisition grain.
+*/
+
+
+
+with applications as (
+    select * from `just-kaizen-ai`.`raw_staging`.`stg_recruiting`
+),
+
+per_requisition as (
+    select
+        requisition_id,
+
+        -- Requisition metadata (any_value -- all rows for a requisition
+        -- carry the same values for these dimensions)
+        any_value(department)     as department,
+        any_value(sub_department) as sub_department,
+        any_value(job_title)      as job_title,
+        any_value(recruiter)      as recruiter,
+        any_value(hiring_manager) as hiring_manager,
+
+        -- Funnel stage volumes (cumulative)
+        count(*)                                                              as total_applications,
+        countif(phone_screen_date is not null)                                as reached_phone_screen,
+        countif(onsite_date is not null)                                      as reached_onsite,
+        countif(offer_date is not null)                                       as reached_offer,
+        countif(current_stage = 'Hired')                                      as count_hired,
+        countif(current_stage = 'Rejected')                                   as count_rejected,
+        countif(current_stage = 'Withdrawn')                                  as count_withdrawn,
+
+        -- Application-window markers
+        min(application_date) as first_application_date,
+        max(application_date) as last_application_date,
+
+        -- Hired candidate's timeline (one Hired row per requisition by
+        -- construction; max() over a single-row subset returns that row's value)
+        max(case when current_stage = 'Hired' then application_date  end) as hired_application_date,
+        max(case when current_stage = 'Hired' then phone_screen_date end) as hired_phone_screen_date,
+        max(case when current_stage = 'Hired' then onsite_date       end) as hired_onsite_date,
+        max(case when current_stage = 'Hired' then offer_date        end) as hired_offer_date,
+        max(case when current_stage = 'Hired' then hire_date         end) as hire_date
+    from applications
+    group by requisition_id
+),
+
+final as (
+    select
+        *,
+
+        -- Time-to metrics (per data dict)
+        date_diff(hire_date,        hired_application_date, day) as time_to_fill_days,
+        date_diff(hired_offer_date, hired_application_date, day) as time_to_offer_days,
+
+        -- Stage conversion rates. SAFE_DIVIDE returns NULL on a 0
+        -- denominator (defensive; in this dataset every requisition
+        -- has at least one Hired row so denominators are >= 1).
+        round(safe_divide(reached_phone_screen, total_applications),  4) as rate_applied_to_phone,
+        round(safe_divide(reached_onsite,       reached_phone_screen),4) as rate_phone_to_onsite,
+        round(safe_divide(reached_offer,        reached_onsite),      4) as rate_onsite_to_offer,
+        round(safe_divide(count_hired,          reached_offer),       4) as rate_offer_to_hired,
+        round(safe_divide(count_hired,          total_applications),  4) as rate_overall_conversion
+    from per_requisition
+)
+
+select * from final;
+
+
+[0m05:51:25.276340 [debug] [Thread-3  ]: Opening a new connection, currently in state closed
+[0m05:51:25.342677 [debug] [Thread-2  ]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=just-kaizen-ai&j=bq:US:6e839fbb-3c0f-4a35-a969-5635c0b76c84&page=queryresults
+[0m05:51:25.514824 [debug] [Thread-4  ]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=just-kaizen-ai&j=bq:US:d7b18209-166b-449f-a332-48f90fbe1bbd&page=queryresults
+[0m05:51:26.320896 [debug] [Thread-3  ]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=just-kaizen-ai&j=bq:US:3849d58e-7310-47c9-ae09-f91ce8665157&page=queryresults
+[0m05:51:26.777089 [debug] [Thread-2  ]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '7a4afeb8-d111-4aed-bc20-d052db2953bc', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x14ecee070>]}
+[0m05:51:26.778754 [info ] [Thread-2  ]: 10 of 19 OK created sql view model raw_intermediate.int_employee_tenure ........ [[32mCREATE VIEW (0 processed)[0m in 2.61s]
+[0m05:51:26.779346 [debug] [Thread-2  ]: Finished running node model.justkaizen_analytics.int_employee_tenure
+[0m05:51:27.305217 [debug] [Thread-4  ]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '7a4afeb8-d111-4aed-bc20-d052db2953bc', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x14e6a4b20>]}
+[0m05:51:27.307110 [info ] [Thread-4  ]: 11 of 19 OK created sql view model raw_intermediate.int_employee_performance_history  [[32mCREATE VIEW (0 processed)[0m in 2.87s]
+[0m05:51:27.308614 [debug] [Thread-4  ]: Finished running node model.justkaizen_analytics.int_employee_performance_history
+[0m05:51:27.310246 [debug] [Thread-2  ]: Began running node model.justkaizen_analytics.int_employee_dimension
+[0m05:51:27.311118 [info ] [Thread-2  ]: 14 of 19 START sql view model raw_intermediate.int_employee_dimension .......... [RUN]
+[0m05:51:27.312312 [debug] [Thread-2  ]: Re-using an available connection from the pool (formerly model.justkaizen_analytics.int_employee_tenure, now model.justkaizen_analytics.int_employee_dimension)
+[0m05:51:27.312969 [debug] [Thread-2  ]: Began compiling node model.justkaizen_analytics.int_employee_dimension
+[0m05:51:27.321503 [debug] [Thread-2  ]: Writing injected SQL for node "model.justkaizen_analytics.int_employee_dimension"
+[0m05:51:27.323062 [debug] [Thread-2  ]: Began executing node model.justkaizen_analytics.int_employee_dimension
+[0m05:51:27.328481 [debug] [Thread-2  ]: Writing runtime sql for node "model.justkaizen_analytics.int_employee_dimension"
+[0m05:51:27.329683 [debug] [Thread-2  ]: On model.justkaizen_analytics.int_employee_dimension: /* {"app": "dbt", "dbt_version": "1.11.0b3", "profile_name": "justkaizen", "target_name": "dev", "node_id": "model.justkaizen_analytics.int_employee_dimension"} */
+
+
+  create or replace view `just-kaizen-ai`.`raw_intermediate`.`int_employee_dimension`
+  OPTIONS(
+      description="""Wide single-row-per-employee dimension combining stg_employees,\nint_employee_tenure, int_employee_compensation_current, and the\nlatest row from int_employee_performance_history. Pre-joins these\nso marts can pull employee identity, tenure, current comp, and\nlatest review outcome in a single ref() instead of four joins.\nPerformance columns are nullable -- not every employee has\nreviews (2025-Q1 hires, very-short-tenure Early Churners).\n"""
+    )
+  as /*
+    Model:        int_employee_dimension
+    Layer:        intermediate
+    Sources:      stg_employees
+                  int_employee_tenure
+                  int_employee_compensation_current
+                  int_employee_performance_history
+    Materialized: view  (per dbt_project.yml intermediate defaults)
+
+    Purpose
+    -------
+    Wide single-row-per-employee dimension combining the headline
+    attributes most marts need to join on. Pre-joins:
+      - Employee identity / org placement / demographics from stg_employees
+      - Tenure metrics from int_employee_tenure
+      - Current compensation + compa_ratio + band_position from
+        int_employee_compensation_current
+      - Latest review cycle outcome from int_employee_performance_history
+
+    Marts can join one row per employee here instead of repeating four
+    joins (and their nullability handling) in every mart that needs the
+    full picture.
+
+    Joins are LEFT JOINs because:
+      - Tenure: every employee has a row, but defensive
+      - Comp: every employee has at least one comp row by Section 12 HR6,
+        but defensive
+      - Latest performance: not every employee has reviews (2025-Q1
+        hires and very-short-tenure Early Churners). Performance fields
+        are intentionally nullable for those employees.
+
+    The is_active boolean is added as a convenience -- almost every mart
+    filters on it, so deriving it once here and exposing it as a typed
+    bool keeps downstream SQL cleaner than re-checking employment_status.
+*/
+
+
+
+with employees as (
+    select * from `just-kaizen-ai`.`raw_staging`.`stg_employees`
+),
+
+tenure as (
+    select * from `just-kaizen-ai`.`raw_intermediate`.`int_employee_tenure`
+),
+
+current_comp as (
+    select * from `just-kaizen-ai`.`raw_intermediate`.`int_employee_compensation_current`
+),
+
+latest_performance as (
+    select *
+    from `just-kaizen-ai`.`raw_intermediate`.`int_employee_performance_history`
+    qualify row_number() over (
+        partition by employee_id
+        order by cycle_sequence desc
+    ) = 1
+),
+
+final as (
+    select
+        -- Identity
+        e.employee_id,
+        e.first_name,
+        e.last_name,
+        e.email,
+
+        -- Org placement
+        e.department,
+        e.sub_department,
+        e.job_title,
+        e.job_level,
+        e.manager_id,
+
+        -- Employment timeline
+        e.hire_date,
+        e.termination_date,
+        e.employment_status,
+        case when e.employment_status = 'Active' then true else false end as is_active,
+        e.termination_type,
+        e.termination_reason,
+
+        -- Demographics
+        e.gender,
+        e.race_ethnicity,
+        e.location_city,
+        e.location_state,
+
+        -- Talent designation
+        e.is_critical_talent,
+
+        -- Tenure (from int_employee_tenure)
+        t.reference_date,
+        t.tenure_months,
+        t.tenure_years,
+        t.total_promotions,
+        t.last_promotion_date,
+        t.months_since_last_promotion,
+        t.time_in_current_role_months,
+        t.last_manager_change_date,
+        t.has_manager_change_last_12mo,
+        t.career_velocity_per_year,
+
+        -- Current compensation (from int_employee_compensation_current)
+        c.salary,
+        c.comp_band_min,
+        c.comp_band_mid,
+        c.comp_band_max,
+        c.compa_ratio,
+        c.band_position,
+        c.current_comp_change_reason,
+        c.current_comp_effective_date,
+
+        -- Latest performance review (from int_employee_performance_history)
+        p.review_cycle           as latest_review_cycle,
+        p.cycle_end_date         as latest_review_cycle_end_date,
+        p.overall_rating         as latest_overall_rating,
+        p.overall_rating_numeric as latest_overall_rating_numeric,
+        p.review_status          as latest_review_status,
+        p.is_top_performer       as is_currently_top_performer
+    from employees                  as e
+    left join tenure                as t on e.employee_id = t.employee_id
+    left join current_comp          as c on e.employee_id = c.employee_id
+    left join latest_performance    as p on e.employee_id = p.employee_id
+)
+
+select * from final;
+
+
+[0m05:51:27.330280 [debug] [Thread-2  ]: Opening a new connection, currently in state closed
+[0m05:51:27.555226 [debug] [Thread-1  ]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '7a4afeb8-d111-4aed-bc20-d052db2953bc', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x14ebe9eb0>]}
+[0m05:51:27.555886 [info ] [Thread-1  ]: 9 of 19 OK created sql view model raw_intermediate.int_employee_event_sequence . [[32mCREATE VIEW (0 processed)[0m in 3.38s]
+[0m05:51:27.556241 [debug] [Thread-1  ]: Finished running node model.justkaizen_analytics.int_employee_event_sequence
+[0m05:51:27.807772 [debug] [Thread-3  ]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '7a4afeb8-d111-4aed-bc20-d052db2953bc', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x14ebc64c0>]}
+[0m05:51:27.808942 [info ] [Thread-3  ]: 13 of 19 OK created sql view model raw_intermediate.int_recruiting_funnel_metrics  [[32mCREATE VIEW (0 processed)[0m in 2.54s]
+[0m05:51:27.810017 [debug] [Thread-3  ]: Finished running node model.justkaizen_analytics.int_recruiting_funnel_metrics
+[0m05:51:27.810898 [debug] [Thread-4  ]: Began running node model.justkaizen_analytics.fct_recruiting_velocity
+[0m05:51:27.811793 [info ] [Thread-4  ]: 15 of 19 START sql table model raw_marts.fct_recruiting_velocity ............... [RUN]
+[0m05:51:27.812612 [debug] [Thread-4  ]: Re-using an available connection from the pool (formerly model.justkaizen_analytics.int_employee_performance_history, now model.justkaizen_analytics.fct_recruiting_velocity)
+[0m05:51:27.813083 [debug] [Thread-4  ]: Began compiling node model.justkaizen_analytics.fct_recruiting_velocity
+[0m05:51:27.821024 [debug] [Thread-4  ]: Writing injected SQL for node "model.justkaizen_analytics.fct_recruiting_velocity"
+[0m05:51:27.822209 [debug] [Thread-4  ]: Began executing node model.justkaizen_analytics.fct_recruiting_velocity
+[0m05:51:27.826402 [debug] [Thread-4  ]: Writing runtime sql for node "model.justkaizen_analytics.fct_recruiting_velocity"
+[0m05:51:27.827423 [debug] [Thread-4  ]: On model.justkaizen_analytics.fct_recruiting_velocity: /* {"app": "dbt", "dbt_version": "1.11.0b3", "profile_name": "justkaizen", "target_name": "dev", "node_id": "model.justkaizen_analytics.fct_recruiting_velocity"} */
+
+  
+    
+
+    create or replace table `just-kaizen-ai`.`raw_marts`.`fct_recruiting_velocity`
+      
+    
+    
+
+    
+    OPTIONS(
+      description="""Per-requisition velocity dashboard with funnel volumes,\ntime-to-fill / time-to-offer, conversion rates, department peer\naverages, and the dominant source channel for each requisition.\n"""
+    )
+    as (
+      /*
+    Model:        fct_recruiting_velocity
+    Layer:        marts
+    Sources:      int_recruiting_funnel_metrics, stg_recruiting
+    Materialized: table  (per dbt_project.yml marts defaults)
+
+    Purpose
+    -------
+    Per-requisition velocity dashboard. Granularity: one row per
+    requisition (~592 rows). Carries all funnel + time-to metrics from
+    int_recruiting_funnel_metrics, plus department-level peer averages
+    and the dominant source channel for each requisition's applicants.
+
+    Calculated fields beyond int_recruiting_funnel_metrics
+    ------------------------------------------------------
+        hire_year, hire_quarter, hire_year_quarter
+            Time bucketing on hire_date for grouping in BI.
+        dept_avg_time_to_fill_days, dept_avg_time_to_offer_days
+            Department-level peer averages (window).
+        time_to_fill_vs_dept_avg
+            Per-requisition deviation from dept average.
+        top_source_for_requisition
+            Most common source across all applications on the
+            requisition. Useful for the source-mix dashboard tab.
+        top_source_share
+            Share of total_applications attributed to top_source.
+*/
+
+
+
+with funnel as (
+    select * from `just-kaizen-ai`.`raw_intermediate`.`int_recruiting_funnel_metrics`
+),
+
+source_counts_per_req as (
+    select
+        requisition_id,
+        source,
+        count(*) as source_count
+    from `just-kaizen-ai`.`raw_staging`.`stg_recruiting`
+    group by requisition_id, source
+),
+
+top_source as (
+    select
+        requisition_id,
+        source        as top_source_for_requisition,
+        source_count  as top_source_count
+    from source_counts_per_req
+    qualify row_number() over (
+        partition by requisition_id
+        order by source_count desc, source
+    ) = 1
+),
+
+with_dept_avgs_and_top_source as (
+    select
+        f.*,
+        avg(f.time_to_fill_days)  over (partition by f.department) as dept_avg_time_to_fill_days,
+        avg(f.time_to_offer_days) over (partition by f.department) as dept_avg_time_to_offer_days,
+        avg(f.rate_overall_conversion) over (partition by f.department) as dept_avg_overall_conversion,
+        ts.top_source_for_requisition,
+        ts.top_source_count
+    from funnel as f
+    left join top_source as ts on f.requisition_id = ts.requisition_id
+),
+
+final as (
+    select
+        -- Requisition identity
+        requisition_id,
+        department,
+        sub_department,
+        job_title,
+        recruiter,
+        hiring_manager,
+
+        -- Hire timing buckets
+        hired_application_date,
+        hire_date,
+        extract(year    from hire_date) as hire_year,
+        extract(quarter from hire_date) as hire_quarter,
+        concat(
+            cast(extract(year from hire_date) as string),
+            '-Q',
+            cast(extract(quarter from hire_date) as string)
+        ) as hire_year_quarter,
+
+        -- Funnel volumes
+        total_applications,
+        reached_phone_screen,
+        reached_onsite,
+        reached_offer,
+        count_hired,
+        count_rejected,
+        count_withdrawn,
+
+        -- Time-to metrics
+        time_to_fill_days,
+        time_to_offer_days,
+        round(dept_avg_time_to_fill_days,  1) as dept_avg_time_to_fill_days,
+        round(dept_avg_time_to_offer_days, 1) as dept_avg_time_to_offer_days,
+        round(time_to_fill_days  - dept_avg_time_to_fill_days,  1) as time_to_fill_vs_dept_avg,
+        round(time_to_offer_days - dept_avg_time_to_offer_days, 1) as time_to_offer_vs_dept_avg,
+
+        -- Conversion rates
+        rate_applied_to_phone,
+        rate_phone_to_onsite,
+        rate_onsite_to_offer,
+        rate_offer_to_hired,
+        rate_overall_conversion,
+        round(dept_avg_overall_conversion, 4) as dept_avg_overall_conversion,
+
+        -- Source mix
+        top_source_for_requisition,
+        top_source_count,
+        round(safe_divide(top_source_count, total_applications), 4) as top_source_share
+    from with_dept_avgs_and_top_source
+)
+
+select * from final
+    );
+  
+[0m05:51:27.828051 [debug] [Thread-4  ]: Opening a new connection, currently in state closed
+[0m05:51:28.324464 [debug] [Thread-2  ]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=just-kaizen-ai&j=bq:US:2253633a-f7e9-4bf0-9f8d-2443e17c2258&page=queryresults
+[0m05:51:28.646073 [debug] [Thread-4  ]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=just-kaizen-ai&j=bq:US:64b8a142-99df-4086-ae87-3b795c0fbf06&page=queryresults
+[0m05:51:28.852520 [error] [Thread-4  ]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=just-kaizen-ai&j=bq:US:64b8a142-99df-4086-ae87-3b795c0fbf06&page=queryresults
+[0m05:51:28.941987 [debug] [Thread-4  ]: Database Error in model fct_recruiting_velocity (models/marts/fct_recruiting_velocity.sql)
+  Ordering by expressions of type STRUCT is not allowed at [67:37]
+  compiled code at target/run/justkaizen_analytics/models/marts/fct_recruiting_velocity.sql
+[0m05:51:28.942919 [debug] [Thread-4  ]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '7a4afeb8-d111-4aed-bc20-d052db2953bc', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x14ef48610>]}
+[0m05:51:28.943554 [error] [Thread-4  ]: 15 of 19 ERROR creating sql table model raw_marts.fct_recruiting_velocity ...... [[31mERROR[0m in 1.13s]
+[0m05:51:28.943905 [debug] [Thread-4  ]: Finished running node model.justkaizen_analytics.fct_recruiting_velocity
+[0m05:51:28.944296 [debug] [Thread-7  ]: Marking all children of 'model.justkaizen_analytics.fct_recruiting_velocity' to be skipped because of status 'error'.  Reason: Database Error in model fct_recruiting_velocity (models/marts/fct_recruiting_velocity.sql)
+  Ordering by expressions of type STRUCT is not allowed at [67:37]
+  compiled code at target/run/justkaizen_analytics/models/marts/fct_recruiting_velocity.sql.
+[0m05:51:30.274567 [debug] [Thread-2  ]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '7a4afeb8-d111-4aed-bc20-d052db2953bc', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x14e66c3d0>]}
+[0m05:51:30.276465 [info ] [Thread-2  ]: 14 of 19 OK created sql view model raw_intermediate.int_employee_dimension ..... [[32mCREATE VIEW (0 processed)[0m in 2.96s]
+[0m05:51:30.277553 [debug] [Thread-2  ]: Finished running node model.justkaizen_analytics.int_employee_dimension
+[0m05:51:30.279328 [debug] [Thread-3  ]: Began running node model.justkaizen_analytics.fct_attrition_drivers
+[0m05:51:30.279963 [debug] [Thread-1  ]: Began running node model.justkaizen_analytics.fct_compensation_parity
+[0m05:51:30.280594 [debug] [Thread-4  ]: Began running node model.justkaizen_analytics.fct_performance_distribution
+[0m05:51:30.281451 [debug] [Thread-2  ]: Began running node model.justkaizen_analytics.fct_workforce_overview
+[0m05:51:30.281220 [info ] [Thread-3  ]: 16 of 19 START sql table model raw_marts.fct_attrition_drivers ................. [RUN]
+[0m05:51:30.281842 [info ] [Thread-1  ]: 17 of 19 START sql table model raw_marts.fct_compensation_parity ............... [RUN]
+[0m05:51:30.282480 [info ] [Thread-4  ]: 18 of 19 START sql table model raw_marts.fct_performance_distribution .......... [RUN]
+[0m05:51:30.283113 [info ] [Thread-2  ]: 19 of 19 START sql table model raw_marts.fct_workforce_overview ................ [RUN]
+[0m05:51:30.283762 [debug] [Thread-3  ]: Re-using an available connection from the pool (formerly model.justkaizen_analytics.int_recruiting_funnel_metrics, now model.justkaizen_analytics.fct_attrition_drivers)
+[0m05:51:30.284235 [debug] [Thread-1  ]: Re-using an available connection from the pool (formerly model.justkaizen_analytics.int_employee_event_sequence, now model.justkaizen_analytics.fct_compensation_parity)
+[0m05:51:30.284661 [debug] [Thread-4  ]: Re-using an available connection from the pool (formerly model.justkaizen_analytics.fct_recruiting_velocity, now model.justkaizen_analytics.fct_performance_distribution)
+[0m05:51:30.284873 [debug] [Thread-2  ]: Re-using an available connection from the pool (formerly model.justkaizen_analytics.int_employee_dimension, now model.justkaizen_analytics.fct_workforce_overview)
+[0m05:51:30.285103 [debug] [Thread-3  ]: Began compiling node model.justkaizen_analytics.fct_attrition_drivers
+[0m05:51:30.285386 [debug] [Thread-1  ]: Began compiling node model.justkaizen_analytics.fct_compensation_parity
+[0m05:51:30.285766 [debug] [Thread-4  ]: Began compiling node model.justkaizen_analytics.fct_performance_distribution
+[0m05:51:30.286241 [debug] [Thread-2  ]: Began compiling node model.justkaizen_analytics.fct_workforce_overview
+[0m05:51:30.297218 [debug] [Thread-3  ]: Writing injected SQL for node "model.justkaizen_analytics.fct_attrition_drivers"
+[0m05:51:30.302994 [debug] [Thread-1  ]: Writing injected SQL for node "model.justkaizen_analytics.fct_compensation_parity"
+[0m05:51:30.305815 [debug] [Thread-4  ]: Writing injected SQL for node "model.justkaizen_analytics.fct_performance_distribution"
+[0m05:51:30.308280 [debug] [Thread-2  ]: Writing injected SQL for node "model.justkaizen_analytics.fct_workforce_overview"
+[0m05:51:30.309257 [debug] [Thread-1  ]: Began executing node model.justkaizen_analytics.fct_compensation_parity
+[0m05:51:30.309467 [debug] [Thread-2  ]: Began executing node model.justkaizen_analytics.fct_workforce_overview
+[0m05:51:30.313552 [debug] [Thread-1  ]: Writing runtime sql for node "model.justkaizen_analytics.fct_compensation_parity"
+[0m05:51:30.314003 [debug] [Thread-3  ]: Began executing node model.justkaizen_analytics.fct_attrition_drivers
+[0m05:51:30.314204 [debug] [Thread-4  ]: Began executing node model.justkaizen_analytics.fct_performance_distribution
+[0m05:51:30.316290 [debug] [Thread-2  ]: Writing runtime sql for node "model.justkaizen_analytics.fct_workforce_overview"
+[0m05:51:30.318876 [debug] [Thread-3  ]: Writing runtime sql for node "model.justkaizen_analytics.fct_attrition_drivers"
+[0m05:51:30.320704 [debug] [Thread-4  ]: Writing runtime sql for node "model.justkaizen_analytics.fct_performance_distribution"
+[0m05:51:30.321349 [debug] [Thread-1  ]: On model.justkaizen_analytics.fct_compensation_parity: /* {"app": "dbt", "dbt_version": "1.11.0b3", "profile_name": "justkaizen", "target_name": "dev", "node_id": "model.justkaizen_analytics.fct_compensation_parity"} */
+
+  
+    
+
+    create or replace table `just-kaizen-ai`.`raw_marts`.`fct_compensation_parity`
+      
+    
+    
+
+    
+    OPTIONS(
+      description="""Per-active-employee compensation snapshot with peer-cohort\npercentiles for pay parity analysis. Cohort is defined as\n(department, job_level). Granularity: one row per active\nemployee.\n"""
+    )
+    as (
+      /*
+    Model:        fct_compensation_parity
+    Layer:        marts
+    Sources:      int_employee_dimension
+    Materialized: table  (per dbt_project.yml marts defaults)
+
+    Purpose
+    -------
+    Per-active-employee compensation snapshot with peer-group
+    percentiles. Granularity: one row per active employee. The peer
+    group for ranking is (department, job_level) -- the natural
+    cohort within which compa_ratio comparison is fair.
+
+    Filters
+    -------
+    Active employees only. Comp parity for terminated employees
+    isn't a useful analytical view; the underlying comp history is
+    still in stg_compensation if needed.
+
+    Calculated fields (added on top of int_employee_dimension)
+    ----------------------------------------------------------
+        compa_ratio_percentile_within_dept_level
+            PERCENT_RANK over (department, job_level). Range [0, 1].
+            0 = lowest compa_ratio in cohort; 1 = highest.
+
+        salary_percentile_within_dept_level
+            Same shape on raw salary.
+
+        cohort_avg_compa_ratio                  AVG over (dept, level)
+        cohort_avg_salary                       AVG over (dept, level)
+        cohort_size                             COUNT over (dept, level)
+
+        compa_ratio_vs_cohort_avg               compa_ratio - cohort_avg_compa_ratio
+        salary_vs_cohort_avg                    salary - cohort_avg_salary
+
+        compa_ratio_quartile_label
+            'Bottom Quartile' / 'Q2' / 'Q3' / 'Top Quartile' from the
+            percentile.
+
+    These let dashboards pivot on (gender, race_ethnicity, location_state)
+    within the (dept, level) cohort to surface pay-parity gaps without
+    further aggregation.
+*/
+
+
+
+with active_employees as (
+    select * from `just-kaizen-ai`.`raw_intermediate`.`int_employee_dimension`
+    where is_active
+),
+
+with_cohort_metrics as (
+    select
+        *,
+        percent_rank() over (
+            partition by department, job_level
+            order by compa_ratio
+        ) as compa_ratio_percentile_within_dept_level,
+
+        percent_rank() over (
+            partition by department, job_level
+            order by salary
+        ) as salary_percentile_within_dept_level,
+
+        avg(compa_ratio) over (
+            partition by department, job_level
+        ) as cohort_avg_compa_ratio,
+
+        avg(salary) over (
+            partition by department, job_level
+        ) as cohort_avg_salary,
+
+        count(*) over (
+            partition by department, job_level
+        ) as cohort_size
+    from active_employees
+),
+
+final as (
+    select
+        -- Identity
+        employee_id,
+        first_name,
+        last_name,
+        email,
+
+        -- Cohort dimensions
+        department,
+        sub_department,
+        job_level,
+        job_title,
+
+        -- Demographics for parity slicing
+        gender,
+        race_ethnicity,
+        location_city,
+        location_state,
+        is_critical_talent,
+
+        -- Tenure context
+        hire_date,
+        tenure_years,
+        total_promotions,
+
+        -- Comp snapshot
+        salary,
+        comp_band_min,
+        comp_band_mid,
+        comp_band_max,
+        compa_ratio,
+        band_position,
+        current_comp_change_reason,
+        current_comp_effective_date,
+
+        -- Peer-cohort rank
+        round(compa_ratio_percentile_within_dept_level, 4) as compa_ratio_percentile_within_dept_level,
+        round(salary_percentile_within_dept_level,      4) as salary_percentile_within_dept_level,
+        round(cohort_avg_compa_ratio, 4)                   as cohort_avg_compa_ratio,
+        round(cohort_avg_salary,      0)                   as cohort_avg_salary,
+        cohort_size,
+
+        -- Distance from cohort average
+        round(compa_ratio - cohort_avg_compa_ratio, 4) as compa_ratio_vs_cohort_avg,
+        round(salary - cohort_avg_salary,           0) as salary_vs_cohort_avg,
+
+        case
+            when compa_ratio_percentile_within_dept_level >= 0.75 then 'Top Quartile'
+            when compa_ratio_percentile_within_dept_level >= 0.50 then 'Q3'
+            when compa_ratio_percentile_within_dept_level >= 0.25 then 'Q2'
+            else 'Bottom Quartile'
+        end as compa_ratio_quartile_label
+    from with_cohort_metrics
+)
+
+select * from final
+    );
+  
+[0m05:51:30.321984 [debug] [Thread-2  ]: On model.justkaizen_analytics.fct_workforce_overview: /* {"app": "dbt", "dbt_version": "1.11.0b3", "profile_name": "justkaizen", "target_name": "dev", "node_id": "model.justkaizen_analytics.fct_workforce_overview"} */
+
+  
+    
+
+    create or replace table `just-kaizen-ai`.`raw_marts`.`fct_workforce_overview`
+      
+    
+    
+
+    
+    OPTIONS(
+      description="""Headline workforce time series. One row per (department,\nyear_quarter) across 21 quarters x 7 departments = 147 rows.\nCarries start / end headcount snapshots, period flow (hires,\nterminations split by type), net change, average period\nheadcount, and attrition rate. Q1 2023 layoff is visible in\nthe layoff_terminations column; the Section 1 hypergrowth peak\n(2022-Q2) is visible in hires_in_period.\n"""
+    )
+    as (
+      /*
+    Model:        fct_workforce_overview
+    Layer:        marts
+    Sources:      int_employee_dimension, stg_employees
+    Materialized: table  (per dbt_project.yml marts defaults)
+
+    Purpose
+    -------
+    Headline workforce time series for the executive dashboard. One row
+    per (department, year_quarter). Period spans 2020-Q1 through 2025-Q1
+    (21 quarters x 7 departments = 147 rows).
+
+    Metrics
+    -------
+        start_headcount             active at the day before the quarter starts
+        end_headcount               active at quarter_end_date
+        net_change                  end - start
+        hires_in_period             count of employees with hire_date in [start, end]
+        terminations_in_period      count with termination_date in [start, end]
+        voluntary_terminations
+        involuntary_terminations
+        layoff_terminations         (split of terminations_in_period by type)
+        attrition_rate_pct          terminations / avg_period_headcount * 100
+        avg_period_headcount        (start + end) / 2
+
+    "Active on date X" = hire_date <= X AND (termination_date is null
+    OR termination_date >= X). This treats termination_date as the
+    employee's last day worked.
+
+    Notable signals visible in this fact
+    ------------------------------------
+    - Q1 2023 layoff: 75 layoff_terminations across Sales (25),
+      Engineering (20), G&A (12), Marketing (8), CS (5), People (5)
+      with Product = 0 (Section 1 layoff distribution).
+    - Hypergrowth peak: 2022-Q2 with ~80 hires_in_period across all
+      departments (Section 1 headcount timeline).
+    - Hiring freeze: 2023-Q1 / 2023-Q2 with 0 hires (post-layoff).
+*/
+
+
+
+with employees as (
+    select * from `just-kaizen-ai`.`raw_intermediate`.`int_employee_dimension`
+),
+
+quarters as (
+    select
+        quarter_start,
+        date_sub(date_add(quarter_start, interval 1 quarter), interval 1 day) as quarter_end,
+        date_sub(quarter_start, interval 1 day)                               as day_before_quarter,
+        concat(
+            cast(extract(year from quarter_start) as string),
+            '-Q',
+            cast(extract(quarter from quarter_start) as string)
+        ) as year_quarter
+    from unnest(
+        generate_date_array(
+            date '2020-01-01',
+            date '2025-01-01',
+            interval 1 quarter
+        )
+    ) as quarter_start
+),
+
+departments as (
+    select distinct department
+    from employees
+    where department in (
+        'Engineering', 'Sales', 'Customer Success', 'Marketing',
+        'Product', 'G&A', 'People'
+    )
+),
+
+quarter_dept_grid as (
+    select
+        q.year_quarter,
+        q.quarter_start,
+        q.quarter_end,
+        q.day_before_quarter,
+        d.department
+    from quarters as q
+    cross join departments as d
+),
+
+with_metrics as (
+    select
+        g.year_quarter,
+        g.quarter_start,
+        g.quarter_end,
+        g.department,
+
+        -- Headcount snapshots
+        countif(
+            e.department = g.department
+            and e.hire_date <= g.day_before_quarter
+            and (e.termination_date is null or e.termination_date >= g.day_before_quarter)
+        ) as start_headcount,
+
+        countif(
+            e.department = g.department
+            and e.hire_date <= g.quarter_end
+            and (e.termination_date is null or e.termination_date >= g.quarter_end)
+        ) as end_headcount,
+
+        -- Period flow
+        countif(
+            e.department = g.department
+            and e.hire_date between g.quarter_start and g.quarter_end
+        ) as hires_in_period,
+
+        countif(
+            e.department = g.department
+            and e.termination_date between g.quarter_start and g.quarter_end
+        ) as terminations_in_period,
+
+        countif(
+            e.department = g.department
+            and e.termination_date between g.quarter_start and g.quarter_end
+            and e.termination_type = 'Voluntary'
+        ) as voluntary_terminations,
+
+        countif(
+            e.department = g.department
+            and e.termination_date between g.quarter_start and g.quarter_end
+            and e.termination_type = 'Involuntary'
+        ) as involuntary_terminations,
+
+        countif(
+            e.department = g.department
+            and e.termination_date between g.quarter_start and g.quarter_end
+            and e.termination_type = 'Layoff'
+        ) as layoff_terminations
+    from quarter_dept_grid as g
+    left join employees       as e on true
+    group by
+        g.year_quarter,
+        g.quarter_start,
+        g.quarter_end,
+        g.department
+),
+
+final as (
+    select
+        year_quarter,
+        quarter_start                              as quarter_start_date,
+        quarter_end                                as quarter_end_date,
+        department,
+
+        start_headcount,
+        end_headcount,
+        end_headcount - start_headcount            as net_change,
+        round((start_headcount + end_headcount) / 2.0, 1) as avg_period_headcount,
+
+        hires_in_period,
+        terminations_in_period,
+        voluntary_terminations,
+        involuntary_terminations,
+        layoff_terminations,
+
+        round(
+            safe_divide(
+                terminations_in_period * 100.0,
+                (start_headcount + end_headcount) / 2.0
+            ),
+            2
+        ) as attrition_rate_pct
+    from with_metrics
+)
+
+select * from final
+order by quarter_start_date, department
+    );
+  
+[0m05:51:30.322609 [debug] [Thread-4  ]: On model.justkaizen_analytics.fct_performance_distribution: /* {"app": "dbt", "dbt_version": "1.11.0b3", "profile_name": "justkaizen", "target_name": "dev", "node_id": "model.justkaizen_analytics.fct_performance_distribution"} */
+
+  
+    
+
+    create or replace table `just-kaizen-ai`.`raw_marts`.`fct_performance_distribution`
+      
+    
+    
+
+    
+    OPTIONS(
+      description="""Per (employee, review_cycle) wide row carrying ratings + trend\nsignals + current dimension context (dept, level, demographics,\ntenure, comp). Granularity matches int_employee_performance_history.\nNote: dept / level / comp are CURRENT, not at-time-of-cycle.\n"""
+    )
+    as (
+      /*
+    Model:        fct_performance_distribution
+    Layer:        marts
+    Sources:      int_employee_performance_history, int_employee_dimension
+    Materialized: table  (per dbt_project.yml marts defaults)
+
+    Purpose
+    -------
+    Per (employee, review_cycle) wide row with all dims needed to
+    slice the performance distribution: dept, level, demographics,
+    tenure, comp. Granularity matches int_employee_performance_history
+    (~2,676 rows).
+
+    Caveat: dept / level / comp dimensions are CURRENT (snapshot from
+    int_employee_dimension), not at-time-of-cycle. For most dashboards
+    this is the right framing -- analysts ask "what's the rating
+    distribution for current Senior Software Engineers" rather than
+    "...for who was a Senior Software Engineer in 2022-H2". A true
+    historical snapshot would require pivoting stg_job_history to a
+    state-at-date function (deferred).
+
+    Calculated fields (added beyond int_employee_performance_history)
+    ----------------------------------------------------------------
+        cycle_year                    extract(year from cycle_end_date)
+        cycle_half                    'H1' or 'H2'
+        rating_distribution_quartile  bucket of overall_rating_numeric for
+                                      easy bar-chart bucketing in BI
+*/
+
+
+
+with performance as (
+    select * from `just-kaizen-ai`.`raw_intermediate`.`int_employee_performance_history`
+),
+
+employees as (
+    select * from `just-kaizen-ai`.`raw_intermediate`.`int_employee_dimension`
+),
+
+final as (
+    select
+        -- Cycle identity
+        p.review_cycle,
+        p.cycle_end_date,
+        extract(year from p.cycle_end_date) as cycle_year,
+        case
+            when p.review_cycle like '%-H1' then 'H1'
+            else 'H2'
+        end as cycle_half,
+        p.cycle_sequence,
+        p.review_completed_date,
+        p.review_status,
+
+        -- Employee identity
+        p.employee_id,
+        e.first_name,
+        e.last_name,
+
+        -- Org context (CURRENT, not at-time-of-cycle)
+        e.department,
+        e.sub_department,
+        e.job_level,
+        e.job_title,
+        e.manager_id,
+        e.is_active,
+
+        -- Demographics
+        e.gender,
+        e.race_ethnicity,
+        e.location_state,
+        e.is_critical_talent,
+
+        -- Tenure context at the snapshot date
+        e.tenure_years,
+        e.total_promotions,
+        e.career_velocity_per_year,
+
+        -- Compensation context
+        e.salary,
+        e.compa_ratio,
+        e.band_position,
+
+        -- Ratings
+        p.overall_rating,
+        p.overall_rating_numeric,
+        p.manager_rating,
+        p.manager_rating_numeric,
+        p.self_rating,
+        p.self_rating_numeric,
+
+        -- Trend signals
+        p.prior_overall_rating,
+        p.prior_overall_rating_numeric,
+        p.overall_rating_delta,
+        p.is_top_performer,
+        p.self_optimism_delta,
+
+        -- Bar-chart bucket
+        case p.overall_rating
+            when 'Significantly Exceeds' then 'High'
+            when 'Exceeds'                then 'High'
+            when 'Meets'                  then 'On Target'
+            when 'Partially Meets'        then 'Below'
+            when 'Does Not Meet'          then 'Below'
+        end as rating_distribution_band
+    from performance as p
+    left join employees as e on p.employee_id = e.employee_id
+)
+
+select * from final
+    );
+  
+[0m05:51:30.323174 [debug] [Thread-3  ]: On model.justkaizen_analytics.fct_attrition_drivers: /* {"app": "dbt", "dbt_version": "1.11.0b3", "profile_name": "justkaizen", "target_name": "dev", "node_id": "model.justkaizen_analytics.fct_attrition_drivers"} */
+
+  
+    
+
+    create or replace table `just-kaizen-ai`.`raw_marts`.`fct_attrition_drivers`
+      
+    
+    
+
+    
+    OPTIONS(
+      description="""One row per terminated employee with attribution columns\nexplaining why they left. terminated_within_6mo_of_manager_change\nsurfaces the Manager Change Casualty archetype's defining pattern;\nwas_declining_performer surfaces the Performance Managed Out\narchetype's pattern.\n"""
+    )
+    as (
+      /*
+    Model:        fct_attrition_drivers
+    Layer:        marts
+    Sources:      int_employee_dimension
+                  int_employee_event_sequence
+                  int_employee_performance_history
+    Materialized: table  (per dbt_project.yml marts defaults)
+
+    Purpose
+    -------
+    One row per terminated employee (~224 rows) with attribution
+    columns the analytics team uses to explain why people leave:
+    tenure at termination, time since last promotion, recent manager
+    change, performance trajectory, and a heuristic
+    `terminated_within_6mo_of_manager_change` flag (matches the
+    Manager Change Casualty archetype's defining pattern per Section 5).
+
+    Calculated fields
+    -----------------
+        tenure_at_termination_months    months from hire_date to
+                                          termination_date
+        last_manager_change_before_term  most recent Manager Change
+                                          event whose effective_date <
+                                          termination_date
+        months_since_last_manager_change_at_term
+                                          months from that event to
+                                          termination_date
+        terminated_within_6mo_of_manager_change
+                                          TRUE if the gap above is <= 6
+                                          months. Surfaces the Manager
+                                          Change Casualty pattern.
+        last_review_rating_at_term       overall_rating from the last
+                                          review prior to termination
+        last_review_rating_numeric_at_term
+                                          numeric mapping
+        was_declining_performer
+                                          TRUE if the last review's
+                                          overall_rating_delta < 0
+                                          (numeric drop). Surfaces the
+                                          Performance Managed Out
+                                          pattern.
+*/
+
+
+
+with terminated_employees as (
+    select * from `just-kaizen-ai`.`raw_intermediate`.`int_employee_dimension`
+    where employment_status = 'Terminated'
+),
+
+manager_change_events as (
+    select *
+    from `just-kaizen-ai`.`raw_intermediate`.`int_employee_event_sequence`
+    where change_type = 'Manager Change'
+),
+
+last_manager_change_per_employee as (
+    select
+        emp.employee_id,
+        max(mc.effective_date) as last_manager_change_before_term
+    from terminated_employees as emp
+    left join manager_change_events as mc
+      on emp.employee_id = mc.employee_id
+     and mc.effective_date < emp.termination_date
+    group by emp.employee_id
+),
+
+last_review_before_term as (
+    select *
+    from `just-kaizen-ai`.`raw_intermediate`.`int_employee_performance_history` as p
+    where exists (
+        select 1
+        from terminated_employees as e
+        where e.employee_id = p.employee_id
+          and p.review_completed_date <= e.termination_date
+    )
+    qualify row_number() over (
+        partition by employee_id
+        order by review_completed_date desc, cycle_sequence desc
+    ) = 1
+),
+
+final as (
+    select
+        -- Identity
+        e.employee_id,
+        e.first_name,
+        e.last_name,
+
+        -- Dept / level / demographics at termination snapshot
+        e.department,
+        e.sub_department,
+        e.job_level,
+        e.gender,
+        e.race_ethnicity,
+        e.location_state,
+        e.is_critical_talent,
+
+        -- Termination details
+        e.hire_date,
+        e.termination_date,
+        e.termination_type,
+        e.termination_reason,
+        date_diff(e.termination_date, e.hire_date, month) as tenure_at_termination_months,
+        round(date_diff(e.termination_date, e.hire_date, day) / 365.25, 2) as tenure_at_termination_years,
+
+        -- Promotion context
+        e.total_promotions,
+        e.last_promotion_date,
+        e.months_since_last_promotion as months_since_last_promotion_at_term,
+
+        -- Manager change context
+        mcr.last_manager_change_before_term,
+        case
+            when mcr.last_manager_change_before_term is not null
+                then date_diff(e.termination_date, mcr.last_manager_change_before_term, month)
+            else null
+        end as months_since_last_manager_change_at_term,
+        case
+            when mcr.last_manager_change_before_term is not null
+                and date_diff(e.termination_date, mcr.last_manager_change_before_term, month) <= 6
+                then true
+            else false
+        end as terminated_within_6mo_of_manager_change,
+
+        -- Performance context
+        lrb.review_cycle           as last_review_cycle_at_term,
+        lrb.overall_rating         as last_review_rating_at_term,
+        lrb.overall_rating_numeric as last_review_rating_numeric_at_term,
+        lrb.overall_rating_delta   as last_review_rating_delta_at_term,
+        case
+            when lrb.overall_rating_delta is not null
+                and lrb.overall_rating_delta < 0
+                then true
+            else false
+        end as was_declining_performer,
+
+        -- Comp at last record (forward-carried in int_employee_dimension)
+        e.salary,
+        e.compa_ratio,
+        e.band_position
+    from terminated_employees                  as e
+    left join last_manager_change_per_employee as mcr on e.employee_id = mcr.employee_id
+    left join last_review_before_term          as lrb on e.employee_id = lrb.employee_id
+)
+
+select * from final
+order by termination_date desc
+    );
+  
+[0m05:51:30.323579 [debug] [Thread-1  ]: Opening a new connection, currently in state closed
+[0m05:51:30.323808 [debug] [Thread-4  ]: Opening a new connection, currently in state closed
+[0m05:51:30.324006 [debug] [Thread-2  ]: Opening a new connection, currently in state closed
+[0m05:51:30.324219 [debug] [Thread-3  ]: Opening a new connection, currently in state closed
+[0m05:51:31.647534 [debug] [Thread-1  ]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=just-kaizen-ai&j=bq:US:966c9b27-a4e4-4916-b24f-879ad6b6b73e&page=queryresults
+[0m05:51:31.665842 [debug] [Thread-4  ]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=just-kaizen-ai&j=bq:US:feae2156-7df1-4283-95bf-9be91f4f52a4&page=queryresults
+[0m05:51:31.686062 [debug] [Thread-3  ]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=just-kaizen-ai&j=bq:US:333cd985-e3a9-4162-9005-d64bc80b5204&page=queryresults
+[0m05:51:31.711451 [debug] [Thread-2  ]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=just-kaizen-ai&j=bq:US:b1ea206b-b4bd-4efd-8a9c-fc40d9b74d19&page=queryresults
+[0m05:51:35.693754 [debug] [Thread-1  ]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '7a4afeb8-d111-4aed-bc20-d052db2953bc', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x14f08e9a0>]}
+[0m05:51:35.697542 [info ] [Thread-1  ]: 17 of 19 OK created sql table model raw_marts.fct_compensation_parity .......... [[32mCREATE TABLE (380.0 rows, 305.2 KiB processed)[0m in 5.41s]
+[0m05:51:35.698677 [debug] [Thread-1  ]: Finished running node model.justkaizen_analytics.fct_compensation_parity
+[0m05:51:35.954147 [debug] [Thread-3  ]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '7a4afeb8-d111-4aed-bc20-d052db2953bc', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x14f0512b0>]}
+[0m05:51:35.954793 [info ] [Thread-3  ]: 16 of 19 OK created sql table model raw_marts.fct_attrition_drivers ............ [[32mCREATE TABLE (224.0 rows, 331.8 KiB processed)[0m in 5.67s]
+[0m05:51:35.955523 [debug] [Thread-3  ]: Finished running node model.justkaizen_analytics.fct_attrition_drivers
+[0m05:51:36.253058 [debug] [Thread-2  ]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '7a4afeb8-d111-4aed-bc20-d052db2953bc', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x14f0c7a60>]}
+[0m05:51:36.254278 [info ] [Thread-2  ]: 19 of 19 OK created sql table model raw_marts.fct_workforce_overview ........... [[32mCREATE TABLE (147.0 rows, 162.2 KiB processed)[0m in 5.97s]
+[0m05:51:36.255258 [debug] [Thread-2  ]: Finished running node model.justkaizen_analytics.fct_workforce_overview
+[0m05:51:39.867324 [debug] [Thread-4  ]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '7a4afeb8-d111-4aed-bc20-d052db2953bc', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x14ef12e50>]}
+[0m05:51:39.870584 [info ] [Thread-4  ]: 18 of 19 OK created sql table model raw_marts.fct_performance_distribution ..... [[32mCREATE TABLE (2.7k rows, 425.7 KiB processed)[0m in 9.58s]
+[0m05:51:39.871256 [debug] [Thread-4  ]: Finished running node model.justkaizen_analytics.fct_performance_distribution
+[0m05:51:39.879790 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m05:51:39.956166 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m05:51:39.956867 [debug] [MainThread]: Connection 'create_just-kaizen-ai_raw_marts' was properly closed.
+[0m05:51:39.957035 [debug] [MainThread]: Connection 'create_just-kaizen-ai_raw_intermediate' was properly closed.
+[0m05:51:39.957714 [debug] [MainThread]: Connection 'create_just-kaizen-ai_raw_staging' was properly closed.
+[0m05:51:39.957945 [debug] [MainThread]: Connection 'model.justkaizen_analytics.fct_compensation_parity' was properly closed.
+[0m05:51:39.958104 [debug] [MainThread]: Connection 'model.justkaizen_analytics.fct_workforce_overview' was properly closed.
+[0m05:51:39.958247 [debug] [MainThread]: Connection 'model.justkaizen_analytics.fct_attrition_drivers' was properly closed.
+[0m05:51:39.958402 [debug] [MainThread]: Connection 'model.justkaizen_analytics.fct_performance_distribution' was properly closed.
+[0m05:51:39.959237 [info ] [MainThread]: 
+[0m05:51:39.960104 [info ] [MainThread]: Finished running 6 table models, 13 view models in 0 hours 0 minutes and 24.77 seconds (24.77s).
+[0m05:51:39.963152 [debug] [MainThread]: Command end result
+[0m05:51:40.046870 [debug] [MainThread]: Wrote artifact WritableManifest to /Users/keenanj/Documents/Claude Code/JustKaizen-Data-Infrastructure/target/manifest.json
+[0m05:51:40.053072 [debug] [MainThread]: Wrote artifact SemanticManifest to /Users/keenanj/Documents/Claude Code/JustKaizen-Data-Infrastructure/target/semantic_manifest.json
+[0m05:51:40.065357 [debug] [MainThread]: Wrote artifact RunExecutionResult to /Users/keenanj/Documents/Claude Code/JustKaizen-Data-Infrastructure/target/run_results.json
+[0m05:51:40.065664 [info ] [MainThread]: 
+[0m05:51:40.066203 [info ] [MainThread]: [31mCompleted with 2 errors, 0 partial successes, and 0 warnings:[0m
+[0m05:51:40.066386 [info ] [MainThread]: 
+[0m05:51:40.066605 [error] [MainThread]: [31mFailure in model fct_engagement_trends (models/marts/fct_engagement_trends.sql)[0m
+[0m05:51:40.066804 [error] [MainThread]:   Database Error in model fct_engagement_trends (models/marts/fct_engagement_trends.sql)
+  Syntax error: Unexpected keyword ROLLUP at [56:6]
+  compiled code at target/run/justkaizen_analytics/models/marts/fct_engagement_trends.sql
+[0m05:51:40.066959 [info ] [MainThread]: 
+[0m05:51:40.067140 [info ] [MainThread]:   compiled code at target/compiled/justkaizen_analytics/models/marts/fct_engagement_trends.sql
+[0m05:51:40.067297 [info ] [MainThread]: 
+[0m05:51:40.067479 [error] [MainThread]: [31mFailure in model fct_recruiting_velocity (models/marts/fct_recruiting_velocity.sql)[0m
+[0m05:51:40.067663 [error] [MainThread]:   Database Error in model fct_recruiting_velocity (models/marts/fct_recruiting_velocity.sql)
+  Ordering by expressions of type STRUCT is not allowed at [67:37]
+  compiled code at target/run/justkaizen_analytics/models/marts/fct_recruiting_velocity.sql
+[0m05:51:40.067815 [info ] [MainThread]: 
+[0m05:51:40.067986 [info ] [MainThread]:   compiled code at target/compiled/justkaizen_analytics/models/marts/fct_recruiting_velocity.sql
+[0m05:51:40.068142 [info ] [MainThread]: 
+[0m05:51:40.069119 [info ] [MainThread]: Done. PASS=17 WARN=0 ERROR=2 SKIP=0 NO-OP=0 TOTAL=19
+[0m05:51:40.153022 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": false, "command_wall_clock_time": 27.780912, "process_in_blocks": "0", "process_kernel_time": 1.013793, "process_mem_max_rss": "362217472", "process_out_blocks": "0", "process_user_time": 6.349642}
+[0m05:51:40.153788 [debug] [MainThread]: Command `dbt run` failed at 05:51:40.153709 after 27.78 seconds
+[0m05:51:40.154526 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1069af940>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x14d246580>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x14d375be0>]}
+[0m05:51:40.154810 [debug] [MainThread]: Flushing usage events
+[0m05:51:40.996327 [debug] [MainThread]: An error was encountered while trying to flush usage events

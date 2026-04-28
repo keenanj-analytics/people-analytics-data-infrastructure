@@ -2,7 +2,7 @@
 
 End-to-end synthetic People Analytics warehouse for **JustKaizen AI**, a fictional Series B SaaS company (380 active employees, remote-first, education / nonprofit verticals). Six raw source tables generated in Python, validated for cross-table coherence, then transformed through a dbt-on-BigQuery staging → intermediate → marts pipeline that's ready to plug into Tableau.
 
-The portfolio goal is to demonstrate production-grade data infrastructure end to end: realistic synthetic data, archetype-driven generation, Section-by-Section spec adherence, dbt layer architecture, dimensional modeling, and the kind of documentation a hiring manager actually reads.
+The portfolio goal is to demonstrate production-grade data infrastructure end to end: realistic synthetic data, archetype-driven generation, Section-by-Section spec adherence, dbt layer architecture, dimensional modeling.
 
 ---
 
@@ -123,8 +123,6 @@ dbt run --select fct_workforce_overview --vars '{current_date: "2025-06-30"}'
 ---
 
 ## Architectural decisions
-
-The decisions below are the ones a hiring manager reading this would actually want to discuss.
 
 ### Section 12 coherence validated upstream in Python, not in dbt
 
@@ -290,8 +288,6 @@ The `analyses/` folder contains four BigQuery-flavored SQL queries demonstrating
 2. **`compa_ratio_gender_gap_by_cohort.sql`** — Gender pay parity *within* (department, job_level) cohorts where the cohort is large enough to be meaningful (n ≥ 10 per gender). Hits `fct_compensation_parity`.
 3. **`manager_change_attrition_signal.sql`** — % of voluntary terminations that occurred within 6 months of a manager change. Surfaces the Manager Change Casualty archetype's defining pattern. Hits `fct_attrition_drivers`.
 4. **`post_layoff_engagement_trough.sql`** — Theme-by-theme score change from the 2022-Q4 pre-layoff cycle to the 2023-Q2 trauma cycle, then to the 2025-Q1 recovery cycle. Quantifies the Section 10 narrative. Hits `fct_engagement_trends`.
-
-These are the kind of canonical queries an analyst would adapt for a Tableau workbook or a slide for an executive review.
 
 ---
 

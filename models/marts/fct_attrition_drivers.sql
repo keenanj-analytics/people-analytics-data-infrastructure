@@ -29,10 +29,23 @@
                                           TRUE if the gap above is <= 6
                                           months. Surfaces the Manager
                                           Change Casualty pattern.
-        last_review_rating_at_term       overall_rating from the last
-                                          review prior to termination
+        last_overall_rating              overall_rating from the last
+                                          review prior to termination.
+                                          Null for terminated employees
+                                          with no review history.
         last_review_rating_numeric_at_term
-                                          numeric mapping
+                                          numeric mapping of
+                                          last_overall_rating.
+        is_top_performer                 TRUE when the employee's two
+                                          most recent reviews before
+                                          termination were both
+                                          Exceeds / Significantly
+                                          Exceeds (per
+                                          int_employee_performance_history's
+                                          rolling 2-cycle definition).
+                                          Coalesced to FALSE for
+                                          terminated employees with
+                                          fewer than 2 reviews on file.
         was_declining_performer
                                           TRUE if the last review's
                                           overall_rating_delta < 0
@@ -125,9 +138,10 @@ final as (
 
         -- Performance context
         lrb.review_cycle           as last_review_cycle_at_term,
-        lrb.overall_rating         as last_review_rating_at_term,
+        lrb.overall_rating         as last_overall_rating,
         lrb.overall_rating_numeric as last_review_rating_numeric_at_term,
         lrb.overall_rating_delta   as last_review_rating_delta_at_term,
+        coalesce(lrb.is_top_performer, false) as is_top_performer,
         case
             when lrb.overall_rating_delta is not null
                 and lrb.overall_rating_delta < 0

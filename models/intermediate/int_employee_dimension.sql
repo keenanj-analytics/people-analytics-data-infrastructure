@@ -93,6 +93,14 @@ final as (
         t.reference_date,
         t.tenure_months,
         t.tenure_years,
+        case
+            when t.tenure_years < 1 then '0-1 years'
+            when t.tenure_years < 2 then '1-2 years'
+            when t.tenure_years < 3 then '2-3 years'
+            when t.tenure_years < 4 then '3-4 years'
+            when t.tenure_years < 5 then '4-5 years'
+            else '5+ years'
+        end as tenure_band,
         t.total_promotions,
         t.last_promotion_date,
         t.months_since_last_promotion,

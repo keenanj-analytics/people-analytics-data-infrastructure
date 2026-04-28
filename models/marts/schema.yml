@@ -379,3 +379,248 @@ models:
           Performance Managed Out archetype's defining flag.
         tests:
           - not_null
+      - name: is_top_performer
+        description: |
+          TRUE when the employee's two most recent review cycles before
+          termination_date were both 'Exceeds' or 'Significantly
+          Exceeds'. Sourced from int_employee_performance_history's
+          rolling 2-cycle definition. Coalesced to FALSE for terminated
+          employees with fewer than 2 reviews on file (e.g. the Early
+          Churner archetype) so the flag stays a clean boolean filter.
+        tests:
+          - not_null
+      - name: last_overall_rating
+        description: |
+          overall_rating from the most recent review cycle whose
+          review_completed_date <= termination_date. Null for
+          terminated employees with no review history.
+        tests:
+          - accepted_values:
+              values:
+                - Significantly Exceeds
+                - Exceeds
+                - Meets
+                - Partially Meets
+                - Does Not Meet
+              config:
+                where: "last_overall_rating is not null"
+
+  - name: fct_monthly_metrics
+    description: |
+      Centralized monthly metrics mart -- one wide row per
+      (snapshot_month, segment_type, segment_value). Carries every
+      base monthly value plus quarterly / rolling_6mo / ttm window
+      aggregations, plus annualized attrition rates and engagement
+      metrics (department-segment only). Single source of truth for
+      Tableau; consumers never compute their own rolling aggregates.
+      See model docstring for the full metric / window matrix and
+      annualization rules.
+    tests:
+      - dbt_utils.unique_combination_of_columns:
+          combination_of_columns:
+            - snapshot_month
+            - segment_type
+            - segment_value
+    columns:
+      - name: snapshot_month
+        description: First day of the calendar month.
+        tests:
+          - not_null
+
+      - name: segment_type
+        description: |
+          Discriminator naming the dimension this row segments by.
+          Engagement metrics (avg_enps, theme_*_score) only populate
+          where segment_type = 'department'. Recruiting metrics
+          (avg_time_to_fill_days_*, offer_acceptance_rate_*) only
+          populate for 'overall' / 'department' / 'sub_department'.
+        tests:
+          - not_null
+          - accepted_values:
+              values:
+                - overall
+                - department
+                - sub_department
+                - job_level
+                - location_state
+                - tenure_band
+
+      - name: segment_value
+        description: |
+          Dimension value for this segment. 'All' for segment_type =
+          'overall'; otherwise the discrete value (e.g. 'Engineering',
+          'IC4', 'CA', '1-2 years').
+        tests:
+          - not_null
+
+      - name: active_headcount_monthly
+        description: |
+          Active employees in this segment counted via the
+          int_monthly_headcount_snapshot membership rule.
+        tests:
+          - not_null
+          - dbt_utils.expression_is_true:
+              expression: ">= 0"
+
+      - name: hires_monthly
+        description: |
+          Count of employees whose hire_date falls in the calendar
+          month. Segment dimensions are carry-forward from CURRENT
+          state (see model docstring).
+        tests:
+          - not_null
+          - dbt_utils.expression_is_true:
+              expression: ">= 0"
+
+      - name: terminations_overall_monthly
+        tests:
+          - not_null
+          - dbt_utils.expression_is_true:
+              expression: ">= 0"
+      - name: terminations_voluntary_monthly
+        tests:
+          - not_null
+          - dbt_utils.expression_is_true:
+              expression: ">= 0"
+      - name: terminations_top_performer_monthly
+        description: |
+          Count of terminations where the employee's pre-termination
+          rolling 2-cycle is_top_performer flag is TRUE (sourced from
+          fct_attrition_drivers).
+        tests:
+          - not_null
+          - dbt_utils.expression_is_true:
+              expression: ">= 0"
+
+      # ---- Offer acceptance rate range tests (4 windows) ----
+      - name: offer_acceptance_rate_monthly
+        description: AVG of int_recruiting_funnel_metrics.offer_acceptance_rate over requisitions filled in the month.
+        tests:
+          - dbt_utils.expression_is_true:
+              expression: "between 0 and 1"
+      - name: offer_acceptance_rate_quarterly
+        tests:
+          - dbt_utils.expression_is_true:
+              expression: "between 0 and 1"
+      - name: offer_acceptance_rate_rolling_6mo
+        tests:
+          - dbt_utils.expression_is_true:
+              expression: "between 0 and 1"
+      - name: offer_acceptance_rate_ttm
+        tests:
+          - dbt_utils.expression_is_true:
+              expression: "between 0 and 1"
+
+      # ---- Annualized attrition rate range tests ----
+      # Rates can technically exceed 1.0 in extreme months (Q1 2023
+      # layoff month annualizes to ~1.92), so we only assert
+      # non-negativity, not an upper bound.
+      - name: attrition_rate_overall_monthly
+        description: |
+          (terminations_overall_monthly / active_headcount_monthly)
+          * 12. Annualized monthly attrition rate.
+        tests:
+          - dbt_utils.expression_is_true:
+              expression: ">= 0"
+      - name: attrition_rate_overall_quarterly
+        tests:
+          - dbt_utils.expression_is_true:
+              expression: ">= 0"
+      - name: attrition_rate_overall_rolling_6mo
+        tests:
+          - dbt_utils.expression_is_true:
+              expression: ">= 0"
+      - name: attrition_rate_overall_ttm
+        tests:
+          - dbt_utils.expression_is_true:
+              expression: ">= 0"
+
+      - name: attrition_rate_voluntary_monthly
+        tests:
+          - dbt_utils.expression_is_true:
+              expression: ">= 0"
+      - name: attrition_rate_voluntary_quarterly
+        tests:
+          - dbt_utils.expression_is_true:
+              expression: ">= 0"
+      - name: attrition_rate_voluntary_rolling_6mo
+        tests:
+          - dbt_utils.expression_is_true:
+              expression: ">= 0"
+      - name: attrition_rate_voluntary_ttm
+        tests:
+          - dbt_utils.expression_is_true:
+              expression: ">= 0"
+
+      - name: attrition_rate_top_performer_monthly
+        tests:
+          - dbt_utils.expression_is_true:
+              expression: ">= 0"
+      - name: attrition_rate_top_performer_quarterly
+        tests:
+          - dbt_utils.expression_is_true:
+              expression: ">= 0"
+      - name: attrition_rate_top_performer_rolling_6mo
+        tests:
+          - dbt_utils.expression_is_true:
+              expression: ">= 0"
+      - name: attrition_rate_top_performer_ttm
+        tests:
+          - dbt_utils.expression_is_true:
+              expression: ">= 0"
+
+      # ---- avg_compa_ratio range tests (4 windows) ----
+      - name: avg_compa_ratio_monthly
+        description: AVG salary / comp_band_mid across employees active in segment-month (point-in-time comp).
+        tests:
+          - dbt_utils.expression_is_true:
+              expression: "between 0.5 and 2.0"
+      - name: avg_compa_ratio_quarterly
+        tests:
+          - dbt_utils.expression_is_true:
+              expression: "between 0.5 and 2.0"
+      - name: avg_compa_ratio_rolling_6mo
+        tests:
+          - dbt_utils.expression_is_true:
+              expression: "between 0.5 and 2.0"
+      - name: avg_compa_ratio_ttm
+        tests:
+          - dbt_utils.expression_is_true:
+              expression: "between 0.5 and 2.0"
+
+      # ---- avg_performance_rating range tests (4 windows) ----
+      - name: avg_performance_rating_monthly
+        description: AVG numeric rating (5=SE, 4=Exceeds, 3=Meets, 2=PM, 1=DNM) of latest review at-or-before snapshot_month_end.
+        tests:
+          - dbt_utils.expression_is_true:
+              expression: "between 1 and 5"
+      - name: avg_performance_rating_quarterly
+        tests:
+          - dbt_utils.expression_is_true:
+              expression: "between 1 and 5"
+      - name: avg_performance_rating_rolling_6mo
+        tests:
+          - dbt_utils.expression_is_true:
+              expression: "between 1 and 5"
+      - name: avg_performance_rating_ttm
+        tests:
+          - dbt_utils.expression_is_true:
+              expression: "between 1 and 5"
+
+      # ---- Other averages: documented but untested ----
+      - name: avg_time_to_fill_days_monthly
+        description: AVG of int_recruiting_funnel_metrics.time_to_fill_days for requisitions filled in this month / segment.
+      - name: avg_enps_monthly
+        description: |
+          enps_score from fct_engagement_trends for the (department,
+          survey_quarter) covering this month. Populated only where
+          segment_type = 'department'. Range -100 to +100.
+      - name: theme_employee_engagement_score_monthly
+        description: |
+          theme_avg_score from fct_engagement_trends for theme
+          'Employee Engagement', for this department/quarter.
+          Populated only where segment_type = 'department'. The
+          remaining seven theme_*_score columns
+          (manager_effectiveness, career_growth, work_life_balance,
+          recognition, company_culture, communication, enablement)
+          follow the same shape -- one column per theme x 4 windows.

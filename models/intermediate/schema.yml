@@ -724,6 +724,21 @@ models:
           - dbt_utils.expression_is_true:
               expression: "between 0 and 1"
 
+      - name: offer_acceptance_rate
+        description: |
+          countif(offer_accepted = true) / countif(offer_date is not
+          null). Of all offers extended on the requisition, the share
+          the candidate accepted. Sourced from the offer_accepted
+          field (candidate-decision view); numerically equivalent to
+          rate_offer_to_hired in this dataset because offer_accepted
+          = TRUE exactly on Hired rows. Null only on requisitions
+          with zero offers extended (none in this dataset, which has
+          one Hired row per requisition by construction).
+        tests:
+          - not_null
+          - dbt_utils.expression_is_true:
+              expression: "between 0 and 1"
+
       - name: rate_overall_conversion
         description: |
           count_hired / total_applications. Spec target 2.1% (Section 9);
@@ -1003,6 +1018,23 @@ models:
       - name: tenure_years
         tests:
           - not_null
+      - name: tenure_band
+        description: |
+          1-year-increment bucket of tenure_years for cohort grouping
+          in marts and dashboards. Bands are half-open on the upper
+          edge (e.g. '1-2 years' is tenure_years >= 1 and < 2). The
+          terminal '5+ years' band absorbs all longer-tenured
+          employees including the founder cohort.
+        tests:
+          - not_null
+          - accepted_values:
+              values:
+                - 0-1 years
+                - 1-2 years
+                - 2-3 years
+                - 3-4 years
+                - 4-5 years
+                - 5+ years
       - name: total_promotions
         tests:
           - not_null
@@ -1068,3 +1100,110 @@ models:
           Significantly Exceeds). Null if the employee has fewer than
           two reviews (cycle_sequence < 2 cannot establish the
           consecutive condition); FALSE on cycle_sequence = 1.
+
+  - name: int_monthly_headcount_snapshot
+    description: |
+      Monthly headcount fact at employee grain. One row per
+      (employee_id, snapshot_month) for every month between Jan 2020
+      and Mar 2025 the employee was on payroll. Carry-forward
+      attributes reflect the employee's current state, not the
+      at-snapshot state -- see model docstring for the trade-offs.
+    tests:
+      - dbt_utils.unique_combination_of_columns:
+          combination_of_columns:
+            - employee_id
+            - snapshot_month
+    columns:
+      - name: employee_id
+        description: |
+          FK to int_employee_dimension.employee_id. Repeats across
+          the rows for each month the employee was active.
+        tests:
+          - not_null
+          - relationships:
+              to: ref('int_employee_dimension')
+              field: employee_id
+
+      - name: snapshot_month
+        description: |
+          First day of the calendar month. Employee is counted in
+          this month if they were on payroll for any part of it:
+          hire_date <= last_day(snapshot_month) AND
+          (termination_date is null OR termination_date >= snapshot_month).
+        tests:
+          - not_null
+
+      - name: department
+        description: |
+          Carry-forward of int_employee_dimension.department (current
+          state, not point-in-time).
+        tests:
+          - not_null
+          - accepted_values:
+              values:
+                - Engineering
+                - Sales
+                - Customer Success
+                - Marketing
+                - Product
+                - G&A
+                - People
+                - Executive
+
+      - name: sub_department
+        description: |
+          Carry-forward. Nullable only for the CEO (Executive
+          department has no sub-department slot).
+
+      - name: job_level
+        description: Carry-forward of current job level.
+        tests:
+          - not_null
+          - accepted_values:
+              values: [IC1, IC2, IC3, IC4, IC5, M1, M2, M3, M4, M5]
+
+      - name: location_state
+        description: Carry-forward of current US state / country code.
+        tests:
+          - not_null
+
+      - name: gender
+        description: |
+          Carry-forward. Nullable per stg_employees (self-reported,
+          optional during onboarding).
+
+      - name: race_ethnicity
+        description: |
+          Carry-forward. Nullable per stg_employees (self-reported,
+          optional during onboarding).
+
+      - name: tenure_band
+        description: |
+          Carry-forward of CURRENT tenure band, not the band as-of
+          snapshot_month. Compute (snapshot_month - hire_date) for
+          point-in-time tenure.
+        tests:
+          - not_null
+          - accepted_values:
+              values:
+                - 0-1 years
+                - 1-2 years
+                - 2-3 years
+                - 3-4 years
+                - 4-5 years
+                - 5+ years
+
+      - name: is_top_performer
+        description: |
+          Renamed from int_employee_dimension.is_currently_top_performer.
+          Reflects the latest review cycle, not the cycle in effect at
+          snapshot_month. Null for employees with no review history.
+
+      - name: is_active
+        description: |
+          True for currently-active employees across every snapshot
+          row; false for since-terminated employees across every row
+          they appear in. The membership filter already excludes
+          post-termination months.
+        tests:
+          - not_null

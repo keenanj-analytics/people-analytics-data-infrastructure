@@ -9,7 +9,8 @@
       "Bash(python3 scripts/data_generation/05_align_subdept_level_grid.py)",
       "Bash(python3 scripts/data_generation/06_build_demographics.py)",
       "Bash(python3 scripts/data_generation/07_materialize_raw_employees.py)",
-      "Bash(python3 scripts/data_generation/08_complete_raw_job_history.py)"
+      "Bash(python3 scripts/data_generation/08_complete_raw_job_history.py)",
+      "Bash(awk 'NR>=175 && NR<=205 {print NR\": \"$0}' \"/Users/keenanj/Documents/Claude Code/JustKaizen-Data-Infrastructure/target/compiled/justkaizen_analytics/models/marts/fct_monthly_metrics.sql\")"
     ]
   }
 }

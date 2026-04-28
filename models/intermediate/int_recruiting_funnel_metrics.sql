@@ -43,6 +43,16 @@
         rate_offer_to_hired        count_hired / reached_offer
         rate_overall_conversion    count_hired / total_applications
 
+    Offer acceptance rate (candidate-decision view):
+        offer_acceptance_rate
+            countif(offer_accepted = true) / countif(offer_date is
+            not null). Of offers extended on this requisition, the
+            share the candidate accepted. Numerically equivalent to
+            rate_offer_to_hired in this dataset (offer_accepted =
+            TRUE iff current_stage = 'Hired'); preserved as a
+            separate column to keep the candidate-decision framing
+            distinct from the funnel-stage framing.
+
     Top application channel (source mix, per requisition):
         top_application_channel        most-common stg_recruiting.source
                                        value across the requisition's
@@ -99,6 +109,24 @@ with per_requisition as (
         countif(current_stage = 'Hired')                                      as count_hired,
         countif(current_stage = 'Rejected')                                   as count_rejected,
         countif(current_stage = 'Withdrawn')                                  as count_withdrawn,
+
+        -- Offer acceptance rate per spec: numerator from
+        -- offer_accepted, NOT current_stage. Conceptually -- of all
+        -- offers extended on this requisition, what share did the
+        -- candidate accept? Numerically equivalent to
+        -- safe_divide(count_hired, reached_offer) in this dataset
+        -- (offer_accepted = TRUE iff current_stage = 'Hired'), but
+        -- the framing differs: candidate-decision view vs. funnel-
+        -- stage view. Preserved as a distinct column so a future
+        -- dataset where offers are accepted-pending-start (Hired
+        -- stage not yet entered) won't collapse the two metrics.
+        round(
+            safe_divide(
+                countif(offer_accepted = true),
+                countif(offer_date is not null)
+            ),
+            4
+        ) as offer_acceptance_rate,
 
         -- Application-window markers
         min(application_date) as first_application_date,

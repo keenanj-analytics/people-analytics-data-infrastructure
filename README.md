@@ -1,5 +1,7 @@
 # JustKaizen AI — Data Infrastructure
 
+**Dashboard:** [Coming soon — Tableau Public]
+
 End-to-end synthetic People Analytics warehouse for **JustKaizen AI**, a fictional Series B SaaS company (380 active employees, remote-first, education / nonprofit verticals). Six raw source tables generated in Python, validated for cross-table coherence, then transformed through a dbt-on-BigQuery staging → intermediate → marts pipeline that's ready to plug into Tableau.
 
 The portfolio goal is to demonstrate production-grade data infrastructure end to end: realistic synthetic data, archetype-driven generation, Section-by-Section spec adherence, dbt layer architecture, dimensional modeling.
@@ -134,7 +136,7 @@ Section 12 has 20+ cross-table invariants (every employee has a Hire row with `e
 
 ### Calculated fields live in dbt, never in the raw data
 
-Per CLAUDE.md and the data dictionary's per-table notes, fields like `compa_ratio`, `tenure_months`, `is_top_performer`, `time_to_fill_days`, `band_position`, `career_velocity_per_year` are *all* computed in dbt — staging passes the raw source rows through unchanged.
+Per `.github/claude.md` and the data dictionary's per-table notes, fields like `compa_ratio`, `tenure_months`, `is_top_performer`, `time_to_fill_days`, `band_position`, `career_velocity_per_year` are *all* computed in dbt — staging passes the raw source rows through unchanged.
 
 **Why:** the spec's calculated formulas might evolve (e.g., the People Ops team might switch `compa_ratio` to use `comp_band_max` as the denominator instead of `comp_band_mid`). Centralizing these in `models/intermediate/` means one file edit propagates everywhere. The raw_* CSVs stay aligned with the vendor schemas (ADP, Pave, Lattice, Ashby) which keeps the dataset re-usable as if it were ingested from real APIs.
 
@@ -182,50 +184,22 @@ Documented at length in `01_generate_employee_profiles.py` and `02_designate_man
 
 ---
 
-## Spec deviations (documented)
+## What I would add in production
 
-The spec is internally inconsistent in places. Where I had to deviate, the deviation is documented at the source. Summary:
+This portfolio focuses on warehouse design and dbt patterns. In a production deployment the same codebase would sit behind these additions:
 
-### Headcount reconciliation (Stage 1)
+- **Airflow or dbt Cloud** for scheduled orchestration — daily seed loads, nightly full warehouse builds, and event-driven reruns when source tables refresh.
+- **CI/CD via GitHub Actions** running `dbt test` on every pull request, plus `dbt build --select state:modified+` against a slim CI dataset so PRs surface model regressions before merge.
+- **Incremental models** for `int_monthly_headcount_snapshot` and `fct_monthly_metrics` — both grow monotonically with time, so full table rebuilds become wasteful as history extends. An `is_incremental()` block keyed on `snapshot_month` would only recompute the trailing months affected by upstream changes.
+- **Row-level access controls** on compensation and demographic data — BigQuery row-level security policies scoped by `department` / `is_executive` so individual contributors see only their cohort while People Ops sees the full warehouse.
+- **Data quality monitoring** with `dbt source freshness` checks, plus anomaly detection (e.g., an Elementary or re_data layer) flagging unexpected swings in active_headcount, attrition_rate, or comp_band drift.
+- **API-based ingestion** replacing the CSV seeds — Fivetran (or custom connectors) pulling directly from ADP, Pave, Ashby, and Lattice, with extracted-at watermarks landing in `raw.*` so the warehouse refreshes incrementally instead of on a full-seed cadence.
 
-Section 5's archetype percentages don't algebraically reconcile with `568 total / 380 active / 188 terminated`. With the rigid 75-person Q1 2023 layoff plus the four 100%-terminated archetypes at their stated proportions, the stated rates produce only ~291 active vs target 380.
+---
 
-**Resolution:** Steady Contributor inflated 25% → 45% (256 → after the user-reviewed adjustment 214); Steady and Internal Mover at 100% active (lost the 15% / 10% term per spec); the four 100%-terminated archetypes resized to the user-approved counts (Early Churner 35, Top Performer Flight Risk 25, Performance Managed Out 15, Manager Change Casualty 20).
+## Spec deviations
 
-Documented in `01_generate_employee_profiles.py` docstring.
-
-### Supplemental terminated profiles (Stage 1.5)
-
-To restore the spec's voluntary turnover semantics for Steady Contributor (15% term) and Internal Mover (10% term), 36 supplemental terminated profiles were appended (32 Steady + 4 Internal Mover, all hired 2021-2022, all Voluntary). Total goes from 568 → 604 / 380 / 224.
-
-These 36 are the only profiles with a `manager_id` populated at Stage 1; the other 568 had `manager_id` populated in Stage 2b's hierarchy resolution.
-
-### Section 3 sub-dept × level grid — 13 residual delta cells
-
-The 2c step-2 alignment closes the IC1+39 / IC4-31 starting-level skew via archetype-budget-respecting promotions and sub-dept rebalancing. 13 cells remain off the Section 3 + uplift target after the alignment runs:
-
-- **Founder IC track at IC5 outside Engineering** — Section 3 only has IC5 cells in Engineering. CS / Product founder IC5 designations spill into non-Section-3 cells (e.g., CS Implementation IC5, Product Design IC5).
-- **People L&D M1 vacancy** — Section 3 row sums imply 4 People M1; Section 2 says 3. 2a designated 3 per Section 2, leaving Section 3's L&D M1 unfilled.
-- **Sales SDR IC1 shortage (-5)** — flex pool doesn't have 10 IC1-starting Sales profiles after the no-demotion guard. Spillover lands in adjacent SDR / AE / SE cells.
-
-Documented in `05_align_subdept_level_grid.py`.
-
-### Performance Managed Out — 3 SR1 soft violations
-
-Spec says Performance Managed Out profiles should show declining ratings in their last 2-3 cycles. Section 7's "late" distribution still has a 15% Meets weight, so the random walk can occasionally produce a non-declining last cycle. 3 of 15 PMO profiles hit this. Documented in the validator output as a soft (informational) rule.
-
-To strictly enforce decline, the late distribution would need to drop the Meets weight to 0 — not done here because it would deviate from Section 7's stated probabilities.
-
-### Row count vs spec targets
-
-| Table | Spec target | Actual | Note |
-|---|---|---|---|
-| `raw_employees` | ~568 | 604 | Spec uses ~ (approximate). Reconciliation math forced 604. |
-| `raw_job_history` | 800-1,000 | 1,045 | Slightly over due to organic Manager Change events bridging structural at-hire vs current manager differences. |
-| `raw_compensation` | 900-1,100 | 2,312 | Significantly over because the spec's row math appears to omit Annual Review records. With the per-Jan-15 review rule the count roughly doubles. Documented in `09_build_raw_compensation.py`. |
-| `raw_performance` | 2,500-3,000 | 2,676 | Within range. |
-| `raw_recruiting` | 8,000-10,000 | 9,348 | Within range. Funnel rates are inflated above Section 9 targets because the Applied-stage rejection pool was capped to keep total volume in the spec range. |
-| `raw_engagement` | 3,500-4,000 | 3,024 | Slightly under. Sub-department rows (Section 12: "only when 5+ respondents") were not generated; including them would land in spec range. |
+See `SPEC_DEVIATIONS.md` for documented deviations from the generation spec and their rationale.
 
 ---
 
@@ -234,7 +208,9 @@ To strictly enforce decline, the late distribution would need to drop the Meets 
 ```
 JustKaizen-Data-Infrastructure/
 ├── README.md                                        ← this file
-├── CLAUDE.md                                        ← project guidance for Claude
+├── SPEC_DEVIATIONS.md                               ← documented deviations from the generation spec
+├── .github/
+│   └── claude.md                                    ← project guidance for Claude
 ├── JustKaizen_AI_Data_Generation_Spec.md            ← the canonical spec
 ├── JustKaizen_Data_Dictionary.xlsx                  ← schemas + Job Architecture bands
 │

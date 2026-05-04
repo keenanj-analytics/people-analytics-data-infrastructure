@@ -53,9 +53,9 @@ Five source systems feed the warehouse, representing the typical People Analytic
 
 | Source | What It Provides | Records |
 |--------|-----------------|---------|
-| HRIS (ADP) | Employee census: demographics, job info, hire/term dates, manager hierarchy, comp zone | ~65,000+ rows (monthly snapshots) |
+| HRIS | Employee census: demographics, job info, hire/term dates, manager hierarchy, comp zone | ~65,000+ rows (monthly snapshots) |
 | ATS | Recruiting pipeline: candidates, interview stages, offers, hires, sources, recruiters | ~30,000+ rows |
-| Performance (Lattice) | Review ratings by cycle, manager reviews, calibrated scores | ~15,000+ rows |
+| Performance Management System | Review ratings by cycle, manager reviews, calibrated scores | ~15,000+ rows |
 | Engagement Survey | Anonymized employee responses across 27 questions and 8 themes | ~25,000+ rows |
 | Compensation Bands | Salary bands by title, zone, and level | ~200+ rows |
 

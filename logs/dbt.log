@@ -1,0 +1,257 @@
+[0m06:24:45.848743 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1062310a0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1205e4610>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1205e4430>]}
+
+
+============================== 06:24:45.851242 | 8b486797-28d9-4d24-b07d-4494b1b37028 ==============================
+[0m06:24:45.851242 [info ] [MainThread]: Running with dbt=1.11.0-b3
+[0m06:24:45.851515 [debug] [MainThread]: running dbt with arguments {'log_format': 'default', 'use_colors': 'True', 'warn_error': 'None', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'cache_selected_only': 'False', 'log_path': '/Users/keenanj/Documents/Claude_Code/people-analytics-data-infrastructure/logs', 'log_cache_events': 'False', 'introspect': 'True', 'quiet': 'False', 'empty': 'None', 'debug': 'False', 'profiles_dir': '/Users/keenanj/.dbt', 'send_anonymous_usage_stats': 'True', 'use_experimental_parser': 'False', 'write_json': 'True', 'printer_width': '80', 'fail_fast': 'False', 'static_parser': 'True', 'partial_parse': 'True', 'indirect_selection': 'eager', 'invocation_command': 'dbt deps', 'no_print': 'None', 'version_check': 'True'}
+[0m06:24:45.932577 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '8b486797-28d9-4d24-b07d-4494b1b37028', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1066a1fd0>]}
+[0m06:24:45.944089 [debug] [MainThread]: Set downloads directory='/var/folders/1v/m0k_yf8d3b78qby25n_s7m6c0000gn/T/dbt-downloads-jwogb1te'
+[0m06:24:45.944316 [debug] [MainThread]: Making package index registry request: GET https://hub.getdbt.com/api/v1/index.json
+[0m06:24:46.278323 [debug] [MainThread]: Response from registry index: GET https://hub.getdbt.com/api/v1/index.json 200
+[0m06:24:46.281036 [debug] [MainThread]: Making package registry request: GET https://hub.getdbt.com/api/v1/dbt-labs/dbt_utils.json
+[0m06:24:46.419146 [debug] [MainThread]: Response from registry: GET https://hub.getdbt.com/api/v1/dbt-labs/dbt_utils.json 200
+[0m06:24:46.441844 [info ] [MainThread]: Updating lock file in file path: /Users/keenanj/Documents/Claude_Code/people-analytics-data-infrastructure/package-lock.yml
+[0m06:24:46.444364 [debug] [MainThread]: Set downloads directory='/var/folders/1v/m0k_yf8d3b78qby25n_s7m6c0000gn/T/dbt-downloads-omfzfcr9'
+[0m06:24:46.448868 [info ] [MainThread]: Installing dbt-labs/dbt_utils
+[0m06:24:46.921784 [info ] [MainThread]: Installed from version 1.3.0
+[0m06:24:46.922136 [info ] [MainThread]: Updated version available: 1.3.3
+[0m06:24:46.922358 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'package', 'label': '8b486797-28d9-4d24-b07d-4494b1b37028', 'property_': 'install', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x120862040>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x120813850>]}
+[0m06:24:46.922592 [info ] [MainThread]: 
+[0m06:24:46.922799 [info ] [MainThread]: Updates available for packages: ['dbt-labs/dbt_utils']                 
+Update your versions in packages.yml, then run dbt deps
+[0m06:24:46.925390 [debug] [MainThread]: Resource report: {"command_name": "deps", "command_success": true, "command_wall_clock_time": 1.1206546, "process_in_blocks": "0", "process_kernel_time": 0.220938, "process_mem_max_rss": "125304832", "process_out_blocks": "0", "process_user_time": 1.593634}
+[0m06:24:46.925649 [debug] [MainThread]: Command `dbt deps` succeeded at 06:24:46.925592 after 1.12 seconds
+[0m06:24:46.925849 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1062310a0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x120813af0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1208136d0>]}
+[0m06:24:46.926053 [debug] [MainThread]: Flushing usage events
+[0m06:24:47.372749 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m06:24:55.219113 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1067a1130>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10783e7c0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10783e5e0>]}
+
+
+============================== 06:24:55.222124 | 9d0ea891-c4b9-46d1-a6f0-7440bf945df7 ==============================
+[0m06:24:55.222124 [info ] [MainThread]: Running with dbt=1.11.0-b3
+[0m06:24:55.222395 [debug] [MainThread]: running dbt with arguments {'use_colors': 'True', 'version_check': 'True', 'fail_fast': 'False', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'profiles_dir': '/Users/keenanj/.dbt', 'no_print': 'None', 'target_path': 'None', 'send_anonymous_usage_stats': 'True', 'introspect': 'True', 'log_path': '/Users/keenanj/Documents/Claude_Code/people-analytics-data-infrastructure/logs', 'log_format': 'default', 'quiet': 'False', 'printer_width': '80', 'use_experimental_parser': 'False', 'indirect_selection': 'eager', 'write_json': 'True', 'invocation_command': 'dbt run --select dim_calendar', 'cache_selected_only': 'False', 'log_cache_events': 'False', 'debug': 'False', 'warn_error': 'None', 'empty': 'False', 'partial_parse': 'True', 'static_parser': 'True'}
+[0m06:25:00.223505 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '9d0ea891-c4b9-46d1-a6f0-7440bf945df7', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x104f34eb0>]}
+[0m06:25:00.255083 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '9d0ea891-c4b9-46d1-a6f0-7440bf945df7', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1070e8e20>]}
+[0m06:25:00.255419 [info ] [MainThread]: Registered adapter: bigquery=1.10.2
+[0m06:25:00.416242 [debug] [MainThread]: checksum: e63134dccc1251cfb572caf0e4aa952f030c125ee3634f3bf2c0a2e1bb6ae349, vars: {}, profile: , target: , version: 1.11.0b3
+[0m06:25:00.416792 [info ] [MainThread]: Unable to do partial parsing because saved manifest not found. Starting full parse.
+[0m06:25:00.416978 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'partial_parser', 'label': '9d0ea891-c4b9-46d1-a6f0-7440bf945df7', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x130d24c10>]}
+[0m06:25:01.120566 [warn ] [MainThread]: [[33mWARNING[0m]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+There are 3 unused configuration paths:
+- models.justkaizen_analytics.staging
+- models.justkaizen_analytics.marts
+- seeds.justkaizen_analytics
+[0m06:25:01.123762 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '9d0ea891-c4b9-46d1-a6f0-7440bf945df7', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1329c0ee0>]}
+[0m06:25:01.164173 [debug] [MainThread]: Wrote artifact WritableManifest to /Users/keenanj/Documents/Claude_Code/people-analytics-data-infrastructure/target/manifest.json
+[0m06:25:01.165599 [debug] [MainThread]: Wrote artifact SemanticManifest to /Users/keenanj/Documents/Claude_Code/people-analytics-data-infrastructure/target/semantic_manifest.json
+[0m06:25:01.177905 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '9d0ea891-c4b9-46d1-a6f0-7440bf945df7', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x132a771c0>]}
+[0m06:25:01.178236 [info ] [MainThread]: Found 1 model, 624 macros
+[0m06:25:01.178402 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '9d0ea891-c4b9-46d1-a6f0-7440bf945df7', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1329c6340>]}
+[0m06:25:01.178969 [info ] [MainThread]: 
+[0m06:25:01.179141 [info ] [MainThread]: Concurrency: 4 threads (target='dev')
+[0m06:25:01.179261 [info ] [MainThread]: 
+[0m06:25:01.179510 [debug] [MainThread]: Acquiring new bigquery connection 'master'
+[0m06:25:01.180043 [debug] [ThreadPool]: Acquiring new bigquery connection 'list_just-kaizen-ai'
+[0m06:25:01.180261 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m06:25:01.180506 [debug] [ThreadPool]: BigQuery adapter: Got an error when attempting to create a bigquery " "client: '[Errno 2] No such file or directory: '/Users/keenanj/Documents/Keys/just-kaizen-ai-6ee503c7c428.json''
+[0m06:25:01.180712 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m06:25:01.180868 [debug] [MainThread]: BigQuery adapter: Got an error when attempting to create a bigquery " "client: '[Errno 2] No such file or directory: '/Users/keenanj/Documents/Keys/just-kaizen-ai-6ee503c7c428.json''
+[0m06:25:01.181007 [info ] [MainThread]: 
+[0m06:25:01.181147 [info ] [MainThread]: Finished running  in 0 hours 0 minutes and 0.00 seconds (0.00s).
+[0m06:25:01.181373 [error] [MainThread]: Encountered an error:
+Database Error
+  [Errno 2] No such file or directory: '/Users/keenanj/Documents/Keys/just-kaizen-ai-6ee503c7c428.json'
+[0m06:25:01.184878 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": false, "command_wall_clock_time": 6.0115657, "process_in_blocks": "0", "process_kernel_time": 0.465913, "process_mem_max_rss": "323928064", "process_out_blocks": "0", "process_user_time": 3.436836}
+[0m06:25:01.185129 [debug] [MainThread]: Command `dbt run` failed at 06:25:01.185074 after 6.01 seconds
+[0m06:25:01.185357 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1067a1130>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x132a97d90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x132a97fa0>]}
+[0m06:25:01.185538 [debug] [MainThread]: Flushing usage events
+[0m06:25:01.524653 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m06:26:33.400789 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1090845b0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10a122ca0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10a122ac0>]}
+
+
+============================== 06:26:33.403901 | 2d1b9a62-f9b0-428c-a2c0-968ad02af5a8 ==============================
+[0m06:26:33.403901 [info ] [MainThread]: Running with dbt=1.11.0-b3
+[0m06:26:33.404165 [debug] [MainThread]: running dbt with arguments {'log_cache_events': 'False', 'debug': 'False', 'no_print': 'None', 'empty': 'False', 'invocation_command': 'dbt run --select dim_calendar', 'log_format': 'default', 'profiles_dir': '/Users/keenanj/.dbt', 'indirect_selection': 'eager', 'static_parser': 'True', 'warn_error': 'None', 'write_json': 'True', 'log_path': '/Users/keenanj/Documents/Claude_Code/people-analytics-data-infrastructure/logs', 'quiet': 'False', 'use_colors': 'True', 'target_path': 'None', 'fail_fast': 'False', 'use_experimental_parser': 'False', 'send_anonymous_usage_stats': 'True', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'version_check': 'True', 'partial_parse': 'True', 'introspect': 'True', 'cache_selected_only': 'False', 'printer_width': '80'}
+[0m06:26:35.023029 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '2d1b9a62-f9b0-428c-a2c0-968ad02af5a8', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10a1022e0>]}
+[0m06:26:35.054007 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '2d1b9a62-f9b0-428c-a2c0-968ad02af5a8', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x14d60e580>]}
+[0m06:26:35.054299 [info ] [MainThread]: Registered adapter: bigquery=1.10.2
+[0m06:26:35.205710 [debug] [MainThread]: checksum: e63134dccc1251cfb572caf0e4aa952f030c125ee3634f3bf2c0a2e1bb6ae349, vars: {}, profile: , target: , version: 1.11.0b3
+[0m06:26:35.282694 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m06:26:35.282893 [debug] [MainThread]: Partial parsing enabled, no changes found, skipping parsing
+[0m06:26:35.286147 [warn ] [MainThread]: [[33mWARNING[0m]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+There are 3 unused configuration paths:
+- models.justkaizen_analytics.staging
+- models.justkaizen_analytics.marts
+- seeds.justkaizen_analytics
+[0m06:26:35.298862 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '2d1b9a62-f9b0-428c-a2c0-968ad02af5a8', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x14db2e130>]}
+[0m06:26:35.338905 [debug] [MainThread]: Wrote artifact WritableManifest to /Users/keenanj/Documents/Claude_Code/people-analytics-data-infrastructure/target/manifest.json
+[0m06:26:35.340969 [debug] [MainThread]: Wrote artifact SemanticManifest to /Users/keenanj/Documents/Claude_Code/people-analytics-data-infrastructure/target/semantic_manifest.json
+[0m06:26:35.350640 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '2d1b9a62-f9b0-428c-a2c0-968ad02af5a8', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x14daf7610>]}
+[0m06:26:35.350852 [info ] [MainThread]: Found 1 model, 624 macros
+[0m06:26:35.350998 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '2d1b9a62-f9b0-428c-a2c0-968ad02af5a8', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x14daf61f0>]}
+[0m06:26:35.351471 [info ] [MainThread]: 
+[0m06:26:35.351623 [info ] [MainThread]: Concurrency: 4 threads (target='dev')
+[0m06:26:35.351739 [info ] [MainThread]: 
+[0m06:26:35.351960 [debug] [MainThread]: Acquiring new bigquery connection 'master'
+[0m06:26:35.352370 [debug] [ThreadPool]: Acquiring new bigquery connection 'list_just-kaizen-ai'
+[0m06:26:35.352533 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m06:26:35.352700 [debug] [ThreadPool]: BigQuery adapter: Got an error when attempting to create a bigquery " "client: '[Errno 2] No such file or directory: '/Users/keenanj/Documents/Keys/just-kaizen-ai-6ee503c7c428.json''
+[0m06:26:35.352876 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m06:26:35.353008 [debug] [MainThread]: BigQuery adapter: Got an error when attempting to create a bigquery " "client: '[Errno 2] No such file or directory: '/Users/keenanj/Documents/Keys/just-kaizen-ai-6ee503c7c428.json''
+[0m06:26:35.353135 [info ] [MainThread]: 
+[0m06:26:35.353259 [info ] [MainThread]: Finished running  in 0 hours 0 minutes and 0.00 seconds (0.00s).
+[0m06:26:35.354145 [error] [MainThread]: Encountered an error:
+Database Error
+  [Errno 2] No such file or directory: '/Users/keenanj/Documents/Keys/just-kaizen-ai-6ee503c7c428.json'
+[0m06:26:35.356624 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": false, "command_wall_clock_time": 2.0002007, "process_in_blocks": "0", "process_kernel_time": 0.346903, "process_mem_max_rss": "372244480", "process_out_blocks": "0", "process_user_time": 2.637846}
+[0m06:26:35.356790 [debug] [MainThread]: Command `dbt run` failed at 06:26:35.356747 after 2.00 seconds
+[0m06:26:35.356926 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1090845b0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x14db48400>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x14db48af0>]}
+[0m06:26:35.357071 [debug] [MainThread]: Flushing usage events
+[0m06:26:35.756370 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m06:30:21.661683 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x104896880>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x105942550>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x105942370>]}
+
+
+============================== 06:30:21.664596 | dcc741e7-1d5b-4c88-aca6-6ec408ce9a86 ==============================
+[0m06:30:21.664596 [info ] [MainThread]: Running with dbt=1.11.0-b3
+[0m06:30:21.664902 [debug] [MainThread]: running dbt with arguments {'warn_error': 'None', 'use_experimental_parser': 'False', 'log_cache_events': 'False', 'cache_selected_only': 'False', 'indirect_selection': 'eager', 'partial_parse': 'True', 'send_anonymous_usage_stats': 'True', 'write_json': 'True', 'empty': 'False', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'version_check': 'True', 'log_path': '/Users/keenanj/Documents/Claude_Code/people-analytics-data-infrastructure/logs', 'target_path': 'None', 'no_print': 'None', 'invocation_command': 'dbt run --select dim_calendar', 'debug': 'False', 'log_format': 'default', 'fail_fast': 'False', 'static_parser': 'True', 'introspect': 'True', 'profiles_dir': '/Users/keenanj/.dbt', 'use_colors': 'True', 'quiet': 'False', 'printer_width': '80'}
+[0m06:30:23.280766 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'dcc741e7-1d5b-4c88-aca6-6ec408ce9a86', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x12d6acd90>]}
+[0m06:30:23.311501 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': 'dcc741e7-1d5b-4c88-aca6-6ec408ce9a86', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x12d7e4550>]}
+[0m06:30:23.311780 [info ] [MainThread]: Registered adapter: bigquery=1.10.2
+[0m06:30:23.461289 [debug] [MainThread]: checksum: e63134dccc1251cfb572caf0e4aa952f030c125ee3634f3bf2c0a2e1bb6ae349, vars: {}, profile: , target: , version: 1.11.0b3
+[0m06:30:23.537553 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m06:30:23.537766 [debug] [MainThread]: Partial parsing enabled, no changes found, skipping parsing
+[0m06:30:23.541023 [warn ] [MainThread]: [[33mWARNING[0m]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+There are 3 unused configuration paths:
+- models.justkaizen_analytics.marts
+- models.justkaizen_analytics.staging
+- seeds.justkaizen_analytics
+[0m06:30:23.553790 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': 'dcc741e7-1d5b-4c88-aca6-6ec408ce9a86', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x12ddee130>]}
+[0m06:30:23.593756 [debug] [MainThread]: Wrote artifact WritableManifest to /Users/keenanj/Documents/Claude_Code/people-analytics-data-infrastructure/target/manifest.json
+[0m06:30:23.596703 [debug] [MainThread]: Wrote artifact SemanticManifest to /Users/keenanj/Documents/Claude_Code/people-analytics-data-infrastructure/target/semantic_manifest.json
+[0m06:30:23.606661 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': 'dcc741e7-1d5b-4c88-aca6-6ec408ce9a86', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x12de08e80>]}
+[0m06:30:23.606881 [info ] [MainThread]: Found 1 model, 624 macros
+[0m06:30:23.607026 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'dcc741e7-1d5b-4c88-aca6-6ec408ce9a86', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x12d7f24c0>]}
+[0m06:30:23.607500 [info ] [MainThread]: 
+[0m06:30:23.607656 [info ] [MainThread]: Concurrency: 4 threads (target='dev')
+[0m06:30:23.607778 [info ] [MainThread]: 
+[0m06:30:23.608001 [debug] [MainThread]: Acquiring new bigquery connection 'master'
+[0m06:30:23.608427 [debug] [ThreadPool]: Acquiring new bigquery connection 'list_just-kaizen-ai'
+[0m06:30:23.608589 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m06:30:24.514205 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_just-kaizen-ai, now list_just-kaizen-ai_raw_intermediate)
+[0m06:30:24.514967 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m06:30:25.690325 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'dcc741e7-1d5b-4c88-aca6-6ec408ce9a86', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x12d7f24c0>]}
+[0m06:30:25.691537 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m06:30:25.766757 [debug] [Thread-1  ]: Began running node model.justkaizen_analytics.dim_calendar
+[0m06:30:25.767177 [info ] [Thread-1  ]: 1 of 1 START sql table model raw_intermediate.dim_calendar ..................... [RUN]
+[0m06:30:25.767444 [debug] [Thread-1  ]: Re-using an available connection from the pool (formerly list_just-kaizen-ai_raw_intermediate, now model.justkaizen_analytics.dim_calendar)
+[0m06:30:25.767623 [debug] [Thread-1  ]: Began compiling node model.justkaizen_analytics.dim_calendar
+[0m06:30:25.774306 [debug] [Thread-1  ]: Writing injected SQL for node "model.justkaizen_analytics.dim_calendar"
+[0m06:30:25.774921 [debug] [Thread-1  ]: Began executing node model.justkaizen_analytics.dim_calendar
+[0m06:30:25.797706 [debug] [Thread-1  ]: Writing runtime sql for node "model.justkaizen_analytics.dim_calendar"
+[0m06:30:25.798510 [debug] [Thread-1  ]: On model.justkaizen_analytics.dim_calendar: /* {"app": "dbt", "dbt_version": "1.11.0b3", "profile_name": "justkaizen", "target_name": "dev", "node_id": "model.justkaizen_analytics.dim_calendar"} */
+
+  
+    
+
+    create or replace table `just-kaizen-ai`.`raw_intermediate`.`dim_calendar`
+      
+    
+    
+
+    
+    OPTIONS()
+    as (
+      /*
+    Model:        dim_calendar
+    Layer:        Intermediate
+    Materialized: table
+    Grain:        One row per calendar day
+    Range:        2020-01-01 through 2026-12-31 (~2,557 rows)
+
+    Purpose:
+        Daily date spine. Anchors every month-grain model in the warehouse.
+        Reporting grids CROSS JOIN distinct report_months from this table
+        against dimension combos from int_employee_monthly_roster, which
+        guarantees a row in every trend line for every month — even months
+        with zero activity. TTM rolling windows in the marts read their
+        report_month sequence from this spine.
+
+    Sources:
+        None. Generated entirely via GENERATE_DATE_ARRAY so this model
+        has no upstream dependencies and can build as step 1.
+
+    Key business rules:
+        - report_quarter formatted as "YYYY Q#" (e.g., "2025 Q1") to match
+          the format carried through every domain reporting mart.
+        - is_quarter_end is TRUE only on the final calendar day of months
+          3, 6, 9, 12 — used by Tableau quarter-end flags.
+        - flag_latest_month marks the most recent complete calendar month
+          relative to CURRENT_DATE(). This is a self-contained proxy for
+          "MAX(report_month) with data" — chosen so dim_calendar has no
+          upstream dependencies per the build order. Once
+          int_employee_monthly_roster exists, this column can be refactored
+          to reference MAX(report_month) from the roster for precision.
+
+    Note:
+        Materialization (table) is set in dbt_project.yml as a per-model
+        override of the intermediate-layer default (view).
+*/
+
+with date_spine as (
+
+    select calendar_date
+    from unnest(
+        generate_date_array(date '2020-01-01', date '2026-12-31', interval 1 day)
+    ) as calendar_date
+
+),
+
+final as (
+
+    select
+        calendar_date,
+        date_trunc(calendar_date, month) as report_month,
+        concat(
+            cast(extract(year from calendar_date) as string),
+            ' Q',
+            cast(extract(quarter from calendar_date) as string)
+        ) as report_quarter,
+        extract(year from calendar_date) as report_year,
+        calendar_date = last_day(calendar_date, month) as is_month_end,
+        (
+            calendar_date = last_day(calendar_date, month)
+            and extract(month from calendar_date) in (3, 6, 9, 12)
+        ) as is_quarter_end,
+        date_trunc(calendar_date, month)
+            = date_sub(date_trunc(current_date(), month), interval 1 month)
+            as flag_latest_month
+    from date_spine
+
+)
+
+select * from final
+    );
+  
+[0m06:30:25.798787 [debug] [Thread-1  ]: Opening a new connection, currently in state closed
+[0m06:30:26.743635 [debug] [Thread-1  ]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=just-kaizen-ai&j=bq:US:82b59109-7213-47b6-b6e4-518f8a155e87&page=queryresults
+[0m06:30:29.094224 [debug] [Thread-1  ]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'dcc741e7-1d5b-4c88-aca6-6ec408ce9a86', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x11f488580>]}
+[0m06:30:29.095036 [info ] [Thread-1  ]: 1 of 1 OK created sql table model raw_intermediate.dim_calendar ................ [[32mCREATE TABLE (2.6k rows, 0 processed)[0m in 3.32s]
+[0m06:30:29.095558 [debug] [Thread-1  ]: Finished running node model.justkaizen_analytics.dim_calendar
+[0m06:30:29.096684 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m06:30:29.157677 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m06:30:29.158010 [debug] [MainThread]: Connection 'model.justkaizen_analytics.dim_calendar' was properly closed.
+[0m06:30:29.158184 [info ] [MainThread]: 
+[0m06:30:29.158464 [info ] [MainThread]: Finished running 1 table model in 0 hours 0 minutes and 5.55 seconds (5.55s).
+[0m06:30:29.159003 [debug] [MainThread]: Command end result
+[0m06:30:29.177678 [debug] [MainThread]: Wrote artifact WritableManifest to /Users/keenanj/Documents/Claude_Code/people-analytics-data-infrastructure/target/manifest.json
+[0m06:30:29.178974 [debug] [MainThread]: Wrote artifact SemanticManifest to /Users/keenanj/Documents/Claude_Code/people-analytics-data-infrastructure/target/semantic_manifest.json
+[0m06:30:29.182571 [debug] [MainThread]: Wrote artifact RunExecutionResult to /Users/keenanj/Documents/Claude_Code/people-analytics-data-infrastructure/target/run_results.json
+[0m06:30:29.182695 [info ] [MainThread]: 
+[0m06:30:29.182879 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m06:30:29.183007 [info ] [MainThread]: 
+[0m06:30:29.183170 [info ] [MainThread]: Done. PASS=1 WARN=0 ERROR=0 SKIP=0 NO-OP=0 TOTAL=1
+[0m06:30:29.185961 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": true, "command_wall_clock_time": 7.5663238, "process_in_blocks": "0", "process_kernel_time": 0.393549, "process_mem_max_rss": "367509504", "process_out_blocks": "0", "process_user_time": 3.045452}
+[0m06:30:29.186203 [debug] [MainThread]: Command `dbt run` succeeded at 06:30:29.186160 after 7.57 seconds
+[0m06:30:29.186413 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x104896880>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x104b19ac0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x12dda7f40>]}
+[0m06:30:29.186565 [debug] [MainThread]: Flushing usage events
+[0m06:30:30.108363 [debug] [MainThread]: An error was encountered while trying to flush usage events

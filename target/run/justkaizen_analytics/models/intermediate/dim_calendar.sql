@@ -1,4 +1,16 @@
-/*
+
+  
+    
+
+    create or replace table `just-kaizen-ai`.`raw_intermediate`.`dim_calendar`
+      
+    
+    
+
+    
+    OPTIONS()
+    as (
+      /*
     Model:        dim_calendar
     Layer:        Intermediate
     Materialized: table
@@ -67,3 +79,5 @@ final as (
 )
 
 select * from final
+    );
+  

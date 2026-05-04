@@ -1,0 +1,44 @@
+name: 'justkaizen_analytics'
+version: '1.0.0'
+config-version: 2
+
+profile: 'justkaizen'
+
+model-paths: ["models"]
+seed-paths: ["seeds"]
+macro-paths: ["macros"]
+test-paths: ["tests"]
+snapshot-paths: ["snapshots"]
+analysis-paths: ["analyses"]
+
+clean-targets:
+  - "target"
+  - "dbt_packages"
+
+# Materialization defaults per layer.
+# Schemas are appended to the profile's default dataset, e.g.,
+# profile dataset 'raw' + '+schema: staging' = BigQuery dataset 'raw_staging'.
+# This matches the dataset layout in CLAUDE.md:
+#   raw_raw, raw_staging, raw_intermediate, raw_marts.
+models:
+  justkaizen_analytics:
+    staging:
+      +materialized: view
+      +schema: staging
+    intermediate:
+      +materialized: view
+      +schema: intermediate
+      # dim_calendar is the only intermediate model materialized as a
+      # table — it's queried as a date spine by every reporting grid
+      # and benefits from being persisted rather than re-derived as a view.
+      dim_calendar:
+        +materialized: table
+    marts:
+      +materialized: table
+      +schema: marts
+
+# Seed config is set up in advance of the data rescale phase; no CSVs
+# exist in seeds/ yet. When generated, they will land in dataset raw_raw.
+seeds:
+  justkaizen_analytics:
+    +schema: raw

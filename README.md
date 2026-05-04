@@ -2,7 +2,7 @@
 
 A production-grade People Analytics data warehouse built for **JustKaizen AI**, a pre-IPO enterprise AI company (1,200 active employees, ~1,900 total, remote-first). The project demonstrates end-to-end data infrastructure: source system integration, dbt transformation layers, BigQuery warehouse, automated data delivery, and Tableau-ready reporting marts.
 
-This infrastructure supports the workforce analytics dashboard and insights published in the companion repository: **[JustKaizen Workforce Analytics →](https://github.com/keenanj-analytics/justkaizen-workforce-analytics)**
+This infrastructure supports the workforce analytics dashboard and insights published in the companion repository: **[JustKaizen Workforce Analytics →](https://github.com/keenanj-analytics/justkaizen-workforce-analytics)** Coming Soon!
 
 ## Tools & Stack
 
@@ -216,8 +216,6 @@ The Apps Script creates one tab per mart table, with formatted headers, auto-siz
 
 - **Daily employee snapshots** with SCD Type 2 change tracking (slowly changing dimensions). The current architecture uses end-of-month snapshots. Daily snapshots would capture mid-month transfers, promotions, and manager changes with exact effective dates.
 - **Incremental models** for the roster and reporting marts. Currently, dbt rebuilds every model from scratch on each run. Incremental materialization would append only new months, reducing build time from minutes to seconds.
-- **Exit survey LLM classification** using the GPT API to tag departing employee survey responses against a 20-theme taxonomy (Career Growth, Compensation, Manager Relationship, etc.). The architecture for this exists in a production system I built previously using Google Sheets + Apps Script.
-- **Attrition forecasting** using logistic regression on the roster dimensions (tenure, compa-ratio, performance trend, manager change recency) to predict 90-day attrition probability per employee.
 
 ---
 
@@ -264,4 +262,4 @@ people-analytics-data-infrastructure/
 
 Built by **[Keenan Artis](https://www.linkedin.com/in/keenanjeffreyartis/)**, a data analyst with 7+ years across forensics analytics (PwC) and people analytics. This architecture is modeled after a production People Analytics infrastructure I built from scratch as the first analytics hire at a ~950-person tech company, adapted for dbt and BigQuery. dbt models were built using Claude Code as an AI-assisted development tool. Architectural decisions, business logic definitions, data validation criteria, and all analytical frameworks were designed by the author prior to code generation.
 
-**[View the Workforce Analytics Dashboard →](https://github.com/keenanj-analytics/justkaizen-workforce-analytics)**
+**[View the Workforce Analytics Dashboard →](https://github.com/keenanj-analytics/justkaizen-workforce-analytics)** Coming Soon!

@@ -37,8 +37,9 @@ renamed as (
         Manager_Email                                                       as manager_id,
         Manage_Name                                                         as manager_name,
 
-        -- Snapshot
-        Report_Date                                                         as report_date,
+        -- Snapshot (string -> DATE so downstream ORDER BY and date
+        -- arithmetic work chronologically, not alphabetically)
+        safe.parse_date('%m/%d/%Y', cast(Report_Date as string))            as report_date,
         Employment_Status                                                   as employment_status,
 
         -- Names

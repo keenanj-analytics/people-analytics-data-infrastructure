@@ -25,6 +25,12 @@
         - offer_accepted: outcome = 'Hired' AND offer_accept_date IS NOT NULL
         - time_to_fill_days: start_date - requisition_fill_start_date
         - time_to_hire_days: start_date - application_date
+
+    Date casting:
+        All date columns arrive from the CSV seed as STRING in MM/DD/YYYY
+        format. SAFE.PARSE_DATE wraps every date field so downstream models
+        (the roster, recruiting mart) receive proper DATE types and
+        DATE_DIFF works without inline re-parsing.
 */
 
 with source as (
@@ -55,7 +61,8 @@ renamed as (
         -- employee_id only meaningful for hired candidates
         case when s.Outcome = 'Hired' then e.employee_id end                as employee_id,
 
-        s.Requisition_Fill_Start_Date                                       as requisition_fill_start_date,
+        safe.parse_date('%m/%d/%Y', cast(s.Requisition_Fill_Start_Date as string))
+                                                                            as requisition_fill_start_date,
         s.Outcome                                                           as outcome,
         s.Job                                                               as job_title,
         s.Job_Status                                                        as job_status,
@@ -69,19 +76,32 @@ renamed as (
         s.Archive_Reason                                                    as archive_reason,
         s.Offer_Decline_Category                                            as offer_decline_category,
 
-        s.Candidate_Application_Date                                        as application_date,
-        s.Candidate_Stage_1_Interview_Date                                  as stage_1_interview_date,
-        s.Candidate_Stage_2_Interview_Date                                  as stage_2_interview_date,
-        s.Candidate_Offer_Stage_Entered_Date                                as offer_extended_date,
-        s.Candidate_Offer_Accept_Date                                       as offer_accept_date,
-        s.Candidate_Start_Date                                              as start_date,
+        safe.parse_date('%m/%d/%Y', cast(s.Candidate_Application_Date as string))
+                                                                            as application_date,
+        safe.parse_date('%m/%d/%Y', cast(s.Candidate_Stage_1_Interview_Date as string))
+                                                                            as stage_1_interview_date,
+        safe.parse_date('%m/%d/%Y', cast(s.Candidate_Stage_2_Interview_Date as string))
+                                                                            as stage_2_interview_date,
+        safe.parse_date('%m/%d/%Y', cast(s.Candidate_Offer_Stage_Entered_Date as string))
+                                                                            as offer_extended_date,
+        safe.parse_date('%m/%d/%Y', cast(s.Candidate_Offer_Accept_Date as string))
+                                                                            as offer_accept_date,
+        safe.parse_date('%m/%d/%Y', cast(s.Candidate_Start_Date as string))
+                                                                            as start_date,
 
-        -- Derived flags & durations
+        -- Derived flags & durations (parse dates inline so DATE_DIFF
+        -- receives DATE arguments regardless of seed casting).
         (s.Outcome = 'Hired' and s.Candidate_Offer_Accept_Date is not null) as offer_accepted,
-        date_diff(s.Candidate_Start_Date, s.Requisition_Fill_Start_Date, day)
-                                                                            as time_to_fill_days,
-        date_diff(s.Candidate_Start_Date, s.Candidate_Application_Date, day)
-                                                                            as time_to_hire_days
+        date_diff(
+            safe.parse_date('%m/%d/%Y', cast(s.Candidate_Start_Date as string)),
+            safe.parse_date('%m/%d/%Y', cast(s.Requisition_Fill_Start_Date as string)),
+            day
+        )                                                                   as time_to_fill_days,
+        date_diff(
+            safe.parse_date('%m/%d/%Y', cast(s.Candidate_Start_Date as string)),
+            safe.parse_date('%m/%d/%Y', cast(s.Candidate_Application_Date as string)),
+            day
+        )                                                                   as time_to_hire_days
 
     from source as s
     left join employees_for_link as e

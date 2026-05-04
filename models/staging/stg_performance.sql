@@ -14,16 +14,18 @@
         Response_Type = 'manager' AND Question = 'Performance Category'
         — drops self reviews, peer reviews, and free-text question rows.
 
-    Rating inversion (per data dictionary):
-        Source 1 ("Truly Outstanding")           -> 5 ("Significantly Exceeds Expectations")
-        Source 2 ("Frequently Exceeds")          -> 4 ("Exceeds Expectations")
-        Source 3 ("Strong Contributor")          -> 3 ("Meets Expectations")
-        Source 4 ("Does Not Meet Expectations")  -> 1 ("Does Not Meet Expectations")
+    Rating inversion (per data dictionary, plus JustKaizen's source-5
+    extension for "Partially Meets"):
+        Source 1 ("Truly Outstanding")             -> 5 ("Significantly Exceeds Expectations")
+        Source 2 ("Frequently Exceeds")            -> 4 ("Exceeds Expectations")
+        Source 3 ("Strong Contributor")            -> 3 ("Meets Expectations")
+        Source 4 ("Does Not Meet Expectations")    -> 1 ("Does Not Meet Expectations")
+        Source 5 ("Partially Meets Expectations")  -> 2 ("Partially Meets Expectations")
 
     Notes:
-        - Lattice has no "Partially Meets" (target = 2). The synthetic
-          generator may emit it; extend the CASE blocks below once the
-          source value is fixed during the rescale phase.
+        - Lattice's native scale is 1-4. Source 5 is a JustKaizen extension
+          emitted by the synthetic generator for the "Partially Meets"
+          target rating, which doesn't exist in real Lattice exports.
         - Calibrated_Score is intentionally dropped; the warehouse uses
           the raw Score per the spec.
 */
@@ -52,12 +54,14 @@ renamed as (
         Reviewer_Name                                                       as reviewer_name,
         Reviewer_email                                                      as reviewer_email,
 
-        -- Inverted numeric rating (source 1=best -> target 5=best)
+        -- Inverted numeric rating (source 1=best -> target 5=best;
+        -- source 5 is the JustKaizen "Partially Meets" extension).
         case safe_cast(Score as int64)
             when 1 then 5
             when 2 then 4
             when 3 then 3
             when 4 then 1
+            when 5 then 2
         end                                                                 as overall_rating_numeric,
 
         -- Cleaned target description
@@ -66,6 +70,7 @@ renamed as (
             when '2 - Frequently Exceeds Expectations'    then 'Exceeds Expectations'
             when '3 - Strong Contributor'                 then 'Meets Expectations'
             when '4 - Does Not Meet Expectations'         then 'Does Not Meet Expectations'
+            when '5 - Partially Meets Expectations'       then 'Partially Meets Expectations'
         end                                                                 as overall_rating,
 
         Response_Text                                                       as response_text

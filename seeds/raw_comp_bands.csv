@@ -1,0 +1,524 @@
+Title,Department,Job_Family,Job_Code,Level,Zone_A_Min_Salary,Zone_A_Mid_Salary,Zone_A_Max_Salary,Zone_B_Min_Salary,Zone_B_Mid_Salary,Zone_B_Max_Salary
+Associate Software Engineer,Engineering,Platform,JK0001,P1,67100,79300,91500,63745,75335,86925
+Software Engineer,Engineering,Platform,JK0002,P2,87840,103700,119560,83448,98515,113582
+Senior Software Engineer,Engineering,Platform,JK0003,P3,115900,140300,164700,110105,133285,156465
+Staff Software Engineer,Engineering,Platform,JK0004,P4,152500,183000,213500,144875,173850,202825
+Principal Software Engineer,Engineering,Platform,JK0005,P5,201300,237900,274500,191235,226005,260775
+Distinguished Software Engineer,Engineering,Platform,JK0006,P6,244000,292800,341600,231800,278160,324520
+Platform Manager,Engineering,Platform,JK0007,M1,134200,164700,195200,127490,156465,185440
+Senior Platform Manager,Engineering,Platform,JK0008,M2,170800,207400,244000,162260,197030,231800
+"Director, Platform",Engineering,Platform,JK0009,M3,213500,256200,298900,202825,243390,283955
+"Senior Director, Platform",Engineering,Platform,JK0010,M4,256200,317200,378200,243390,301340,359290
+"VP, Platform",Engineering,Platform,JK0011,E1,317200,402600,488000,301340,382470,463600
+"SVP, Engineering",Engineering,Platform,JK0012,E2,378200,475800,573400,359290,452010,544730
+Chief Engineering Officer (E3),Engineering,Platform,JK0013,E3,427000,524600,622200,405650,498370,591090
+Chief Engineering Officer,Engineering,Platform,JK0014,E4,463600,573400,683200,440420,544730,649040
+Associate AI/ML Engineer,Engineering,AI/ML,JK0015,P1,67100,79300,91500,63745,75335,86925
+AI/ML Engineer,Engineering,AI/ML,JK0016,P2,87840,103700,119560,83448,98515,113582
+Senior AI/ML Engineer,Engineering,AI/ML,JK0017,P3,115900,140300,164700,110105,133285,156465
+Staff AI/ML Engineer,Engineering,AI/ML,JK0018,P4,152500,183000,213500,144875,173850,202825
+Principal AI/ML Engineer,Engineering,AI/ML,JK0019,P5,201300,237900,274500,191235,226005,260775
+Distinguished AI/ML Engineer,Engineering,AI/ML,JK0020,P6,244000,292800,341600,231800,278160,324520
+AI/ML Manager,Engineering,AI/ML,JK0021,M1,134200,164700,195200,127490,156465,185440
+Senior AI/ML Manager,Engineering,AI/ML,JK0022,M2,170800,207400,244000,162260,197030,231800
+"Director, AI/ML",Engineering,AI/ML,JK0023,M3,213500,256200,298900,202825,243390,283955
+"Senior Director, AI/ML",Engineering,AI/ML,JK0024,M4,256200,317200,378200,243390,301340,359290
+"VP, AI/ML",Engineering,AI/ML,JK0025,E1,317200,402600,488000,301340,382470,463600
+Associate Infrastructure Engineer,Engineering,Infrastructure,JK0026,P1,67100,79300,91500,63745,75335,86925
+Infrastructure Engineer,Engineering,Infrastructure,JK0027,P2,87840,103700,119560,83448,98515,113582
+Senior Infrastructure Engineer,Engineering,Infrastructure,JK0028,P3,115900,140300,164700,110105,133285,156465
+Staff Infrastructure Engineer,Engineering,Infrastructure,JK0029,P4,152500,183000,213500,144875,173850,202825
+Principal Infrastructure Engineer,Engineering,Infrastructure,JK0030,P5,201300,237900,274500,191235,226005,260775
+Distinguished Infrastructure Engineer,Engineering,Infrastructure,JK0031,P6,244000,292800,341600,231800,278160,324520
+Infrastructure Manager,Engineering,Infrastructure,JK0032,M1,134200,164700,195200,127490,156465,185440
+Senior Infrastructure Manager,Engineering,Infrastructure,JK0033,M2,170800,207400,244000,162260,197030,231800
+"Director, Infrastructure",Engineering,Infrastructure,JK0034,M3,213500,256200,298900,202825,243390,283955
+"Senior Director, Infrastructure",Engineering,Infrastructure,JK0035,M4,256200,317200,378200,243390,301340,359290
+"VP, Infrastructure",Engineering,Infrastructure,JK0036,E1,317200,402600,488000,301340,382470,463600
+Associate Data Engineer,Engineering,Data Engineering,JK0037,P1,67100,79300,91500,63745,75335,86925
+Data Engineer,Engineering,Data Engineering,JK0038,P2,87840,103700,119560,83448,98515,113582
+Senior Data Engineer,Engineering,Data Engineering,JK0039,P3,115900,140300,164700,110105,133285,156465
+Staff Data Engineer,Engineering,Data Engineering,JK0040,P4,152500,183000,213500,144875,173850,202825
+Principal Data Engineer,Engineering,Data Engineering,JK0041,P5,201300,237900,274500,191235,226005,260775
+Distinguished Data Engineer,Engineering,Data Engineering,JK0042,P6,244000,292800,341600,231800,278160,324520
+Data Engineering Manager,Engineering,Data Engineering,JK0043,M1,134200,164700,195200,127490,156465,185440
+Senior Data Engineering Manager,Engineering,Data Engineering,JK0044,M2,170800,207400,244000,162260,197030,231800
+"Director, Data Engineering",Engineering,Data Engineering,JK0045,M3,213500,256200,298900,202825,243390,283955
+"Senior Director, Data Engineering",Engineering,Data Engineering,JK0046,M4,256200,317200,378200,243390,301340,359290
+"VP, Data Engineering",Engineering,Data Engineering,JK0047,E1,317200,402600,488000,301340,382470,463600
+Associate Security Engineer,Engineering,Security,JK0048,P1,67100,79300,91500,63745,75335,86925
+Security Engineer,Engineering,Security,JK0049,P2,87840,103700,119560,83448,98515,113582
+Senior Security Engineer,Engineering,Security,JK0050,P3,115900,140300,164700,110105,133285,156465
+Staff Security Engineer,Engineering,Security,JK0051,P4,152500,183000,213500,144875,173850,202825
+Principal Security Engineer,Engineering,Security,JK0052,P5,201300,237900,274500,191235,226005,260775
+Distinguished Security Engineer,Engineering,Security,JK0053,P6,244000,292800,341600,231800,278160,324520
+Security Manager,Engineering,Security,JK0054,M1,134200,164700,195200,127490,156465,185440
+Senior Security Manager,Engineering,Security,JK0055,M2,170800,207400,244000,162260,197030,231800
+"Director, Security",Engineering,Security,JK0056,M3,213500,256200,298900,202825,243390,283955
+"Senior Director, Security",Engineering,Security,JK0057,M4,256200,317200,378200,243390,301340,359290
+"VP, Security",Engineering,Security,JK0058,E1,317200,402600,488000,301340,382470,463600
+Associate QA Engineer,Engineering,QA,JK0059,P1,67100,79300,91500,63745,75335,86925
+QA Engineer,Engineering,QA,JK0060,P2,87840,103700,119560,83448,98515,113582
+Senior QA Engineer,Engineering,QA,JK0061,P3,115900,140300,164700,110105,133285,156465
+Staff QA Engineer,Engineering,QA,JK0062,P4,152500,183000,213500,144875,173850,202825
+Principal QA Engineer,Engineering,QA,JK0063,P5,201300,237900,274500,191235,226005,260775
+Distinguished QA Engineer,Engineering,QA,JK0064,P6,244000,292800,341600,231800,278160,324520
+QA Manager,Engineering,QA,JK0065,M1,134200,164700,195200,127490,156465,185440
+Senior QA Manager,Engineering,QA,JK0066,M2,170800,207400,244000,162260,197030,231800
+"Director, QA",Engineering,QA,JK0067,M3,213500,256200,298900,202825,243390,283955
+"Senior Director, QA",Engineering,QA,JK0068,M4,256200,317200,378200,243390,301340,359290
+"VP, QA",Engineering,QA,JK0069,E1,317200,402600,488000,301340,382470,463600
+Associate DevEx Engineer,Engineering,Developer Experience,JK0070,P1,67100,79300,91500,63745,75335,86925
+DevEx Engineer,Engineering,Developer Experience,JK0071,P2,87840,103700,119560,83448,98515,113582
+Senior DevEx Engineer,Engineering,Developer Experience,JK0072,P3,115900,140300,164700,110105,133285,156465
+Staff DevEx Engineer,Engineering,Developer Experience,JK0073,P4,152500,183000,213500,144875,173850,202825
+Principal DevEx Engineer,Engineering,Developer Experience,JK0074,P5,201300,237900,274500,191235,226005,260775
+Distinguished DevEx Engineer,Engineering,Developer Experience,JK0075,P6,244000,292800,341600,231800,278160,324520
+Developer Experience Manager,Engineering,Developer Experience,JK0076,M1,134200,164700,195200,127490,156465,185440
+Senior Developer Experience Manager,Engineering,Developer Experience,JK0077,M2,170800,207400,244000,162260,197030,231800
+"Director, Developer Experience",Engineering,Developer Experience,JK0078,M3,213500,256200,298900,202825,243390,283955
+"Senior Director, Developer Experience",Engineering,Developer Experience,JK0079,M4,256200,317200,378200,243390,301340,359290
+"VP, Developer Experience",Engineering,Developer Experience,JK0080,E1,317200,402600,488000,301340,382470,463600
+Associate Site Reliability Engineer,Engineering,DevOps & SRE,JK0081,P1,67100,79300,91500,63745,75335,86925
+Site Reliability Engineer,Engineering,DevOps & SRE,JK0082,P2,87840,103700,119560,83448,98515,113582
+Senior Site Reliability Engineer,Engineering,DevOps & SRE,JK0083,P3,115900,140300,164700,110105,133285,156465
+Staff Site Reliability Engineer,Engineering,DevOps & SRE,JK0084,P4,152500,183000,213500,144875,173850,202825
+Principal Site Reliability Engineer,Engineering,DevOps & SRE,JK0085,P5,201300,237900,274500,191235,226005,260775
+Distinguished Site Reliability Engineer,Engineering,DevOps & SRE,JK0086,P6,244000,292800,341600,231800,278160,324520
+DevOps & SRE Manager,Engineering,DevOps & SRE,JK0087,M1,134200,164700,195200,127490,156465,185440
+Senior DevOps & SRE Manager,Engineering,DevOps & SRE,JK0088,M2,170800,207400,244000,162260,197030,231800
+"Director, DevOps & SRE",Engineering,DevOps & SRE,JK0089,M3,213500,256200,298900,202825,243390,283955
+"Senior Director, DevOps & SRE",Engineering,DevOps & SRE,JK0090,M4,256200,317200,378200,243390,301340,359290
+"VP, DevOps & SRE",Engineering,DevOps & SRE,JK0091,E1,317200,402600,488000,301340,382470,463600
+Associate Sales Development Representative,Sales,SDR,JK0092,P1,55000,65000,75000,52250,61750,71250
+Sales Development Representative,Sales,SDR,JK0093,P2,72000,85000,98000,68400,80750,93100
+Senior Sales Development Representative,Sales,SDR,JK0094,P3,95000,115000,135000,90250,109250,128250
+Staff Sales Development Representative,Sales,SDR,JK0095,P4,125000,150000,175000,118750,142500,166250
+Principal Sales Development Representative,Sales,SDR,JK0096,P5,165000,195000,225000,156750,185250,213750
+Distinguished Sales Development Representative,Sales,SDR,JK0097,P6,200000,240000,280000,190000,228000,266000
+SDR Manager,Sales,SDR,JK0098,M1,110000,135000,160000,104500,128250,152000
+Senior SDR Manager,Sales,SDR,JK0099,M2,140000,170000,200000,133000,161500,190000
+"Director, SDR",Sales,SDR,JK0100,M3,175000,210000,245000,166250,199500,232750
+"Senior Director, SDR",Sales,SDR,JK0101,M4,210000,260000,310000,199500,247000,294500
+"VP, SDR",Sales,SDR,JK0102,E1,260000,330000,400000,247000,313500,380000
+"SVP, Sales",Sales,SDR,JK0103,E2,310000,390000,470000,294500,370500,446500
+Chief Sales Officer (E3),Sales,SDR,JK0104,E3,350000,430000,510000,332500,408500,484500
+Chief Sales Officer,Sales,SDR,JK0105,E4,380000,470000,560000,361000,446500,532000
+Associate Account Executive,Sales,Account Executive,JK0106,P1,55000,65000,75000,52250,61750,71250
+Account Executive,Sales,Account Executive,JK0107,P2,72000,85000,98000,68400,80750,93100
+Senior Account Executive,Sales,Account Executive,JK0108,P3,95000,115000,135000,90250,109250,128250
+Staff Account Executive,Sales,Account Executive,JK0109,P4,125000,150000,175000,118750,142500,166250
+Principal Account Executive,Sales,Account Executive,JK0110,P5,165000,195000,225000,156750,185250,213750
+Distinguished Account Executive,Sales,Account Executive,JK0111,P6,200000,240000,280000,190000,228000,266000
+Account Executive Manager,Sales,Account Executive,JK0112,M1,110000,135000,160000,104500,128250,152000
+Senior Account Executive Manager,Sales,Account Executive,JK0113,M2,140000,170000,200000,133000,161500,190000
+"Director, Account Executive",Sales,Account Executive,JK0114,M3,175000,210000,245000,166250,199500,232750
+"Senior Director, Account Executive",Sales,Account Executive,JK0115,M4,210000,260000,310000,199500,247000,294500
+"VP, Account Executive",Sales,Account Executive,JK0116,E1,260000,330000,400000,247000,313500,380000
+Associate Account Manager,Sales,Account Management,JK0117,P1,55000,65000,75000,52250,61750,71250
+Account Manager,Sales,Account Management,JK0118,P2,72000,85000,98000,68400,80750,93100
+Senior Account Manager,Sales,Account Management,JK0119,P3,95000,115000,135000,90250,109250,128250
+Staff Account Manager,Sales,Account Management,JK0120,P4,125000,150000,175000,118750,142500,166250
+Principal Account Manager,Sales,Account Management,JK0121,P5,165000,195000,225000,156750,185250,213750
+Distinguished Account Manager,Sales,Account Management,JK0122,P6,200000,240000,280000,190000,228000,266000
+Account Management Manager,Sales,Account Management,JK0123,M1,110000,135000,160000,104500,128250,152000
+Senior Account Management Manager,Sales,Account Management,JK0124,M2,140000,170000,200000,133000,161500,190000
+"Director, Account Management",Sales,Account Management,JK0125,M3,175000,210000,245000,166250,199500,232750
+"Senior Director, Account Management",Sales,Account Management,JK0126,M4,210000,260000,310000,199500,247000,294500
+"VP, Account Management",Sales,Account Management,JK0127,E1,260000,330000,400000,247000,313500,380000
+Associate Sales Engineer,Sales,Sales Engineering,JK0128,P1,55000,65000,75000,52250,61750,71250
+Sales Engineer,Sales,Sales Engineering,JK0129,P2,72000,85000,98000,68400,80750,93100
+Senior Sales Engineer,Sales,Sales Engineering,JK0130,P3,95000,115000,135000,90250,109250,128250
+Staff Sales Engineer,Sales,Sales Engineering,JK0131,P4,125000,150000,175000,118750,142500,166250
+Principal Sales Engineer,Sales,Sales Engineering,JK0132,P5,165000,195000,225000,156750,185250,213750
+Distinguished Sales Engineer,Sales,Sales Engineering,JK0133,P6,200000,240000,280000,190000,228000,266000
+Sales Engineering Manager,Sales,Sales Engineering,JK0134,M1,110000,135000,160000,104500,128250,152000
+Senior Sales Engineering Manager,Sales,Sales Engineering,JK0135,M2,140000,170000,200000,133000,161500,190000
+"Director, Sales Engineering",Sales,Sales Engineering,JK0136,M3,175000,210000,245000,166250,199500,232750
+"Senior Director, Sales Engineering",Sales,Sales Engineering,JK0137,M4,210000,260000,310000,199500,247000,294500
+"VP, Sales Engineering",Sales,Sales Engineering,JK0138,E1,260000,330000,400000,247000,313500,380000
+Associate Enterprise Account Executive,Sales,Enterprise Sales,JK0139,P1,55000,65000,75000,52250,61750,71250
+Enterprise Account Executive,Sales,Enterprise Sales,JK0140,P2,72000,85000,98000,68400,80750,93100
+Senior Enterprise Account Executive,Sales,Enterprise Sales,JK0141,P3,95000,115000,135000,90250,109250,128250
+Staff Enterprise Account Executive,Sales,Enterprise Sales,JK0142,P4,125000,150000,175000,118750,142500,166250
+Principal Enterprise Account Executive,Sales,Enterprise Sales,JK0143,P5,165000,195000,225000,156750,185250,213750
+Distinguished Enterprise Account Executive,Sales,Enterprise Sales,JK0144,P6,200000,240000,280000,190000,228000,266000
+Enterprise Sales Manager,Sales,Enterprise Sales,JK0145,M1,110000,135000,160000,104500,128250,152000
+Senior Enterprise Sales Manager,Sales,Enterprise Sales,JK0146,M2,140000,170000,200000,133000,161500,190000
+"Director, Enterprise Sales",Sales,Enterprise Sales,JK0147,M3,175000,210000,245000,166250,199500,232750
+"Senior Director, Enterprise Sales",Sales,Enterprise Sales,JK0148,M4,210000,260000,310000,199500,247000,294500
+"VP, Enterprise Sales",Sales,Enterprise Sales,JK0149,E1,260000,330000,400000,247000,313500,380000
+Associate Revenue Operations Analyst,Sales,Revenue Operations,JK0150,P1,55000,65000,75000,52250,61750,71250
+Revenue Operations Analyst,Sales,Revenue Operations,JK0151,P2,72000,85000,98000,68400,80750,93100
+Senior Revenue Operations Analyst,Sales,Revenue Operations,JK0152,P3,95000,115000,135000,90250,109250,128250
+Staff Revenue Operations Analyst,Sales,Revenue Operations,JK0153,P4,125000,150000,175000,118750,142500,166250
+Principal Revenue Operations Analyst,Sales,Revenue Operations,JK0154,P5,165000,195000,225000,156750,185250,213750
+Distinguished Revenue Operations Analyst,Sales,Revenue Operations,JK0155,P6,200000,240000,280000,190000,228000,266000
+Revenue Operations Manager,Sales,Revenue Operations,JK0156,M1,110000,135000,160000,104500,128250,152000
+Senior Revenue Operations Manager,Sales,Revenue Operations,JK0157,M2,140000,170000,200000,133000,161500,190000
+"Director, Revenue Operations",Sales,Revenue Operations,JK0158,M3,175000,210000,245000,166250,199500,232750
+"Senior Director, Revenue Operations",Sales,Revenue Operations,JK0159,M4,210000,260000,310000,199500,247000,294500
+"VP, Revenue Operations",Sales,Revenue Operations,JK0160,E1,260000,330000,400000,247000,313500,380000
+Associate Customer Success Manager,Customer Success,CSM,JK0161,P1,50600,59800,69000,48070,56810,65550
+Customer Success Manager,Customer Success,CSM,JK0162,P2,66240,78200,90160,62928,74290,85652
+Senior Customer Success Manager,Customer Success,CSM,JK0163,P3,87400,105800,124200,83030,100510,117990
+Staff Customer Success Manager,Customer Success,CSM,JK0164,P4,115000,138000,161000,109250,131100,152950
+Principal Customer Success Manager,Customer Success,CSM,JK0165,P5,151800,179400,207000,144210,170430,196650
+Distinguished Customer Success Manager,Customer Success,CSM,JK0166,P6,184000,220800,257600,174800,209760,244720
+CSM Manager,Customer Success,CSM,JK0167,M1,101200,124200,147200,96140,117990,139840
+Senior CSM Manager,Customer Success,CSM,JK0168,M2,128800,156400,184000,122360,148580,174800
+"Director, CSM",Customer Success,CSM,JK0169,M3,161000,193200,225400,152950,183540,214130
+"Senior Director, CSM",Customer Success,CSM,JK0170,M4,193200,239200,285200,183540,227240,270940
+"VP, CSM",Customer Success,CSM,JK0171,E1,239200,303600,368000,227240,288420,349600
+"SVP, Customer Success",Customer Success,CSM,JK0172,E2,285200,358800,432400,270940,340860,410780
+Chief Customer Success Officer (E3),Customer Success,CSM,JK0173,E3,322000,395600,469200,305900,375820,445740
+Chief Customer Success Officer,Customer Success,CSM,JK0174,E4,349600,432400,515200,332120,410780,489440
+Associate Support Specialist,Customer Success,Support,JK0175,P1,50600,59800,69000,48070,56810,65550
+Support Specialist,Customer Success,Support,JK0176,P2,66240,78200,90160,62928,74290,85652
+Senior Support Specialist,Customer Success,Support,JK0177,P3,87400,105800,124200,83030,100510,117990
+Staff Support Specialist,Customer Success,Support,JK0178,P4,115000,138000,161000,109250,131100,152950
+Principal Support Specialist,Customer Success,Support,JK0179,P5,151800,179400,207000,144210,170430,196650
+Distinguished Support Specialist,Customer Success,Support,JK0180,P6,184000,220800,257600,174800,209760,244720
+Support Manager,Customer Success,Support,JK0181,M1,101200,124200,147200,96140,117990,139840
+Senior Support Manager,Customer Success,Support,JK0182,M2,128800,156400,184000,122360,148580,174800
+"Director, Support",Customer Success,Support,JK0183,M3,161000,193200,225400,152950,183540,214130
+"Senior Director, Support",Customer Success,Support,JK0184,M4,193200,239200,285200,183540,227240,270940
+"VP, Support",Customer Success,Support,JK0185,E1,239200,303600,368000,227240,288420,349600
+Associate Implementation Specialist,Customer Success,Implementation,JK0186,P1,50600,59800,69000,48070,56810,65550
+Implementation Specialist,Customer Success,Implementation,JK0187,P2,66240,78200,90160,62928,74290,85652
+Senior Implementation Specialist,Customer Success,Implementation,JK0188,P3,87400,105800,124200,83030,100510,117990
+Staff Implementation Specialist,Customer Success,Implementation,JK0189,P4,115000,138000,161000,109250,131100,152950
+Principal Implementation Specialist,Customer Success,Implementation,JK0190,P5,151800,179400,207000,144210,170430,196650
+Distinguished Implementation Specialist,Customer Success,Implementation,JK0191,P6,184000,220800,257600,174800,209760,244720
+Implementation Manager,Customer Success,Implementation,JK0192,M1,101200,124200,147200,96140,117990,139840
+Senior Implementation Manager,Customer Success,Implementation,JK0193,M2,128800,156400,184000,122360,148580,174800
+"Director, Implementation",Customer Success,Implementation,JK0194,M3,161000,193200,225400,152950,183540,214130
+"Senior Director, Implementation",Customer Success,Implementation,JK0195,M4,193200,239200,285200,183540,227240,270940
+"VP, Implementation",Customer Success,Implementation,JK0196,E1,239200,303600,368000,227240,288420,349600
+Associate Customer Education Specialist,Customer Success,Customer Education,JK0197,P1,50600,59800,69000,48070,56810,65550
+Customer Education Specialist,Customer Success,Customer Education,JK0198,P2,66240,78200,90160,62928,74290,85652
+Senior Customer Education Specialist,Customer Success,Customer Education,JK0199,P3,87400,105800,124200,83030,100510,117990
+Staff Customer Education Specialist,Customer Success,Customer Education,JK0200,P4,115000,138000,161000,109250,131100,152950
+Principal Customer Education Specialist,Customer Success,Customer Education,JK0201,P5,151800,179400,207000,144210,170430,196650
+Distinguished Customer Education Specialist,Customer Success,Customer Education,JK0202,P6,184000,220800,257600,174800,209760,244720
+Customer Education Manager,Customer Success,Customer Education,JK0203,M1,101200,124200,147200,96140,117990,139840
+Senior Customer Education Manager,Customer Success,Customer Education,JK0204,M2,128800,156400,184000,122360,148580,174800
+"Director, Customer Education",Customer Success,Customer Education,JK0205,M3,161000,193200,225400,152950,183540,214130
+"Senior Director, Customer Education",Customer Success,Customer Education,JK0206,M4,193200,239200,285200,183540,227240,270940
+"VP, Customer Education",Customer Success,Customer Education,JK0207,E1,239200,303600,368000,227240,288420,349600
+Associate Financial Analyst,G&A,Finance,JK0208,P1,48400,57200,66000,45980,54340,62700
+Financial Analyst,G&A,Finance,JK0209,P2,63360,74800,86240,60192,71060,81928
+Senior Financial Analyst,G&A,Finance,JK0210,P3,83600,101200,118800,79420,96140,112860
+Staff Financial Analyst,G&A,Finance,JK0211,P4,110000,132000,154000,104500,125400,146300
+Principal Financial Analyst,G&A,Finance,JK0212,P5,145200,171600,198000,137940,163020,188100
+Distinguished Financial Analyst,G&A,Finance,JK0213,P6,176000,211200,246400,167200,200640,234080
+Finance Manager,G&A,Finance,JK0214,M1,96800,118800,140800,91960,112860,133760
+Senior Finance Manager,G&A,Finance,JK0215,M2,123200,149600,176000,117040,142120,167200
+"Director, Finance",G&A,Finance,JK0216,M3,154000,184800,215600,146300,175560,204820
+"Senior Director, Finance",G&A,Finance,JK0217,M4,184800,228800,272800,175560,217360,259160
+"VP, Finance",G&A,Finance,JK0218,E1,228800,290400,352000,217360,275880,334400
+"SVP, G&A",G&A,Finance,JK0219,E2,272800,343200,413600,259160,326040,392920
+Chief G&A Officer (E3),G&A,Finance,JK0220,E3,308000,378400,448800,292600,359480,426360
+Chief G&A Officer,G&A,Finance,JK0221,E4,334400,413600,492800,317680,392920,468160
+Associate IT Specialist,G&A,IT,JK0222,P1,48400,57200,66000,45980,54340,62700
+IT Specialist,G&A,IT,JK0223,P2,63360,74800,86240,60192,71060,81928
+Senior IT Specialist,G&A,IT,JK0224,P3,83600,101200,118800,79420,96140,112860
+Staff IT Specialist,G&A,IT,JK0225,P4,110000,132000,154000,104500,125400,146300
+Principal IT Specialist,G&A,IT,JK0226,P5,145200,171600,198000,137940,163020,188100
+Distinguished IT Specialist,G&A,IT,JK0227,P6,176000,211200,246400,167200,200640,234080
+IT Manager,G&A,IT,JK0228,M1,96800,118800,140800,91960,112860,133760
+Senior IT Manager,G&A,IT,JK0229,M2,123200,149600,176000,117040,142120,167200
+"Director, IT",G&A,IT,JK0230,M3,154000,184800,215600,146300,175560,204820
+"Senior Director, IT",G&A,IT,JK0231,M4,184800,228800,272800,175560,217360,259160
+"VP, IT",G&A,IT,JK0232,E1,228800,290400,352000,217360,275880,334400
+Associate Legal Counsel,G&A,Legal,JK0233,P1,48400,57200,66000,45980,54340,62700
+Legal Counsel,G&A,Legal,JK0234,P2,63360,74800,86240,60192,71060,81928
+Senior Legal Counsel,G&A,Legal,JK0235,P3,83600,101200,118800,79420,96140,112860
+Staff Legal Counsel,G&A,Legal,JK0236,P4,110000,132000,154000,104500,125400,146300
+Principal Legal Counsel,G&A,Legal,JK0237,P5,145200,171600,198000,137940,163020,188100
+Distinguished Legal Counsel,G&A,Legal,JK0238,P6,176000,211200,246400,167200,200640,234080
+Legal Manager,G&A,Legal,JK0239,M1,96800,118800,140800,91960,112860,133760
+Senior Legal Manager,G&A,Legal,JK0240,M2,123200,149600,176000,117040,142120,167200
+"Director, Legal",G&A,Legal,JK0241,M3,154000,184800,215600,146300,175560,204820
+"Senior Director, Legal",G&A,Legal,JK0242,M4,184800,228800,272800,175560,217360,259160
+"VP, Legal",G&A,Legal,JK0243,E1,228800,290400,352000,217360,275880,334400
+Associate Business Operations Analyst,G&A,Business Operations,JK0244,P1,48400,57200,66000,45980,54340,62700
+Business Operations Analyst,G&A,Business Operations,JK0245,P2,63360,74800,86240,60192,71060,81928
+Senior Business Operations Analyst,G&A,Business Operations,JK0246,P3,83600,101200,118800,79420,96140,112860
+Staff Business Operations Analyst,G&A,Business Operations,JK0247,P4,110000,132000,154000,104500,125400,146300
+Principal Business Operations Analyst,G&A,Business Operations,JK0248,P5,145200,171600,198000,137940,163020,188100
+Distinguished Business Operations Analyst,G&A,Business Operations,JK0249,P6,176000,211200,246400,167200,200640,234080
+Business Operations Manager,G&A,Business Operations,JK0250,M1,96800,118800,140800,91960,112860,133760
+Senior Business Operations Manager,G&A,Business Operations,JK0251,M2,123200,149600,176000,117040,142120,167200
+"Director, Business Operations",G&A,Business Operations,JK0252,M3,154000,184800,215600,146300,175560,204820
+"Senior Director, Business Operations",G&A,Business Operations,JK0253,M4,184800,228800,272800,175560,217360,259160
+"VP, Business Operations",G&A,Business Operations,JK0254,E1,228800,290400,352000,217360,275880,334400
+Associate Facilities Coordinator,G&A,Facilities,JK0255,P1,48400,57200,66000,45980,54340,62700
+Facilities Coordinator,G&A,Facilities,JK0256,P2,63360,74800,86240,60192,71060,81928
+Senior Facilities Coordinator,G&A,Facilities,JK0257,P3,83600,101200,118800,79420,96140,112860
+Staff Facilities Coordinator,G&A,Facilities,JK0258,P4,110000,132000,154000,104500,125400,146300
+Principal Facilities Coordinator,G&A,Facilities,JK0259,P5,145200,171600,198000,137940,163020,188100
+Distinguished Facilities Coordinator,G&A,Facilities,JK0260,P6,176000,211200,246400,167200,200640,234080
+Facilities Manager,G&A,Facilities,JK0261,M1,96800,118800,140800,91960,112860,133760
+Senior Facilities Manager,G&A,Facilities,JK0262,M2,123200,149600,176000,117040,142120,167200
+"Director, Facilities",G&A,Facilities,JK0263,M3,154000,184800,215600,146300,175560,204820
+"Senior Director, Facilities",G&A,Facilities,JK0264,M4,184800,228800,272800,175560,217360,259160
+"VP, Facilities",G&A,Facilities,JK0265,E1,228800,290400,352000,217360,275880,334400
+Associate Accountant,G&A,Accounting,JK0266,P1,48400,57200,66000,45980,54340,62700
+Accountant,G&A,Accounting,JK0267,P2,63360,74800,86240,60192,71060,81928
+Senior Accountant,G&A,Accounting,JK0268,P3,83600,101200,118800,79420,96140,112860
+Staff Accountant,G&A,Accounting,JK0269,P4,110000,132000,154000,104500,125400,146300
+Principal Accountant,G&A,Accounting,JK0270,P5,145200,171600,198000,137940,163020,188100
+Distinguished Accountant,G&A,Accounting,JK0271,P6,176000,211200,246400,167200,200640,234080
+Accounting Manager,G&A,Accounting,JK0272,M1,96800,118800,140800,91960,112860,133760
+Senior Accounting Manager,G&A,Accounting,JK0273,M2,123200,149600,176000,117040,142120,167200
+"Director, Accounting",G&A,Accounting,JK0274,M3,154000,184800,215600,146300,175560,204820
+"Senior Director, Accounting",G&A,Accounting,JK0275,M4,184800,228800,272800,175560,217360,259160
+"VP, Accounting",G&A,Accounting,JK0276,E1,228800,290400,352000,217360,275880,334400
+Associate Growth Marketing Specialist,Marketing,Growth / Demand Gen,JK0277,P1,52800,62400,72000,50160,59280,68400
+Growth Marketing Specialist,Marketing,Growth / Demand Gen,JK0278,P2,69120,81600,94080,65664,77520,89376
+Senior Growth Marketing Specialist,Marketing,Growth / Demand Gen,JK0279,P3,91200,110400,129600,86640,104880,123120
+Staff Growth Marketing Specialist,Marketing,Growth / Demand Gen,JK0280,P4,120000,144000,168000,114000,136800,159600
+Principal Growth Marketing Specialist,Marketing,Growth / Demand Gen,JK0281,P5,158400,187200,216000,150480,177840,205200
+Distinguished Growth Marketing Specialist,Marketing,Growth / Demand Gen,JK0282,P6,192000,230400,268800,182400,218880,255360
+Growth / Demand Gen Manager,Marketing,Growth / Demand Gen,JK0283,M1,105600,129600,153600,100320,123120,145920
+Senior Growth / Demand Gen Manager,Marketing,Growth / Demand Gen,JK0284,M2,134400,163200,192000,127680,155040,182400
+"Director, Growth / Demand Gen",Marketing,Growth / Demand Gen,JK0285,M3,168000,201600,235200,159600,191520,223440
+"Senior Director, Growth / Demand Gen",Marketing,Growth / Demand Gen,JK0286,M4,201600,249600,297600,191520,237120,282720
+"VP, Growth / Demand Gen",Marketing,Growth / Demand Gen,JK0287,E1,249600,316800,384000,237120,300960,364800
+"SVP, Marketing",Marketing,Growth / Demand Gen,JK0288,E2,297600,374400,451200,282720,355680,428640
+Chief Marketing Officer (E3),Marketing,Growth / Demand Gen,JK0289,E3,336000,412800,489600,319200,392160,465120
+Chief Marketing Officer,Marketing,Growth / Demand Gen,JK0290,E4,364800,451200,537600,346560,428640,510720
+Associate Content Marketing Specialist,Marketing,Content,JK0291,P1,52800,62400,72000,50160,59280,68400
+Content Marketing Specialist,Marketing,Content,JK0292,P2,69120,81600,94080,65664,77520,89376
+Senior Content Marketing Specialist,Marketing,Content,JK0293,P3,91200,110400,129600,86640,104880,123120
+Staff Content Marketing Specialist,Marketing,Content,JK0294,P4,120000,144000,168000,114000,136800,159600
+Principal Content Marketing Specialist,Marketing,Content,JK0295,P5,158400,187200,216000,150480,177840,205200
+Distinguished Content Marketing Specialist,Marketing,Content,JK0296,P6,192000,230400,268800,182400,218880,255360
+Content Manager,Marketing,Content,JK0297,M1,105600,129600,153600,100320,123120,145920
+Senior Content Manager,Marketing,Content,JK0298,M2,134400,163200,192000,127680,155040,182400
+"Director, Content",Marketing,Content,JK0299,M3,168000,201600,235200,159600,191520,223440
+"Senior Director, Content",Marketing,Content,JK0300,M4,201600,249600,297600,191520,237120,282720
+"VP, Content",Marketing,Content,JK0301,E1,249600,316800,384000,237120,300960,364800
+Associate Product Marketing Specialist,Marketing,Product Marketing,JK0302,P1,52800,62400,72000,50160,59280,68400
+Product Marketing Specialist,Marketing,Product Marketing,JK0303,P2,69120,81600,94080,65664,77520,89376
+Senior Product Marketing Specialist,Marketing,Product Marketing,JK0304,P3,91200,110400,129600,86640,104880,123120
+Staff Product Marketing Specialist,Marketing,Product Marketing,JK0305,P4,120000,144000,168000,114000,136800,159600
+Principal Product Marketing Specialist,Marketing,Product Marketing,JK0306,P5,158400,187200,216000,150480,177840,205200
+Distinguished Product Marketing Specialist,Marketing,Product Marketing,JK0307,P6,192000,230400,268800,182400,218880,255360
+Product Marketing Manager,Marketing,Product Marketing,JK0308,M1,105600,129600,153600,100320,123120,145920
+Senior Product Marketing Manager,Marketing,Product Marketing,JK0309,M2,134400,163200,192000,127680,155040,182400
+"Director, Product Marketing",Marketing,Product Marketing,JK0310,M3,168000,201600,235200,159600,191520,223440
+"Senior Director, Product Marketing",Marketing,Product Marketing,JK0311,M4,201600,249600,297600,191520,237120,282720
+"VP, Product Marketing",Marketing,Product Marketing,JK0312,E1,249600,316800,384000,237120,300960,364800
+Associate Brand Designer,Marketing,Brand & Creative,JK0313,P1,52800,62400,72000,50160,59280,68400
+Brand Designer,Marketing,Brand & Creative,JK0314,P2,69120,81600,94080,65664,77520,89376
+Senior Brand Designer,Marketing,Brand & Creative,JK0315,P3,91200,110400,129600,86640,104880,123120
+Staff Brand Designer,Marketing,Brand & Creative,JK0316,P4,120000,144000,168000,114000,136800,159600
+Principal Brand Designer,Marketing,Brand & Creative,JK0317,P5,158400,187200,216000,150480,177840,205200
+Distinguished Brand Designer,Marketing,Brand & Creative,JK0318,P6,192000,230400,268800,182400,218880,255360
+Brand & Creative Manager,Marketing,Brand & Creative,JK0319,M1,105600,129600,153600,100320,123120,145920
+Senior Brand & Creative Manager,Marketing,Brand & Creative,JK0320,M2,134400,163200,192000,127680,155040,182400
+"Director, Brand & Creative",Marketing,Brand & Creative,JK0321,M3,168000,201600,235200,159600,191520,223440
+"Senior Director, Brand & Creative",Marketing,Brand & Creative,JK0322,M4,201600,249600,297600,191520,237120,282720
+"VP, Brand & Creative",Marketing,Brand & Creative,JK0323,E1,249600,316800,384000,237120,300960,364800
+Associate Events Coordinator,Marketing,Events & Comms,JK0324,P1,52800,62400,72000,50160,59280,68400
+Events Coordinator,Marketing,Events & Comms,JK0325,P2,69120,81600,94080,65664,77520,89376
+Senior Events Coordinator,Marketing,Events & Comms,JK0326,P3,91200,110400,129600,86640,104880,123120
+Staff Events Coordinator,Marketing,Events & Comms,JK0327,P4,120000,144000,168000,114000,136800,159600
+Principal Events Coordinator,Marketing,Events & Comms,JK0328,P5,158400,187200,216000,150480,177840,205200
+Distinguished Events Coordinator,Marketing,Events & Comms,JK0329,P6,192000,230400,268800,182400,218880,255360
+Events & Comms Manager,Marketing,Events & Comms,JK0330,M1,105600,129600,153600,100320,123120,145920
+Senior Events & Comms Manager,Marketing,Events & Comms,JK0331,M2,134400,163200,192000,127680,155040,182400
+"Director, Events & Comms",Marketing,Events & Comms,JK0332,M3,168000,201600,235200,159600,191520,223440
+"Senior Director, Events & Comms",Marketing,Events & Comms,JK0333,M4,201600,249600,297600,191520,237120,282720
+"VP, Events & Comms",Marketing,Events & Comms,JK0334,E1,249600,316800,384000,237120,300960,364800
+Associate Marketing Analyst,Marketing,Growth Analytics,JK0335,P1,52800,62400,72000,50160,59280,68400
+Marketing Analyst,Marketing,Growth Analytics,JK0336,P2,69120,81600,94080,65664,77520,89376
+Senior Marketing Analyst,Marketing,Growth Analytics,JK0337,P3,91200,110400,129600,86640,104880,123120
+Staff Marketing Analyst,Marketing,Growth Analytics,JK0338,P4,120000,144000,168000,114000,136800,159600
+Principal Marketing Analyst,Marketing,Growth Analytics,JK0339,P5,158400,187200,216000,150480,177840,205200
+Distinguished Marketing Analyst,Marketing,Growth Analytics,JK0340,P6,192000,230400,268800,182400,218880,255360
+Growth Analytics Manager,Marketing,Growth Analytics,JK0341,M1,105600,129600,153600,100320,123120,145920
+Senior Growth Analytics Manager,Marketing,Growth Analytics,JK0342,M2,134400,163200,192000,127680,155040,182400
+"Director, Growth Analytics",Marketing,Growth Analytics,JK0343,M3,168000,201600,235200,159600,191520,223440
+"Senior Director, Growth Analytics",Marketing,Growth Analytics,JK0344,M4,201600,249600,297600,191520,237120,282720
+"VP, Growth Analytics",Marketing,Growth Analytics,JK0345,E1,249600,316800,384000,237120,300960,364800
+Associate Product Manager,Product,Product Management,JK0346,P1,60500,71500,82500,57475,67925,78375
+Product Manager,Product,Product Management,JK0347,P2,79200,93500,107800,75240,88825,102410
+Senior Product Manager,Product,Product Management,JK0348,P3,104500,126500,148500,99275,120175,141075
+Staff Product Manager,Product,Product Management,JK0349,P4,137500,165000,192500,130625,156750,182875
+Principal Product Manager,Product,Product Management,JK0350,P5,181500,214500,247500,172425,203775,235125
+Distinguished Product Manager,Product,Product Management,JK0351,P6,220000,264000,308000,209000,250800,292600
+Product Management Manager,Product,Product Management,JK0352,M1,121000,148500,176000,114950,141075,167200
+Senior Product Management Manager,Product,Product Management,JK0353,M2,154000,187000,220000,146300,177650,209000
+"Director, Product Management",Product,Product Management,JK0354,M3,192500,231000,269500,182875,219450,256025
+"Senior Director, Product Management",Product,Product Management,JK0355,M4,231000,286000,341000,219450,271700,323950
+"VP, Product Management",Product,Product Management,JK0356,E1,286000,363000,440000,271700,344850,418000
+"SVP, Product",Product,Product Management,JK0357,E2,341000,429000,517000,323950,407550,491150
+Chief Product Officer (E3),Product,Product Management,JK0358,E3,385000,473000,561000,365750,449350,532950
+Chief Product Officer,Product,Product Management,JK0359,E4,418000,517000,616000,397100,491150,585200
+Associate Product Designer,Product,Design,JK0360,P1,60500,71500,82500,57475,67925,78375
+Product Designer,Product,Design,JK0361,P2,79200,93500,107800,75240,88825,102410
+Senior Product Designer,Product,Design,JK0362,P3,104500,126500,148500,99275,120175,141075
+Staff Product Designer,Product,Design,JK0363,P4,137500,165000,192500,130625,156750,182875
+Principal Product Designer,Product,Design,JK0364,P5,181500,214500,247500,172425,203775,235125
+Distinguished Product Designer,Product,Design,JK0365,P6,220000,264000,308000,209000,250800,292600
+Design Manager,Product,Design,JK0366,M1,121000,148500,176000,114950,141075,167200
+Senior Design Manager,Product,Design,JK0367,M2,154000,187000,220000,146300,177650,209000
+"Director, Design",Product,Design,JK0368,M3,192500,231000,269500,182875,219450,256025
+"Senior Director, Design",Product,Design,JK0369,M4,231000,286000,341000,219450,271700,323950
+"VP, Design",Product,Design,JK0370,E1,286000,363000,440000,271700,344850,418000
+Associate UX Researcher,Product,UX Research,JK0371,P1,60500,71500,82500,57475,67925,78375
+UX Researcher,Product,UX Research,JK0372,P2,79200,93500,107800,75240,88825,102410
+Senior UX Researcher,Product,UX Research,JK0373,P3,104500,126500,148500,99275,120175,141075
+Staff UX Researcher,Product,UX Research,JK0374,P4,137500,165000,192500,130625,156750,182875
+Principal UX Researcher,Product,UX Research,JK0375,P5,181500,214500,247500,172425,203775,235125
+Distinguished UX Researcher,Product,UX Research,JK0376,P6,220000,264000,308000,209000,250800,292600
+UX Research Manager,Product,UX Research,JK0377,M1,121000,148500,176000,114950,141075,167200
+Senior UX Research Manager,Product,UX Research,JK0378,M2,154000,187000,220000,146300,177650,209000
+"Director, UX Research",Product,UX Research,JK0379,M3,192500,231000,269500,182875,219450,256025
+"Senior Director, UX Research",Product,UX Research,JK0380,M4,231000,286000,341000,219450,271700,323950
+"VP, UX Research",Product,UX Research,JK0381,E1,286000,363000,440000,271700,344850,418000
+Associate Product Analyst,Product,Product Analytics,JK0382,P1,60500,71500,82500,57475,67925,78375
+Product Analyst,Product,Product Analytics,JK0383,P2,79200,93500,107800,75240,88825,102410
+Senior Product Analyst,Product,Product Analytics,JK0384,P3,104500,126500,148500,99275,120175,141075
+Staff Product Analyst,Product,Product Analytics,JK0385,P4,137500,165000,192500,130625,156750,182875
+Principal Product Analyst,Product,Product Analytics,JK0386,P5,181500,214500,247500,172425,203775,235125
+Distinguished Product Analyst,Product,Product Analytics,JK0387,P6,220000,264000,308000,209000,250800,292600
+Product Analytics Manager,Product,Product Analytics,JK0388,M1,121000,148500,176000,114950,141075,167200
+Senior Product Analytics Manager,Product,Product Analytics,JK0389,M2,154000,187000,220000,146300,177650,209000
+"Director, Product Analytics",Product,Product Analytics,JK0390,M3,192500,231000,269500,182875,219450,256025
+"Senior Director, Product Analytics",Product,Product Analytics,JK0391,M4,231000,286000,341000,219450,271700,323950
+"VP, Product Analytics",Product,Product Analytics,JK0392,E1,286000,363000,440000,271700,344850,418000
+Associate Product Ops Specialist,Product,Product Ops,JK0393,P1,60500,71500,82500,57475,67925,78375
+Product Ops Specialist,Product,Product Ops,JK0394,P2,79200,93500,107800,75240,88825,102410
+Senior Product Ops Specialist,Product,Product Ops,JK0395,P3,104500,126500,148500,99275,120175,141075
+Staff Product Ops Specialist,Product,Product Ops,JK0396,P4,137500,165000,192500,130625,156750,182875
+Principal Product Ops Specialist,Product,Product Ops,JK0397,P5,181500,214500,247500,172425,203775,235125
+Distinguished Product Ops Specialist,Product,Product Ops,JK0398,P6,220000,264000,308000,209000,250800,292600
+Product Ops Manager,Product,Product Ops,JK0399,M1,121000,148500,176000,114950,141075,167200
+Senior Product Ops Manager,Product,Product Ops,JK0400,M2,154000,187000,220000,146300,177650,209000
+"Director, Product Ops",Product,Product Ops,JK0401,M3,192500,231000,269500,182875,219450,256025
+"Senior Director, Product Ops",Product,Product Ops,JK0402,M4,231000,286000,341000,219450,271700,323950
+"VP, Product Ops",Product,Product Ops,JK0403,E1,286000,363000,440000,271700,344850,418000
+Associate Recruiter,People,Recruiting,JK0404,P1,48400,57200,66000,45980,54340,62700
+Recruiter,People,Recruiting,JK0405,P2,63360,74800,86240,60192,71060,81928
+Senior Recruiter,People,Recruiting,JK0406,P3,83600,101200,118800,79420,96140,112860
+Staff Recruiter,People,Recruiting,JK0407,P4,110000,132000,154000,104500,125400,146300
+Principal Recruiter,People,Recruiting,JK0408,P5,145200,171600,198000,137940,163020,188100
+Distinguished Recruiter,People,Recruiting,JK0409,P6,176000,211200,246400,167200,200640,234080
+Recruiting Manager,People,Recruiting,JK0410,M1,96800,118800,140800,91960,112860,133760
+Senior Recruiting Manager,People,Recruiting,JK0411,M2,123200,149600,176000,117040,142120,167200
+"Director, Recruiting",People,Recruiting,JK0412,M3,154000,184800,215600,146300,175560,204820
+"Senior Director, Recruiting",People,Recruiting,JK0413,M4,184800,228800,272800,175560,217360,259160
+"VP, Recruiting",People,Recruiting,JK0414,E1,228800,290400,352000,217360,275880,334400
+"SVP, People",People,Recruiting,JK0415,E2,272800,343200,413600,259160,326040,392920
+Chief People Officer (E3),People,Recruiting,JK0416,E3,308000,378400,448800,292600,359480,426360
+Chief People Officer,People,Recruiting,JK0417,E4,334400,413600,492800,317680,392920,468160
+Associate HR Business Partner,People,HRBPs,JK0418,P1,48400,57200,66000,45980,54340,62700
+HR Business Partner,People,HRBPs,JK0419,P2,63360,74800,86240,60192,71060,81928
+Senior HR Business Partner,People,HRBPs,JK0420,P3,83600,101200,118800,79420,96140,112860
+Staff HR Business Partner,People,HRBPs,JK0421,P4,110000,132000,154000,104500,125400,146300
+Principal HR Business Partner,People,HRBPs,JK0422,P5,145200,171600,198000,137940,163020,188100
+Distinguished HR Business Partner,People,HRBPs,JK0423,P6,176000,211200,246400,167200,200640,234080
+HRBPs Manager,People,HRBPs,JK0424,M1,96800,118800,140800,91960,112860,133760
+Senior HRBPs Manager,People,HRBPs,JK0425,M2,123200,149600,176000,117040,142120,167200
+"Director, HRBPs",People,HRBPs,JK0426,M3,154000,184800,215600,146300,175560,204820
+"Senior Director, HRBPs",People,HRBPs,JK0427,M4,184800,228800,272800,175560,217360,259160
+"VP, HRBPs",People,HRBPs,JK0428,E1,228800,290400,352000,217360,275880,334400
+Associate People Operations Specialist,People,People Ops,JK0429,P1,48400,57200,66000,45980,54340,62700
+People Operations Specialist,People,People Ops,JK0430,P2,63360,74800,86240,60192,71060,81928
+Senior People Operations Specialist,People,People Ops,JK0431,P3,83600,101200,118800,79420,96140,112860
+Staff People Operations Specialist,People,People Ops,JK0432,P4,110000,132000,154000,104500,125400,146300
+Principal People Operations Specialist,People,People Ops,JK0433,P5,145200,171600,198000,137940,163020,188100
+Distinguished People Operations Specialist,People,People Ops,JK0434,P6,176000,211200,246400,167200,200640,234080
+People Ops Manager,People,People Ops,JK0435,M1,96800,118800,140800,91960,112860,133760
+Senior People Ops Manager,People,People Ops,JK0436,M2,123200,149600,176000,117040,142120,167200
+"Director, People Ops",People,People Ops,JK0437,M3,154000,184800,215600,146300,175560,204820
+"Senior Director, People Ops",People,People Ops,JK0438,M4,184800,228800,272800,175560,217360,259160
+"VP, People Ops",People,People Ops,JK0439,E1,228800,290400,352000,217360,275880,334400
+Associate Learning & Development Specialist,People,L&D,JK0440,P1,48400,57200,66000,45980,54340,62700
+Learning & Development Specialist,People,L&D,JK0441,P2,63360,74800,86240,60192,71060,81928
+Senior Learning & Development Specialist,People,L&D,JK0442,P3,83600,101200,118800,79420,96140,112860
+Staff Learning & Development Specialist,People,L&D,JK0443,P4,110000,132000,154000,104500,125400,146300
+Principal Learning & Development Specialist,People,L&D,JK0444,P5,145200,171600,198000,137940,163020,188100
+Distinguished Learning & Development Specialist,People,L&D,JK0445,P6,176000,211200,246400,167200,200640,234080
+L&D Manager,People,L&D,JK0446,M1,96800,118800,140800,91960,112860,133760
+Senior L&D Manager,People,L&D,JK0447,M2,123200,149600,176000,117040,142120,167200
+"Director, L&D",People,L&D,JK0448,M3,154000,184800,215600,146300,175560,204820
+"Senior Director, L&D",People,L&D,JK0449,M4,184800,228800,272800,175560,217360,259160
+"VP, L&D",People,L&D,JK0450,E1,228800,290400,352000,217360,275880,334400
+Associate Compensation Analyst,People,Total Rewards,JK0451,P1,48400,57200,66000,45980,54340,62700
+Compensation Analyst,People,Total Rewards,JK0452,P2,63360,74800,86240,60192,71060,81928
+Senior Compensation Analyst,People,Total Rewards,JK0453,P3,83600,101200,118800,79420,96140,112860
+Staff Compensation Analyst,People,Total Rewards,JK0454,P4,110000,132000,154000,104500,125400,146300
+Principal Compensation Analyst,People,Total Rewards,JK0455,P5,145200,171600,198000,137940,163020,188100
+Distinguished Compensation Analyst,People,Total Rewards,JK0456,P6,176000,211200,246400,167200,200640,234080
+Total Rewards Manager,People,Total Rewards,JK0457,M1,96800,118800,140800,91960,112860,133760
+Senior Total Rewards Manager,People,Total Rewards,JK0458,M2,123200,149600,176000,117040,142120,167200
+"Director, Total Rewards",People,Total Rewards,JK0459,M3,154000,184800,215600,146300,175560,204820
+"Senior Director, Total Rewards",People,Total Rewards,JK0460,M4,184800,228800,272800,175560,217360,259160
+"VP, Total Rewards",People,Total Rewards,JK0461,E1,228800,290400,352000,217360,275880,334400
+Associate DEIB Specialist,People,DEIB,JK0462,P1,48400,57200,66000,45980,54340,62700
+DEIB Specialist,People,DEIB,JK0463,P2,63360,74800,86240,60192,71060,81928
+Senior DEIB Specialist,People,DEIB,JK0464,P3,83600,101200,118800,79420,96140,112860
+Staff DEIB Specialist,People,DEIB,JK0465,P4,110000,132000,154000,104500,125400,146300
+Principal DEIB Specialist,People,DEIB,JK0466,P5,145200,171600,198000,137940,163020,188100
+Distinguished DEIB Specialist,People,DEIB,JK0467,P6,176000,211200,246400,167200,200640,234080
+DEIB Manager,People,DEIB,JK0468,M1,96800,118800,140800,91960,112860,133760
+Senior DEIB Manager,People,DEIB,JK0469,M2,123200,149600,176000,117040,142120,167200
+"Director, DEIB",People,DEIB,JK0470,M3,154000,184800,215600,146300,175560,204820
+"Senior Director, DEIB",People,DEIB,JK0471,M4,184800,228800,272800,175560,217360,259160
+"VP, DEIB",People,DEIB,JK0472,E1,228800,290400,352000,217360,275880,334400
+Associate Workplace Experience Coordinator,People,Workplace Experience,JK0473,P1,48400,57200,66000,45980,54340,62700
+Workplace Experience Coordinator,People,Workplace Experience,JK0474,P2,63360,74800,86240,60192,71060,81928
+Senior Workplace Experience Coordinator,People,Workplace Experience,JK0475,P3,83600,101200,118800,79420,96140,112860
+Staff Workplace Experience Coordinator,People,Workplace Experience,JK0476,P4,110000,132000,154000,104500,125400,146300
+Principal Workplace Experience Coordinator,People,Workplace Experience,JK0477,P5,145200,171600,198000,137940,163020,188100
+Distinguished Workplace Experience Coordinator,People,Workplace Experience,JK0478,P6,176000,211200,246400,167200,200640,234080
+Workplace Experience Manager,People,Workplace Experience,JK0479,M1,96800,118800,140800,91960,112860,133760
+Senior Workplace Experience Manager,People,Workplace Experience,JK0480,M2,123200,149600,176000,117040,142120,167200
+"Director, Workplace Experience",People,Workplace Experience,JK0481,M3,154000,184800,215600,146300,175560,204820
+"Senior Director, Workplace Experience",People,Workplace Experience,JK0482,M4,184800,228800,272800,175560,217360,259160
+"VP, Workplace Experience",People,Workplace Experience,JK0483,E1,228800,290400,352000,217360,275880,334400
+"SVP, Data & Analytics",Data & Analytics,Data Engineering,JK0484,E2,341000,429000,517000,323950,407550,491150
+Chief Data & Analytics Officer (E3),Data & Analytics,Data Engineering,JK0485,E3,385000,473000,561000,365750,449350,532950
+Chief Data & Analytics Officer,Data & Analytics,Data Engineering,JK0486,E4,418000,517000,616000,397100,491150,585200
+Associate BI Analyst,Data & Analytics,Business Intelligence,JK0487,P1,60500,71500,82500,57475,67925,78375
+BI Analyst,Data & Analytics,Business Intelligence,JK0488,P2,79200,93500,107800,75240,88825,102410
+Senior BI Analyst,Data & Analytics,Business Intelligence,JK0489,P3,104500,126500,148500,99275,120175,141075
+Staff BI Analyst,Data & Analytics,Business Intelligence,JK0490,P4,137500,165000,192500,130625,156750,182875
+Principal BI Analyst,Data & Analytics,Business Intelligence,JK0491,P5,181500,214500,247500,172425,203775,235125
+Distinguished BI Analyst,Data & Analytics,Business Intelligence,JK0492,P6,220000,264000,308000,209000,250800,292600
+Business Intelligence Manager,Data & Analytics,Business Intelligence,JK0493,M1,121000,148500,176000,114950,141075,167200
+Senior Business Intelligence Manager,Data & Analytics,Business Intelligence,JK0494,M2,154000,187000,220000,146300,177650,209000
+"Director, Business Intelligence",Data & Analytics,Business Intelligence,JK0495,M3,192500,231000,269500,182875,219450,256025
+"Senior Director, Business Intelligence",Data & Analytics,Business Intelligence,JK0496,M4,231000,286000,341000,219450,271700,323950
+"VP, Business Intelligence",Data & Analytics,Business Intelligence,JK0497,E1,286000,363000,440000,271700,344850,418000
+Associate Data Scientist,Data & Analytics,Data Science,JK0498,P1,60500,71500,82500,57475,67925,78375
+Data Scientist,Data & Analytics,Data Science,JK0499,P2,79200,93500,107800,75240,88825,102410
+Senior Data Scientist,Data & Analytics,Data Science,JK0500,P3,104500,126500,148500,99275,120175,141075
+Staff Data Scientist,Data & Analytics,Data Science,JK0501,P4,137500,165000,192500,130625,156750,182875
+Principal Data Scientist,Data & Analytics,Data Science,JK0502,P5,181500,214500,247500,172425,203775,235125
+Distinguished Data Scientist,Data & Analytics,Data Science,JK0503,P6,220000,264000,308000,209000,250800,292600
+Data Science Manager,Data & Analytics,Data Science,JK0504,M1,121000,148500,176000,114950,141075,167200
+Senior Data Science Manager,Data & Analytics,Data Science,JK0505,M2,154000,187000,220000,146300,177650,209000
+"Director, Data Science",Data & Analytics,Data Science,JK0506,M3,192500,231000,269500,182875,219450,256025
+"Senior Director, Data Science",Data & Analytics,Data Science,JK0507,M4,231000,286000,341000,219450,271700,323950
+"VP, Data Science",Data & Analytics,Data Science,JK0508,E1,286000,363000,440000,271700,344850,418000
+Associate Strategy & Operations Analyst,Executive,Office of CEO,JK0509,P1,60500,71500,82500,57475,67925,78375
+Strategy & Operations Analyst,Executive,Office of CEO,JK0510,P2,79200,93500,107800,75240,88825,102410
+Senior Strategy & Operations Analyst,Executive,Office of CEO,JK0511,P3,104500,126500,148500,99275,120175,141075
+Staff Strategy & Operations Analyst,Executive,Office of CEO,JK0512,P4,137500,165000,192500,130625,156750,182875
+Principal Strategy & Operations Analyst,Executive,Office of CEO,JK0513,P5,181500,214500,247500,172425,203775,235125
+Distinguished Strategy & Operations Analyst,Executive,Office of CEO,JK0514,P6,220000,264000,308000,209000,250800,292600
+Office of CEO Manager,Executive,Office of CEO,JK0515,M1,121000,148500,176000,114950,141075,167200
+Senior Office of CEO Manager,Executive,Office of CEO,JK0516,M2,154000,187000,220000,146300,177650,209000
+"Director, Office of CEO",Executive,Office of CEO,JK0517,M3,192500,231000,269500,182875,219450,256025
+"Senior Director, Office of CEO",Executive,Office of CEO,JK0518,M4,231000,286000,341000,219450,271700,323950
+"VP, Office of CEO",Executive,Office of CEO,JK0519,E1,286000,363000,440000,271700,344850,418000
+"SVP, Executive",Executive,Office of CEO,JK0520,E2,341000,429000,517000,323950,407550,491150
+Chief Executive Officer (E3),Executive,Office of CEO,JK0521,E3,385000,473000,561000,365750,449350,532950
+Chief Executive Officer,Executive,Office of CEO,JK0522,E4,418000,517000,616000,397100,491150,585200
+President,Executive,Office of CEO,JK0523,E5,462000,550000,638000,438900,522500,606100

@@ -9196,3 +9196,139 @@ select * from final
 [0m14:02:22.766697 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x108c511f0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x108ee3c10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x11fbcfca0>]}
 [0m14:02:22.766876 [debug] [MainThread]: Flushing usage events
 [0m14:02:23.097563 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m14:10:12.877687 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1069ee850>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x107eb0460>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x107eb0280>]}
+
+
+============================== 14:10:12.880343 | dd0e8442-76ee-4c58-a504-bda12fed0442 ==============================
+[0m14:10:12.880343 [info ] [MainThread]: Running with dbt=1.11.0-b3
+[0m14:10:12.880624 [debug] [MainThread]: running dbt with arguments {'send_anonymous_usage_stats': 'True', 'target_path': 'None', 'debug': 'False', 'use_colors': 'True', 'invocation_command': 'dbt run-operation drop_v0_models', 'no_print': 'None', 'warn_error': 'None', 'quiet': 'False', 'use_experimental_parser': 'False', 'log_cache_events': 'False', 'printer_width': '80', 'partial_parse': 'True', 'write_json': 'True', 'cache_selected_only': 'False', 'version_check': 'True', 'introspect': 'True', 'indirect_selection': 'eager', 'empty': 'None', 'fail_fast': 'False', 'profiles_dir': '/Users/keenanj/.dbt', 'log_path': '/Users/keenanj/Documents/Claude_Code/people-analytics-data-infrastructure/logs', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'static_parser': 'True', 'log_format': 'default'}
+[0m14:10:14.684592 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'dd0e8442-76ee-4c58-a504-bda12fed0442', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x144983250>]}
+[0m14:10:14.714836 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': 'dd0e8442-76ee-4c58-a504-bda12fed0442', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x144983b80>]}
+[0m14:10:14.715166 [info ] [MainThread]: Registered adapter: bigquery=1.10.2
+[0m14:10:14.865363 [debug] [MainThread]: checksum: e63134dccc1251cfb572caf0e4aa952f030c125ee3634f3bf2c0a2e1bb6ae349, vars: {}, profile: , target: , version: 1.11.0b3
+[0m14:10:14.971775 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 1 files added, 0 files changed.
+[0m14:10:14.972108 [debug] [MainThread]: Partial parsing: added file: justkaizen_analytics://macros/drop_v0_models.sql
+[0m14:10:15.029347 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': 'dd0e8442-76ee-4c58-a504-bda12fed0442', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x145aa6130>]}
+[0m14:10:15.087147 [debug] [MainThread]: Wrote artifact WritableManifest to /Users/keenanj/Documents/Claude_Code/people-analytics-data-infrastructure/target/manifest.json
+[0m14:10:15.089306 [debug] [MainThread]: Wrote artifact SemanticManifest to /Users/keenanj/Documents/Claude_Code/people-analytics-data-infrastructure/target/semantic_manifest.json
+[0m14:10:15.099712 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': 'dd0e8442-76ee-4c58-a504-bda12fed0442', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x145a572e0>]}
+[0m14:10:15.100083 [info ] [MainThread]: Found 25 models, 6 seeds, 6 sources, 625 macros
+[0m14:10:15.100324 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'dd0e8442-76ee-4c58-a504-bda12fed0442', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x145a57100>]}
+[0m14:10:15.100684 [debug] [MainThread]: Acquiring new bigquery connection 'macro_drop_v0_models'
+[0m14:10:15.104936 [info ] [MainThread]:   drop view if exists `just-kaizen-ai`.raw_intermediate.int_employee_dimension
+[0m14:10:15.108487 [debug] [MainThread]: On macro_drop_v0_models: /* {"app": "dbt", "dbt_version": "1.11.0b3", "profile_name": "justkaizen", "target_name": "dev", "connection_name": "macro_drop_v0_models"} */
+
+    drop view if exists `just-kaizen-ai`.raw_intermediate.int_employee_dimension
+  
+[0m14:10:15.108701 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m14:10:15.929858 [debug] [MainThread]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=just-kaizen-ai&j=bq:US:faa014b0-99a9-4018-b91d-985e569d2a4f&page=queryresults
+[0m14:10:16.587162 [info ] [MainThread]:   drop view if exists `just-kaizen-ai`.raw_intermediate.int_employee_event_sequence
+[0m14:10:16.587788 [debug] [MainThread]: On macro_drop_v0_models: /* {"app": "dbt", "dbt_version": "1.11.0b3", "profile_name": "justkaizen", "target_name": "dev", "connection_name": "macro_drop_v0_models"} */
+
+    drop view if exists `just-kaizen-ai`.raw_intermediate.int_employee_event_sequence
+  
+[0m14:10:16.993833 [debug] [MainThread]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=just-kaizen-ai&j=bq:US:53b7a386-099d-4dd1-85ad-91ddd7f881a3&page=queryresults
+[0m14:10:17.670565 [info ] [MainThread]:   drop view if exists `just-kaizen-ai`.raw_intermediate.int_monthly_headcount_snapshot
+[0m14:10:17.672044 [debug] [MainThread]: On macro_drop_v0_models: /* {"app": "dbt", "dbt_version": "1.11.0b3", "profile_name": "justkaizen", "target_name": "dev", "connection_name": "macro_drop_v0_models"} */
+
+    drop view if exists `just-kaizen-ai`.raw_intermediate.int_monthly_headcount_snapshot
+  
+[0m14:10:18.193575 [debug] [MainThread]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=just-kaizen-ai&j=bq:US:d75982b2-2a9a-4fcd-86ba-626dc2baedc2&page=queryresults
+[0m14:10:18.697153 [info ] [MainThread]:   drop table if exists `just-kaizen-ai`.raw_marts.fct_monthly_metrics
+[0m14:10:18.699204 [debug] [MainThread]: On macro_drop_v0_models: /* {"app": "dbt", "dbt_version": "1.11.0b3", "profile_name": "justkaizen", "target_name": "dev", "connection_name": "macro_drop_v0_models"} */
+
+    drop table if exists `just-kaizen-ai`.raw_marts.fct_monthly_metrics
+  
+[0m14:10:19.308152 [debug] [MainThread]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=just-kaizen-ai&j=bq:US:5b26b36c-3381-466b-8a01-bb7fb52815b0&page=queryresults
+[0m14:10:19.700917 [info ] [MainThread]:   drop table if exists `just-kaizen-ai`.raw_marts.fct_workforce_overview
+[0m14:10:19.701757 [debug] [MainThread]: On macro_drop_v0_models: /* {"app": "dbt", "dbt_version": "1.11.0b3", "profile_name": "justkaizen", "target_name": "dev", "connection_name": "macro_drop_v0_models"} */
+
+    drop table if exists `just-kaizen-ai`.raw_marts.fct_workforce_overview
+  
+[0m14:10:20.139080 [debug] [MainThread]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=just-kaizen-ai&j=bq:US:41722d32-a5ed-47d0-9baf-ec76c26045fd&page=queryresults
+[0m14:10:20.554782 [info ] [MainThread]:   drop table if exists `just-kaizen-ai`.raw_marts.fct_attrition_drivers
+[0m14:10:20.556056 [debug] [MainThread]: On macro_drop_v0_models: /* {"app": "dbt", "dbt_version": "1.11.0b3", "profile_name": "justkaizen", "target_name": "dev", "connection_name": "macro_drop_v0_models"} */
+
+    drop table if exists `just-kaizen-ai`.raw_marts.fct_attrition_drivers
+  
+[0m14:10:20.972727 [debug] [MainThread]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=just-kaizen-ai&j=bq:US:4c21822c-d411-41c8-9c23-13a2aabcd5ec&page=queryresults
+[0m14:10:21.362491 [info ] [MainThread]:   drop table if exists `just-kaizen-ai`.raw_marts.fct_compensation_parity
+[0m14:10:21.363287 [debug] [MainThread]: On macro_drop_v0_models: /* {"app": "dbt", "dbt_version": "1.11.0b3", "profile_name": "justkaizen", "target_name": "dev", "connection_name": "macro_drop_v0_models"} */
+
+    drop table if exists `just-kaizen-ai`.raw_marts.fct_compensation_parity
+  
+[0m14:10:21.769770 [debug] [MainThread]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=just-kaizen-ai&j=bq:US:8263fe20-468c-453e-9790-10c46f7f266d&page=queryresults
+[0m14:10:22.181053 [info ] [MainThread]: V0 cleanup complete.
+[0m14:10:22.207113 [debug] [MainThread]: Wrote artifact RunResultsArtifact to /Users/keenanj/Documents/Claude_Code/people-analytics-data-infrastructure/target/run_results.json
+[0m14:10:22.213264 [debug] [MainThread]: Resource report: {"command_name": "run-operation", "command_success": true, "command_wall_clock_time": 9.375012, "process_in_blocks": "0", "process_kernel_time": 0.445115, "process_mem_max_rss": "361873408", "process_out_blocks": "0", "process_user_time": 3.009701}
+[0m14:10:22.213860 [debug] [MainThread]: Command `dbt run-operation` succeeded at 14:10:22.213720 after 9.38 seconds
+[0m14:10:22.214286 [debug] [MainThread]: Connection 'macro_drop_v0_models' was properly closed.
+[0m14:10:22.214745 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1069ee850>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x144e862b0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x144983250>]}
+[0m14:10:22.215271 [debug] [MainThread]: Flushing usage events
+[0m14:10:22.603866 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m14:10:55.007953 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1105a9370>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1129647c0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1129645e0>]}
+
+
+============================== 14:10:55.010486 | 721d3a8b-3dfa-4c0c-ad3c-98dd0357036e ==============================
+[0m14:10:55.010486 [info ] [MainThread]: Running with dbt=1.11.0-b3
+[0m14:10:55.010772 [debug] [MainThread]: running dbt with arguments {'invocation_command': 'dbt run-operation list_objects', 'static_parser': 'True', 'introspect': 'True', 'profiles_dir': '/Users/keenanj/.dbt', 'log_cache_events': 'False', 'quiet': 'False', 'fail_fast': 'False', 'send_anonymous_usage_stats': 'True', 'no_print': 'None', 'version_check': 'True', 'log_path': '/Users/keenanj/Documents/Claude_Code/people-analytics-data-infrastructure/logs', 'warn_error': 'None', 'cache_selected_only': 'False', 'debug': 'False', 'use_experimental_parser': 'False', 'write_json': 'True', 'indirect_selection': 'eager', 'use_colors': 'True', 'printer_width': '80', 'log_format': 'default', 'target_path': 'None', 'empty': 'None', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'partial_parse': 'True'}
+[0m14:10:56.627524 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '721d3a8b-3dfa-4c0c-ad3c-98dd0357036e', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1120ec430>]}
+[0m14:10:56.657288 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '721d3a8b-3dfa-4c0c-ad3c-98dd0357036e', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x112146280>]}
+[0m14:10:56.657600 [info ] [MainThread]: Registered adapter: bigquery=1.10.2
+[0m14:10:56.807321 [debug] [MainThread]: checksum: e63134dccc1251cfb572caf0e4aa952f030c125ee3634f3bf2c0a2e1bb6ae349, vars: {}, profile: , target: , version: 1.11.0b3
+[0m14:10:56.912148 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 1 files added, 0 files changed.
+[0m14:10:56.912473 [debug] [MainThread]: Partial parsing: added file: justkaizen_analytics://macros/list_objects.sql
+[0m14:10:56.968055 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '721d3a8b-3dfa-4c0c-ad3c-98dd0357036e', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x146926130>]}
+[0m14:10:57.024992 [debug] [MainThread]: Wrote artifact WritableManifest to /Users/keenanj/Documents/Claude_Code/people-analytics-data-infrastructure/target/manifest.json
+[0m14:10:57.026649 [debug] [MainThread]: Wrote artifact SemanticManifest to /Users/keenanj/Documents/Claude_Code/people-analytics-data-infrastructure/target/semantic_manifest.json
+[0m14:10:57.035663 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '721d3a8b-3dfa-4c0c-ad3c-98dd0357036e', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x145d71580>]}
+[0m14:10:57.035916 [info ] [MainThread]: Found 25 models, 6 seeds, 6 sources, 626 macros
+[0m14:10:57.036084 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '721d3a8b-3dfa-4c0c-ad3c-98dd0357036e', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x145fcf160>]}
+[0m14:10:57.036503 [debug] [MainThread]: Acquiring new bigquery connection 'macro_list_objects'
+[0m14:10:57.040575 [info ] [MainThread]: --- raw_intermediate ---
+[0m14:10:57.044076 [debug] [MainThread]: On macro_list_objects: /* {"app": "dbt", "dbt_version": "1.11.0b3", "profile_name": "justkaizen", "target_name": "dev", "connection_name": "macro_list_objects"} */
+
+    
+            select table_name, table_type
+            from `just-kaizen-ai.raw_intermediate.INFORMATION_SCHEMA.TABLES`
+            order by table_name
+        
+  
+[0m14:10:57.044269 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m14:10:58.119378 [debug] [MainThread]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=just-kaizen-ai&j=bq:US:d46d8655-8272-4c39-83cd-9a5d2b22b6d8&page=queryresults
+[0m14:10:59.048989 [info ] [MainThread]:   dim_calendar   (BASE TABLE)
+[0m14:10:59.049943 [info ] [MainThread]:   int_employee_compensation_current   (VIEW)
+[0m14:10:59.050617 [info ] [MainThread]:   int_employee_monthly_roster   (VIEW)
+[0m14:10:59.051115 [info ] [MainThread]:   int_employee_performance_history   (VIEW)
+[0m14:10:59.051507 [info ] [MainThread]:   int_employee_tenure   (VIEW)
+[0m14:10:59.051879 [info ] [MainThread]:   int_engagement_theme_rollup   (VIEW)
+[0m14:10:59.052234 [info ] [MainThread]:   int_recruiting_funnel_metrics   (VIEW)
+[0m14:10:59.052568 [info ] [MainThread]:   int_reporting_grid_attrition   (VIEW)
+[0m14:10:59.052864 [info ] [MainThread]:   int_reporting_grid_compensation   (VIEW)
+[0m14:10:59.053159 [info ] [MainThread]:   int_reporting_grid_recruiting   (VIEW)
+[0m14:10:59.053449 [info ] [MainThread]:   int_reporting_grid_workforce   (VIEW)
+[0m14:10:59.053761 [info ] [MainThread]: --- raw_marts ---
+[0m14:10:59.054402 [debug] [MainThread]: On macro_list_objects: /* {"app": "dbt", "dbt_version": "1.11.0b3", "profile_name": "justkaizen", "target_name": "dev", "connection_name": "macro_list_objects"} */
+
+    
+            select table_name, table_type
+            from `just-kaizen-ai.raw_marts.INFORMATION_SCHEMA.TABLES`
+            order by table_name
+        
+  
+[0m14:10:59.698430 [debug] [MainThread]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=just-kaizen-ai&j=bq:US:2a52124e-df00-4e8c-a98b-86c698fb2df2&page=queryresults
+[0m14:11:00.490176 [info ] [MainThread]:   fct_attrition_reporting   (BASE TABLE)
+[0m14:11:00.491051 [info ] [MainThread]:   fct_compensation_reporting   (BASE TABLE)
+[0m14:11:00.491600 [info ] [MainThread]:   fct_employee_roster   (BASE TABLE)
+[0m14:11:00.492069 [info ] [MainThread]:   fct_engagement_trends   (BASE TABLE)
+[0m14:11:00.492500 [info ] [MainThread]:   fct_performance_distribution   (BASE TABLE)
+[0m14:11:00.492919 [info ] [MainThread]:   fct_recruiting_reporting   (BASE TABLE)
+[0m14:11:00.493326 [info ] [MainThread]:   fct_recruiting_velocity   (BASE TABLE)
+[0m14:11:00.493733 [info ] [MainThread]:   fct_workforce_composition   (BASE TABLE)
+[0m14:11:00.510698 [debug] [MainThread]: Wrote artifact RunResultsArtifact to /Users/keenanj/Documents/Claude_Code/people-analytics-data-infrastructure/target/run_results.json
+[0m14:11:00.515933 [debug] [MainThread]: Resource report: {"command_name": "run-operation", "command_success": true, "command_wall_clock_time": 5.545616, "process_in_blocks": "0", "process_kernel_time": 0.350155, "process_mem_max_rss": "368345088", "process_out_blocks": "0", "process_user_time": 2.791285}
+[0m14:11:00.516547 [debug] [MainThread]: Command `dbt run-operation` succeeded at 14:11:00.516409 after 5.55 seconds
+[0m14:11:00.516941 [debug] [MainThread]: Connection 'macro_list_objects' was properly closed.
+[0m14:11:00.517437 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1105a9370>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10712cca0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x145fcf1f0>]}
+[0m14:11:00.517894 [debug] [MainThread]: Flushing usage events
+[0m14:11:00.855803 [debug] [MainThread]: An error was encountered while trying to flush usage events

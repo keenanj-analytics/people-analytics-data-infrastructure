@@ -8,7 +8,7 @@ This document defines every field in every model. Matches the final ERD as of th
 
 ### raw_employees
 
-**Source:** ADP HRIS export (combined active + terminated in single file)
+**Source:** HRIS export (combined active + terminated in single file)
 **Grain:** One row per employee as of Report_Date. In production, multiple monthly snapshots are UNION'd to create a time series.
 **PK:** Work_Email
 **FK:** Requisition_ID (links to raw_offers_hires)
@@ -17,18 +17,18 @@ This document defines every field in every model. Matches the final ERD as of th
 |-------|------|-------------|
 | Work_Email | STRING | PK. Lowercase work email. Pattern: {first_initial}{last}@justkaizen.com |
 | Requisition_ID | STRING | FK. Links to raw_offers_hires. Pattern: "R-{dept_code}-1001-JustKaizen-{seq}" |
-| Position_ID | STRING | ADP position identifier. Pattern: "JK100000" |
+| Position_ID | STRING | HRIS position identifier. Pattern: "JK100000" |
 | Report_Date | DATE | Snapshot date for this export (end of month) |
 | Employment_Status | STRING | "Active" or "Terminated" |
 | Full_Name | STRING | "First Last" |
 | First_Name | STRING | Legal first name |
 | Last_Name | STRING | Legal last name |
-| Hire_Date | STRING | Original hire date (MM/DD/YYYY format from ADP, needs casting) |
+| Hire_Date | STRING | Original hire date (MM/DD/YYYY format from HRIS, needs casting) |
 | Work_Country | STRING | "UNITED STATES" (~95%) or international |
 | Work_City | STRING | City name |
 | Work_State | STRING | US state abbreviation |
 | Pay_Zone | STRING | "ZONE A" (SF/NYC metro) or "ZONE B" (everywhere else). Determines which comp band applies. |
-| Gender | STRING | ADP values: "Men", "Women", "Non-Binary", "Not Specified" |
+| Gender | STRING | HRIS values: "Men", "Women", "Non-Binary", "Not Specified" |
 | Race | STRING | "White", "Asian", "Hispanic or Latino", "Black or African American", "Two or More Races", "N/A - EU / APAC", "Not Specified" |
 | Manager_Email | STRING | Work email of direct manager. Join key for building org hierarchy. |
 | Manage_Name | STRING | Manager's full name |
@@ -45,14 +45,14 @@ This document defines every field in every model. Matches the final ERD as of th
 | No_Direct_Reports | INT | Count of direct reports. 0 for ICs. |
 | No_Indirect_Reports | INT | Count of skip-level reports. 0 for most. |
 | Manager_Status | BOOL | TRUE if the employee manages people. |
-| Tenure_bucket | STRING | Pre-computed in ADP. "0-6 Months", "6-12 Months", etc. Note: dbt will recompute this using 1-year intervals for reporting. |
+| Tenure_bucket | STRING | Pre-computed in HRIS. "0-6 Months", "6-12 Months", etc. Note: dbt will recompute this using 1-year intervals for reporting. |
 | Critical_Talent | BOOL | People Ops designation. ~5% of population. |
-| Hire_Origin | STRING | Usually NULL. Populated if tracked in ADP. |
-| Hire_Recruiter | STRING | Recruiter credited with the hire (from ADP). |
+| Hire_Origin | STRING | Usually NULL. Populated if tracked in HRIS. |
+| Hire_Recruiter | STRING | Recruiter credited with the hire (from HRIS). |
 
 ### raw_performance
 
-**Source:** Lattice performance review export
+**Source:** Performance management system export
 **Grain:** One row per (Question_ID x Reviewee_Email x Cycle_Name). Very granular. Includes self reviews, peer reviews, manager reviews, and multiple questions per review.
 **PK:** (Question_ID, Reviewee_Email, Cycle_Name) composite
 **FK:** Reviewee_Email (links to raw_employees.Work_Email)
@@ -196,7 +196,7 @@ The staging layer cleans field names, casts data types, and applies source-level
 | 3 | 3 - Strong Contributor | 3 | Meets Expectations |
 | 4 | 4 - Does Not Meet Expectations | 1 | Does Not Meet Expectations |
 
-**Note:** Source uses 1-4 scale where 1 is best. Target uses 1-5 scale where 5 is best. The 2-point rating (Partially Meets) does not exist in the source Lattice system; it will be generated in synthetic data for JustKaizen.
+**Note:** Source uses 1-4 scale where 1 is best. Target uses 1-5 scale where 5 is best. The 2-point rating (Partially Meets) does not exist in the source performance management system; it is a JustKaizen addition generated in synthetic data.
 
 ### stg_recruiting
 

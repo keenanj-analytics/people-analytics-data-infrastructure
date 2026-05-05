@@ -10,7 +10,7 @@ This infrastructure supports the workforce analytics dashboard and insights publ
 |-------|-----------|
 | Data Generation | Python (pandas) |
 | Data Warehouse | Google BigQuery |
-| Transformation | dbt (29 models across staging, intermediate, and mart layers) |
+| Transformation | dbt (25 models across staging, intermediate, and mart layers) |
 | Data Delivery | Google Apps Script (BigQuery → Google Sheets, automated) |
 | Visualization | Tableau Public |
 | AI-Assisted Development | Claude Code (code development, model generation, testing) |
@@ -95,7 +95,7 @@ The most common People Analytics setup is a single wide reporting table that tri
 
 ## dbt Transformation
 
-### Model Inventory (29 models)
+### Model Inventory (25 models)
 
 | Layer | Models | Materialization | Purpose |
 |-------|--------|----------------|---------|
@@ -103,9 +103,8 @@ The most common People Analytics setup is a single wide reporting table that tri
 | Intermediate (helpers) | 3 | View | Collapse multi-row source data into one row per employee (latest comp, latest rating, tenure metrics). |
 | Intermediate (roster) | 1 | View | The golden record. One row per employee per month. All dimensions as columns. ~65,000-75,000 rows. |
 | Intermediate (grids) | 4 | View | Month x dimension scaffolds ensuring no gaps in trend lines. One per reporting domain. |
-| Intermediate (other) | 3 | View | Recruiting funnel aggregation, engagement theme rollup, calendar date spine. |
-| Marts (reporting) | 4 | Table | Pre-computed metrics with TTM rolling windows and org-wide benchmarks. Tableau reads these directly. |
-| Marts (detail) | 4 | Table | Drill-through tables for individual employee, requisition, engagement, and performance detail. |
+| Intermediate (other) | 3 | View/Table | Recruiting funnel aggregation, engagement theme rollup, calendar date spine (dim_calendar materialized as table). |
+| Marts | 8 | Table | 4 reporting marts with TTM rolling windows and org-wide benchmarks, plus 4 drill-through detail tables. |
 
 ### Key Transformation Patterns
 
@@ -183,16 +182,14 @@ In Tableau, this translates to: drag the segment rate as a bar, drag the org-wid
 
 ## Data Validation
 
-All models pass dbt tests covering:
+Schema tests are defined in `schema.yml` files across all three model layers, covering:
 
-| Test Category | What It Validates | Count |
-|--------------|-------------------|-------|
-| Primary key uniqueness | No duplicate rows at the defined grain | Per model |
-| Not null | PKs and critical fields are never NULL | Per model |
-| Accepted values | Categorical fields contain only valid values (level groups, tenure buckets, termination types) | Per model |
-| Referential integrity | Every manager_id maps to a valid employee_id. Every requisition_id in the roster exists in recruiting. | Cross-model |
-| Range checks | Compa-ratios between 0.75 and 1.25. Attrition rates between 0 and 1. Tenure months >= 0. | Per model |
-| Sum validation | SUM(department headcounts) = org-wide headcount for every month | Mart-level |
+| Test Category | What It Validates |
+|--------------|-------------------|
+| Primary key uniqueness | No duplicate rows at the defined grain |
+| Not null | PKs and critical fields are never NULL |
+| Accepted values | Categorical fields contain only valid values (level groups, tenure buckets, termination types) |
+| Referential integrity | Every manager_id maps to a valid employee_id. Every requisition_id in the roster exists in recruiting. |
 
 ---
 
@@ -223,34 +220,31 @@ The Apps Script creates one tab per mart table, with formatted headers, auto-siz
 
 ```
 people-analytics-data-infrastructure/
-├── CLAUDE.md                              ← Project brain file
-├── README.md                              ← This file
+├── README.md
 │
-├── docs/
-│   ├── JustKaizen_Company_Profile.md      ← Company story, org structure, parameters
-│   ├── JustKaizen_Data_Dictionary.md      ← Every field in every model
-│   ├── JustKaizen_Model_Dependency_Map.md ← Model connections and join keys
-│   ├── JustKaizen_Architecture_Spec.md    ← Full model specifications
-│   └── assets/
-│       ├── raw_layer_erd.png              ← Source system ERD
-│       └── pipeline_flow.png              ← Staging → Intermediate → Mart flow
+├── docs/assets/
+│   ├── JustKaizen_Company_Profile_Definitive.md  ← Company story, org structure, parameters
+│   ├── JustKaizen_Data_Dictionary.md             ← Every field in every model
+│   ├── JustKaizen_Model_Dependency_Map.md        ← Model connections and join keys
+│   ├── JustKaizen_dbt_Architecture_Spec.md       ← Full model specifications
+│   ├── raw_layer_erd.png                         ← Source system ERD
+│   └── pipeline_flow.png                         ← Staging → Intermediate → Mart flow
 │
-├── scripts/data_generation/               ← Python synthetic data pipeline
-│   ├── 01_generate_employee_profiles.py
-│   ├── ...
-│   └── 13_validate_and_export.py
+├── scripts/data_generation/
+│   └── generate_all_seeds.py                     ← Python synthetic data pipeline
 │
-├── seeds/                                 ← Raw CSVs loaded via dbt seed
+├── seeds/                                        ← Raw CSVs loaded via dbt seed
 │   ├── raw_employees.csv
 │   ├── raw_performance.csv
 │   ├── raw_offers_hires.csv
 │   ├── raw_ees_responses.csv
-│   └── raw_comp_bands.csv
+│   ├── raw_comp_bands.csv
+│   └── raw_job_history.csv
 │
 ├── models/
-│   ├── staging/                           ← 6 stg_* views + schema.yml
-│   ├── intermediate/                      ← 12 int_* views + dim_calendar + schema.yml
-│   └── marts/                             ← 11 fct_* tables + schema.yml
+│   ├── staging/                                  ← 6 stg_* views + sources.yml + schema.yml
+│   ├── intermediate/                             ← 11 int_* models + dim_calendar + schema.yml
+│   └── marts/                                    ← 8 fct_* tables + schema.yml
 │
 ├── dbt_project.yml
 └── packages.yml

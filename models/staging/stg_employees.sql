@@ -1,7 +1,7 @@
 /*
     Model:  stg_employees
     Layer:  Staging
-    Source: raw.raw_employees (ADP HRIS export)
+    Source: raw.raw_employees (HRIS export)
     Grain:  One row per employee per Report_Date snapshot
     PK:     work_email (= employee_id)
 
@@ -85,7 +85,7 @@ renamed as (
         Manager_Status                                                      as manager_status,
 
         -- Tenure & flags (tenure_bucket recomputed on the roster with
-        -- 1-year intervals; passed through here as-is from ADP)
+        -- 1-year intervals; passed through here as-is from HRIS)
         Tenure_bucket                                                       as tenure_bucket,
         Critical_Talent                                                     as critical_talent,
         Hire_Origin                                                         as hire_origin,

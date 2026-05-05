@@ -13,12 +13,12 @@ sources:
     tables:
       - name: raw_employees
         description: |
-          ADP HRIS export. Combined active + terminated employee census.
+          HRIS export. Combined active + terminated employee census.
           One row per employee per Report_Date snapshot. PK Work_Email.
 
       - name: raw_performance
         description: |
-          Lattice review export. One row per
+          Performance management system export. One row per
           (Question_ID x Reviewee_Email x Cycle_Name). Includes manager,
           self, and peer reviews — staging filters to manager + Performance
           Category to produce one official rating per employee per cycle.

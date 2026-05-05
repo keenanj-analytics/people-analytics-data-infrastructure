@@ -21,7 +21,7 @@
 
     Notes:
         - All 46 columns from int_employee_monthly_roster pass through
-          unchanged. full_name already lives on the roster as the ADP-
+          unchanged. full_name already lives on the roster as the HRIS-
           provided field (no CONCAT needed) — kept as-is.
         - band_position_label returns NULL for rows without a
           compa_ratio (employees missing a comp band match), rather

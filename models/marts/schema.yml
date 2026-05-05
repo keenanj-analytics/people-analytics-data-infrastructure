@@ -1,0 +1,164 @@
+version: 2
+
+models:
+  - name: fct_attrition_reporting
+    description: >
+      Rolling 12-month attrition rates across all dimension combinations.
+      One row per (report_month x dimension combo from attrition grid).
+    columns:
+      - name: report_month
+        tests:
+          - not_null
+      - name: department
+        tests:
+          - not_null
+      - name: level_group
+        tests:
+          - accepted_values:
+              values: ['Junior IC', 'Senior IC', 'Manager', 'Director', 'Senior Leadership']
+      - name: tenure_bucket
+        tests:
+          - accepted_values:
+              values: ['0-1 Years', '1-2 Years', '2-3 Years', '3-4 Years', '4-5 Years', '5+ Years']
+      - name: top_performer_flag
+        tests:
+          - accepted_values:
+              values: ['Y', 'N']
+      - name: end_month_headcount
+        tests:
+          - not_null
+
+  - name: fct_recruiting_reporting
+    description: >
+      Rolling 12-month hiring speed and offer acceptance metrics.
+      One row per (report_month x dimension combo from recruiting grid).
+    columns:
+      - name: report_month
+        tests:
+          - not_null
+      - name: department
+        tests:
+          - not_null
+
+  - name: fct_workforce_composition
+    description: >
+      Headcount, representation, and span of control by all workforce dimensions.
+      One row per (report_month x dimension combo from workforce grid).
+    columns:
+      - name: report_month
+        tests:
+          - not_null
+      - name: department
+        tests:
+          - not_null
+      - name: level_group
+        tests:
+          - accepted_values:
+              values: ['Junior IC', 'Senior IC', 'Manager', 'Director', 'Senior Leadership']
+      - name: headcount
+        tests:
+          - not_null
+
+  - name: fct_compensation_reporting
+    description: >
+      Compa-ratio distribution and salary metrics by all compensation dimensions.
+      One row per (report_month x dimension combo from compensation grid).
+    columns:
+      - name: report_month
+        tests:
+          - not_null
+      - name: department
+        tests:
+          - not_null
+      - name: level_group
+        tests:
+          - accepted_values:
+              values: ['Junior IC', 'Senior IC', 'Manager', 'Director', 'Senior Leadership']
+      - name: employee_count
+        tests:
+          - not_null
+
+  - name: fct_employee_roster
+    description: >
+      Drill-through table. The monthly roster promoted to mart layer for
+      Tableau. One row per employee per month.
+    columns:
+      - name: employee_id
+        tests:
+          - not_null
+      - name: report_month
+        tests:
+          - not_null
+      - name: employment_status
+        tests:
+          - not_null
+          - accepted_values:
+              values: ['Active', 'Terminated']
+      - name: level_group
+        tests:
+          - not_null
+          - accepted_values:
+              values: ['Junior IC', 'Senior IC', 'Manager', 'Director', 'Senior Leadership']
+      - name: band_position_label
+        tests:
+          - accepted_values:
+              values: ['Below Band', 'Within Band', 'Above Band']
+      - name: department
+        tests:
+          - not_null
+      - name: hire_date
+        tests:
+          - not_null
+
+  - name: fct_recruiting_velocity
+    description: "Per-requisition funnel detail. Drill-through for the hiring dashboard."
+    columns:
+      - name: requisition_id
+        description: "Primary key."
+        tests:
+          - unique
+          - not_null
+      - name: total_applicants
+        tests:
+          - not_null
+
+  - name: fct_engagement_trends
+    description: "Theme scores by department and survey cycle with cycle-over-cycle deltas."
+    columns:
+      - name: survey_cycle
+        tests:
+          - not_null
+      - name: department
+        tests:
+          - not_null
+      - name: theme
+        tests:
+          - not_null
+      - name: response_count
+        tests:
+          - not_null
+
+  - name: fct_performance_distribution
+    description: "Per employee x review cycle ratings. Drill-through for the performance dashboard."
+    columns:
+      - name: employee_id
+        tests:
+          - not_null
+      - name: review_cycle
+        tests:
+          - not_null
+      - name: overall_rating_numeric
+        tests:
+          - not_null
+          - accepted_values:
+              values: [1, 2, 3, 4, 5]
+      - name: level_group
+        tests:
+          - not_null
+          - accepted_values:
+              values: ['Junior IC', 'Senior IC', 'Manager', 'Director', 'Senior Leadership']
+      - name: is_top_performer
+        tests:
+          - not_null
+          - accepted_values:
+              values: ['Y', 'N']

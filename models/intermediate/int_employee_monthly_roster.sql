@@ -31,7 +31,7 @@
           salary, no_direct_reports, manager_status. Phase 2 introduces
           per-month point-in-time joins.
         - manager_status and no_direct_reports come from stg_employees
-          (ADP-provided) and are not recomputed via aggregation.
+          (HRIS-provided) and are not recomputed via aggregation.
 
     Derived fields (computed in this model, not in any source):
         level_group, tenure_months, tenure_bucket, new_hire_flag,

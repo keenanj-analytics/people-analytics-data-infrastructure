@@ -1,0 +1,176 @@
+version: 2
+
+models:
+  - name: dim_calendar
+    description: "Date spine. One row per day from 2020-01-01 through 2026-12-31."
+    columns:
+      - name: calendar_date
+        description: "Primary key."
+        tests:
+          - unique
+          - not_null
+      - name: report_month
+        tests:
+          - not_null
+      - name: report_year
+        tests:
+          - not_null
+
+  - name: int_employee_tenure
+    description: "Tenure metrics per employee. One row per employee."
+    columns:
+      - name: employee_id
+        description: "Primary key."
+        tests:
+          - unique
+          - not_null
+      - name: hire_date
+        tests:
+          - not_null
+      - name: tenure_months
+        tests:
+          - not_null
+
+  - name: int_employee_compensation_current
+    description: "Latest compensation per employee with matched comp band."
+    columns:
+      - name: employee_id
+        description: "Primary key."
+        tests:
+          - unique
+          - not_null
+      - name: salary
+        tests:
+          - not_null
+
+  - name: int_employee_performance_history
+    description: "Latest performance rating per employee."
+    columns:
+      - name: employee_id
+        description: "Primary key."
+        tests:
+          - unique
+          - not_null
+      - name: top_performer_flag
+        tests:
+          - not_null
+          - accepted_values:
+              values: ['Y', 'N']
+      - name: latest_perf_rating_numeric
+        tests:
+          - accepted_values:
+              values: [1, 2, 3, 4, 5]
+
+  - name: int_employee_monthly_roster
+    description: >
+      The golden record. One row per employee per month they were active
+      (or terminated in that month). All dimensions as columns.
+    columns:
+      - name: employee_id
+        tests:
+          - not_null
+      - name: report_month
+        tests:
+          - not_null
+      - name: employment_status
+        tests:
+          - not_null
+          - accepted_values:
+              values: ['Active', 'Terminated']
+      - name: level_group
+        tests:
+          - not_null
+          - accepted_values:
+              values: ['Junior IC', 'Senior IC', 'Manager', 'Director', 'Senior Leadership']
+      - name: tenure_bucket
+        tests:
+          - not_null
+          - accepted_values:
+              values: ['0-1 Years', '1-2 Years', '2-3 Years', '3-4 Years', '4-5 Years', '5+ Years']
+      - name: new_hire_flag
+        tests:
+          - not_null
+          - accepted_values:
+              values: ['New Hire', 'Tenured']
+      - name: top_performer_flag
+        tests:
+          - not_null
+          - accepted_values:
+              values: ['Y', 'N']
+      - name: department
+        tests:
+          - not_null
+      - name: gender
+        tests:
+          - not_null
+      - name: hire_date
+        tests:
+          - not_null
+
+  - name: int_reporting_grid_attrition
+    description: "Scaffold: report_month x attrition dimension combinations. Ensures no gaps in trend lines."
+    columns:
+      - name: report_month
+        tests:
+          - not_null
+      - name: department
+        tests:
+          - not_null
+
+  - name: int_reporting_grid_recruiting
+    description: "Scaffold: report_month x recruiting dimension combinations."
+    columns:
+      - name: report_month
+        tests:
+          - not_null
+      - name: department
+        tests:
+          - not_null
+
+  - name: int_reporting_grid_workforce
+    description: "Scaffold: report_month x workforce dimension combinations."
+    columns:
+      - name: report_month
+        tests:
+          - not_null
+      - name: department
+        tests:
+          - not_null
+
+  - name: int_reporting_grid_compensation
+    description: "Scaffold: report_month x compensation dimension combinations."
+    columns:
+      - name: report_month
+        tests:
+          - not_null
+      - name: department
+        tests:
+          - not_null
+
+  - name: int_recruiting_funnel_metrics
+    description: "Per-requisition funnel volumes, conversion rates, and time-to-fill."
+    columns:
+      - name: requisition_id
+        description: "Primary key."
+        tests:
+          - unique
+          - not_null
+      - name: total_applicants
+        tests:
+          - not_null
+
+  - name: int_engagement_theme_rollup
+    description: "Engagement scores aggregated to survey_cycle x department x theme."
+    columns:
+      - name: survey_cycle
+        tests:
+          - not_null
+      - name: department
+        tests:
+          - not_null
+      - name: theme
+        tests:
+          - not_null
+      - name: response_count
+        tests:
+          - not_null

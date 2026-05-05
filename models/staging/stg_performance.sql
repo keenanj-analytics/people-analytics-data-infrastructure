@@ -1,14 +1,14 @@
 /*
     Model:  stg_performance
     Layer:  Staging
-    Source: raw.raw_performance (Lattice export)
+    Source: raw.raw_performance (performance management system export)
     Grain:  One row per employee per review cycle (post-filter)
     PK:     (employee_id, cycle_name)
 
     Purpose:
-        Filter to the official manager rating row, then invert Lattice's
-        1-best 4-point scale to JustKaizen's 5-best 5-point scale. Clean
-        field names. Output one rating per (employee, cycle).
+        Filter to the official manager rating row, then invert the source
+        system's 1-best 4-point scale to JustKaizen's 5-best 5-point
+        scale. Clean field names. Output one rating per (employee, cycle).
 
     Critical filter (collapses the source grain):
         Response_Type = 'manager' AND Question = 'Performance Category'
@@ -23,9 +23,9 @@
         Source 5 ("Partially Meets Expectations")  -> 2 ("Partially Meets Expectations")
 
     Notes:
-        - Lattice's native scale is 1-4. Source 5 is a JustKaizen extension
-          emitted by the synthetic generator for the "Partially Meets"
-          target rating, which doesn't exist in real Lattice exports.
+        - The source system's native scale is 1-4. Source 5 is a
+          JustKaizen extension emitted by the synthetic generator for
+          the "Partially Meets" target rating.
         - Calibrated_Score is intentionally dropped; the warehouse uses
           the raw Score per the spec.
 */

@@ -1,0 +1,143 @@
+version: 2
+
+models:
+  - name: stg_employees
+    description: "HRIS export cleaned and renamed. One row per employee per report_date snapshot."
+    columns:
+      - name: employee_id
+        description: "Primary key (work email). Unique per report_date."
+        tests:
+          - not_null
+      - name: report_date
+        tests:
+          - not_null
+      - name: employment_status
+        tests:
+          - not_null
+          - accepted_values:
+              values: ['Active', 'Terminated']
+      - name: hire_date
+        tests:
+          - not_null
+      - name: department
+        tests:
+          - not_null
+      - name: job_level
+        tests:
+          - not_null
+      - name: employment_type
+        tests:
+          - not_null
+          - accepted_values:
+              values: ['Full Time', 'Part Time', 'Contractor']
+      - name: gender
+        tests:
+          - accepted_values:
+              values: ['Men', 'Women', 'Non-Binary', 'Not Specified']
+
+  - name: stg_performance
+    description: "Performance management system export. One official manager rating per employee per cycle."
+    columns:
+      - name: employee_id
+        tests:
+          - not_null
+      - name: cycle_name
+        tests:
+          - not_null
+      - name: overall_rating_numeric
+        tests:
+          - not_null
+          - accepted_values:
+              values: [1, 2, 3, 4, 5]
+      - name: overall_rating
+        tests:
+          - not_null
+          - accepted_values:
+              values:
+                - 'Significantly Exceeds Expectations'
+                - 'Exceeds Expectations'
+                - 'Meets Expectations'
+                - 'Partially Meets Expectations'
+                - 'Does Not Meet Expectations'
+
+  - name: stg_recruiting
+    description: "ATS recruiting pipeline. One row per candidate-job combination."
+    columns:
+      - name: candidate_id
+        description: "Primary key."
+        tests:
+          - unique
+          - not_null
+      - name: requisition_id
+        tests:
+          - not_null
+      - name: outcome
+        tests:
+          - accepted_values:
+              values: ['Hired', 'Archived']
+      - name: origin
+        tests:
+          - accepted_values:
+              values: ['sourced', 'applied', 'referred', 'agency', 'internal']
+
+  - name: stg_engagement
+    description: "Engagement survey responses. Anonymized, no link to employee roster."
+    columns:
+      - name: anonymized_user_id
+        tests:
+          - not_null
+      - name: ees_cycle
+        tests:
+          - not_null
+      - name: ees_question
+        tests:
+          - not_null
+      - name: ees_theme_name
+        tests:
+          - not_null
+      - name: department
+        tests:
+          - not_null
+
+  - name: stg_comp_bands
+    description: "Compensation band structure. One row per job title with Zone A and Zone B ranges."
+    columns:
+      - name: job_title
+        description: "Primary key."
+        tests:
+          - unique
+          - not_null
+      - name: job_level
+        tests:
+          - not_null
+      - name: zone_a_min_salary
+        tests:
+          - not_null
+      - name: zone_a_mid_salary
+        tests:
+          - not_null
+      - name: zone_a_max_salary
+        tests:
+          - not_null
+      - name: zone_b_min_salary
+        tests:
+          - not_null
+      - name: zone_b_mid_salary
+        tests:
+          - not_null
+      - name: zone_b_max_salary
+        tests:
+          - not_null
+
+  - name: stg_job_history
+    description: "Job change events: promotions, transfers, manager changes."
+    columns:
+      - name: employee_id
+        tests:
+          - not_null
+      - name: effective_date
+        tests:
+          - not_null
+      - name: change_type
+        tests:
+          - not_null

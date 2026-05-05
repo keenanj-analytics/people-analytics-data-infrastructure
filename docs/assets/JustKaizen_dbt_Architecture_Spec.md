@@ -167,7 +167,7 @@ No changes to existing seeds. Current schema supports the new architecture.
 | flag_latest_report | STRING | "X" if report_month = MAX(report_month) across the table |
 | flag_month_beg_end | STRING | Always "End" (we use end-of-month snapshots only; beginning of month derived from prior month's end) |
 | is_terminated_this_month | BOOL | TRUE if DATE_TRUNC(termination_date, MONTH) = report_month |
-| is_excluded_termination | BOOL | TRUE if termination_reason IN ('Reduction in Force', ...) (list from Attentive) |
+| is_excluded_termination | BOOL | TRUE if termination_reason IN ('Reduction in Force', ...) (standard exclusion list) |
 | is_attrition_eligible_term | BOOL | is_terminated_this_month = TRUE AND is_excluded_termination = FALSE |
 
 **Notes:**

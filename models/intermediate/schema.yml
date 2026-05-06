@@ -2,7 +2,7 @@ version: 2
 
 models:
   - name: dim_calendar
-    description: "Date spine. One row per day from 2020-01-01 through 2026-12-31."
+    description: "Date spine. One row per day from 2020-01-01 through 2025-03-31."
     columns:
       - name: calendar_date
         description: "Primary key."
@@ -60,6 +60,7 @@ models:
         tests:
           - accepted_values:
               values: [1, 2, 3, 4, 5]
+              quote: false
 
   - name: int_employee_monthly_roster
     description: >

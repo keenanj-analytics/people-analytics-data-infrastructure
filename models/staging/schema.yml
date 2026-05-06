@@ -49,6 +49,7 @@ models:
           - not_null
           - accepted_values:
               values: [1, 2, 3, 4, 5]
+              quote: false
       - name: overall_rating
         tests:
           - not_null

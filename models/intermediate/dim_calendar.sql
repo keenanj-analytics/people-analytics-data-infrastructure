@@ -3,7 +3,7 @@
     Layer:        Intermediate
     Materialized: table
     Grain:        One row per calendar day
-    Range:        2020-01-01 through 2026-12-31 (~2,557 rows)
+    Range:        2020-01-01 through 2025-03-31 (~1,917 rows)
 
     Purpose:
         Daily date spine. Anchors every month-grain model in the warehouse.
@@ -38,7 +38,7 @@ with date_spine as (
 
     select calendar_date
     from unnest(
-        generate_date_array(date '2020-01-01', date '2026-12-31', interval 1 day)
+        generate_date_array(date '2020-01-01', date '2025-03-31', interval 1 day)
     ) as calendar_date
 
 ),

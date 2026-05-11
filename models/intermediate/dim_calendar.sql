@@ -3,7 +3,7 @@
     Layer:        Intermediate
     Materialized: table
     Grain:        One row per calendar day
-    Range:        2020-01-01 through 2025-03-31 (~1,917 rows)
+    Range:        2021-01-01 through 2026-03-31 (~1,917 rows)
 
     Purpose:
         Daily date spine. Anchors every month-grain model in the warehouse.
@@ -18,7 +18,7 @@
         has no upstream dependencies and can build as step 1.
 
     Key business rules:
-        - report_quarter formatted as "YYYY Q#" (e.g., "2025 Q1") to match
+        - report_quarter formatted as "YYYY Q#" (e.g., "2026 Q1") to match
           the format carried through every domain reporting mart.
         - is_quarter_end is TRUE only on the final calendar day of months
           3, 6, 9, 12 — used by Tableau quarter-end flags.
@@ -38,7 +38,7 @@ with date_spine as (
 
     select calendar_date
     from unnest(
-        generate_date_array(date '2020-01-01', date '2025-03-31', interval 1 day)
+        generate_date_array(date '2021-01-01', date '2026-03-31', interval 1 day)
     ) as calendar_date
 
 ),

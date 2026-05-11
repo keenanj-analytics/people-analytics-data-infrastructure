@@ -37,7 +37,8 @@
         level_group, tenure_months, tenure_bucket, new_hire_flag,
         employment_status, termination_type, top_performer_flag,
         flag_latest_report, is_terminated_this_month,
-        is_excluded_termination, is_attrition_eligible_term
+        is_excluded_termination, is_attrition_eligible_term,
+        is_rif_termination
 
     Notes:
         - Excluded termination reasons mirror CLAUDE.md exactly.
@@ -314,7 +315,9 @@ final as (
         is_terminated_this_month,
         is_excluded_termination,
         is_terminated_this_month
-            and not is_excluded_termination                                 as is_attrition_eligible_term
+            and not is_excluded_termination                                 as is_attrition_eligible_term,
+        is_terminated_this_month
+            and termination_reason = 'Reduction in Force'                   as is_rif_termination
 
     from enriched
 

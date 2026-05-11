@@ -276,22 +276,21 @@ VOLUNTARY_REASONS = [
     ("Other",                 0.05),
 ]
 
-# Performance source-rating distribution (§9). Source uses 1=best, 5 added
-# for "Partially Meets" per JustKaizen extension.
+# Performance source-rating distribution (§9). Source uses 1=best, 5=worst.
 SOURCE_RATING_DIST = [
-    (1, 0.07),  # Truly Outstanding              -> target 5
-    (2, 0.22),  # Frequently Exceeds             -> target 4
+    (1, 0.07),  # Outstanding                    -> target 5
+    (2, 0.22),  # Exceeds Expectations           -> target 4
     (3, 0.52),  # Strong Contributor             -> target 3
-    (4, 0.04),  # Does Not Meet                  -> target 1
-    (5, 0.15),  # Partially Meets (JK addition)  -> target 2
+    (4, 0.15),  # Partially Meets Expectations   -> target 2
+    (5, 0.04),  # Does Not Meet Expectations     -> target 1
 ]
 
 SOURCE_DESCRIPTIONS = {
-    1: "1 - Truly Outstanding",
-    2: "2 - Frequently Exceeds Expectations",
+    1: "1 - Outstanding",
+    2: "2 - Exceeds Expectations",
     3: "3 - Strong Contributor",
-    4: "4 - Does Not Meet Expectations",
-    5: "5 - Partially Meets Expectations",
+    4: "4 - Partially Meets Expectations",
+    5: "5 - Does Not Meet Expectations",
 }
 
 # Recruiting candidate source distribution (§14)

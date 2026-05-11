@@ -11,7 +11,7 @@ This infrastructure supports the workforce analytics dashboard and insights publ
 | Data Generation | Python (pandas) |
 | Data Warehouse | Google BigQuery |
 | Transformation | dbt (25 models across staging, intermediate, and mart layers) |
-| Data Delivery | Google Apps Script (BigQuery → Google Sheets, automated) |
+| Data Delivery | Python (BigQuery → CSV export), Google Drive → Tableau |
 | Visualization | Tableau Public |
 | AI-Assisted Development | Claude Code (code development, model generation, testing) |
 | Version Control | Git / GitHub |
@@ -145,9 +145,9 @@ WHERE e.hire_date <= LAST_DAY(m.report_month)
   AND (e.termination_date IS NULL OR e.termination_date >= m.report_month)
 ```
 
-**Pattern 2: TTM Rolling Window Calculations**
+**Pattern 2: Multi-Window Rolling Calculations**
 
-Trailing twelve-month attrition rates are computed using window functions with a 12-month averaged denominator that smooths the impact of structural events like layoffs:
+Attrition rates are computed across two rolling windows — trailing twelve-month (TTM) for annual perspective and 3-month annualized for quarterly performance. Both use averaged denominators that smooth the impact of structural events like layoffs:
 
 ```sql
 -- TTM attrition rate with averaged denominator
@@ -170,13 +170,15 @@ AS ttm_voluntary_attrition_rate
 Every reporting mart carries three levels of comparison so any segment can be benchmarked without a second query:
 
 ```sql
--- Segment rate alongside department and org-wide benchmarks
-ttm_voluntary_attrition_rate,           -- This segment's rate
-dept_ttm_voluntary_attrition_rate,      -- Department average
-orgwide_ttm_voluntary_attrition_rate    -- Company-wide average
+-- Segment rate alongside department and org-wide benchmarks (both windows)
+ttm_voluntary_attrition_rate,                       -- This segment's 12-month rate
+r3m_voluntary_attrition_rate_annualized,            -- This segment's quarterly rate (annualized)
+dept_ttm_overall_attrition_rate,                    -- Department 12-month benchmark
+orgwide_ttm_overall_attrition_rate,                 -- Company-wide 12-month benchmark
+orgwide_r3m_overall_attrition_rate_annualized       -- Company-wide quarterly benchmark
 ```
 
-In Tableau, this translates to: drag the segment rate as a bar, drag the org-wide rate as a reference line. One data source, no calculated fields.
+In Tableau, this translates to: drag the segment rate as a bar, drag the org-wide rate as a reference line. A parameter toggles between TTM and quarterly views. One data source, one calculated field.
 
 ---
 
@@ -195,15 +197,15 @@ Schema tests are defined in `schema.yml` files across all three model layers, co
 
 ## Data Delivery
 
-An automated pipeline delivers mart data from BigQuery to Google Sheets using Apps Script. Tableau Public connects to the Google Sheet via the Google Drive connector.
+A Python export script pulls all 8 mart tables from BigQuery to CSV files in the `exports/` directory. CSVs are pushed to Google Drive, where Tableau connects via the Google Drive connector.
 
 ```
 dbt run (rebuilds marts in BigQuery)
-    → Apps Script "Refresh All Data" (pulls marts into Google Sheets)
-        → Tableau reads from Google Sheets (no manual export)
+    → python3 scripts/export_marts_to_csv.py (pulls all marts to exports/)
+        → Push CSVs to Google Drive → Tableau reads from Drive
 ```
 
-The Apps Script creates one tab per mart table, with formatted headers, auto-sized columns, and a custom menu for one-click refresh. Total refresh time: ~3 minutes for all tables.
+No row limits, no column truncation, no intermediary spreadsheet layer. Full fidelity from warehouse to dashboard.
 
 ---
 
@@ -222,16 +224,21 @@ The Apps Script creates one tab per mart table, with formatted headers, auto-siz
 people-analytics-data-infrastructure/
 ├── README.md
 │
-├── docs/assets/
-│   ├── JustKaizen_Company_Profile_Definitive.md  ← Company story, org structure, parameters
-│   ├── JustKaizen_Data_Dictionary.md             ← Every field in every model
-│   ├── JustKaizen_Model_Dependency_Map.md        ← Model connections and join keys
-│   ├── JustKaizen_dbt_Architecture_Spec.md       ← Full model specifications
-│   ├── raw_layer_erd.png                         ← Source system ERD
-│   └── pipeline_flow.png                         ← Staging → Intermediate → Mart flow
+├── docs/
+│   ├── JustKaizen_dbt_System_Guide.md            ← Full system walkthrough (architecture, commands, troubleshooting)
+│   ├── dbt_Learning_Plan.md                      ← 10-phase dbt learning plan mapped to this project
+│   └── assets/
+│       ├── JustKaizen_Company_Profile_Definitive.md  ← Company story, org structure, parameters
+│       ├── JustKaizen_Data_Dictionary.md             ← Every field in every model
+│       ├── JustKaizen_Model_Dependency_Map.md        ← Model connections and join keys
+│       ├── JustKaizen_dbt_Architecture_Spec.md       ← Full model specifications
+│       ├── raw_layer_erd.png                         ← Source system ERD
+│       └── pipeline_flow.png                         ← Staging → Intermediate → Mart flow
 │
-├── scripts/data_generation/
-│   └── generate_all_seeds.py                     ← Python synthetic data pipeline
+├── scripts/
+│   ├── data_generation/
+│   │   └── generate_all_seeds.py                 ← Python synthetic data pipeline
+│   └── export_marts_to_csv.py                    ← BigQuery → CSV export for all mart tables
 │
 ├── seeds/                                        ← Raw CSVs loaded via dbt seed
 │   ├── raw_employees.csv
@@ -254,6 +261,6 @@ people-analytics-data-infrastructure/
 
 ## About
 
-Built by **[Keenan Artis](https://www.linkedin.com/in/keenanjeffreyartis/)**, a data analyst with 7+ years across forensics analytics (PwC) and people analytics. This architecture is modeled after a production People Analytics infrastructure I built from scratch as the first analytics hire at a ~950-person tech company, adapted for dbt and BigQuery. dbt models were built using Claude Code as an AI-assisted development tool. Architectural decisions, business logic definitions, data validation criteria, and all analytical frameworks were designed by the author prior to code generation.
+Built by **[Keenan Artis](https://www.linkedin.com/in/keenanjeffreyartis/)**, an analytics engineer with 7+ years across forensics analytics (PwC) and people analytics. This architecture is modeled after a production People Analytics infrastructure I built from scratch as the sole analytics IC at a 1,200-person tech company, adapted for dbt and BigQuery. dbt models were built using Claude Code as an AI-assisted development tool. Architectural decisions, business logic definitions, data validation criteria, and all analytical frameworks were designed by the author prior to code generation.
 
 **[View the Workforce Analytics Dashboard →](https://github.com/keenanj-analytics/justkaizen-workforce-analytics)** Coming Soon!

@@ -39,9 +39,9 @@ This document defines every field in every model. Matches the final ERD as of th
 | Job_Level | STRING | Level framework: P1-P6 (IC), M1-M4 (Manager/Director), E1-E6 (Senior Leadership) |
 | Employment_Type | STRING | "Full Time", "Part Time", "Contractor". Filter to "Full Time" for all metrics. |
 | Termination_Date | DATE | NULL for active employees. Populated for terminated. |
-| Termination_Reason | STRING | Specific reason: "Career Opportunities", "Compensation", "Work-Life Balance", "Manager Relationship", "Personal Reasons", "Reduction in Force", etc. NULL for active. |
-| Termination_Regrettable | STRING | People Ops designation: "Regrettable" or "Nonregrettable". Independent of performance. NULL for active. |
-| Termination_Voluntary | BOOL | TRUE = voluntary departure, FALSE = involuntary (including RIF). NULL for active. RIF is identified by Termination_Reason = "Reduction in Force". |
+| Termination_Reason | STRING | Specific reason. Voluntary: "Career Opportunities", "Compensation", "Work-Life Balance", "Manager Relationship", "Personal Reasons", "Return to School", "Relocation", "Other". Involuntary: "Performance", "Misconduct", "Policy Violation". Excluded: "Reduction in Force", "End of Contract", "Entity Change", "Acquisition/Merger", "End of Internship", "International Transfer", "Converting to FT". NULL for active. |
+| Termination_Regrettable | STRING | People Ops designation: "Regrettable" or "Not Regrettable". Independent of performance. NULL for active. |
+| Termination_Voluntary | BOOL | TRUE = voluntary departure, FALSE = involuntary (Performance, Misconduct, Policy Violation, RIF). NULL for active. |
 | No_Direct_Reports | INT | Count of direct reports. 0 for ICs. |
 | No_Indirect_Reports | INT | Count of skip-level reports. 0 for most. |
 | Manager_Status | BOOL | TRUE if the employee manages people. |
@@ -66,8 +66,8 @@ This document defines every field in every model. Matches the final ERD as of th
 | Reviewer_email | STRING | Email of the reviewer |
 | Reviewee_Name | STRING | Name of the employee being reviewed |
 | Question | STRING | Question text. The rating lives on the "Performance Category" question. |
-| Score | STRING | Raw score from reviewer (1-4 scale at source, or " --" for text-only questions) |
-| Score_Description | STRING | Rating text: "1 - Truly Outstanding", "2 - Frequently Exceeds Expectations", "3 - Strong Contributor", "4 - Does Not Meet Expectations" |
+| Score | STRING | Raw score from reviewer (1-5 scale, or " --" for text-only questions) |
+| Score_Description | STRING | Rating text: "1 - Outstanding", "2 - Exceeds Expectations", "3 - Strong Contributor", "4 - Partially Meets Expectations", "5 - Does Not Meet Expectations" |
 | Calibrated_Score | STRING | Post-calibration score. Often " --" if calibration didn't override. |
 | Calibrated_Score_Description | STRING | Post-calibration rating text |
 | Response_Text | STRING | Free-text response for open-ended questions. " --" for rating questions. |
@@ -191,12 +191,13 @@ The staging layer cleans field names, casts data types, and applies source-level
 
 | Source Score | Source Description | Target Numeric | Target Description |
 |------------|-------------------|---------------|-------------------|
-| 1 | 1 - Truly Outstanding | 5 | Significantly Exceeds Expectations |
-| 2 | 2 - Frequently Exceeds Expectations | 4 | Exceeds Expectations |
+| 1 | 1 - Outstanding | 5 | Significantly Exceeds Expectations |
+| 2 | 2 - Exceeds Expectations | 4 | Exceeds Expectations |
 | 3 | 3 - Strong Contributor | 3 | Meets Expectations |
-| 4 | 4 - Does Not Meet Expectations | 1 | Does Not Meet Expectations |
+| 4 | 4 - Partially Meets Expectations | 2 | Partially Meets Expectations |
+| 5 | 5 - Does Not Meet Expectations | 1 | Does Not Meet Expectations |
 
-**Note:** Source uses 1-4 scale where 1 is best. Target uses 1-5 scale where 5 is best. The 2-point rating (Partially Meets) does not exist in the source performance management system; it is a JustKaizen addition generated in synthetic data.
+**Note:** Source uses 1-5 scale where 1 is best. Target uses 1-5 scale where 5 is best.
 
 ### stg_recruiting
 
@@ -301,6 +302,7 @@ The staging layer cleans field names, casts data types, and applies source-level
 | is_terminated_this_month | BOOL | DATE_TRUNC(termination_date, MONTH) = report_month |
 | is_excluded_termination | BOOL | TRUE if termination_reason IN ('Reduction in Force', 'End of Contract', 'Entity Change', 'Acquisition/Merger', 'End of Internship', 'International Transfer', 'Relocation', 'Converting to FT'). This is a data cleaning convention, not a dashboard filter. |
 | is_attrition_eligible_term | BOOL | is_terminated_this_month = TRUE AND is_excluded_termination = FALSE |
+| is_rif_termination | BOOL | is_terminated_this_month = TRUE AND termination_reason = 'Reduction in Force' |
 
 ### int_reporting_grid_attrition
 
@@ -334,7 +336,7 @@ The staging layer cleans field names, casts data types, and applies source-level
 | Field | Type | Description |
 |-------|------|-------------|
 | report_month | DATE | From grid |
-| report_quarter | STRING | "2024 Q4" |
+| report_quarter | STRING | "2025 Q4" |
 | flag_end_of_quarter | BOOL | Month in (3,6,9,12) or latest month |
 | flag_latest_report | BOOL | report_month = MAX(report_month) |
 | department | STRING | Dimension |
@@ -351,6 +353,8 @@ The staging layer cleans field names, casts data types, and applies source-level
 | involuntary_terminations | INT | Where termination_type = "Involuntary" AND eligible |
 | top_performer_terminations | INT | Where top_performer_flag = "Y" AND eligible |
 | regrettable_terminations | INT | Where is_regrettable = "Regrettable" AND eligible |
+| rif_terminations | INT | Where is_rif_termination = TRUE (Reduction in Force only) |
+| total_terminations_plus_rif | INT | total_terminations + rif_terminations |
 | ttm_total_terminations | INT | SUM over 12-month window |
 | ttm_voluntary_terminations | INT | SUM over 12-month window |
 | ttm_avg_headcount | FLOAT | AVG(end_month_headcount) over 12-month window |
@@ -358,9 +362,25 @@ The staging layer cleans field names, casts data types, and applies source-level
 | ttm_voluntary_attrition_rate | FLOAT | ttm_voluntary / ttm_avg_headcount |
 | ttm_top_performer_attrition_rate | FLOAT | ttm_top_performer / ttm_avg_headcount |
 | ttm_regrettable_attrition_rate | FLOAT | ttm_regrettable / ttm_avg_headcount |
-| orgwide_ttm_overall_attrition_rate | FLOAT | Company-wide TTM attrition, same month |
-| orgwide_ttm_voluntary_attrition_rate | FLOAT | Company-wide TTM voluntary |
-| dept_ttm_overall_attrition_rate | FLOAT | Department-level TTM attrition |
+| r3m_total_terminations | INT | SUM over 3-month window |
+| r3m_voluntary_terminations | INT | SUM over 3-month window |
+| r3m_avg_headcount | FLOAT | AVG(end_month_headcount) over 3-month window |
+| r3m_overall_attrition_rate_annualized | FLOAT | (r3m_total / r3m_avg_headcount) * 4 |
+| r3m_voluntary_attrition_rate_annualized | FLOAT | (r3m_voluntary / r3m_avg_headcount) * 4 |
+| r3m_top_performer_attrition_rate_annualized | FLOAT | (r3m_top_performer / r3m_avg_headcount) * 4 |
+| r3m_regrettable_attrition_rate_annualized | FLOAT | (r3m_regrettable / r3m_avg_headcount) * 4 |
+| orgwide_ttm_total_terminations | INT | Company-wide TTM total termination count |
+| orgwide_ttm_voluntary_terminations | INT | Company-wide TTM voluntary count |
+| orgwide_ttm_avg_headcount | FLOAT | Company-wide TTM average headcount |
+| orgwide_ttm_overall_attrition_rate | FLOAT | Company-wide TTM attrition rate |
+| orgwide_ttm_voluntary_attrition_rate | FLOAT | Company-wide TTM voluntary rate |
+| orgwide_r3m_total_terminations | INT | Company-wide 3-month rolling total count |
+| orgwide_r3m_voluntary_terminations | INT | Company-wide 3-month rolling voluntary count |
+| orgwide_r3m_avg_headcount | FLOAT | Company-wide 3-month rolling avg headcount |
+| orgwide_r3m_overall_attrition_rate_annualized | FLOAT | Company-wide 3-month rolling annualized rate |
+| orgwide_r3m_voluntary_attrition_rate_annualized | FLOAT | Company-wide 3-month rolling voluntary annualized rate |
+| dept_ttm_overall_attrition_rate | FLOAT | Department-level TTM attrition rate |
+| dept_r3m_overall_attrition_rate_annualized | FLOAT | Department-level 3-month rolling annualized rate |
 
 ### fct_recruiting_reporting
 

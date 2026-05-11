@@ -5,9 +5,9 @@
 **Company:** JustKaizen AI
 **What they do:** Enterprise AI platform that automates business operations, analytics, and decision-making workflows for mid-market and enterprise organizations.
 **Mission:** Build intelligent automation that makes every team operate at their best.
-**Founded:** 2018, remote-first (HQ in San Francisco for legal/investor purposes)
-**Current state (Q1 2025):** 1,200 active employees, ~$180M ARR, 25% YoY growth, preparing for IPO in 2026
-**Data scope:** January 2020 through March 2025 (5 years, 63 months)
+**Founded:** 2019, remote-first (HQ in San Francisco for legal/investor purposes)
+**Current state (Q1 2026):** 1,200 active employees, ~$180M ARR, 25% YoY growth, preparing for IPO in 2027
+**Data scope:** January 2021 through March 2026 (5 years, 63 months)
 **Total employees ever:** ~1,900 (1,200 active + ~700 terminated across the data scope)
 
 ---
@@ -16,11 +16,11 @@
 
 | Round | Year | Amount | Valuation | Milestone |
 |-------|------|--------|-----------|-----------|
-| Seed | 2018 | $5M | $20M | MVP launched, first 10 enterprise pilots |
-| Series A | 2019 | $25M | $100M | Product-market fit, 50+ customers |
-| Series B | 2020 | $60M | $350M | Mid-market expansion, 200+ customers |
-| Series C | 2021 | $120M | $1.2B | Unicorn status, international expansion |
-| Series D | 2023 | $150M | $2.5B | Post-RIF stabilization, path to profitability |
+| Seed | 2019 | $5M | $20M | MVP launched, first 10 enterprise pilots |
+| Series A | 2020 | $25M | $100M | Product-market fit, 50+ customers |
+| Series B | 2021 | $60M | $350M | Mid-market expansion, 200+ customers |
+| Series C | 2022 | $120M | $1.2B | Unicorn status, international expansion |
+| Series D | 2024 | $150M | $2.5B | Post-RIF stabilization, path to profitability |
 
 ---
 
@@ -28,32 +28,32 @@
 
 | Period | Event | Start HC | End HC | Net Change |
 |--------|-------|----------|--------|------------|
-| 2018 Q1-Q4 | Founding year | 0 | 15 | +15 |
-| 2019 Q1-Q2 | Seed hiring | 15 | 40 | +25 |
-| 2019 Q3-Q4 | Series A ramp | 40 | 80 | +40 |
-| 2020 Q1-Q2 | Series B, COVID remote shift | 80 | 150 | +70 |
-| 2020 Q3-Q4 | Continued growth | 150 | 250 | +100 |
-| 2021 Q1-Q2 | Series C, hypergrowth begins | 250 | 450 | +200 |
-| 2021 Q3-Q4 | Peak hiring velocity | 450 | 700 | +250 |
-| 2022 Q1-Q2 | Hypergrowth continues | 700 | 1,000 | +300 |
-| 2022 Q3-Q4 | Growth slowing, market correction | 1,000 | 1,200 | +200 |
-| 2023 Q1 | **RIF: 12% reduction (150 people)** | 1,200 | 1,050 | -150 |
-| 2023 Q2 | Hiring freeze, natural attrition | 1,050 | 1,020 | -30 |
-| 2023 Q3 | Series D, cautious rehire | 1,020 | 1,040 | +20 |
-| 2023 Q4 | Disciplined growth resumes | 1,040 | 1,070 | +30 |
-| 2024 Q1 | Steady hiring | 1,070 | 1,100 | +30 |
-| 2024 Q2 | Continued growth | 1,100 | 1,130 | +30 |
-| 2024 Q3 | Continued growth | 1,130 | 1,160 | +30 |
-| 2024 Q4 | Year-end hiring push | 1,160 | 1,200 | +40 |
-| 2025 Q1 | Current state, IPO prep | 1,200 | 1,200 | 0 (net) |
+| 2019 Q1-Q4 | Founding year | 0 | 15 | +15 |
+| 2020 Q1-Q2 | Seed hiring | 15 | 40 | +25 |
+| 2020 Q3-Q4 | Series A ramp | 40 | 80 | +40 |
+| 2021 Q1-Q2 | Series B, COVID remote shift | 80 | 150 | +70 |
+| 2021 Q3-Q4 | Continued growth | 150 | 250 | +100 |
+| 2022 Q1-Q2 | Series C, hypergrowth begins | 250 | 450 | +200 |
+| 2022 Q3-Q4 | Peak hiring velocity | 450 | 700 | +250 |
+| 2023 Q1-Q2 | Hypergrowth continues | 700 | 1,000 | +300 |
+| 2023 Q3-Q4 | Growth slowing, market correction | 1,000 | 1,200 | +200 |
+| 2024 Q1 | **RIF: 12% reduction (150 people)** | 1,200 | 1,050 | -150 |
+| 2024 Q2 | Hiring freeze, natural attrition | 1,050 | 1,020 | -30 |
+| 2024 Q3 | Series D, cautious rehire | 1,020 | 1,040 | +20 |
+| 2024 Q4 | Disciplined growth resumes | 1,040 | 1,070 | +30 |
+| 2025 Q1 | Steady hiring | 1,070 | 1,100 | +30 |
+| 2025 Q2 | Continued growth | 1,100 | 1,130 | +30 |
+| 2025 Q3 | Continued growth | 1,130 | 1,160 | +30 |
+| 2025 Q4 | Year-end hiring push | 1,160 | 1,200 | +40 |
+| 2026 Q1 | Current state, IPO prep | 1,200 | 1,200 | 0 (net) |
 
-**Note:** Data scope for the warehouse starts January 2020. Employees hired in 2018-2019 appear in the data with their original hire dates but their first roster snapshot is January 2020.
+**Note:** Data scope for the warehouse starts January 2021. Employees hired in 2019-2020 appear in the data with their original hire dates but their first roster snapshot is January 2021.
 
 ---
 
-## 4. 2023 Q1 Layoff Details
+## 4. 2024 Q1 Layoff Details
 
-150 employees terminated as "Reduction in Force" in Q1 2023. Driven by market correction, over-hiring during 2022 hypergrowth, and board pressure to demonstrate path to profitability ahead of IPO.
+150 employees terminated as "Reduction in Force" in Q1 2024. Driven by market correction, over-hiring during 2023 hypergrowth, and board pressure to demonstrate path to profitability ahead of IPO.
 
 | Department | People Cut | % of Dept at Time | Notes |
 |------------|-----------|-------------------|-------|
@@ -66,7 +66,7 @@
 | Product | 10 | 10% | UX Research consolidated, junior PM roles |
 | Data & Analytics | 0 | 0% | Protected. Small team, fully utilized. |
 
-**Post-layoff narrative:** Company stabilized through Q2-Q3 2023, secured Series D funding ($150M at $2.5B valuation) in Q3 2023, and resumed disciplined hiring. By Q4 2024, headcount returned to pre-layoff levels. IPO targeted for 2026.
+**Post-layoff narrative:** Company stabilized through Q2-Q3 2024, secured Series D funding ($150M at $2.5B valuation) in Q3 2024, and resumed disciplined hiring. By Q4 2025, headcount returned to pre-layoff levels. IPO targeted for 2027.
 
 ---
 
@@ -76,26 +76,26 @@
 
 | employee_id | Name | Title | Level | Department | Reports To | Hire Date |
 |-------------|------|-------|-------|------------|-----------|-----------|
-| EMP-001 | Maya Chen | CEO | E6 | Executive | Board | 2018-03-01 |
-| EMP-002 | David Okafor | CTO | E4 | Engineering | EMP-001 | 2018-03-01 |
-| EMP-003 | Marcus Lee | CRO | E4 | Sales | EMP-001 | 2020-06-01 |
-| EMP-004 | Aisha Patel | CFO | E4 | G&A | EMP-001 | 2019-09-01 |
-| EMP-005 | James Wallace | CPO | E4 | Product | EMP-001 | 2021-04-01 |
-| EMP-006 | Rachel Torres | Chief People Officer | E4 | People | EMP-001 | 2021-08-01 |
-| EMP-007 | Lisa Nakamura | CMO | E4 | Marketing | EMP-001 | 2020-11-01 |
-| EMP-008 | Carlos Rivera | VP Customer Success | E1 | Customer Success | EMP-001 | 2020-03-01 |
-| EMP-009 | Sarah Kim | VP Data & Analytics | E1 | Data & Analytics | EMP-001 | 2022-01-15 |
-| EMP-010 | Nina Kowalski | Chief of Staff | E3 | Executive | EMP-001 | 2023-06-01 |
-| EMP-011 | Kevin Zhao | VP Engineering, Platform | E1 | Engineering | EMP-002 | 2018-06-01 |
-| EMP-012 | Priya Sharma | VP Engineering, AI/ML | E1 | Engineering | EMP-002 | 2019-03-01 |
-| EMP-013 | Derek Washington | VP Engineering, Infrastructure | E1 | Engineering | EMP-002 | 2020-09-01 |
-| EMP-014 | Jordan Blake | VP Sales, Commercial | E1 | Sales | EMP-003 | 2021-02-01 |
-| EMP-015 | Michelle Park | VP Sales, Enterprise | E1 | Sales | EMP-003 | 2021-07-01 |
-| EMP-016 | Amara Johnson | VP People Operations | E1 | People | EMP-006 | 2022-03-01 |
-| EMP-017 | Raj Krishnan | VP Product | E1 | Product | EMP-005 | 2021-09-01 |
-| EMP-018 | Hannah Scott | VP Marketing, Growth | E1 | Marketing | EMP-007 | 2021-05-01 |
-| EMP-019 | Andre Williams | VP Finance | E1 | G&A | EMP-004 | 2020-08-01 |
-| EMP-020 | Carlos Mendez | VP Customer Success, Ops | E1 | Customer Success | EMP-008 | 2021-11-01 |
+| EMP-001 | Maya Chen | CEO | E6 | Executive | Board | 2019-03-01 |
+| EMP-002 | David Okafor | CTO | E4 | Engineering | EMP-001 | 2019-03-01 |
+| EMP-003 | Marcus Lee | CRO | E4 | Sales | EMP-001 | 2021-06-01 |
+| EMP-004 | Aisha Patel | CFO | E4 | G&A | EMP-001 | 2020-09-01 |
+| EMP-005 | James Wallace | CPO | E4 | Product | EMP-001 | 2022-04-01 |
+| EMP-006 | Rachel Torres | Chief People Officer | E4 | People | EMP-001 | 2022-08-01 |
+| EMP-007 | Lisa Nakamura | CMO | E4 | Marketing | EMP-001 | 2021-11-01 |
+| EMP-008 | Carlos Rivera | VP Customer Success | E1 | Customer Success | EMP-001 | 2021-03-01 |
+| EMP-009 | Sarah Kim | VP Data & Analytics | E1 | Data & Analytics | EMP-001 | 2023-01-15 |
+| EMP-010 | Nina Kowalski | Chief of Staff | E3 | Executive | EMP-001 | 2024-06-01 |
+| EMP-011 | Kevin Zhao | VP Engineering, Platform | E1 | Engineering | EMP-002 | 2019-06-01 |
+| EMP-012 | Priya Sharma | VP Engineering, AI/ML | E1 | Engineering | EMP-002 | 2020-03-01 |
+| EMP-013 | Derek Washington | VP Engineering, Infrastructure | E1 | Engineering | EMP-002 | 2021-09-01 |
+| EMP-014 | Jordan Blake | VP Sales, Commercial | E1 | Sales | EMP-003 | 2022-02-01 |
+| EMP-015 | Michelle Park | VP Sales, Enterprise | E1 | Sales | EMP-003 | 2022-07-01 |
+| EMP-016 | Amara Johnson | VP People Operations | E1 | People | EMP-006 | 2023-03-01 |
+| EMP-017 | Raj Krishnan | VP Product | E1 | Product | EMP-005 | 2022-09-01 |
+| EMP-018 | Hannah Scott | VP Marketing, Growth | E1 | Marketing | EMP-007 | 2022-05-01 |
+| EMP-019 | Andre Williams | VP Finance | E1 | G&A | EMP-004 | 2021-08-01 |
+| EMP-020 | Carlos Mendez | VP Customer Success, Ops | E1 | Customer Success | EMP-008 | 2022-11-01 |
 
 **Departed Leadership:**
 | employee_id | Name | Title | Department | Termination Date | Reason |
@@ -452,14 +452,14 @@ Bands shift upward over time to reflect market adjustments. When generating hist
 
 | Year | Multiplier | Interpretation |
 |------|-----------|----------------|
-| 2018 | 0.78x | Early-stage, below-market |
-| 2019 | 0.82x | Series A, still below market |
-| 2020 | 0.85x | Series B, approaching market |
-| 2021 | 0.88x | Hypergrowth, competitive but lagging |
-| 2022 | 0.92x | Market correction, bands catching up |
-| 2023 | 0.95x | Post-RIF, significant market adjustment (Sept 2023) |
-| 2024 | 0.98x | Near-market rates |
-| 2025 | 1.00x | Current market rates |
+| 2019 | 0.78x | Early-stage, below-market |
+| 2020 | 0.82x | Series A, still below market |
+| 2021 | 0.85x | Series B, approaching market |
+| 2022 | 0.88x | Hypergrowth, competitive but lagging |
+| 2023 | 0.92x | Market correction, bands catching up |
+| 2024 | 0.95x | Post-RIF, significant market adjustment (Sept 2024) |
+| 2025 | 0.98x | Near-market rates |
+| 2026 | 1.00x | Current market rates |
 
 ### 8d. Compensation Change Rules
 
@@ -470,7 +470,7 @@ Bands shift upward over time to reflect market adjustments. When generating hist
 | Annual merit (Meets Expectations) | 3-4% | Standard performer, January each year |
 | Annual merit (Partially Meets) | 0-1% | Below expectations |
 | Annual merit (Does Not Meet) | 0% | Comp frozen |
-| Market Adjustment | 5-8% | Company-wide, occurred September 2023 post-Series D |
+| Market Adjustment | 5-8% | Company-wide, occurred September 2024 post-Series D |
 | Lateral move | 0% | No comp change for same-level department transfers |
 
 **Compa-ratio formula:** `ROUND(salary / comp_band_mid, 2)`
@@ -494,7 +494,7 @@ Bands shift upward over time to reflect market adjustments. When generating hist
 ### Review Cycles
 
 - **Frequency:** Semi-annual (Mid-Year and Year-End)
-- **Cycle names:** "2020 Mid-Year", "2020 Year-End", "2021 Mid-Year", etc.
+- **Cycle names:** "2021 Mid-Year", "2021 Year-End", "2022 Mid-Year", etc.
 - **Review period:** Mid-Year covers Jan-Jun, Year-End covers Jul-Dec
 - **Completion window:** 4-6 weeks after period end
 
@@ -522,8 +522,8 @@ These behavioral archetypes drive realistic patterns in the synthetic data. Each
 | Manager Change Casualty | 7% | Leaves within 6 months of a manager change. Leadership transition attrition. |
 | Comp-Driven Exit | 6% | Below-band compa-ratio, leaves when market heats up. |
 | Career Ceiling | 5% | Hits IC5/IC6 or M3/M4 ceiling, leaves for a step-up title elsewhere. |
-| Founder / Early Employee | 3% | Hired 2018-2019. High loyalty, deep institutional knowledge. Most still active. |
-| Layoff Casualty | 4% | Terminated during Q1 2023 RIF. Event-driven, not behavioral. |
+| Founder / Early Employee | 3% | Hired 2019-2020. High loyalty, deep institutional knowledge. Most still active. |
+| Layoff Casualty | 4% | Terminated during Q1 2024 RIF. Event-driven, not behavioral. |
 
 ---
 
@@ -550,10 +550,20 @@ These behavioral archetypes drive realistic patterns in the synthetic data. Each
 | Compensation | 20% |
 | Work-Life Balance | 15% |
 | Manager Relationship | 12% |
-| Personal Reasons | 10% |
+| Personal Reasons | 8% |
 | Relocation | 5% |
 | Return to School | 3% |
-| Other | 5% |
+| Other | 4% |
+
+### Involuntary Termination Reasons (Attrition-Eligible)
+
+These are performance-driven or conduct-driven terminations that count toward attrition metrics. They represent roughly 4-5% of all non-RIF terminations.
+
+| Reason | Description |
+|--------|-------------|
+| Performance | Terminated for sustained underperformance (scores 4-5). Not regrettable. |
+| Misconduct | Terminated for behavioral violations. Not regrettable. |
+| Policy Violation | Terminated for policy breaches. Not regrettable. |
 
 ### Excluded Termination Reasons
 
@@ -645,7 +655,7 @@ Excluded reasons:
 | Parameter | Value |
 |-----------|-------|
 | Frequency | Semi-annual (H1 and H2) |
-| Cycles | 2020-H1 through 2025-H1 (10 cycles) |
+| Cycles | 2021-H1 through 2025-H2 (10 cycles) |
 | Anonymization | Department-level minimum. Sub-department included when response count >= 5. |
 | Questions | 27 questions across 8 themes |
 | Response rate | 78-88% per cycle |

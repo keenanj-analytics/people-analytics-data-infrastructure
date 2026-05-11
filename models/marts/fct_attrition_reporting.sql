@@ -11,7 +11,8 @@
     Purpose:
         The attrition reporting table Tableau reads. Carries headcount,
         termination counts (total / voluntary / involuntary / top performer
-        / regrettable), TTM rolling totals, TTM rates, and three levels of
+        / regrettable), TTM rolling totals, TTM rates, 3-month rolling
+        annualized rates for quarterly performance, and three levels of
         benchmark (segment, department, company-wide) on every row.
 
     Construction:
@@ -70,7 +71,8 @@ cell_aggregated as (
         countif(is_attrition_eligible_term and termination_type = 'Involuntary')    as involuntary_terminations,
         countif(is_attrition_eligible_term and top_performer_flag = 'Y')            as top_performer_terminations,
         countif(is_attrition_eligible_term and is_regrettable_termination = 'Regrettable')
-                                                                                    as regrettable_terminations
+                                                                                    as regrettable_terminations,
+        countif(is_rif_termination)                                                 as rif_terminations
     from roster
     where employment_type = 'Full Time'
     group by 1, 2, 3, 4, 5, 6, 7, 8, 9
@@ -96,7 +98,8 @@ scaffolded as (
         coalesce(a.voluntary_terminations, 0)      as voluntary_terminations,
         coalesce(a.involuntary_terminations, 0)    as involuntary_terminations,
         coalesce(a.top_performer_terminations, 0)  as top_performer_terminations,
-        coalesce(a.regrettable_terminations, 0)    as regrettable_terminations
+        coalesce(a.regrettable_terminations, 0)    as regrettable_terminations,
+        coalesce(a.rif_terminations, 0)              as rif_terminations
     from {{ ref('int_reporting_grid_attrition') }} as g
     left join cell_aggregated as a
         on  g.report_month       =                a.report_month
@@ -114,27 +117,50 @@ scaffolded as (
 with_ttm as (
 
     -- Per-cell TTM rolling windows (12-month trailing)
+    -- and 3-month rolling windows for quarterly attrition
     select
         *,
-        sum(total_terminations)         over cell_window as ttm_total_terminations,
-        sum(voluntary_terminations)     over cell_window as ttm_voluntary_terminations,
-        sum(top_performer_terminations) over cell_window as ttm_top_performer_terminations,
-        sum(regrettable_terminations)   over cell_window as ttm_regrettable_terminations,
-        avg(end_month_headcount)        over cell_window as ttm_avg_headcount
+        -- 12-month (TTM) rolling
+        sum(total_terminations)         over cell_window_12m as ttm_total_terminations,
+        sum(voluntary_terminations)     over cell_window_12m as ttm_voluntary_terminations,
+        sum(top_performer_terminations) over cell_window_12m as ttm_top_performer_terminations,
+        sum(regrettable_terminations)   over cell_window_12m as ttm_regrettable_terminations,
+        avg(end_month_headcount)        over cell_window_12m as ttm_avg_headcount,
+
+        -- 3-month rolling (for annualized quarterly rate)
+        sum(total_terminations)         over cell_window_3m  as r3m_total_terminations,
+        sum(voluntary_terminations)     over cell_window_3m  as r3m_voluntary_terminations,
+        sum(top_performer_terminations) over cell_window_3m  as r3m_top_performer_terminations,
+        sum(regrettable_terminations)   over cell_window_3m  as r3m_regrettable_terminations,
+        avg(end_month_headcount)        over cell_window_3m  as r3m_avg_headcount
     from scaffolded
-    window cell_window as (
-        partition by
-            department,
-            sub_department,
-            job_level,
-            level_group,
-            tenure_bucket,
-            top_performer_flag,
-            gender,
-            race_ethnicity
-        order by report_month
-        rows between 11 preceding and current row
-    )
+    window
+        cell_window_12m as (
+            partition by
+                department,
+                sub_department,
+                job_level,
+                level_group,
+                tenure_bucket,
+                top_performer_flag,
+                gender,
+                race_ethnicity
+            order by report_month
+            rows between 11 preceding and current row
+        ),
+        cell_window_3m as (
+            partition by
+                department,
+                sub_department,
+                job_level,
+                level_group,
+                tenure_bucket,
+                top_performer_flag,
+                gender,
+                race_ethnicity
+            order by report_month
+            rows between 2 preceding and current row
+        )
 
 ),
 
@@ -154,22 +180,45 @@ orgwide_monthly as (
 
 orgwide_ttm as (
 
-    -- Company-wide TTM rates per month
+    -- Company-wide TTM and 3-month rolling rates per month
     select
         report_month,
+        -- 12-month (TTM) raw counts
+        sum(total_terminations)     over orgwide_12m as orgwide_ttm_total_terminations,
+        sum(voluntary_terminations) over orgwide_12m as orgwide_ttm_voluntary_terminations,
+        avg(end_month_headcount)    over orgwide_12m as orgwide_ttm_avg_headcount,
+        -- 12-month (TTM) rates
         safe_divide(
-            sum(total_terminations)     over orgwide_window,
-            avg(end_month_headcount)    over orgwide_window
+            sum(total_terminations)     over orgwide_12m,
+            avg(end_month_headcount)    over orgwide_12m
         ) as orgwide_ttm_overall_attrition_rate,
         safe_divide(
-            sum(voluntary_terminations) over orgwide_window,
-            avg(end_month_headcount)    over orgwide_window
-        ) as orgwide_ttm_voluntary_attrition_rate
+            sum(voluntary_terminations) over orgwide_12m,
+            avg(end_month_headcount)    over orgwide_12m
+        ) as orgwide_ttm_voluntary_attrition_rate,
+        -- 3-month rolling raw counts
+        sum(total_terminations)     over orgwide_3m  as orgwide_r3m_total_terminations,
+        sum(voluntary_terminations) over orgwide_3m  as orgwide_r3m_voluntary_terminations,
+        avg(end_month_headcount)    over orgwide_3m  as orgwide_r3m_avg_headcount,
+        -- 3-month rolling rates (annualized)
+        safe_divide(
+            sum(total_terminations)     over orgwide_3m,
+            avg(end_month_headcount)    over orgwide_3m
+        ) * 4 as orgwide_r3m_overall_attrition_rate_annualized,
+        safe_divide(
+            sum(voluntary_terminations) over orgwide_3m,
+            avg(end_month_headcount)    over orgwide_3m
+        ) * 4 as orgwide_r3m_voluntary_attrition_rate_annualized
     from orgwide_monthly
-    window orgwide_window as (
-        order by report_month
-        rows between 11 preceding and current row
-    )
+    window
+        orgwide_12m as (
+            order by report_month
+            rows between 11 preceding and current row
+        ),
+        orgwide_3m as (
+            order by report_month
+            rows between 2 preceding and current row
+        )
 
 ),
 
@@ -189,20 +238,32 @@ dept_monthly as (
 
 dept_ttm as (
 
-    -- Per-department TTM overall attrition rate per month
+    -- Per-department TTM and 3-month rolling attrition rates per month
     select
         report_month,
         department,
+        -- 12-month (TTM)
         safe_divide(
-            sum(total_terminations)  over dept_window,
-            avg(end_month_headcount) over dept_window
-        ) as dept_ttm_overall_attrition_rate
+            sum(total_terminations)  over dept_12m,
+            avg(end_month_headcount) over dept_12m
+        ) as dept_ttm_overall_attrition_rate,
+        -- 3-month rolling (annualized)
+        safe_divide(
+            sum(total_terminations)  over dept_3m,
+            avg(end_month_headcount) over dept_3m
+        ) * 4 as dept_r3m_overall_attrition_rate_annualized
     from dept_monthly
-    window dept_window as (
-        partition by department
-        order by report_month
-        rows between 11 preceding and current row
-    )
+    window
+        dept_12m as (
+            partition by department
+            order by report_month
+            rows between 11 preceding and current row
+        ),
+        dept_3m as (
+            partition by department
+            order by report_month
+            rows between 2 preceding and current row
+        )
 
 ),
 
@@ -236,8 +297,10 @@ final as (
         t.involuntary_terminations,
         t.top_performer_terminations,
         t.regrettable_terminations,
+        t.rif_terminations,
+        t.total_terminations + t.rif_terminations                           as total_terminations_plus_rif,
 
-        -- Cell-level TTM counts and rates
+        -- Cell-level TTM counts and rates (12-month rolling)
         t.ttm_total_terminations,
         t.ttm_voluntary_terminations,
         t.ttm_avg_headcount,
@@ -246,10 +309,32 @@ final as (
         safe_divide(t.ttm_top_performer_terminations,  t.ttm_avg_headcount) as ttm_top_performer_attrition_rate,
         safe_divide(t.ttm_regrettable_terminations,    t.ttm_avg_headcount) as ttm_regrettable_attrition_rate,
 
-        -- Benchmarks
+        -- Cell-level 3-month rolling counts and annualized rates
+        t.r3m_total_terminations,
+        t.r3m_voluntary_terminations,
+        t.r3m_avg_headcount,
+        safe_divide(t.r3m_total_terminations,          t.r3m_avg_headcount) * 4 as r3m_overall_attrition_rate_annualized,
+        safe_divide(t.r3m_voluntary_terminations,      t.r3m_avg_headcount) * 4 as r3m_voluntary_attrition_rate_annualized,
+        safe_divide(t.r3m_top_performer_terminations,  t.r3m_avg_headcount) * 4 as r3m_top_performer_attrition_rate_annualized,
+        safe_divide(t.r3m_regrettable_terminations,    t.r3m_avg_headcount) * 4 as r3m_regrettable_attrition_rate_annualized,
+
+        -- Org-wide TTM counts and rates (12-month)
+        o.orgwide_ttm_total_terminations,
+        o.orgwide_ttm_voluntary_terminations,
+        o.orgwide_ttm_avg_headcount,
         o.orgwide_ttm_overall_attrition_rate,
         o.orgwide_ttm_voluntary_attrition_rate,
-        d.dept_ttm_overall_attrition_rate
+
+        -- Org-wide 3-month rolling counts and rates (annualized)
+        o.orgwide_r3m_total_terminations,
+        o.orgwide_r3m_voluntary_terminations,
+        o.orgwide_r3m_avg_headcount,
+        o.orgwide_r3m_overall_attrition_rate_annualized,
+        o.orgwide_r3m_voluntary_attrition_rate_annualized,
+
+        -- Dept benchmarks
+        d.dept_ttm_overall_attrition_rate,
+        d.dept_r3m_overall_attrition_rate_annualized
 
     from with_ttm as t
     left join orgwide_ttm as o

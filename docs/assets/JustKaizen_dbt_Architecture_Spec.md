@@ -69,7 +69,7 @@ No changes to existing seeds. Current schema supports the new architecture.
 
 | Layer | Model | Purpose |
 |-------|-------|---------|
-| Seed/Model | dim_calendar | Daily date spine (Jan 1, 2020 through Dec 31, 2026). Centralized date reference. |
+| Seed/Model | dim_calendar | Daily date spine (Jan 1, 2021 through Mar 31, 2026). Centralized date reference. |
 | Intermediate | int_employee_monthly_roster | One row per employee per month. The golden record. All dimensions as columns. |
 | Intermediate | int_reporting_grid_attrition | Full month x dimension scaffold for attrition mart |
 | Intermediate | int_reporting_grid_recruiting | Full month x dimension scaffold for recruiting mart |
@@ -91,7 +91,7 @@ No changes to existing seeds. Current schema supports the new architecture.
 
 **Type:** dbt model (generated, not seed)
 **Grain:** One row per day
-**Range:** January 1, 2020 through December 31, 2026
+**Range:** January 1, 2021 through March 31, 2026
 
 | Column | Type | Logic |
 |--------|------|-------|

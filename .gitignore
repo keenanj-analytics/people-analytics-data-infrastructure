@@ -22,3 +22,13 @@ dbt_cloud/
 
 # Environment
 .env
+
+# Generated exports (rebuild via: python3 scripts/export_marts_to_csv.py)
+exports/
+
+# Personal files
+Keenan_Artis_Resume.docx
+docs/company_research/
+
+# Tableau workbooks (published separately)
+Tableau Dashboards/

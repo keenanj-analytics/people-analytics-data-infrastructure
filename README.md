@@ -2,7 +2,7 @@
 
 A production-grade People Analytics data warehouse built for **JustKaizen AI**, a pre-IPO enterprise AI company (1,200 active employees, ~1,900 total, remote-first). The project demonstrates end-to-end data infrastructure: source system integration, dbt transformation layers, BigQuery warehouse, automated data delivery, and Tableau-ready reporting marts.
 
-This infrastructure supports the workforce analytics dashboard and insights published in the companion repository: **[JustKaizen Workforce Analytics →](https://github.com/keenanj-analytics/justkaizen-workforce-analytics)** Coming Soon!
+This infrastructure supports the workforce insights published in the companion repository: **[People Analytics Insights →](https://github.com/keenanj-analytics/people-analytics-insights)**
 
 ## Tools & Stack
 
@@ -263,4 +263,4 @@ people-analytics-data-infrastructure/
 
 Built by **[Keenan Artis](https://www.linkedin.com/in/keenanjeffreyartis/)**, an analytics engineer with 7+ years across forensics analytics (PwC) and people analytics. This architecture is modeled after a production People Analytics infrastructure I built from scratch as the sole analytics IC at a 1,200-person tech company, adapted for dbt and BigQuery. dbt models were built using Claude Code as an AI-assisted development tool. Architectural decisions, business logic definitions, data validation criteria, and all analytical frameworks were designed by the author prior to code generation.
 
-**[View the Workforce Analytics Dashboard →](https://github.com/keenanj-analytics/justkaizen-workforce-analytics)** Coming Soon!
+**[View the People Analytics Insights →](https://github.com/keenanj-analytics/people-analytics-insights)**

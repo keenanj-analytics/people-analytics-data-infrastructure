@@ -15,13 +15,17 @@
 
     Construction:
         CROSS JOIN distinct (report_month, report_quarter) from
-        dim_calendar with distinct recruiting-dimension tuples from
-        int_employee_monthly_roster. The roster carries these fields
-        for hired employees only, so combinations that exist purely on
-        unfilled requisitions in stg_recruiting (e.g., a recruiter who
-        ran reqs but landed no hires) will be absent from the scaffold.
-        Acceptable trade-off for V1; expand the source to include
-        stg_recruiting directly if those slices become material.
+        dim_calendar with distinct recruiting-dimension tuples sourced
+        from two places:
+          1. int_employee_monthly_roster — covers hired candidates (always
+             have department, sub_department, job_level populated).
+          2. stg_recruiting + stg_comp_bands + requisition hire lookup —
+             covers non-hired candidates (declined offers, archived).
+             Department and job_level from comp_bands via job title;
+             sub_department from the hired candidate on the same
+             requisition. Unfilled reqs keep sub_department = NULL.
+        The UNION ensures both hired and non-hired dimension combos exist
+        in the scaffold.
 */
 
 with calendar_months as (
@@ -34,7 +38,8 @@ with calendar_months as (
 
 ),
 
-dimension_combos as (
+-- Dimension combos from hired employees (roster-based, always has sub_department)
+roster_combos as (
 
     select distinct
         department,
@@ -45,6 +50,49 @@ dimension_combos as (
         candidate_recruiter,
         candidate_hiring_manager
     from {{ ref('int_employee_monthly_roster') }}
+
+),
+
+-- Sub-department for each requisition, derived from the hired candidate
+req_sub_dept as (
+
+    select distinct
+        r.requisition_id,
+        e.sub_department            as req_sub_department
+    from {{ ref('stg_recruiting') }} as r
+    inner join (
+        select distinct employee_id, sub_department
+        from {{ ref('int_employee_monthly_roster') }}
+    ) as e on r.employee_id = e.employee_id
+    where r.employee_id is not null
+
+),
+
+-- Dimension combos from all candidates (including non-hired)
+-- Department/job_level from comp_bands; sub_department from requisition's hire
+candidate_combos as (
+
+    select distinct
+        cb.department,
+        req.req_sub_department      as sub_department,
+        cb.job_level,
+        r.Source                    as candidate_source,
+        r.Origin                   as candidate_origin,
+        r.Recruiter                as candidate_recruiter,
+        r.Hiring_Manager           as candidate_hiring_manager
+    from {{ source('raw', 'raw_offers_hires') }} as r
+    left join {{ ref('stg_comp_bands') }} as cb
+        on r.Job = cb.job_title
+    left join req_sub_dept as req
+        on r.Requisition_ID = req.requisition_id
+
+),
+
+dimension_combos as (
+
+    select * from roster_combos
+    union distinct
+    select * from candidate_combos
 
 ),
 

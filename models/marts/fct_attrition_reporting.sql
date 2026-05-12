@@ -34,9 +34,8 @@
     Notes:
         - TTM denominator is AVG of 12 monthly end-headcounts, not a
           two-point average. This smooths RIF distortion per CLAUDE.md.
-        - Top performer / regrettable TTM termination counts are computed
-          as intermediates but not exposed as columns; the data dictionary
-          surfaces only the rates. Add columns if needed downstream.
+        - Top performer / regrettable TTM and r3m termination counts are
+          exposed as standalone columns alongside their corresponding rates.
         - All aggregations (cell, org-wide, department) filter to
           employment_type = 'Full Time'. Part-time and contractor rows
           are excluded from every workforce metric in the warehouse.
@@ -303,6 +302,8 @@ final as (
         -- Cell-level TTM counts and rates (12-month rolling)
         t.ttm_total_terminations,
         t.ttm_voluntary_terminations,
+        t.ttm_top_performer_terminations,
+        t.ttm_regrettable_terminations,
         t.ttm_avg_headcount,
         safe_divide(t.ttm_total_terminations,          t.ttm_avg_headcount) as ttm_overall_attrition_rate,
         safe_divide(t.ttm_voluntary_terminations,      t.ttm_avg_headcount) as ttm_voluntary_attrition_rate,
@@ -312,6 +313,8 @@ final as (
         -- Cell-level 3-month rolling counts and annualized rates
         t.r3m_total_terminations,
         t.r3m_voluntary_terminations,
+        t.r3m_top_performer_terminations,
+        t.r3m_regrettable_terminations,
         t.r3m_avg_headcount,
         safe_divide(t.r3m_total_terminations,          t.r3m_avg_headcount) * 4 as r3m_overall_attrition_rate_annualized,
         safe_divide(t.r3m_voluntary_terminations,      t.r3m_avg_headcount) * 4 as r3m_voluntary_attrition_rate_annualized,

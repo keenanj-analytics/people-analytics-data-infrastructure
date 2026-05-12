@@ -299,7 +299,7 @@ python3 scripts/export_marts_to_csv.py
 
 **Why CSVs instead of Google Sheets?**
 
-- Google Sheets has a 10M cell limit per spreadsheet. fct_attrition_reporting alone (274K rows × 28 cols) = 7.7M cells.
+- Google Sheets has a 10M cell limit per spreadsheet. fct_attrition_reporting alone (274K rows × 52 cols) = 14.3M cells.
 - CSVs have no row/column limits. Full SELECT * with all columns, all rows, all months.
 - CSVs are version-controllable and don't depend on Apps Script middleware.
 
@@ -492,9 +492,9 @@ INTERMEDIATE (BigQuery: raw_intermediate — views + 1 table)
 MARTS (BigQuery: raw_marts — tables)
 │
 ├── DOMAIN REPORTING (aggregated + scaffolded + TTM + benchmarks)
-│   ├── fct_attrition_reporting ←── roster + grid     274,869 rows × 28 cols
+│   ├── fct_attrition_reporting ←── roster + grid     274,869 rows × 52 cols
 │   ├── fct_workforce_composition ←── roster + grid    89,964 rows × 22 cols
-│   ├── fct_recruiting_reporting ←── roster + grid    119,133 rows × 24 cols
+│   ├── fct_recruiting_reporting ←── roster + grid    119,133 rows × 35 cols
 │   └── fct_compensation_reporting ←── roster + grid   79,191 rows × 20 cols
 │
 ├── DRILL-THROUGH

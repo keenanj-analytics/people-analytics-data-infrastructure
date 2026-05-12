@@ -224,25 +224,49 @@ Grain: report_month x department x sub_department x job_level x level_group x ge
 | top_performer_flag | STRING | Dimension |
 | gender | STRING | Dimension |
 | race_ethnicity | STRING | Dimension |
-| beg_month_headcount | INT | Count of active employees at start of month (prior month end count) |
 | end_month_headcount | INT | Count of active employees at end of month |
-| avg_headcount | FLOAT | (beg + end) / 2 |
 | total_terminations | INT | Count where is_attrition_eligible_term = TRUE |
-| voluntary_terminations | INT | Count where termination_type = "Voluntary" AND is_attrition_eligible_term = TRUE |
-| involuntary_terminations | INT | Count where termination_type = "Involuntary" AND is_attrition_eligible_term = TRUE |
-| top_performer_terminations | INT | Count where top_performer_flag = "Y" AND is_attrition_eligible_term = TRUE |
-| ttm_total_terminations | INT | SUM(total_terminations) OVER (ORDER BY report_month ROWS BETWEEN 11 PRECEDING AND CURRENT ROW) |
-| ttm_voluntary_terminations | INT | Same window for voluntary |
-| ttm_avg_headcount | FLOAT | AVG(end_month_headcount) OVER (ORDER BY report_month ROWS BETWEEN 11 PRECEDING AND CURRENT ROW) |
-| ttm_overall_attrition_rate | FLOAT | ttm_total_terminations / ttm_avg_headcount |
-| ttm_voluntary_attrition_rate | FLOAT | ttm_voluntary_terminations / ttm_avg_headcount |
-| ttm_top_performer_attrition_rate | FLOAT | ttm_top_performer_terminations / ttm_avg_headcount |
-| orgwide_ttm_overall_attrition_rate | FLOAT | Company-wide TTM overall attrition for the same month |
-| orgwide_ttm_voluntary_attrition_rate | FLOAT | Company-wide TTM voluntary attrition for the same month |
-| dept_ttm_overall_attrition_rate | FLOAT | Department-level TTM overall attrition for the same month |
+| voluntary_terminations | INT | Voluntary AND is_attrition_eligible_term |
+| involuntary_terminations | INT | Involuntary AND is_attrition_eligible_term |
+| top_performer_terminations | INT | top_performer_flag = "Y" AND is_attrition_eligible_term |
+| regrettable_terminations | INT | is_regrettable = "Regrettable" AND is_attrition_eligible_term |
+| rif_terminations | INT | is_rif_termination = TRUE (Reduction in Force only) |
+| total_terminations_plus_rif | INT | total_terminations + rif_terminations |
+| ttm_total_terminations | INT | SUM over 12-month window |
+| ttm_voluntary_terminations | INT | SUM over 12-month window |
+| ttm_top_performer_terminations | INT | SUM over 12-month window |
+| ttm_regrettable_terminations | INT | SUM over 12-month window |
+| ttm_avg_headcount | FLOAT | AVG(end_month_headcount) over 12-month window |
+| ttm_overall_attrition_rate | FLOAT | ttm_total / ttm_avg_headcount |
+| ttm_voluntary_attrition_rate | FLOAT | ttm_voluntary / ttm_avg_headcount |
+| ttm_top_performer_attrition_rate | FLOAT | ttm_top_performer / ttm_avg_headcount |
+| ttm_regrettable_attrition_rate | FLOAT | ttm_regrettable / ttm_avg_headcount |
+| r3m_total_terminations | INT | SUM over 3-month window |
+| r3m_voluntary_terminations | INT | SUM over 3-month window |
+| r3m_top_performer_terminations | INT | SUM over 3-month window |
+| r3m_regrettable_terminations | INT | SUM over 3-month window |
+| r3m_avg_headcount | FLOAT | AVG(end_month_headcount) over 3-month window |
+| r3m_overall_attrition_rate_annualized | FLOAT | (r3m_total / r3m_avg_headcount) * 4 |
+| r3m_voluntary_attrition_rate_annualized | FLOAT | (r3m_voluntary / r3m_avg_headcount) * 4 |
+| r3m_top_performer_attrition_rate_annualized | FLOAT | (r3m_top_performer / r3m_avg_headcount) * 4 |
+| r3m_regrettable_attrition_rate_annualized | FLOAT | (r3m_regrettable / r3m_avg_headcount) * 4 |
+| orgwide_ttm_total_terminations | INT | Company-wide TTM total count |
+| orgwide_ttm_voluntary_terminations | INT | Company-wide TTM voluntary count |
+| orgwide_ttm_avg_headcount | FLOAT | Company-wide TTM avg headcount |
+| orgwide_ttm_overall_attrition_rate | FLOAT | Company-wide TTM overall rate |
+| orgwide_ttm_voluntary_attrition_rate | FLOAT | Company-wide TTM voluntary rate |
+| orgwide_r3m_total_terminations | INT | Company-wide 3-month rolling total count |
+| orgwide_r3m_voluntary_terminations | INT | Company-wide 3-month rolling voluntary count |
+| orgwide_r3m_avg_headcount | FLOAT | Company-wide 3-month rolling avg headcount |
+| orgwide_r3m_overall_attrition_rate_annualized | FLOAT | Company-wide 3-month annualized rate |
+| orgwide_r3m_voluntary_attrition_rate_annualized | FLOAT | Company-wide 3-month annualized voluntary rate |
+| dept_ttm_overall_attrition_rate | FLOAT | Department-level TTM rate |
+| dept_r3m_overall_attrition_rate_annualized | FLOAT | Department-level 3-month annualized rate |
 
 **Excluded termination reasons (filtered via is_attrition_eligible_term):**
 Reduction in Force, End of Contract, Entity Change, Acquisition/Merger, End of Internship, International Transfer, Relocation, Converting to FT
+
+**RIF tracking:** RIF terminations are tracked separately via rif_terminations and total_terminations_plus_rif so dashboards can show total workforce impact including mass layoffs.
 
 ---
 
@@ -269,17 +293,31 @@ Reduction in Force, End of Contract, Entity Change, Acquisition/Merger, End of I
 | total_offers_extended | INT | Count of offers (accepted + declined) |
 | total_offers_accepted | INT | Count where offer_accepted = TRUE |
 | total_offers_declined | INT | Count where offer_accepted = FALSE |
-| sum_time_to_fill | FLOAT | SUM(DATE_DIFF(hire_date, application_date, DAY)) for hires |
-| avg_time_to_fill | FLOAT | sum_time_to_fill / total_hires |
-| ttm_total_hires | INT | SUM(total_hires) OVER (ROWS BETWEEN 11 PRECEDING AND CURRENT ROW) |
-| ttm_offers_extended | INT | Same window |
-| ttm_offers_accepted | INT | Same window |
+| sum_time_to_fill | FLOAT | SUM of days to fill (external hires only) |
+| avg_time_to_fill | FLOAT | sum_time_to_fill / external_hires_for_ttf |
+| ttm_total_hires | INT | SUM over 12-month window |
+| ttm_offers_extended | INT | SUM over 12-month window |
+| ttm_offers_accepted | INT | SUM over 12-month window |
+| ttm_sum_time_to_fill | FLOAT | SUM of days over 12-month window |
+| ttm_external_hires_for_ttf | INT | Count of external hires over 12-month window |
 | ttm_offer_acceptance_rate | FLOAT | ttm_offers_accepted / ttm_offers_extended |
-| ttm_avg_time_to_fill | FLOAT | SUM(sum_time_to_fill) OVER (11 preceding) / ttm_total_hires |
-| orgwide_ttm_offer_acceptance_rate | FLOAT | Company-wide TTM offer acceptance for same month |
-| orgwide_ttm_avg_time_to_fill | FLOAT | Company-wide TTM avg time to fill for same month |
+| ttm_avg_time_to_fill | FLOAT | ttm_sum_time_to_fill / ttm_external_hires_for_ttf |
+| r3m_total_hires | INT | SUM over 3-month window |
+| r3m_offers_extended | INT | SUM over 3-month window |
+| r3m_offers_accepted | INT | SUM over 3-month window |
+| r3m_sum_time_to_fill | FLOAT | SUM of days over 3-month window |
+| r3m_external_hires_for_ttf | INT | Count of external hires over 3-month window |
+| r3m_offer_acceptance_rate | FLOAT | r3m_offers_accepted / r3m_offers_extended |
+| r3m_avg_time_to_fill | FLOAT | r3m_sum_time_to_fill / r3m_external_hires_for_ttf |
+| orgwide_ttm_offer_acceptance_rate | FLOAT | Company-wide TTM benchmark |
+| orgwide_ttm_avg_time_to_fill | FLOAT | Company-wide TTM benchmark |
+| orgwide_r3m_offer_acceptance_rate | FLOAT | Company-wide 3-month rolling benchmark |
+| orgwide_r3m_avg_time_to_fill | FLOAT | Company-wide 3-month rolling benchmark |
 
-**Note:** Internal hires (candidate_origin = "internal") excluded from time-to-fill calculations.
+**Notes:**
+- Internal hires (candidate_origin = "internal") excluded from time-to-fill calculations.
+- Non-hired candidates get sub_department via requisition-based lookup (from the hired candidate on the same req).
+- The recruiting grid UNIONs dimension combos from the roster (hired) and from raw_offers_hires + stg_comp_bands (all candidates) so declined offers survive the scaffold join.
 
 ---
 

@@ -112,9 +112,11 @@ Each section shows: **Target model** ← what feeds into it, with the join key a
 | Source | Join Key | What It Provides |
 |--------|----------|-----------------|
 | dim_calendar | Distinct report_months | Every month |
-| int_employee_monthly_roster + stg_recruiting | Distinct dimension combos (department, sub_department, job_level, candidate_source, candidate_origin, candidate_recruiter, candidate_hiring_manager) | Every combo that has existed |
+| int_employee_monthly_roster | Distinct dimension combos for hired candidates (always has sub_department) | Roster-based combos |
+| raw_offers_hires + stg_comp_bands | Distinct dimension combos for all candidates (department/job_level from comp_bands, sub_department from requisition hire lookup) | Candidate-based combos (includes non-hired) |
+| stg_recruiting | Requisition → employee_id lookup for sub_department | Links requisitions to hired employees |
 
-**Output:** Same scaffold pattern as attrition grid, different dimensions.
+**Output:** UNION of roster-based and candidate-based dimension combos CROSS JOINed with calendar months. Ensures declined offers (which have NULL sub_department from comp_bands but populated sub_department from req lookup) survive the scaffold join.
 
 ---
 

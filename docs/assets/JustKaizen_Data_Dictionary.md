@@ -312,7 +312,7 @@ The staging layer cleans field names, casts data types, and applies source-level
 ### int_reporting_grid_recruiting
 
 **Grain:** report_month x department x sub_department x job_level x candidate_source x candidate_origin x candidate_recruiter x candidate_hiring_manager
-**Source:** dim_calendar CROSS JOIN distinct dimension combos from recruiting data
+**Source:** dim_calendar CROSS JOIN distinct dimension combos from UNION of: (1) int_employee_monthly_roster (hired candidates, always has sub_department) and (2) raw_offers_hires + stg_comp_bands + requisition-based sub_department lookup (all candidates including non-hired, so declined offers survive the scaffold)
 
 ### int_reporting_grid_workforce
 
@@ -357,6 +357,8 @@ The staging layer cleans field names, casts data types, and applies source-level
 | total_terminations_plus_rif | INT | total_terminations + rif_terminations |
 | ttm_total_terminations | INT | SUM over 12-month window |
 | ttm_voluntary_terminations | INT | SUM over 12-month window |
+| ttm_top_performer_terminations | INT | SUM over 12-month window |
+| ttm_regrettable_terminations | INT | SUM over 12-month window |
 | ttm_avg_headcount | FLOAT | AVG(end_month_headcount) over 12-month window |
 | ttm_overall_attrition_rate | FLOAT | ttm_total_terminations / ttm_avg_headcount |
 | ttm_voluntary_attrition_rate | FLOAT | ttm_voluntary / ttm_avg_headcount |
@@ -364,6 +366,8 @@ The staging layer cleans field names, casts data types, and applies source-level
 | ttm_regrettable_attrition_rate | FLOAT | ttm_regrettable / ttm_avg_headcount |
 | r3m_total_terminations | INT | SUM over 3-month window |
 | r3m_voluntary_terminations | INT | SUM over 3-month window |
+| r3m_top_performer_terminations | INT | SUM over 3-month window |
+| r3m_regrettable_terminations | INT | SUM over 3-month window |
 | r3m_avg_headcount | FLOAT | AVG(end_month_headcount) over 3-month window |
 | r3m_overall_attrition_rate_annualized | FLOAT | (r3m_total / r3m_avg_headcount) * 4 |
 | r3m_voluntary_attrition_rate_annualized | FLOAT | (r3m_voluntary / r3m_avg_headcount) * 4 |
@@ -404,17 +408,31 @@ The staging layer cleans field names, casts data types, and applies source-level
 | total_offers_extended | INT | Offers (accepted + declined) |
 | total_offers_accepted | INT | Accepted |
 | total_offers_declined | INT | Declined |
-| sum_time_to_fill | FLOAT | SUM of days to fill |
-| avg_time_to_fill | FLOAT | sum / count |
-| ttm_total_hires | INT | Rolling 12mo sum |
-| ttm_offers_extended | INT | Rolling 12mo sum |
-| ttm_offers_accepted | INT | Rolling 12mo sum |
-| ttm_offer_acceptance_rate | FLOAT | accepted / extended |
-| ttm_avg_time_to_fill | FLOAT | Rolling 12mo weighted avg |
-| orgwide_ttm_offer_acceptance_rate | FLOAT | Company-wide benchmark |
-| orgwide_ttm_avg_time_to_fill | FLOAT | Company-wide benchmark |
+| sum_time_to_fill | FLOAT | SUM of days to fill (external hires only) |
+| avg_time_to_fill | FLOAT | sum_time_to_fill / external_hires_for_ttf |
+| ttm_total_hires | INT | Rolling 12-month sum |
+| ttm_offers_extended | INT | Rolling 12-month sum |
+| ttm_offers_accepted | INT | Rolling 12-month sum |
+| ttm_sum_time_to_fill | FLOAT | Rolling 12-month SUM of days to fill |
+| ttm_external_hires_for_ttf | INT | Rolling 12-month count of external hires |
+| ttm_offer_acceptance_rate | FLOAT | ttm_offers_accepted / ttm_offers_extended |
+| ttm_avg_time_to_fill | FLOAT | ttm_sum_time_to_fill / ttm_external_hires_for_ttf |
+| r3m_total_hires | INT | Rolling 3-month sum |
+| r3m_offers_extended | INT | Rolling 3-month sum |
+| r3m_offers_accepted | INT | Rolling 3-month sum |
+| r3m_sum_time_to_fill | FLOAT | Rolling 3-month SUM of days to fill |
+| r3m_external_hires_for_ttf | INT | Rolling 3-month count of external hires |
+| r3m_offer_acceptance_rate | FLOAT | r3m_offers_accepted / r3m_offers_extended |
+| r3m_avg_time_to_fill | FLOAT | r3m_sum_time_to_fill / r3m_external_hires_for_ttf |
+| orgwide_ttm_offer_acceptance_rate | FLOAT | Company-wide TTM benchmark |
+| orgwide_ttm_avg_time_to_fill | FLOAT | Company-wide TTM benchmark |
+| orgwide_r3m_offer_acceptance_rate | FLOAT | Company-wide 3-month rolling benchmark |
+| orgwide_r3m_avg_time_to_fill | FLOAT | Company-wide 3-month rolling benchmark |
 
-**Note:** Internal hires (origin = "internal") excluded from time-to-fill calculations.
+**Notes:**
+- Internal hires (origin = "internal") excluded from time-to-fill calculations.
+- Non-hired candidates get sub_department from the hired candidate on the same requisition (requisition-based lookup). Unfilled requisitions remain NULL.
+- Recruiter field maps to 27 People team employees in the Recruiting sub-department, assigned per requisition with employment timeline consistency.
 
 ### fct_workforce_composition
 

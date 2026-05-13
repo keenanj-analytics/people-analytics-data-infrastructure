@@ -63,6 +63,7 @@ final as (
             when e.job_level in ('M3','M4')                     then 'Director'
             when e.job_level in ('E1','E2','E3','E4','E5','E6') then 'Senior Leadership'
         end                                     as level_group,
+        e.employment_status,
         p.overall_rating,
         p.overall_rating_numeric,
         case

@@ -3,7 +3,7 @@
     Layer:        Intermediate — scaffold
     Materialized: view
     Grain:        report_month × department × sub_department × job_level
-                  × level_group × gender × latest_perf_rating
+                  × level_group × gender × race_ethnicity × latest_perf_rating
 
     Purpose:
         Full month × dimension scaffold for fct_compensation_reporting.
@@ -38,6 +38,7 @@ dimension_combos as (
         job_level,
         level_group,
         gender,
+        race_ethnicity,
         latest_perf_rating
     from {{ ref('int_employee_monthly_roster') }}
 
@@ -53,6 +54,7 @@ final as (
         d.job_level,
         d.level_group,
         d.gender,
+        d.race_ethnicity,
         d.latest_perf_rating
     from calendar_months as c
     cross join dimension_combos as d

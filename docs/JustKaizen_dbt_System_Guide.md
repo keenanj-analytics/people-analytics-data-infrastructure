@@ -79,7 +79,7 @@ This installs dbt Core + the BigQuery adapter in one package.
 
 *Location: ~/.dbt/profiles.yml*
 
-This file lives OUTSIDE your project directory (in your home folder). It contains your BigQuery connection credentials. dbt reads it every time you run a command.
+This file lives OUTSIDE the project directory (in the home folder). It contains the BigQuery connection credentials. dbt reads it every time a command runs.
 
 ```yaml
 justkaizen:
@@ -94,7 +94,7 @@ justkaizen:
       threads: 4
 ```
 
-**Key fields:** `project` = your GCP project ID. `dataset` = the default BigQuery dataset (dbt appends schema overrides to this, e.g., raw + _staging = raw_staging). `keyfile` = path to your service account JSON key. `threads` = parallel model builds.
+**Key fields:** `project` = the GCP project ID. `dataset` = the default BigQuery dataset (dbt appends schema overrides to this, e.g., raw + _staging = raw_staging). `keyfile` = path to the service account JSON key. `threads` = parallel model builds.
 
 #### dbt_project.yml
 
@@ -321,7 +321,7 @@ Tableau Public connects to the CSV files hosted on Google Drive. Each CSV become
 
 ## Part 3: dbt Commands Reference
 
-Run all commands from your project root directory.
+Run all commands from the project root directory.
 
 | Command | What It Does | When to Use |
 |---------|-------------|-------------|
@@ -332,9 +332,9 @@ Run all commands from your project root directory.
 | `dbt compile` | Compiles Jinja SQL to raw SQL without executing. Output in target/compiled/ | Debugging — see the exact SQL dbt will send to BigQuery. |
 | `dbt build -s model_name+` | Builds a specific model and everything downstream of it | After changing one model. The `+` means "and all dependents." |
 | `dbt build -s +model_name` | Builds everything upstream of a model, then the model itself | Rebuilding a model with all its dependencies. |
-| `dbt debug` | Tests your connection to BigQuery and validates profiles.yml | First-time setup or when you get auth errors. |
+| `dbt debug` | Tests the connection to BigQuery and validates profiles.yml | First-time setup or when auth errors occur. |
 | `dbt deps` | Installs packages from packages.yml (e.g., dbt_utils) | First-time setup or after adding a new package. |
-| `dbt clean` | Deletes target/ and dbt_packages/ directories | When you want a fresh build from scratch. |
+| `dbt clean` | Deletes target/ and dbt_packages/ directories | For a fresh build from scratch. |
 
 ---
 
@@ -344,7 +344,7 @@ Run all commands from your project root directory.
 
 1. Install dbt: `pip3 install dbt-bigquery`
 2. Clone the repo: `git clone https://github.com/keenanj-analytics/people-analytics-data-infrastructure.git`
-3. Create `~/.dbt/profiles.yml` with your BigQuery service account key (see Layer 1)
+3. Create `~/.dbt/profiles.yml` with the BigQuery service account key (see Layer 1)
 4. Test connection: `dbt debug`
 5. Install packages: `dbt deps`
 6. Load seeds: `dbt seed` (wait for completion — large seeds take ~30s)
@@ -381,17 +381,17 @@ Run all commands from your project root directory.
 
 1. Run: `dbt compile`
 2. Open `target/compiled/justkaizen_analytics/models/` to see the compiled SQL
-3. You can paste this SQL directly into the BigQuery console to test
+3. This SQL can be pasted directly into the BigQuery console to test
 
 ---
 
 ## Part 5: Troubleshooting
 
-### FIX: "Your default credentials were not found"
+### FIX: "Default credentials were not found"
 
 This means Python can't find BigQuery auth.
 
-- Check that your profiles.yml has the correct keyfile path
+- Check that profiles.yml has the correct keyfile path
 - Verify the JSON key file exists at that path
 - If running the Python export script, it reads the keyfile path from the script itself — update KEYFILE in export_marts_to_csv.py
 
@@ -414,8 +414,8 @@ Race condition. The large engagement seed (~165K rows) takes ~27 seconds to load
 
 Active employees with NULL termination_date are cross-joined into every future month.
 
-- **Cause:** dim_calendar generates dates beyond the scope of your data
-- **Fix:** Cap dim_calendar's GENERATE_DATE_ARRAY end date to match your data scope (currently `DATE '2026-03-31'`)
+- **Cause:** dim_calendar generates dates beyond the scope of the data
+- **Fix:** Cap dim_calendar's GENERATE_DATE_ARRAY end date to match the data scope (currently `DATE '2026-03-31'`)
 - **Location:** models/intermediate/dim_calendar.sql, line with `generate_date_array()`
 
 ### FIX: dbt debug fails

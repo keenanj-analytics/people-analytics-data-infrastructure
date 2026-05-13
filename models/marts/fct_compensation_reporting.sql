@@ -3,9 +3,10 @@
     Layer:        Mart
     Materialized: table
     Grain:        report_month × department × sub_department × job_level
-                  × level_group × gender × latest_perf_rating
+                  × level_group × gender × race_ethnicity
+                  × latest_perf_rating
     Source:       int_reporting_grid_compensation (scaffold)
-                  int_employee_monthly_roster (Full Time + Active)
+                  int_employee_monthly_roster (Full Time, all statuses)
 
     Purpose:
         Salary, compa-ratio, band-position, and band-position outliers
@@ -35,9 +36,10 @@
         AVG over the cell averages each employee's position.
 
     Notes:
-        - Aggregations filter to employment_type = 'Full Time' AND
-          employment_status = 'Active'. Terminated employees in their
-          termination month are excluded from comp metrics.
+        - Aggregations filter to employment_type = 'Full Time'.
+          employment_status is included as a dimension so Tableau can
+          slice active vs. terminated. race_ethnicity added for pay
+          equity analysis across demographic groups.
         - latest_perf_rating is the string description from the roster
           ("Exceeds Expectations" etc.); NULL for never-reviewed employees.
 */
@@ -57,6 +59,8 @@ cell_aggregated as (
         job_level,
         level_group,
         gender,
+        race_ethnicity,
+        employment_status,
         latest_perf_rating,
         count(*)                                                                    as employee_count,
         avg(salary)                                                                 as avg_salary,
@@ -67,8 +71,7 @@ cell_aggregated as (
         approx_quantiles(compa_ratio, 2) [offset(1)]                                as median_compa_ratio
     from roster
     where employment_type = 'Full Time'
-      and employment_status = 'Active'
-    group by 1, 2, 3, 4, 5, 6, 7
+    group by 1, 2, 3, 4, 5, 6, 7, 8, 9
 
 ),
 
@@ -82,6 +85,8 @@ scaffolded as (
         g.job_level,
         g.level_group,
         g.gender,
+        g.race_ethnicity,
+        a.employment_status,
         g.latest_perf_rating,
         coalesce(a.employee_count, 0)       as employee_count,
         a.avg_salary,
@@ -98,6 +103,7 @@ scaffolded as (
         and g.job_level           is not distinct from a.job_level
         and g.level_group         is not distinct from a.level_group
         and g.gender              is not distinct from a.gender
+        and g.race_ethnicity      is not distinct from a.race_ethnicity
         and g.latest_perf_rating  is not distinct from a.latest_perf_rating
 
 ),
@@ -147,6 +153,8 @@ final as (
         s.job_level,
         s.level_group,
         s.gender,
+        s.race_ethnicity,
+        s.employment_status,
         s.latest_perf_rating,
 
         -- Cell-level metrics

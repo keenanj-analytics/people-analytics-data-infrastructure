@@ -225,10 +225,9 @@ people-analytics-data-infrastructure/
 ├── README.md
 │
 ├── docs/
+│   ├── JustKaizen_Company_Profile.md             ← Company story, org structure, parameters
 │   ├── JustKaizen_dbt_System_Guide.md            ← Full system walkthrough (architecture, commands, troubleshooting)
-│   ├── dbt_Learning_Plan.md                      ← 10-phase dbt learning plan mapped to this project
 │   └── assets/
-│       ├── JustKaizen_Company_Profile_Definitive.md  ← Company story, org structure, parameters
 │       ├── JustKaizen_Data_Dictionary.md             ← Every field in every model
 │       ├── JustKaizen_Model_Dependency_Map.md        ← Model connections and join keys
 │       ├── JustKaizen_dbt_Architecture_Spec.md       ← Full model specifications

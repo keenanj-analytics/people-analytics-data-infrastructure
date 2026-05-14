@@ -26,8 +26,8 @@ dbt_cloud/
 # Generated exports (rebuild via: python3 scripts/export_marts_to_csv.py)
 exports/
 
-# Personal files
-Keenan_Artis_Resume.docx
+# Local working files
+*.docx
 docs/company_research/
 docs/dbt_Learning_Plan.md
 docs/JustKaizen_dbt_System_Guide.pdf
